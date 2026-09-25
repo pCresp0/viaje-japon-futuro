@@ -1,0 +1,162 @@
+import { days as baseDays, tripMeta } from "../data/trip";
+
+// Returns today's local date as YYYY-MM-DD
+export function todayISO() {
+  const d = new Date();
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${day}`;
+}
+
+// Devuelve la fecha actual en la zona horaria de Japón (Asia/Tokyo) en formato YYYY-MM-DD
+export function getTokyoISO() {
+  try {
+    const f = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Tokyo", year: "numeric", month: "2-digit", day: "2-digit" });
+    return f.format(new Date());
+  } catch {
+    return todayISO();
+  }
+}
+
+export function getTripStatus() {
+  if (tripMeta.status === "planning" || !tripMeta.start) {
+    return { phase: "planning", dayNum: 1 };
+  }
+
+  const localToday = todayISO();
+  const tokyoToday = getTokyoISO();
+
+  const isDuringTrip = (date) => date >= tripMeta.start && date <= tripMeta.end;
+
+  let today = localToday;
+  if (isDuringTrip(tokyoToday)) {
+    today = tokyoToday;
+  } else if (isDuringTrip(localToday)) {
+    today = localToday;
+  }
+
+  if (today < tripMeta.start) {
+    return { phase: "before", daysUntil: diffDays(today, tripMeta.start), dayNum: 1 };
+  }
+  if (today > tripMeta.end) {
+    return { phase: "after" };
+  }
+  const day = baseDays.find((d) => d.date === today);
+  if (day) return { phase: "during", dayNum: day.num };
+  return { phase: "during", dayNum: 1 };
+}
+
+export function getDefaultTripDay() {
+  const status = getTripStatus();
+  if (status.phase === "planning") {
+    return 1;
+  }
+  if (status.phase === "during") {
+    return status.dayNum ?? 1;
+  }
+  if (status.phase === "after") {
+    return null;
+  }
+  return 1;
+}
+
+// Devuelve el id del hotel (de 'stays') en el que se duerme la noche del día indicado
+export function getHotelForDay(dayNum) {
+  if (dayNum == null) return "tokio";
+  if (dayNum <= 4) return "tokio";
+  if (dayNum === 5) return "fuji";
+  if (dayNum <= 7) return "osaka";
+  if (dayNum <= 9) return "miyajima";
+  if (dayNum <= 11) return "okinawa";
+  if (dayNum === 12) return "hokkaido";
+  return "tokio-despedida";
+}
+
+// Minutos transcurridos desde medianoche, en la hora de Japón (o local si falla),
+// usados para encontrar en qué punto del horario de hoy estamos ahora mismo.
+export function getCurrentMinutesTokyo() {
+  try {
+    const f = new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Tokyo", hour: "2-digit", minute: "2-digit", hour12: false });
+    const parts = f.formatToParts(new Date());
+    const h = Number(parts.find((p) => p.type === "hour")?.value ?? 0);
+    const m = Number(parts.find((p) => p.type === "minute")?.value ?? 0);
+    return h * 60 + m;
+  } catch {
+    const d = new Date();
+    return d.getHours() * 60 + d.getMinutes();
+  }
+}
+
+// Dado el horario de un día (array de { time, text }), devuelve { index, status }
+// para la parada correspondiente al momento actual, donde `index` es la posición
+// (dentro de las entradas que SÍ tienen una hora real) y `status` es "now" si ya
+// ha empezado esa parada, o "upcoming" si todavía no ha empezado ninguna del día
+// (la hora actual es anterior a la primera parada con hora) -- en ese caso apunta
+// a la primera parada, pero como "próxima", no como "en curso". Devuelve null si
+// no hay ninguna entrada con hora reconocible.
+export function findCurrentScheduleIndex(schedule) {
+  if (!schedule || schedule.length === 0) return null;
+  const timed = schedule
+    .map((s, i) => ({ ...s, _origIndex: i }))
+    .filter((s) => s.time && /\d/.test(s.time));
+  if (timed.length === 0) return null;
+
+  const nowMinutes = getCurrentMinutesTokyo();
+
+  const parseStartMinutes = (timeStr) => {
+    const match = String(timeStr).match(/(\d{1,2}):(\d{2})/);
+    if (!match) return null;
+    return Number(match[1]) * 60 + Number(match[2]);
+  };
+
+  let bestFilteredIndex = null;
+  let bestMinutes = -Infinity;
+  timed.forEach((s, filteredIdx) => {
+    const startMinutes = parseStartMinutes(s.time);
+    if (startMinutes == null) return;
+    if (startMinutes <= nowMinutes && startMinutes > bestMinutes) {
+      bestMinutes = startMinutes;
+      bestFilteredIndex = filteredIdx;
+    }
+  });
+
+  if (bestFilteredIndex == null) {
+    // Ningún hito del día ha empezado todavía -- el primero con hora es el próximo.
+    return { index: 0, status: "upcoming" };
+  }
+  return { index: bestFilteredIndex, status: "now" };
+}
+
+export function diffDays(fromISO, toISO) {
+  const a = new Date(fromISO + "T00:00:00");
+  const b = new Date(toISO + "T00:00:00");
+  return Math.round((b - a) / 86400000);
+}
+
+const MONTHS = ["ene","feb","mar","abr","may","jun","jul","ago","sept","oct","nov","dic"];
+const WEEKDAYS = ["dom","lun","mar","mié","jue","vie","sáb"];
+
+// Formatea un Date en una zona horaria dada como "dd-mmm-yyyy"
+export function fmtDateTZ(date, tz) {
+  const f = new Intl.DateTimeFormat("es-ES", { timeZone: tz, day: "numeric", month: "numeric", year: "numeric" });
+  const p = Object.fromEntries(f.formatToParts(date).map(({ type, value }) => [type, value]));
+  return `${p.day}-${MONTHS[+p.month - 1]}-${p.year}`;
+}
+
+// Formatea un objeto Date como "dd-mmm-yyyy" (p.ej. "7-sept-2026")
+export function fmtDate(date) {
+  return `${date.getDate()}-${MONTHS[date.getMonth()]}-${date.getFullYear()}`;
+}
+
+// "dom 7-sept-2026"
+export function formatDateLong(iso) {
+  const d = new Date(iso + "T00:00:00");
+  return `${WEEKDAYS[d.getDay()]} ${d.getDate()}-${MONTHS[d.getMonth()]}-${d.getFullYear()}`;
+}
+
+// "7-sept-2026"
+export function formatDateShort(iso) {
+  const d = new Date(iso + "T00:00:00");
+  return fmtDate(d);
+}

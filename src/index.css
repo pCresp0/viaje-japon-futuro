@@ -1,0 +1,461 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #1b1f27;
+  --ink-soft: #5a6070;
+  --paper: #f7f0e3;
+  --paper-raised: #fffdf8;
+  --indigo: #1d3557;
+  --indigo-deep: #12213a;
+  --shu: #bc4749;
+  --shu-deep: #7a2c2e;
+  --shu-darker: #4d1c1e;
+  --forest: #2e7d5b;
+  --gold: #c9a227;
+  --line: #e6dcc4;
+
+  --font-display: Georgia, "Iowan Old Style", "Palatino Linotype", "Noto Serif", serif;
+  --font-body: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+
+  /* Cabecera móvil: 58px útiles + safe-area (centrado vertical del título) */
+  --mobile-topbar: calc(58px + env(safe-area-inset-top, 0px));
+}
+
+@media (min-width: 768px) {
+  :root {
+    --mobile-topbar: 0px;
+  }
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+
+/* Evitar zoom automático en iOS Safari al hacer foco en campos de texto (requiere font-size >= 16px) */
+@media screen and (max-width: 768px) {
+  input[type="text"],
+  input[type="search"],
+  input[type="password"],
+  input[type="number"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="url"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+/* ── Textura de olas sobre el fondo de la app ────────────────────────
+   Misma imagen que el panel lateral (waves-sidebar.webp) pero con
+   opacidad reducida y un leve blur para que sea más difuminada.
+   inset: -12px compensa el sangrado de bordes del filtro blur. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -12px;
+  background-image: url('/waves-sidebar.webp');
+  background-size: cover;
+  background-position: center top;
+  opacity: 0.11;
+  filter: blur(2px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+body {
+  position: relative;
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  overscroll-behavior-y: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* stamp-like eyebrow labels */
+.eyebrow {
+  font-family: var(--font-body);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  font-weight: 600;
+  /* Hereda el color del contenedor. Antes forzaba var(--ink-soft), lo que
+     pisaba silenciosamente a utilidades como text-white/80 y dejaba texto
+     gris ilegible sobre fondos de color. */
+  color: inherit;
+}
+
+/* Japanese-style thin horizontal rule */
+.kosen {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 1.5rem 0;
+}
+
+/* Card base */
+.card {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+::selection {
+  background: var(--shu);
+  color: white;
+}
+
+/* Placeholder del acceso: asteriscos muy difuminados */
+.access-pass-input::placeholder {
+  color: var(--ink-soft);
+  opacity: 0.28;
+  letter-spacing: 0.18em;
+}
+
+/* Smooth page transitions */
+main > div > * {
+  animation: fadeIn 0.18s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+/* Desktop: remove mobile top padding */
+@media (min-width: 768px) {
+  main {
+    padding-top: 0 !important;
+  }
+  
+  body, #root {
+    overflow: hidden;
+  }
+}
+
+/* Anclas de día en itinerario y apartados de historia: dejan margen bajo la cabecera fija
+   para que scrollIntoView muestre la card completa arriba, sin tapar ni cortar. */
+.itinerary-day-anchor,
+.history-section-anchor,
+.period-card-anchor {
+  scroll-margin-top: 14px;
+}
+@media (max-width: 767px) {
+  .itinerary-day-anchor,
+  .history-section-anchor,
+  .period-card-anchor {
+    scroll-margin-top: calc(var(--mobile-topbar) + 10px);
+  }
+}
+
+/* Anclas de billetes/trayectos en Transportes: aquí hay DOS barras fijas
+   apiladas (la cabecera general + la pestaña Billetes/Trayectos, que
+   también es sticky), así que necesitan más margen que el resto de
+   anclas para que scrollIntoView no deje la tarjeta tapada a medias. */
+.transport-anchor {
+  scroll-margin-top: 90px;
+}
+@media (max-width: 767px) {
+  .transport-anchor {
+    scroll-margin-top: calc(var(--mobile-topbar) + 70px);
+  }
+}
+
+/* Home page: countdown + next-day cards stack on mobile, side by side on desktop */
+.before-trip-grid {
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) {
+  .before-trip-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Show/hide detail panel based on screen size */
+@media (max-width: 1023px) {
+  [data-detail-panel] {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  [data-mobile-modal] {
+    display: none !important;
+  }
+}
+
+/* ── Modal / bottom-sheet system ──────────────────────────────────────
+   Fixed positioning inside a scrolling ancestor can misbehave on iOS
+   Safari (it sometimes anchors to the nearest scroll container instead
+   of the viewport). Using position:fixed on a dedicated top-level
+   overlay class, plus dvh units, keeps it pinned to the real viewport
+   and properly scrollable/closable on every device.
+
+   The sheet is anchored near the top of the screen (not full bottom-
+   sheet) with real top/bottom margins, so it never collides with the
+   mobile topbar above or gets cut off below — and always leaves room
+   to scroll its own content when it's tall. */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: calc(64px + env(safe-area-inset-top, 0px)) 12px calc(16px + env(safe-area-inset-bottom, 0px));
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.modal-sheet {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  max-height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: var(--paper-raised);
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+  margin: auto;
+}
+
+.modal-sheet-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 12px 12px 0;
+  background: var(--paper-raised);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.modal-sheet-body {
+  padding: 4px 20px calc(24px + env(safe-area-inset-bottom, 0px));
+}
+
+.modal-close-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-soft);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+@media (min-width: 640px) {
+  .modal-overlay {
+    align-items: center;
+    padding: 24px 16px;
+  }
+}
+
+/* ── Blinking alert dot (nav "Cosas pendientes") ──────────────────── */
+.alert-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff5c5c;
+  box-shadow: 0 0 0 0 rgba(255, 92, 92, 0.7);
+  margin-left: auto;
+  flex-shrink: 0;
+  animation: alertPulse 1.6s ease-out infinite;
+}
+
+@keyframes alertPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(255, 92, 92, 0.7); opacity: 1; }
+  70%  { box-shadow: 0 0 0 7px rgba(255, 92, 92, 0); opacity: 0.75; }
+  100% { box-shadow: 0 0 0 0 rgba(255, 92, 92, 0); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .alert-dot { animation: none; }
+}
+
+/* ── Speaking indicator (frases con pronunciación) ────────────────── */
+.speaking-pulse {
+  animation: speakPulse 0.9s ease-in-out infinite;
+}
+
+@keyframes speakPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.15); opacity: 0.75; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .speaking-pulse { animation: none; }
+}
+
+/* ── Resultado de búsqueda destacado ─────────────────────────────────
+   Al llegar desde el buscador global, el elemento encontrado se marca
+   con un anillo de color y un resplandor de fondo que se desvanece solo
+   a los ~2.5s — suficiente para que el ojo lo encuentre sin quedarse
+   "pegado" para siempre. scroll-margin-top evita que la topbar fija en
+   móvil tape la parte superior del elemento al hacer scrollIntoView. */
+.search-highlight-pulse {
+  scroll-margin-top: 72px;
+  animation: searchHighlight 2.6s ease-out;
+  border-radius: inherit;
+}
+
+@keyframes searchHighlight {
+  0% {
+    box-shadow: 0 0 0 3px var(--gold, #c9a227), 0 4px 18px rgba(201, 162, 39, 0.35);
+    background-color: rgba(201, 162, 39, 0.14);
+  }
+  70% {
+    box-shadow: 0 0 0 3px var(--gold, #c9a227), 0 4px 18px rgba(201, 162, 39, 0.2);
+    background-color: rgba(201, 162, 39, 0.08);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(201, 162, 39, 0);
+    background-color: transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .search-highlight-pulse { animation: none; outline: 2px solid var(--gold, #c9a227); }
+}
+
+/* ── Día de hoy en el Calendario ──────────────────────────────────────
+   A diferencia del resaltado del buscador (que se desvanece a los
+   2.5s), este es permanente mientras la celda de "hoy" esté visible:
+   un anillo dorado fijo, más un pulso hacia fuera en bucle para que se
+   note incluso sin fijarse mucho. */
+.today-pulse-ring {
+  animation: todayPulse 1.8s ease-out infinite;
+}
+
+/* El anillo pulsa hacia DENTRO (inset), no hacia fuera. La tabla del
+   calendario recorta el contenido con overflow:hidden para redondear
+   sus esquinas exteriores — un box-shadow que creciera hacia fuera se
+   cortaba en seco contra ese límite en cualquier celda pegada a un
+   borde (la columna de la izquierda, la última fila...). Con inset el
+   anillo nunca sale de los límites de la propia celda, así que se ve
+   bien en cualquier posición de la rejilla. */
+@keyframes todayPulse {
+  0% {
+    box-shadow: inset 0 0 0 2px var(--gold, #c9a227), inset 0 0 0 2px rgba(201, 162, 39, 0.5);
+  }
+  70% {
+    box-shadow: inset 0 0 0 2px var(--gold, #c9a227), inset 0 0 0 9px rgba(201, 162, 39, 0);
+  }
+  100% {
+    box-shadow: inset 0 0 0 2px var(--gold, #c9a227), inset 0 0 0 9px rgba(201, 162, 39, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .today-pulse-ring { animation: none; box-shadow: inset 0 0 0 2px var(--gold, #c9a227); }
+}
+
+/* ── Botón de altavoz (afordancia clara de "esto se pulsa") ─────────── */
+.speaker-btn {
+  transition: transform 0.12s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+.speaker-btn:hover {
+  filter: brightness(1.06);
+}
+.speaker-btn:active {
+  transform: scale(0.9);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15) !important;
+}
+
+/* ── Leaflet z-index containment ───────────────────────────────────────
+   Leaflet's internal panes (tiles, markers, controls, popups) use z-index
+   values up to ~1000 by default, which floats above our own overlays
+   (mobile topbar=150, nav drawer=200/210, modal=100). Force its stacking
+   context to stay low so it can never bleed through them. */
+.leaflet-container {
+  z-index: 0;
+}
+.leaflet-pane,
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 10 !important;
+}
+.leaflet-popup {
+  z-index: 15 !important;
+}
+
+/* ── Altura de viewport con fallback real ────────────────────────────
+   En un objeto de estilos de React (JS) no se pueden repetir claves —
+   "height: 100vh, height: 100dvh" en el mismo objeto sólo aplicaría la
+   segunda, perdiendo el fallback en navegadores sin soporte de dvh. En
+   CSS de verdad sí se puede: el navegador aplica la última declaración
+   que entienda e ignora la que no reconoce, dando el fallback real. */
+.full-viewport-height {
+  height: 100vh;
+  height: 100dvh;
+}
+.full-viewport-min-height {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* ── Exportar itinerario a PDF ────────────────────────────────────────
+   Se usa la impresión nativa del navegador (Guardar como PDF) en vez de
+   una librería tipo jsPDF: así el texto sale real y seleccionable, los
+   enlaces (Google Maps, reservas...) quedan clicables de verdad en el
+   PDF, y las imágenes se insertan a su calidad original — todo eso hay
+   que reconstruirlo a mano con jsPDF y es mucho más frágil.
+
+   El contenido de impresión vive siempre en el DOM (montado vía portal
+   en <body>, ver ItineraryPrintView.jsx) pero oculto en pantalla; sólo
+   se muestra dentro de @media print, momento en el que se oculta el
+   resto de la app (menú, cabecera, footer...). */
+.print-only {
+  display: none;
+}
+
+@media print {
+  html, body {
+    background: #fff !important;
+    color: #1b1f27 !important;
+  }
+  body::before {
+    display: none !important;
+  }
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .app-shell {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .history-period-print-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  @page {
+    margin: 12mm 10mm;
+  }
+  a {
+    text-decoration: none;
+  }
+}

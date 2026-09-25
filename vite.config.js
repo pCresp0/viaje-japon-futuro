@@ -1,0 +1,58 @@
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
+import { VitePWA } from 'vite-plugin-pwa'
+
+export default defineConfig({
+  base: '/',
+  define: {
+    // Marca de tiempo real de cuándo se generó este build, para poder
+    // comprobar en la propia web si un cambio ya se ha desplegado o no.
+    __BUILD_TIME__: JSON.stringify(new Date().toISOString()),
+  },
+  plugins: [
+    react(),
+    tailwindcss(),
+    VitePWA({
+      registerType: 'autoUpdate',
+      includeAssets: [
+        'favicon.ico',
+        'icon-16.png',
+        'icon-32.png',
+        'icon-180.png',
+        'apple-touch-icon.png',
+        'og-image.png',
+      ],
+      manifest: {
+        name: 'Viaje a Japón — Septiembre 2026',
+        short_name: 'Japón 2026',
+        description: 'Guía del viaje a Japón, septiembre 2026',
+        start_url: '/',
+        scope: '/',
+        display: 'standalone',
+        background_color: '#1D3557',
+        theme_color: '#4d1c1e',
+        icons: [
+          { src: 'icon-192.png', sizes: '192x192', type: 'image/png' },
+          { src: 'icon-512.png', sizes: '512x512', type: 'image/png' },
+          { src: 'icon-maskable-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
+        ],
+      },
+      workbox: {
+        // Sin esto, un service worker nuevo se instala pero se queda
+        // "esperando" hasta que se cierren todas las pestañas/instancias
+        // de la app antes de activarse — en una PWA instalada eso puede
+        // tardar días. Con skipWaiting + clientsClaim, la nueva versión
+        // (con sus fixes) toma el control en cuanto termina de instalarse.
+        skipWaiting: true,
+        clientsClaim: true,
+        globPatterns: ['**/*.{js,css,html,png,svg,ico,webp}'],
+        navigateFallback: '/index.html',
+        // El contenido del sitio (itinerario, guías, mapa) ha crecido más
+        // allá del límite por defecto de precaché de Workbox (2 MiB) --
+        // sin esto el build falla en vez de simplemente avisar.
+        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
+      },
+    }),
+  ],
+})

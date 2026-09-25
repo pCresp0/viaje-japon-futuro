@@ -1,0 +1,1402 @@
+// Guías detalladas de cada lugar del itinerario.
+// Contenido opcional: se muestra sólo cuando el usuario pulsa "Saber más".
+//
+// Cada entrada tiene:
+//   name       — nombre del lugar
+//   jp         — nombre en japonés
+//   founded    — fecha o periodo de fundación
+//   tagline    — resumen de una línea
+//   sections   — bloques de contenido { title, body }
+//   curiosities— lista de datos curiosos
+//   tip        — consejo práctico para la visita
+
+export const guides = {
+  // ══════════════════════════════════════════════════════════════════
+  // KIOTO Y ALREDEDORES
+  // ══════════════════════════════════════════════════════════════════
+
+  "fushimi-inari": {
+    name: "Fushimi Inari Taisha",
+    jp: "伏見稲荷大社",
+    founded: "Año 711",
+    wiki: "Fushimi Inari-taisha",
+    tagline: "El santuario de los diez mil torii rojos, dedicado al dios del arroz y la prosperidad.",
+    sections: [
+      {
+        title: "Qué es exactamente",
+        body: "Es el santuario principal (taisha) de los aproximadamente 30.000 santuarios dedicados a Inari que hay repartidos por todo Japón. Inari es la deidad sintoísta del arroz, la fertilidad, la agricultura y, por extensión moderna, la prosperidad de los negocios. No es un templo budista sino un santuario sintoísta: la diferencia se nota en la puerta de entrada (torii) y en que no hay estatuas de Buda.",
+      },
+      {
+        title: "Historia",
+        body: "Fue fundado en el año 711, antes incluso de que Kioto fuera capital, por el clan Hata, una familia de inmigrantes de origen coreano que dominaba las técnicas de cultivo del arroz y la sericultura. En 816 el monje Kūkai lo trasladó a su emplazamiento actual. Sobrevivió a la Guerra Ōnin (1467-1477), que arrasó gran parte de Kioto, aunque los edificios principales fueron reconstruidos en 1499. La estructura principal que se ve hoy data de ese año.",
+      },
+      {
+        title: "Los torii y por qué son tantos",
+        body: "El camino de torii (senbon torii, 'mil torii', aunque en realidad son más de 10.000) empezó a formarse en el periodo Edo. Cada torii es una donación de una persona o empresa que pide o agradece prosperidad. En la parte trasera de cada uno están grabados el nombre del donante y la fecha. Los precios van desde unos 400.000 ¥ (~2.170€) por uno pequeño hasta más de un millón (~5.400€+) por los grandes. Cuando uno se pudre, se retira y se vende el espacio de nuevo, así que el túnel está en renovación constante.",
+      },
+      {
+        title: "Los zorros",
+        body: "Verás cientos de estatuas de zorros (kitsune) por todo el recinto. No son la deidad, sino sus mensajeros. Casi siempre llevan algo en la boca: una llave (la del granero de arroz), una gavilla de arroz, una joya o un pergamino. La creencia popular japonesa atribuye a los zorros la capacidad de transformarse y poseer a las personas, lo que les da un aura ambivalente entre lo protector y lo inquietante.",
+      },
+      {
+        title: "La subida al monte Inari",
+        body: "El recorrido completo sube hasta la cima del monte Inari (233 m) y son unas 2-3 horas ida y vuelta. La mayoría de los turistas se dan la vuelta en el mirador de Yotsutsuji (unos 30-45 minutos de subida), desde donde hay buenas vistas de Kioto. A partir de ahí el camino se vacía casi por completo y se llena de pequeños altares privados con velas.",
+      },
+    ],
+    curiosities: [
+      "Aparece en la película 'Memorias de una geisha' (2005), en la escena en la que la protagonista corre de niña entre los torii.",
+      "Es gratuito y está abierto las 24 horas, todos los días del año — algo poco común en los grandes monumentos de Japón.",
+      "El 'inari-zushi' (bolsita de tofu frito rellena de arroz) se llama así porque se cree que el tofu frito es la comida favorita de los zorros.",
+    ],
+    tip: "Llegar antes de las 8:00 o después de las 16:00 marca la diferencia entre hacer fotos del túnel vacío o de una fila de gente.",
+  },
+
+  "todai-ji": {
+    name: "Todai-ji y el Gran Buda",
+    jp: "東大寺",
+    founded: "Año 752",
+    wiki: "Tōdai-ji",
+    tagline: "El edificio de madera más grande del mundo durante siglos, con un Buda de bronce de 15 metros.",
+    sections: [
+      {
+        title: "Qué es",
+        body: "Es el 'Gran Templo del Este', el templo principal de la escuela budista Kegon y, durante siglos, el centro de la red de templos provinciales de todo Japón. Su sala principal, el Daibutsuden, alberga el Daibutsu: una estatua de bronce de Buda Vairocana de casi 15 metros de altura y unas 500 toneladas.",
+      },
+      {
+        title: "Por qué se construyó",
+        body: "El emperador Shōmu ordenó su construcción en el año 743, en plena crisis: una epidemia de viruela había matado a un tercio de la población japonesa (incluidos los cuatro hermanos Fujiwara que dominaban la corte), había hambrunas y revueltas. El proyecto fue un acto de fe estatal para pacificar el país, y también una demostración de poder centralizado. Consumió tanto bronce que casi arruinó la economía del país, y la producción de cobre de Japón quedó agotada durante años.",
+      },
+      {
+        title: "Destruido y reconstruido dos veces",
+        body: "Esto es importante: lo que verás no es el edificio original. El Daibutsuden fue quemado en 1180 durante la guerra Genpei y reconstruido; volvió a arder en 1567 durante las guerras civiles del periodo Sengoku, y la cabeza del Buda se derritió. La estatua estuvo casi 100 años a la intemperie. El edificio actual es de 1709 y, aunque sigue siendo enorme, es un 30% más pequeño que el original: no había fondos ni árboles suficientemente grandes para replicarlo. De la estatua original sólo quedan partes de la base y las piernas; la cabeza es del periodo Edo.",
+      },
+      {
+        title: "Los ciervos de Nara",
+        body: "Los más de 1.000 ciervos sika que campan libres por el parque no son una atracción turística montada: en el sintoísmo se consideraban mensajeros de los dioses y estuvieron protegidos por ley desde el siglo VIII — matar uno se castigaba con la muerte hasta 1637. Hoy son Monumento Natural Nacional. Han aprendido a inclinar la cabeza para pedir galletas (shika senbei), un comportamiento que no es innato sino aprendido de la interacción con visitantes.",
+      },
+    ],
+    curiosities: [
+      "En una de las columnas del interior hay un agujero del mismo tamaño que una fosa nasal del Buda. La creencia dice que quien consigue pasar por él tendrá la iluminación en su próxima vida. Los niños pasan sin problema; los adultos, con dificultad.",
+      "Los ciervos pueden ser agresivos si llevas comida visible. También muerden mapas y folletos, así que guarda el papel.",
+      "La ceremonia de 'apertura de ojos' del Buda en 752 reunió a 10.000 monjes y asistieron delegaciones de India, China y Vietnam — fue un acontecimiento internacional.",
+    ],
+    tip: "El templo Nigatsu-do, subiendo la colina detrás del Daibutsuden, es gratuito, casi siempre está vacío y tiene la mejor vista panorámica de Nara.",
+  },
+
+  "kinkaku-ji": {
+    name: "Kinkaku-ji (Pabellón Dorado)",
+    jp: "金閣寺",
+    founded: "1397 (edificio actual: 1955)",
+    wiki: "Kinkaku-ji",
+    tagline: "Un pabellón cubierto de pan de oro sobre un estanque — y una reconstrucción tras un incendio provocado.",
+    sections: [
+      {
+        title: "Qué es",
+        body: "Formalmente se llama Rokuon-ji. Era la villa de retiro del shogun Ashikaga Yoshimitsu, que se retiró oficialmente del poder en 1394 pero siguió gobernando en la práctica desde aquí. A su muerte, según su testamento, se convirtió en templo zen de la escuela Rinzai.",
+      },
+      {
+        title: "El detalle arquitectónico que casi nadie ve",
+        body: "Los tres pisos del pabellón están construidos en tres estilos distintos, y esa es la clave del edificio. El primero es estilo shinden, el de los palacios aristocráticos del periodo Heian, y no lleva oro. El segundo es estilo buke, el de las casas de samuráis, cubierto de pan de oro. El tercero es estilo zenshū-butsuden, el de las salas budistas zen chinas, también dorado. Yoshimitsu estaba representando visualmente cómo el poder había pasado de la aristocracia a los guerreros y de ahí a la autoridad espiritual — que él encarnaba.",
+      },
+      {
+        title: "El incendio de 1950",
+        body: "El edificio que ves es de 1955. En julio de 1950, un joven monje novicio de 22 años llamado Hayashi Yōken lo roció con combustible y le prendió fuego, y luego intentó suicidarse en la colina de detrás. Sobrevivió. En el juicio declaró que le atormentaba la belleza del pabellón y el contraste con su propia fealdad y tartamudez, y que odiaba ver el templo convertido en negocio turístico. Murió de tuberculosis en 1956. El suceso conmocionó a Japón y Yukio Mishima escribió a partir de él su novela 'El pabellón de oro' (1956), una de las obras clave de la literatura japonesa del siglo XX.",
+      },
+      {
+        title: "El oro actual",
+        body: "La reconstrucción de 1955 fue fiel al original, pero en 1987 se volvió a recubrir con un pan de oro cinco veces más grueso que el que tenía originalmente, además de repintar todo el lacado interior. Costó unos 740 millones de yenes (~4 M€) de la época. Irónicamente, el pabellón actual brilla mucho más de lo que jamás brilló el de Yoshimitsu.",
+      },
+    ],
+    curiosities: [
+      "El fénix dorado de la cumbre del tejado sí es original: se salvó del incendio porque estaba retirado para restauración.",
+      "El estanque, Kyōko-chi ('espejo de agua'), está diseñado para que el reflejo sea parte de la obra. Las islas y rocas representan escenas de la cosmología budista.",
+      "No se puede entrar al pabellón. Nunca ha estado abierto al público por dentro.",
+    ],
+    tip: "El recorrido es de sentido único y bastante corto (30-40 min). Se ve mejor con sol de mañana, cuando la luz da de frente al pabellón.",
+  },
+
+  "ginkaku-ji": {
+    name: "Ginkaku-ji (Pabellón de Plata)",
+    jp: "銀閣寺",
+    founded: "1482",
+    wiki: "Ginkaku-ji",
+    tagline: "El pabellón que nunca fue plateado, y donde nació buena parte de la estética japonesa moderna.",
+    sections: [
+      {
+        title: "La plata que no existe",
+        body: "Lo primero que sorprende: no tiene nada de plata. El nombre es posterior y probablemente irónico o comparativo con el Pabellón Dorado de su abuelo. Hay dos teorías: que se planeó recubrirlo de plata y nunca se hizo por falta de fondos durante la Guerra Ōnin, o que el nombre viene del reflejo plateado de la luna sobre la laca negra del edificio. Análisis modernos de 2007 confirmaron que nunca hubo recubrimiento plateado.",
+      },
+      {
+        title: "Historia",
+        body: "Lo construyó Ashikaga Yoshimasa, nieto del constructor del Kinkaku-ji, como villa de retiro. Yoshimasa fue un shogun desastroso políticamente: su indecisión sobre la sucesión desencadenó la Guerra Ōnin, que destruyó Kioto y sumió a Japón en un siglo de guerra civil. Mientras la ciudad ardía, él se dedicaba aquí al arte, la poesía y la ceremonia del té.",
+      },
+      {
+        title: "Por qué importa culturalmente",
+        body: "Ese retiro de Yoshimasa dio lugar a la 'cultura Higashiyama', que es el origen de buena parte de lo que hoy consideramos estética japonesa: la ceremonia del té formalizada, el ikebana, el teatro nō, la jardinería de rocas, la arquitectura shoin (con tatami, tokonoma y puertas correderas) y la estética wabi-sabi de la belleza en lo imperfecto y austero. La sala Tōgu-dō del recinto contiene el que se considera el primer cuarto de té de Japón, de 4,5 tatamis.",
+      },
+      {
+        title: "El jardín de arena",
+        body: "El 'Mar de Arena Plateada' (Ginshadan) y el cono truncado del 'Monte Fuji de la Contemplación de la Luna' (Kōgetsudai) son de arena blanca rastrillada. No son originales del siglo XV: aparecen documentados desde el periodo Edo. Se rastrillan a mano constantemente y su forma exacta se mantiene con plantillas.",
+      },
+    ],
+    curiosities: [
+      "Solo dos edificios del recinto son originales del siglo XV: el propio pabellón y el Tōgu-dō. Ambos son Tesoro Nacional.",
+      "El musgo del jardín tiene más de 100 variedades y es uno de los jardines de musgo más cuidados de Kioto.",
+      "El Paseo de la Filosofía que sale de aquí debe su nombre a Kitarō Nishida, filósofo de la Escuela de Kioto, que lo recorría a diario meditando.",
+    ],
+    tip: "Se disfruta mucho más si se hace después del Kinkaku-ji, para captar el contraste deliberado entre ostentación y austeridad.",
+  },
+
+  "kiyomizu-dera": {
+    name: "Kiyomizu-dera",
+    jp: "清水寺",
+    founded: "Año 778 (edificios actuales: 1633)",
+    wiki: "Kiyomizu-dera",
+    tagline: "Una plataforma de madera suspendida sobre el vacío, construida sin un solo clavo.",
+    sections: [
+      {
+        title: "Qué es",
+        body: "Templo budista de la escuela Hossō, fundado en 778, antes de que Kioto fuera capital. Su nombre significa 'templo del agua pura', por la cascada Otowa que brota en el recinto y que fue el motivo original de su fundación: el monje Enchin tuvo una visión que le llevó hasta este manantial.",
+      },
+      {
+        title: "La plataforma",
+        body: "El escenario (butai) sobresale 13 metros sobre la ladera, sostenido por 168 pilares de zelkova japonesa de hasta 12 metros. Todo el conjunto está ensamblado mediante juntas de carpintería, sin un solo clavo. Los edificios actuales son de 1633, reconstruidos por orden del shogun Tokugawa Iemitsu tras uno de los muchos incendios que ha sufrido el templo — ha ardido más de nueve veces a lo largo de su historia.",
+      },
+      {
+        title: "'Saltar del escenario de Kiyomizu'",
+        body: "Es una expresión japonesa equivalente a 'lanzarse a la piscina' o tomar una decisión drástica. Viene de una creencia del periodo Edo: quien sobreviviera al salto de 13 metros vería cumplido su deseo. Los registros documentan 234 saltos entre 1694 y 1864, con una tasa de supervivencia del 85% (la vegetación de abajo amortiguaba). La práctica se prohibió en 1872.",
+      },
+      {
+        title: "La cascada Otowa",
+        body: "En la base del templo, tres chorros de agua caen desde donde los visitantes beben con cazos de mango largo. Cada chorro concede algo distinto: longevidad, éxito académico y suerte en el amor. La tradición dice que beber de los tres se considera codicioso y anula el efecto — hay que elegir uno.",
+      },
+      {
+        title: "Jishu Jinja",
+        body: "Dentro del recinto hay un santuario dedicado al dios del amor y el emparejamiento. Tiene dos piedras separadas 18 metros: si consigues caminar de una a otra con los ojos cerrados, encontrarás el amor. Si necesitas que alguien te guíe, necesitarás un intermediario en la vida real.",
+      },
+    ],
+    curiosities: [
+      "Fue candidato en 2007 a las Nuevas Siete Maravillas del Mundo.",
+      "La restauración del tejado terminó en 2020 tras varios años con andamios; ahora se ve completo por primera vez en casi una década.",
+      "Las cuestas de acceso (Sannenzaka y Ninenzaka) tienen una leyenda: tropezar en ellas trae tres o dos años de mala suerte respectivamente. Están empedradas y son resbaladizas, así que la advertencia es medio en serio.",
+    ],
+    tip: "Abre a las 6:00 de la mañana. Es de los pocos templos importantes que se pueden ver prácticamente solos si madrugas.",
+  },
+
+  "arashiyama": {
+    name: "Arashiyama y el bosque de bambú",
+    jp: "嵐山",
+    founded: "Periodo Heian (s. VIII-XII)",
+    wiki: "Arashiyama",
+    tagline: "El retiro aristocrático de la corte Heian, con un bosque de bambú que suena distinto a todo.",
+    sections: [
+      {
+        title: "Qué es",
+        body: "Un distrito en el oeste de Kioto, al pie del monte Arashiyama ('montaña de la tormenta'). Desde el periodo Heian fue el lugar de segunda residencia de la aristocracia de la corte, que venía a contemplar los cerezos en primavera y los arces en otoño. Es Lugar de Belleza Escénica designado a nivel nacional.",
+      },
+      {
+        title: "El bosque de bambú",
+        body: "El Sagano Bamboo Grove es un sendero de unos 400 metros entre cañas de bambú moso de hasta 20 metros. No es un bosque natural: se plantó y se mantiene deliberadamente, y el bambú se cosecha para artesanía. El Ministerio de Medio Ambiente japonés lo incluyó en su lista de los '100 paisajes sonoros de Japón' por el sonido particular que hace el viento entre las cañas, combinado con el crujido de los tallos al rozarse.",
+      },
+      {
+        title: "El puente Togetsukyo",
+        body: "El 'puente que cruza la luna' data originalmente del siglo IX, aunque la estructura actual es de 1934 (con núcleo de hormigón revestido de madera para conservar el aspecto). Su nombre viene de un comentario del emperador Kameyama en el siglo XIII, al ver la luna parecer cruzar el puente.",
+      },
+      {
+        title: "Otagi Nenbutsu-ji",
+        body: "Subiendo por Saga-Toriimoto está este templo, mucho menos visitado. Contiene 1.200 estatuas de rakan (discípulos de Buda) talladas entre 1981 y 1991 no por escultores profesionales, sino por visitantes aficionados guiados por el escultor Kōchō Nishimura. Por eso cada una tiene una expresión completamente distinta y algunas son abiertamente humorísticas: hay rakan con raquetas de tenis, con cámaras de fotos, con gatos. Están cubiertas de musgo y el conjunto es extraordinario.",
+      },
+    ],
+    curiosities: [
+      "El parque de monos Iwatayama, en lo alto de la colina, tiene unos 120 macacos japoneses en libertad y una vista panorámica de Kioto. La subida son 20 minutos empinados.",
+      "El tren panorámico Sagano Romantic Train recorre el desfiladero del río Hozu; en temporada alta hay que reservar.",
+      "El templo Tenryū-ji, Patrimonio de la Humanidad, tiene un jardín de 1339 diseñado por Musō Soseki que se conserva prácticamente sin cambios — algo rarísimo.",
+    ],
+    tip: "El bosque de bambú se llena muchísimo desde las 9:00. Ir a primera hora o al final del día cambia completamente la experiencia.",
+  },
+
+  "gion": {
+    name: "Gion y los barrios de geishas",
+    jp: "祇園",
+    founded: "Siglo XVI",
+    wiki: "Gion, Kyoto",
+    tagline: "El distrito de geishas más famoso de Japón, donde todavía trabajan unas 200 profesionales.",
+    sections: [
+      {
+        title: "Qué es un hanamachi",
+        body: "Gion es un hanamachi ('ciudad de flores'), uno de los cinco que quedan en Kioto junto a Pontocho, Miyagawachō, Kamishichiken y Gion Higashi. Son distritos donde viven y trabajan las geiko (así se llaman las geishas en Kioto) y las maiko (aprendices). Surgieron en el siglo XVI como zona de casas de té para peregrinos que iban al santuario Yasaka.",
+      },
+      {
+        title: "Geiko, no geisha",
+        body: "En Kioto el término correcto es geiko ('mujer de arte'). Son artistas profesionales especializadas en danza tradicional, canto, shamisen, ceremonia del té y conversación. No son ni han sido prostitutas: esa confusión viene de las oiran, cortesanas de otro gremio, y se agravó durante la ocupación estadounidense de posguerra, cuando prostitutas se vestían de geisha para atraer soldados. Una maiko empieza su formación a los 15-16 años y tarda unos cinco en convertirse en geiko.",
+      },
+      {
+        title: "Cómo distinguirlas",
+        body: "Una maiko lleva el obi colgando hasta casi el suelo (darari obi), sandalias altas de madera (okobo), maquillaje blanco con el labio inferior pintado sólo parcialmente el primer año, y flores elaboradas en el pelo que cambian cada mes. Una geiko lleva el obi corto y anudado, peluca en vez de pelo propio, y adornos mucho más sobrios. Si ves a alguien con kimono haciéndose fotos en plena calle, casi con total seguridad es una turista con kimono alquilado.",
+      },
+      {
+        title: "La calle Hanamikoji",
+        body: "Es la arteria principal, con ochaya (casas de té) de fachada de madera y celosías. Estos establecimientos funcionan por presentación: no se puede entrar sin ser cliente recomendado por otro cliente, un sistema llamado ichigen-san okotowari. Una velada con geiko puede costar varios cientos de euros por persona.",
+      },
+    ],
+    curiosities: [
+      "Desde 2019 está prohibido hacer fotografías en las calles privadas de Gion, con multas de 10.000 ¥ (~54€). En 2024 se cerraron varios callejones al turismo por el acoso a las maiko.",
+      "El número de geiko y maiko ha caído de unas 80.000 en los años 20 a unas 1.000 en todo Japón, de las cuales unas 200 están en Kioto.",
+      "El riachuelo Shirakawa, con sus sauces y casas de madera, es probablemente el rincón más fotografiado de Kioto al atardecer.",
+    ],
+    tip: "Entre las 17:30 y las 18:30 es cuando las maiko se desplazan a sus citas. Si ves una, no la pares ni la persigas: van con prisa a trabajar.",
+  },
+
+  "nishiki": {
+    name: "Mercado de Nishiki",
+    jp: "錦市場",
+    founded: "Siglo XIV",
+    wiki: "Nishiki Market",
+    tagline: "'La cocina de Kioto': 400 metros de callejón cubierto con 130 puestos, muchos con siglos de historia.",
+    sections: [
+      {
+        title: "Historia",
+        body: "Los primeros puestos de pescado documentados aquí datan de 1310, aunque la zona ya funcionaba como mercado antes. Se estableció aquí porque el subsuelo tiene aguas subterráneas frías que permitían conservar el pescado antes de la refrigeración. Muchas tiendas llevan en la misma familia cinco o más generaciones.",
+      },
+      {
+        title: "Qué encontrar",
+        body: "Es el sitio para ver los ingredientes específicos de la cocina de Kioto: tsukemono (encurtidos, especialmente el shibazuke morado y el senmaizuke de nabo), yuba (nata de tofu), fu (gluten de trigo), tofu fresco, matcha, dashimaki tamago (tortilla enrollada con caldo), y verduras kyō-yasai autóctonas de Kioto que no se cultivan en ningún otro sitio.",
+      },
+      {
+        title: "El techo",
+        body: "La cubierta de vidrio con franjas rojas, amarillas y verdes es de 1993. Los colores no son decorativos al azar: se eligieron para reproducir el ambiente cromático de los antiguos toldos de tela del mercado.",
+      },
+    ],
+    curiosities: [
+      "Comer andando está mal visto en Japón y en Nishiki lo han pedido explícitamente con carteles: la idea es comprar y comer parado junto al puesto.",
+      "El callejón mide unos 400 metros y a veces sólo 3-5 metros de ancho, así que en hora punta se avanza muy despacio.",
+      "En el extremo este conecta directamente con el santuario Nishiki Tenmangū, encajado entre edificios comerciales.",
+    ],
+    tip: "Muchos puestos cierran sobre las 17:00-18:00 y algunos los miércoles. Mejor ir a media mañana.",
+  },
+
+  "osaka": {
+    name: "Osaka: castillo y Dotonbori",
+    jp: "大阪",
+    founded: "Castillo: 1583",
+    wiki: "Osaka Castle",
+    tagline: "La cocina de Japón y la ciudad de los mercaderes, con un castillo que es puro símbolo.",
+    sections: [
+      {
+        title: "El castillo",
+        body: "Lo construyó Toyotomi Hideyoshi en 1583 como el castillo más grande de Japón, símbolo de la unificación del país que él había completado. En su época, se le llegó a describir como 'sin rival en los tres reinos' (Japón, China e India) y 'el más fuerte de Japón'. Fue destruido en 1615 por Tokugawa Ieyasu en el sitio de Osaka (la Campaña de Verano), que acabó con el clan Toyotomi. Se reconstruyó entre 1620 y 1629, y la nueva torre volvió a arder por un rayo en 1665. El grueso de lo que quedaba en pie se quemó en un incendio durante la Restauración Meiji (1868), y algunas partes más se perdieron en los bombardeos de 1945.",
+      },
+      {
+        title: "Dos castillos, uno enterrado",
+        body: "Esto es lo más sorprendente del recinto, y mucha gente se lo pierde: el castillo de Hideyoshi que ves hoy en los folletos NO es el que pisas. Tras derrotar a los Toyotomi en 1615, el shogunato Tokugawa no se limitó a reconstruir el castillo — lo enterró literalmente bajo toneladas de tierra, como borrando la autoridad de la familia Toyotomi, y construyó su propio castillo encima, a mayor escala. Todos los muros y fosos que ves hoy en superficie son de la reconstrucción Tokugawa; los del periodo Toyotomi llevaban casi 400 años bajo tierra. En 1959, una prospección geológica del recinto principal (Honmaru) encontró por sorpresa un muro de piedra que se hundía unos 7 metros bajo tierra — se le llamó el 'muro misterioso' hasta que las investigaciones confirmaron que era obra de Hideyoshi. En 1984, unas obras de renovación de tuberías destaparon un tramo mucho mayor del mismo muro enterrado, de 6 metros de alto, perteneciente al Tsumenomaru (el núcleo del castillo de Toyotomi). Para hacerte una idea de la diferencia de escala: según el propio panel comparativo del museo, la torre del castillo de Toyotomi medía unos 39 m desde su propio nivel del suelo original (otras fuentes históricas la sitúan más bien en torno a 44 m, según cómo se mida exactamente); la torre Tokugawa que la sustituyó, ya sobre el terraplén añadido, alcanzaba unos 58 m — en cualquier caso, notablemente más alta.",
+      },
+      {
+        title: "Lo que verás realmente",
+        body: "Conviene saberlo: la torre actual es de 1931, de hormigón armado, y por dentro es un museo moderno con ascensor. No es una reconstrucción arqueológica sino una recreación libre, financiada por donaciones ciudadanas. Lo que sí es auténtico y espectacular son los muros de piedra y los fosos, del siglo XVII: algunas rocas individuales pesan más de 100 toneladas y fueron transportadas por mar desde canteras a cientos de kilómetros (monte Rokko, islas del mar interior de Seto, y canteras de Kyushu a 420 km de distancia). En total se calcula que se usó cerca de un millón de piedras de granito en las murallas.",
+      },
+      {
+        title: "Vistas desde el mirador: qué se ve en cada dirección",
+        body: "El mirador de la planta 8 rodea toda la torre y permite una vuelta completa de 360°, a unos 50 m de altura. Como el castillo está en el extremo norte de la meseta de Uemachi (la única elevación natural de Osaka), mirando hacia el sur el desnivel se nota menos porque el suelo ya está alto de por sí; mirando hacia el resto de direcciones, en cambio, se percibe mucho mejor la altura real. El propio mirador tiene, en cada uno de los cuatro lados, un panel panorámico oficial que identifica cada edificio y punto de referencia visible — esto es literalmente lo que ponen esos paneles, lado por lado:\n\n🧭 **Este**: Crystal Tower, el edificio Twin 21, el Hotel New Otani Osaka, Izumi Hall, el Osaka-jo Hall, la puerta Ote-mon, la estación JR Osakajo-koen, el campus de Morinomiya de la Universidad Metropolitana de Osaka, la Taiyo-no-hiroba (plaza del sol), el foso exterior norte y el foso exterior este, el bosquecillo de ciruelos (Plum Grove), la puerta Tamatsukuri-guchi y la estación de tratamiento de aguas Ote-mae. Y, en el horizonte, la dirección de Nara, el monte Ikoma, el monte Shigi y el monte Nijō.\n\n🧭 **Sur**: la torre PL Peace Tower, el KKR Hotel Osaka, el hotel Patina Osaka, el templo Shitennō-ji, Abeno Harukas (el edificio más alto de Japón), el zoo de Tennōji, el santuario Sumiyoshi Taisha, la torre Tsūtenkaku, el barrio de Dōtonbori, el Museo de Historia de Osaka y el edificio de NHK Osaka. En el horizonte lejano: el monte Nijō, el monte Katsuragi y el monte Kongō.\n\n🧭 **Oeste**: el Kyocera Dome Osaka, el acuario Kaiyūkan, el Museo de Historia de Osaka, NHK Osaka, la sede de la Policía de la Prefectura de Osaka, Universal Studios Japan, el Centro Internacional del Cáncer de Osaka, la sede del Gobierno de la Prefectura de Osaka, el ayuntamiento de Osaka (Osaka City Hall), el Umeda Sky Building, Osaka Station, Grand Front Osaka, el centro comercial HEP FIVE, y el hotel DoubleTree by Hilton Osaka Castle. Más cerca, dentro ya del propio recinto: las torretas Sengan-yagura y Tamon-yagura, la puerta Ote-mon, el jardín Nishinomaru y el antiguo Palacio de Invitados de Osaka (Osaka Geihinkan). Al fondo, la cordillera de Rokko.\n\n🧭 **Norte**: el Sempukan (antigua residencia occidental, Bien Cultural Importante), la Casa de la Moneda de Japón (Zōheikyoku), el río Ōkawa y el río Neyagawa, el Parque Conmemorativo de la Expo '70, la estación de Kyōbashi, los rascacielos del Osaka Business Park (OBP), el Hotel New Otani Osaka, el Osaka-jo Hall y la puerta Aoya-mon.\n\nLos cuatro paneles llevan fecha del 16 de marzo de 2026 y están firmados por el fotógrafo Nishikawa Takashi — se actualizan de vez en cuando a medida que cambia el skyline de la ciudad. Hay prismáticos de monedas (100 ¥) en el mirador si se quiere ver con más detalle el monte Ikoma o los rascacielos más lejanos.",
+      },
+      {
+        title: "Las piedras con marca (kokuin-ishi)",
+        body: "Un detalle que casi nadie mira de cerca: muchas de las piedras de las murallas tienen símbolos o caracteres grabados. Se calcula que hay entre 50.000 y 60.000 piedras marcadas en todo el castillo, con unos 2.000 diseños distintos. El shogunato Tokugawa dividió la reconstrucción entre 64 clanes daimyō del oeste de Japón, y cada uno marcaba las piedras de su tramo asignado — con su escudo familiar, un símbolo propio, o el nombre de la cantera de origen — tanto para señalar los límites de cada tramo de obra como, según los historiadores, para que cada señor dejara constancia (y presumiera) de la calidad de su trabajo ante el shogun. Un dato curioso que revela el trasfondo político de la época: no se ha encontrado ni una sola marca de los clanes que perdieron en la batalla de Sekigahara (como Ishida Mitsunari o Konishi Yukinaga) — todas las marcas identificadas corresponden exactamente a los clanes que sí conservaron el favor de Tokugawa. Hoy se pueden comparar más de 80 piedras marcadas de golpe en la llamada Kokuinseki Hiroba ('Plaza de las Piedras con Marca'), cerca del Gokurakubashi.",
+      },
+      {
+        title: "El Museo de la Muralla Toyotomi",
+        body: "Justo al lado de la torre principal (unos 160 m al sureste, 2 minutos andando) hay un pabellón pequeño y fácil de pasar por alto: el Museo de la Muralla de Piedra Toyotomi (大阪城 豊臣石垣館). Ahí se expone, bajando bajo el nivel de la calle, el propio tramo de muralla enterrada que se descubrió en 1984 — piedra que llevaba casi 400 años sin que nadie la viera, construida en 1583 con la tecnología más avanzada de la época para proteger la base militar desde la que Hideyoshi unificó Japón. La superficie todavía conserva marcas visibles del fuego de la Campaña de Osaka de 1615. Se entra con la misma entrada del museo de la torre principal, así que si ya has pagado la entrada al castillo, no cuesta nada de más asomarse.",
+      },
+      {
+        title: "El biombo de la Campaña de Osaka",
+        body: "En el museo de la torre se expone (o se reproduce, según la temporada) uno de los objetos más impresionantes del castillo: el Ōsaka Natsu no Jin Zu Byōbu (大坂夏の陣図屏風), un biombo de seis paneles con fondo de pan de oro que retrata la batalla final entre los Toyotomi y los Tokugawa el 3 de junio de 1615. Perteneció durante generaciones al clan Kuroda, señores del dominio de Fukuoka, por lo que también se le conoce como 'biombo Kuroda'; hoy es Bien Cultural Importante de Japón. El nivel de detalle es asombroso: sus dos hojas (cada una de 150 x 360 cm) representan 5.071 personas, 348 caballos, 1.387 estandartes, 974 lanzas, 119 arcos y 158 armas de fuego, pintados uno a uno. De esas más de 5.000 figuras, los historiadores han logrado identificar a 21 generales concretos que sí participaron en la batalla real, incluidos Tokugawa Ieyasu, su hijo Hidetada, y el célebre Sanada Yukimura — el samurái que estuvo a punto de dar la vuelta a la batalla con una carga casi suicida contra el propio campamento de Ieyasu, y que sigue siendo hoy uno de los personajes más admirados del periodo Sengoku.",
+      },
+      {
+        title: "El 'Guernica' del periodo Sengoku",
+        body: "Lo que hace único a este biombo, y lo que lo distingue de cualquier otro biombo de batalla japonés, está en su hoja izquierda. Mientras la hoja derecha muestra el combate militar propiamente dicho, la izquierda retrata sin ningún filtro lo que pasó después de la caída del castillo: soldados derrotados y civiles huyendo, y tropas y bandidos saqueando, secuestrando y decapitando a su paso — la práctica conocida como ranbōdori (乱妨取り), habitual en la guerra japonesa de la época pero que ningún otro biombo se atrevió a representar con este nivel de crudeza. Por ese contraste entre el esplendor pictórico (pan de oro, colores vivos) y la violencia explícita de lo que cuenta, los historiadores de arte japoneses lo han apodado el 'Guernica del periodo Sengoku', en referencia al cuadro de Picasso sobre el bombardeo de Guernica. Más allá de su valor artístico, es también una fuente histórica única: como casi no sobreviven registros visuales del castillo en su versión Toyotomi (recuerda que quedó enterrado), este biombo es una de las pocas ventanas reales a cómo era el castillo y la ciudad antes de 1615.",
+      },
+      {
+        title: "Objetos destacados del museo",
+        body: "Además del biombo de la Campaña de Osaka, el museo guarda otras piezas que vale la pena buscar:\n\n👘 **Jinbaori con el monte Fuji**: un jinbaori (sobretodo de campaña que los samuráis vestían sobre la armadura) con el monte Fuji bordado en la espalda, en lana amarilla sobre fondo negro, con una columna de humo volcánico saliendo de la cima. Tiene volantes de estilo europeo en el cuello y las sisas — la lana se importó de Europa, y la tela frontal, con un diseño de peonías y crisantemos, se importó de la China Ming. Es decir: una prenda de guerra japonesa hecha con materiales de medio mundo. El forro interior lleva estampado el mon (escudo familiar) de flor de paulonia, y se dice que perteneció al propio Toyotomi Hideyoshi.\n\n⚔️ **La espada 'Ogo' (réplica)**: una réplica moderna (2017) de una de las espadas más legendarias de Japón, hecha por el maestro espadero Gassan Sadatoshi, reconocido Bien Cultural Intangible de la prefectura de Nara. La espada Ogo original la forjó Go Yoshihiro, uno de los grandes maestros del periodo Nanboku-chō (siglo XIV), y pasó de mano en mano entre grandes señores: Oda Nobunaga se la regaló a su comandante Araki Murashige por su lealtad; cuando Murashige acabó traicionando a Nobunaga, la espada pasó a manos de Hideyoshi. Terminó ardiendo cuando cayó el castillo en 1615 — pero antes de perderse, el experto en espadas de Hideyoshi, Hon'ami Kōtoku, había registrado sus medidas exactas y el patrón del temple del acero, lo que permitió recrearla con fidelidad cuatro siglos después.\n\n🐯 **El rollo de la cacería del tigre de los Shimazu**: un makimono (rollo pictórico) que ilustra un episodio poco conocido de las invasiones de Corea de Hideyoshi: ordenó a los daimyō que habían cruzado el mar que le enviaran carne y vísceras de tigre en salazón. El clan Shimazu de Satsuma organizó una cacería, sufrió bajas, pero consiguió matar un tigre y volvió triunfante. El episodio se recopiló como 'El relato de la cacería del tigre' y se usaba como material educativo para adiestrar a los jóvenes samuráis del dominio de Satsuma; esta obra es una representación pictórica de ese texto, probablemente de finales del periodo Edo o posterior. El tigre está pintado de forma más realista que en la pintura japonesa tradicional — probablemente el artista trabajó a partir de un ejemplar disecado — y dado que el tigre que había en la península de Corea era el tigre de Amur (la subespecie más grande que existe), el tamaño tan exagerado del animal en el dibujo puede no ser tan exagerado como parece.\n\n🎎 **El diorama de la batalla**: una gran vitrina con cientos de figuritas de samuráis en formación de combate, ambientada junto a una reproducción a gran escala del propio biombo de la Campaña de Osaka. Una de las secciones está etiquetada '真田幸村隊' ('Unidad de Sanada Yukimura'), en honor al samurái que casi cambia el curso de la batalla.",
+      },
+      {
+        title: "La vida de Hideyoshi, año a año",
+        body: "El museo dedica una sala entera a un gran biombo dorado con la biografía completa de Toyotomi Hideyoshi en 19 episodios, cada uno acompañado de pinturas de época. Como se advierte en el propio panel introductorio: gran parte de lo que se sabe de Hideyoshi viene mezclado con leyenda, ya que su figura se ha idealizado y romantizado mucho más de lo que permiten los hechos históricos — pero precisamente por eso, conocer también la leyenda es parte de entender cómo lo recuerda Japón. Aquí van los 19 episodios completos:\n\n**1. Nacimiento de Hiyoshimaru (Hideyoshi)** — Nace en 1537 en el pueblo de Nakamura, provincia de Owari, hijo de una familia campesina pobre. Existen leyendas posteriores (creadas ya en el periodo Edo) que dicen que su madre soñó con el sol entrando en la casa la noche antes de nacer.\n\n**2. El encuentro con Koroku Hachisuka** — En su juventud errante, trabajó en distintos oficios (vendedor ambulante, recogedor de leña) antes de conocer a Hachisuka Koroku, un personaje que sería clave en su ascenso posterior. La leyenda dice que en su juventud llegó a robar.\n\n**3. Portador de sandalias** — A los 18 años entró al servicio de Oda Nobunaga como portador de sandalias, el puesto más humilde. La anécdota más famosa (aunque de veracidad discutida) cuenta que calentaba las sandalias de Nobunaga metiéndolas bajo su ropa en invierno.\n\n**4. Matrimonio con O-ne** — Se casó con una mujer llamada O-ne, cuya boda se celebró, según cuentan las crónicas, en la humilde habitación de una casa de vecinos. O-ne tenía unos 25 años.\n\n**5. La reparación milagrosa del Castillo Kiyosu** — Cuando el castillo residencial de Nobunaga necesitó reparaciones urgentes, Hideyoshi asumió la responsabilidad, dividió el trabajo en equipos y los puso a competir entre sí — el resultado fue una reparación completada en solo 3 días.\n\n**6. El asedio por inundación del Castillo Takamatsu** — Para someter la región de Chūgoku, Hideyoshi ideó una estrategia poco habitual: construir un dique y represar el río para inundar el castillo. Funcionó: el castillo quedó anegado y Hideyoshi logró conquistarlo gracias a esta táctica.\n\n**7. Los ritos funerarios de Oda Nobunaga** — Nobunaga murió asesinado en una revuelta de su propio vasallo Akechi Mitsuhide. Al enterarse, Hideyoshi derrotó a Akechi en batalla, vengando a su señor, y ofició los ritos funerarios de Nobunaga siguiendo la tradición, en el templo Daitoku-ji de Kioto — un gesto con el que reforzaba públicamente su posición como sucesor de Nobunaga.\n\n**8. La batalla de Shizugatake** — Hideyoshi derrotó a Shibata Katsuie, uno de los vasallos más destacados de Nobunaga y su principal rival por la sucesión. Contó con la ayuda de otros generales cercanos a Nobunaga que se pasaron a su bando, asegurando así su posición como heredero de la campaña de unificación de Nobunaga.\n\n**9. La construcción del Castillo de Osaka** — Hideyoshi empezó a construirlo en 1583 como base de operaciones para su campaña de unificación de todo el país. Los misioneros cristianos llegados de Europa, igual que los señores de la guerra japoneses, quedaron impresionados por la imponente estructura del castillo.\n\n**10. La batalla de Komaki-Nagakute** — Hideyoshi se enfrentó a Tokugawa Ieyasu, quien había resistido tercamente hasta el final. Aunque la batalla en sí no tuvo un vencedor claro, Hideyoshi terminó consiguiendo que Ieyasu entrara a su servicio, explotando la política en vez de la fuerza militar — le devolvió a su hermana, a la que había hecho divorciarse para casarla con Ieyasu como esposa legítima, y envió también a su madre como rehén para sellar la lealtad de Ieyasu.\n\n**11. La gran ceremonia del té de Kitano** — En 1587, Hideyoshi patrocinó una fiesta del té a gran escala en Kitano, Kioto, sin precedentes por su tamaño, invitando a miles de personas de toda condición — granjeros, comerciantes y nobles incluidos — y ofició él mismo la ceremonia del té para el público general, ganando enorme popularidad.\n\n**12. La visita imperial a la mansión Jurakutei** — Hideyoshi tuvo el honor de recibir la visita del emperador Go-Yōzei en su mansión. Se invitó a nobles de la corte y señores feudales al banquete, donde se les obligó a jurar lealtad a Hideyoshi en presencia del propio emperador — una jugada política maestra para legitimar su poder.\n\n**13. La campaña de Odawara** — Hideyoshi combatió contra el clan Hōjō, que se resistió obstinadamente hasta el último momento. Durante la campaña, Hideyoshi permitió a los generales participantes invitar a sus esposas al campamento, para que pudieran disfrutar de cantos y bailes — un detalle que revela también su estilo de liderazgo, mezclando dureza militar con gestos de generosidad calculada.\n\n**14. El catastro de Taikō** — Hideyoshi envió funcionarios del gobierno a los pueblos de todo el país para investigar a fondo la zona: se confirmó la capacidad productiva de la tierra y se aseguró la recaudación del impuesto territorial de los agricultores — una reforma administrativa fundamental para financiar y controlar el país unificado.\n\n**15. La construcción del Gran Buda** — Hideyoshi mandó construir un Gran Buda en el templo Hōkō-ji de Kioto, una de las mayores estructuras de madera del mundo en su momento. Usó, entre otros materiales, las espadas confiscadas a los campesinos en la célebre 'Cacería de Espadas' (katanagari), fundidas para hacer clavos y grapas de la construcción — vinculando simbólicamente el desarme del pueblo con un acto de piedad religiosa.\n\n**16. La campaña de Corea** — Hideyoshi se trasladó al Castillo de Nagoya en Hizen (Kyūshū) como comandante supremo de la invasión de Corea. La campaña incluyó matanzas masivas, incluidos civiles, y la toma forzosa de rehenes coreanos, dejando una herida profunda en la memoria histórica coreana que perdura hasta hoy.\n\n**17. El destierro del Kampaku Hidetsugu** — Cuando nació su hijo biológico Hideyori, Hideyoshi ordenó a su hijo adoptivo y heredero designado, Hidetsugu, que se hiciera seppuku, y ejecutó también a la esposa de Hidetsugu y a más de 30 de sus familiares y sirvientas, bajo la acusación de rebelión — un episodio de brutalidad extrema que ensombrece su legado, motivado por el deseo de asegurar la sucesión para su hijo biológico.\n\n**18. La fiesta de los cerezos en flor de Daigo** — Cinco meses antes de morir, Hideyoshi organizó una fiesta a gran escala para contemplar los cerezos en flor en el templo Daigo-ji, invitando a sus damas de compañía. Fue el último gran evento festivo que organizó, y refleja su gusto por el esplendor y las celebraciones hasta el final de su vida.\n\n**19. El final de la vida de Hideyoshi** — Murió en el Castillo de Fushimi a los 62 años, en 1598. Poco antes de morir, estableció un sistema de gobierno compartido entre cinco magistrados (go-bugyō, formados por vasallos de confianza) y cinco regentes (go-tairō, formados por los señores feudales más poderosos), para gestionar el país tras su muerte. Hasta el último momento se preocupó por el futuro de su hijo Hideyori, que entonces tenía solo 6 años — una preocupación con fundamento, ya que ese mismo sistema de regentes no evitó que Tokugawa Ieyasu, el más poderoso de los cinco, acabara arrebatando el poder a los Toyotomi en los años siguientes, hasta destruir por completo el clan en la Campaña de Osaka de 1615.",
+      },
+      {
+        title: "Dotonbori",
+        body: "El canal se excavó en 1615 y la zona se convirtió en el distrito de teatros de Osaka (kabuki y bunraku). Hoy es la zona de neones, restaurantes y carteles gigantes. El letrero del corredor Glico lleva ahí desde 1935 y va por su sexta versión; el cangrejo mecánico del restaurante Kani Dōraku, desde 1960.",
+      },
+      {
+        title: "Kuidaore",
+        body: "Osaka tiene una palabra propia: kuidaore, 'arruinarse comiendo'. La ciudad fue durante siglos el centro de comercio de arroz de Japón y desarrolló una cultura gastronómica popular y sin pretensiones. De aquí salen el takoyaki (bolas de pulpo), el okonomiyaki (tortilla de repollo a la plancha) y el kushikatsu (brochetas rebozadas).",
+      },
+    ],
+    curiosities: [
+      "Regla estricta del kushikatsu: no se puede mojar dos veces la brocheta en la salsa comunitaria. Está escrito en todos los locales.",
+      "En Osaka la gente se coloca a la derecha de las escaleras mecánicas; en Tokio, a la izquierda. Nadie sabe con certeza por qué.",
+      "Shinsekai ('mundo nuevo') se construyó en 1912 inspirándose en París por el norte y Coney Island por el sur; su torre Tsūtenkaku imitaba a la Torre Eiffel.",
+      "Cerca de la Puerta Sakuramon hay una piedra llamada Higo-ishi de más de 15 metros de ancho, una de las piedras individuales más grandes de todo el castillo — un auténtico alarde de ingeniería del siglo XVII solo para el transporte.",
+      "Durante la investigación de las piedras marcadas, en algunos tramos se encontraron también impactos de bala de los bombardeos aéreos de 1945, todavía visibles junto a las escaleras de acceso al castillo.",
+    ],
+    tip: "El castillo por dentro se puede saltar sin remordimiento si vas justo de tiempo. El parque y los muros son lo que merece la pena — y si entras, no te pierdas el pequeño Museo de la Muralla Toyotomi junto a la torre, que casi nadie visita y cuenta la parte más interesante de la historia.",
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // ALPES JAPONESES
+  // ══════════════════════════════════════════════════════════════════
+
+  "kanazawa": {
+    name: "Kanazawa",
+    jp: "金沢",
+    founded: "Castillo: 1583",
+    wiki: "Kanazawa",
+    tagline: "La 'pequeña Kioto' del Mar de Japón: el dominio más rico del país, sin haber sido nunca su capital.",
+    sections: [
+      {
+        title: "La ciudad de los Maeda",
+        body: "Kanazawa fue durante 300 años (1583–1871) la capital del dominio de Kaga, el feudo más rico de todo Japón bajo el shogunato Tokugawa — más rico que muchos dominios juntos, y solo por detrás del propio territorio del shogún. El clan Maeda, que lo gobernó durante 14 generaciones, evitó deliberadamente construir un ejército grande (algo que habría alarmado a Tokugawa) y en su lugar volcó su riqueza en cultura: arte, artesanía, jardinería y gastronomía. Es la razón por la que hoy Kanazawa conserva tanto patrimonio intacto — y por la que se la conoce como 'la pequeña Kioto', aunque a diferencia de Kioto, jamás fue bombardeada en la Segunda Guerra Mundial ni sufrió terremotos importantes, por lo que buena parte de su trazado feudal es literalmente original, no reconstruido.",
+      },
+      {
+        title: "La capital del pan de oro",
+        body: "Kanazawa produce más del 99% del pan de oro (kinpaku) de todo Japón. La técnica consiste en martillear el oro hasta láminas de apenas 0,0001 mm de grosor — tan finas que casi flotan con el aire. Se usa para decorar templos, budas, lacas y, hoy en día, también helados de té verde y cosmética (busca los 'gold leaf soft cream' por la ciudad, es una tradición turística reciente pero genuina, ya que en efecto sale de los mismos talleres). El clima húmedo de Kanazawa, curiosamente, es ideal para trabajar el oro sin que se rompa.",
+      },
+      {
+        title: "El castillo",
+        body: "A diferencia de Kioto o Osaka, el castillo de Kanazawa no tiene una torre principal (tenshu) reconstruida — se quemó en 1602 y nunca se volvió a levantar, ya que los Maeda temían que una torre imponente despertara sospechas de rebelión ante el shogunato. Lo que sí se ha reconstruido con fidelidad histórica (usando técnicas y materiales tradicionales, sin hormigón) son varias puertas y torretas, incluida la icónica Ishikawa-mon. El resultado es un recinto más discreto que otros castillos japoneses, pero paradójicamente más auténtico en sus materiales.",
+      },
+    ],
+    curiosities: [
+      "En Kanazawa la gente se coloca a la izquierda en las escaleras mecánicas, como en Tokio — a diferencia de Osaka, que va a la derecha.",
+      "El museo de Arte Contemporáneo del Siglo XXI, con su icónica 'Piscina' de Leandro Erlich (donde parece que la gente camina bajo el agua), es una de las razones por las que Kanazawa se ha vuelto una parada obligada del arte contemporáneo japonés, no solo de la tradición Edo.",
+      "La lluvia es tan habitual en Kanazawa que hay un dicho local: 'no hace falta paraguas en Kanazawa, basta con tener uno a mano' (¡casi nadie sale sin él!).",
+    ],
+    tip: "Con la ciudad tan compacta, ir caminando entre Kenroku-en, el castillo, Nagamachi y Omicho es perfectamente viable sin depender del Loop Bus.",
+  },
+
+  "nagamachi": {
+    name: "Nagamachi y la casa samurái Nomura",
+    jp: "長町・野村家",
+    founded: "Residencia Nomura: siglo XVII",
+    wiki: "Nagamachi",
+    tagline: "El barrio donde vivían los samuráis de rango medio-alto del clan Maeda, con una de sus casas abierta al público.",
+    sections: [
+      {
+        title: "El barrio de Nagamachi",
+        body: "Nagamachi era la zona residencial donde vivían los samuráis al servicio directo del clan Maeda, señores del dominio de Kaga -- el más rico de todo Japón bajo el shogunato Tokugawa, conocido como el dominio 'de un millón de koku' (hyakuman-goku), la unidad con la que se medía la riqueza de un feudo en arroz. Los muros de tierra (dorobei) que ves recorriendo sus callejuelas son originales de la época Edo, protegidos hoy por tejadillos de paja en invierno para que no se agrieten con la nieve. A diferencia de Kioto o de otras ciudades japonesas, Kanazawa no sufrió bombardeos en la Segunda Guerra Mundial ni grandes terremotos, así que el trazado de canales y calles estrechas que ves es literalmente el mismo que pisaban los samuráis del siglo XVII, no una reconstrucción.",
+      },
+      {
+        title: "La familia Nomura",
+        body: "En 1583 el señor Maeda Toshiie tomó el castillo de Kanazawa y sentó las bases de tres siglos de paz y prosperidad para el clan Kaga. Uno de sus seguidores de alto rango, Nomura Denbei Nobusada, recibió un feudo de 1.000 koku, más tarde ampliado a 1.200 koku, y sus descendientes sirvieron como retenedores superiores durante doce generaciones, hasta la Restauración Meiji (1868), cuando el sistema feudal se disolvió y muchas casas samurái fueron destruidas, convertidas en huertas o vendidas. De la propiedad original de los Nomura solo sobrevivieron partes del portón y el muro. La pieza que hoy se visita -- incluida la sala principal -- la compró en el periodo Shōwa temprano un industrial local, Kubo Hikobei, que trasladó hasta aquí la sala de una antigua casa señorial de la localidad de Daishōji, cerca de su pueblo natal, para reconstruir el conjunto tal como se ve hoy.",
+      },
+      {
+        title: "La sala Jyōdan-no-ma",
+        body: "Es la sala principal de la casa, de ciprés japonés, con diseños elaborados en palorrosa y ébano. El panel del tokonoma (la alcoba decorativa) es de madera de paulonia, y todos los clavos están ocultos con remates de caqui negro tallados en estilo calado -- un detalle típico de la carpintería samurái de más categoría, pensado para que no se viera ni un solo elemento metálico. Las puertas correderas de papel grueso tienen tiradores de hierro ornamental de estilo 'indio', y una de ellas incorpora una ventana de cristal tallado que refleja el arroyo serpenteante junto a la veranda -- una rareza arquitectónica que debió sorprender mucho a las visitas de la época. Cada puerta corredera está pintada con paisajes de Sasaki Senkei, un pintor de alto rango de la escuela Kanō; una de ellas, con una composición de tortugas ('Yūki no zu'), se considera una de sus obras maestras y una pieza de un valor cultural excepcional para Japón.",
+      },
+      {
+        title: "El jardín",
+        body: "Sentados en la sala Jyōdan-no-ma se contempla un jardín cuidadosamente diseñado, con una cascada, un arroyo transparente que serpentea entre piedras, un puente de granito rosado, varios tipos de farolillos de piedra y una pequeña pagoda de varios pisos repartidos por el conjunto. Destaca también un árbol de mirica (Myrica rubra) de más de 400 años, una especie que se considera difícil de cultivar en el clima de la región de Hokuriku. El jardín está reconocido como uno de los ejemplos más representativos del estilo Kobori Enshū, uno de los grandes maestros de la jardinería japonesa del periodo Edo.",
+      },
+    ],
+    curiosities: [
+      "El sitio lo gestiona hoy 'A Society for the Preservation of Nomura Family', una asociación dedicada exclusivamente a conservar esta única propiedad.",
+      "Los tejadillos de paja que cubren los muros de tierra en invierno (komo-gake) son los mismos que se usan para proteger los pinos de Kenroku-en de la nieve -- una técnica compartida por todo Kanazawa.",
+    ],
+    tip: "Aunque solo se visite una casa samurái, Nomura-ke es la más recomendable de Nagamachi por la combinación de arquitectura interior de altísimo nivel y el jardín -- muchas otras casas del barrio son solo fachada.",
+  },
+
+  "higashi-chaya": {
+    name: "Higashi Chaya",
+    jp: "東茶屋街",
+    founded: "1820",
+    wiki: "Higashi Chaya District",
+    tagline: "El mayor y más espectacular de los tres barrios de casas de té de Kanazawa.",
+    sections: [
+      {
+        title: "El barrio de las geishas",
+        body: "Higashi Chaya ('barrio de té del este') se estableció oficialmente en 1820, cuando el shogunato ordenó concentrar todas las casas de té con geishas de Kanazawa en distritos designados, fuera del centro. De los tres barrios de este tipo que tuvo la ciudad (Higashi, Nishi y Kazuemachi), Higashi es el más grande y el mejor conservado: una calle empedrada flanqueada por casas de dos plantas con fachadas de celosía de madera (kimusuko), diseñadas para que se pudiera ver algo desde fuera sin comprometer la intimidad del interior. Hoy en día todavía hay geiko (el término que usan en Kanazawa, en vez de 'geisha') en activo en el barrio, aunque las veladas con ellas requieren presentación previa de un cliente habitual -- el sistema ichigen-san okotowari, el mismo que en el Gion de Kioto.",
+      },
+      {
+        title: "Shima y Kaikaro: las dos casas de té abiertas",
+        body: "De todas las ochaya del barrio, solo dos abren sus puertas al público sin necesidad de presentación: Shima, una casa de té de 1820 convertida en pequeño museo que conserva su distribución original de habitaciones para las representaciones de geiko; y Kaikaro, todavía en funcionamiento como ochaya real por las noches, con un imponente salón decorado en pan de oro (Kanazawa produce el 99% del oro en pan de todo Japón). Ambas cobran entrada y son la forma más accesible de ver por dentro cómo era realmente una casa de té de este periodo.",
+      },
+      {
+        title: "De día o al anochecer",
+        body: "El barrio tiene dos caras. De día (hasta las 17:00-18:00 aprox.) las tiendas de artesanía, pan de oro y dulces están abiertas, así como las dos casas de té visitables -- es el momento para comprar y entrar a ver el interior. Al anochecer, cuando cierran las tiendas, las farolas de gas se encienden y las multitudes de turistas se disipan, el barrio recupera un ambiente mucho más parecido al original del periodo Edo -- más silencioso, más auténtico, y el mejor momento para pasear y hacer fotos de las fachadas iluminadas.",
+      },
+    ],
+    curiosities: [
+      "Según las guías locales, en la actualidad trabajan unas cinco geiko en todo el barrio -- un número muy reducido comparado con su apogeo histórico.",
+      "El monte Utatsu, justo encima del barrio, tiene varios miradores desde los que se ve Higashi Chaya y, en noches despejadas, las luces de los barcos pesqueros faenando en el mar de Japón.",
+      "La tienda de pan de oro Hakuza, en la calle principal, tiene una sala de ceremonia del té completamente recubierta de pan de oro -- de las pocas experiencias de este tipo abiertas al público sin reserva.",
+    ],
+    tip: "Si el tiempo apremia, prioriza pasear por la calle principal y entrar en una sola casa de té (Shima o Kaikaro, no ambas) antes que intentar verlo todo con prisas.",
+  },
+
+
+
+  "kenroku-en": {
+    name: "Jardín Kenroku-en",
+    jp: "兼六園",
+    founded: "Siglo XVII",
+    wiki: "Kenroku-en",
+    tagline: "Uno de los tres grandes jardines de Japón, diseñado para cumplir seis atributos imposibles a la vez.",
+    sections: [
+      {
+        title: "El nombre",
+        body: "Kenroku-en significa 'jardín de las seis combinaciones'. Viene de un tratado paisajístico chino que sostenía que un jardín perfecto debe reunir seis atributos que normalmente se excluyen entre sí: amplitud y reclusión, artificio y antigüedad, agua abundante y vistas panorámicas. Tener las seis a la vez se consideraba imposible; este jardín se diseñó específicamente para lograrlo.",
+      },
+      {
+        title: "Historia",
+        body: "Lo desarrolló el clan Maeda, señores del dominio de Kaga, a lo largo de casi dos siglos, desde 1676. Los Maeda eran el clan más rico de Japón después del propio shogunato, y volcaron su fortuna en cultura y arte en parte como estrategia política: dedicarse ostentosamente a lo estético señalaba al shogun que no estaban invirtiendo en ejércitos. Se abrió al público en 1874.",
+      },
+      {
+        title: "Qué buscar",
+        body: "La linterna Kotoji-tōrō, de dos patas desiguales junto al estanque Kasumi, es el símbolo del jardín y de la ciudad. La fuente del jardín es la más antigua de Japón que funciona con presión natural, sin bomba: el agua sube por diferencia de nivel desde un estanque superior. En invierno se instalan los yukitsuri, conos de cuerdas que sostienen las ramas de los pinos para que no se rompan con el peso de la nieve — una imagen icónica, aunque en septiembre no estarán puestos.",
+      },
+    ],
+    curiosities: [
+      "Los otros dos 'grandes jardines' son Kairaku-en en Mito y Kōraku-en en Okayama.",
+      "El barrio samurái de Nagamachi, cerca del jardín, conserva los muros de tierra originales y algunas casas visitables de los guerreros de rango medio del clan Maeda.",
+      "El mercado Ōmichō lleva funcionando desde el siglo XVIII y es el mejor sitio de la costa del Mar de Japón para marisco, especialmente cangrejo.",
+    ],
+    tip: "Abre a las 7:00 en verano. La primera hora es cuando mejor se aprecia el atributo de 'reclusión' que en pleno día desaparece por completo.",
+  },
+
+  "shirakawa-go": {
+    name: "Shirakawa-go",
+    jp: "白川郷",
+    founded: "Casas de los siglos XVII-XIX",
+    wiki: "Shirakawa-go",
+    tagline: "Aldea de casas con tejados de paja a dos aguas, Patrimonio de la Humanidad, en un valle aislado por la nieve.",
+    sections: [
+      {
+        title: "Gasshō-zukuri",
+        body: "El estilo de las casas se llama gasshō-zukuri, 'construido como manos en oración', porque el tejado a dos aguas muy inclinado recuerda a dos palmas juntas. La inclinación de unos 60 grados no es estética: esta zona recibe hasta 10 metros de nieve al año y un tejado plano colapsaría. La paja de susuki tiene entre 50 y 80 cm de grosor y aísla del frío extremo.",
+      },
+      {
+        title: "Construidas sin clavos",
+        body: "Toda la estructura está ensamblada con juntas de madera y atada con cuerdas de paja y viñas, sin un solo clavo metálico. Esto le da flexibilidad para absorber el peso de la nieve y los terremotos. Los tejados se rehacen cada 30-40 años en una operación comunitaria llamada yui, en la que participan cientos de vecinos en un solo día — un sistema de ayuda mutua que sigue vivo.",
+      },
+      {
+        title: "Los pisos superiores y la seda",
+        body: "El espacio bajo el tejado, de tres o cuatro plantas, no era vivienda: se usaba para criar gusanos de seda. La sericultura fue la base económica del valle durante siglos, junto con la producción de salitre para pólvora, que se obtenía del suelo bajo las casas. El humo del hogar (irori) de la planta baja subía y ahumaba la estructura, protegiéndola de insectos y podredumbre.",
+      },
+      {
+        title: "Por qué sigue en pie",
+        body: "El valle estuvo prácticamente aislado hasta que se abrieron las carreteras en los años 50 y 60. En 1961 la construcción de la presa de Miboro inundó varias aldeas vecinas y forzó el traslado de decenas de casas. La conciencia de estar perdiendo el patrimonio llevó a los vecinos a crear un pacto en 1971 comprometiéndose a no vender, alquilar ni destruir. Fue declarado Patrimonio de la Humanidad en 1995.",
+      },
+    ],
+    curiosities: [
+      "Ogimachi, la aldea principal, tiene unas 110 casas gasshō, de las cuales unas 20 son visitables o funcionan como minshuku.",
+      "El mirador de Shiroyama, subiendo unos 15-20 minutos, da la vista clásica del valle completo.",
+      "La casa Wada, la más grande, pertenece a la familia que gestionaba el comercio de salitre y se puede visitar por dentro.",
+    ],
+    tip: "El bus de Kanazawa se llena; ir con la reserva hecha es imprescindible. Con 3 horas se ve bien la aldea sin agobios.",
+  },
+
+  "takayama": {
+    name: "Takayama",
+    jp: "高山",
+    founded: "Casco antiguo: siglo XVII",
+    wiki: "Takayama, Gifu",
+    tagline: "Un casco histórico de madera oscura intacto, en una ciudad que fue gobernada directamente por el shogun.",
+    sections: [
+      {
+        title: "Por qué se conservó",
+        body: "Takayama estaba tan aislada entre montañas que quedó al margen de las guerras y de la industrialización. En 1692 el shogunato Tokugawa se la arrebató al clan Kanamori y la puso bajo administración directa, precisamente por su valor maderero: los bosques de Hida abastecían las obras del shogunato. Eso trajo estabilidad y dinero, pero también prohibiciones de construcción ostentosa, que dieron a la ciudad su aspecto sobrio y homogéneo.",
+      },
+      {
+        title: "Sanmachi Suji",
+        body: "Las tres calles del barrio mercantil conservan casas de los siglos XVII-XIX con celosías de madera oscurecida, aleros bajos y sake-bayashi (bolas de ramas de cedro colgadas) que indican las destilerías de sake. Cuando la bola está verde, el sake nuevo acaba de salir; según se seca y se vuelve marrón, indica la maduración.",
+      },
+      {
+        title: "Los carpinteros de Hida",
+        body: "La región tiene una tradición de carpintería de más de 1.300 años. Era tan reconocida que durante el periodo Nara, en lugar de pagar impuestos en arroz, Hida enviaba carpinteros a la capital: unos 100 hombres al año trabajaban en la construcción de los templos y palacios de Nara y Kioto. Muchos de los grandes templos que veremos deben su estructura a artesanos de aquí.",
+      },
+      {
+        title: "El festival de Takayama",
+        body: "Se celebra en primavera (abril) y otoño (octubre) y está considerado uno de los tres festivales más bellos de Japón. Sus carrozas (yatai), algunas del siglo XVII, llevan marionetas mecánicas (karakuri) accionadas por varillas y cuerdas desde dentro. Aunque no coincidamos con el festival, varias carrozas se exponen todo el año en el Takayama Yatai Kaikan.",
+      },
+    ],
+    curiosities: [
+      "La ternera de Hida es de la misma raza que la de Kobe (wagyu negro japonés) y compite en calidad, con la ventaja de que aquí es bastante más barata.",
+      "Los mercadillos matutinos (Jinya-mae y Miyagawa) funcionan desde el periodo Edo y abren de 7:00 a 12:00.",
+      "El Takayama Jinya es el único edificio de gobierno provincial del periodo Edo que se conserva completo en todo Japón.",
+    ],
+    tip: "El casco antiguo se recorre en 2 horas, pero merece la pena reservar tiempo para el mercadillo de la mañana antes de coger el tren.",
+  },
+
+  "nakasendo": {
+    name: "La Ruta Nakasendō: historia del camino",
+    jp: "中山道",
+    founded: "Siglo XVII",
+    wiki: "Nakasendō",
+    tagline: "534 km del camino real del periodo Edo entre Kioto y Tokio -- hoy solo sobreviven intactos 8 km, entre Magome y Tsumago.",
+    sections: [
+      {
+        title: "Qué era el Nakasendō",
+        body: "Una de las cinco carreteras oficiales (Gokaidō) que el shogunato Tokugawa estableció desde 1601 para conectar Edo (Tokio) con Kioto. El Nakasendō, \"camino a través de las montañas\", medía 534 km y tenía 69 pueblos-posta (shukuba o -juku). Su alternativa costera era el Tōkaidō, más rápido pero con ríos que se desbordaban; el Nakasendō era más largo pero fiable todo el año, y era el que usaban las princesas y comitivas importantes.",
+      },
+      {
+        title: "Qué era un pueblo-posta (-juku)",
+        body: "El sufijo \"-juku\" (宿) significa literalmente \"alojamiento\" o \"posada\", y se añadía al nombre de cualquier pueblo que existiera para dar servicio a los viajeros del camino: de ahí Magome (sin sufijo oficial en su nombre común, pero funcionalmente lo mismo) y Tsumago-juku. Cada pueblo-posta tenía honjin (posada principal, reservada a daimyō y funcionarios de alto rango) y waki-honjin (posada secundaria, de respaldo), además de casas de té (chaya) para descansos cortos.",
+      },
+      {
+        title: "El sankin-kōtai",
+        body: "El tráfico venía sobre todo de un sistema del shogunato: obligaba a todos los señores feudales a residir en Edo un año de cada dos, dejando a sus familias allí como rehenes permanentes. Eso generaba desfiles constantes de cientos o miles de personas por estos caminos, y arruinaba económicamente a los daimyō, que era exactamente la intención. Los pueblos-posta vivían de dar alojamiento y caballos a esas comitivas.",
+      },
+      {
+        title: "Tsumago: la primera restauración",
+        body: "Tsumago fue el primer pueblo de Japón en emprender una restauración histórica sistemática, en 1968. Los vecinos firmaron un pacto de tres noes: no vender, no alquilar, no destruir. Se enterraron los cables eléctricos, se retiraron las máquinas expendedoras y las señales modernas, y los coches están prohibidos de 9:00 a 17:00. El resultado es que no se ve un solo elemento del siglo XX en la calle principal.",
+      },
+      {
+        title: "La caminata de hoy",
+        body: "Los 8 km entre Magome y Tsumago se hacen en unas 2,5-3 horas. El sentido Magome→Tsumago es el recomendado porque Magome está más alto: se sube el paso de Magome-tōge (~300 m) y luego se baja casi todo el resto. Parte del camino es empedrado original del periodo Edo (ishidatami). Hay campanas repartidas por el bosque para ahuyentar osos, que se tocan al pasar -- los avistamientos son muy raros pero la costumbre se mantiene.",
+      },
+    ],
+    curiosities: [
+      "Magome se quemó completamente dos veces, en 1895 y 1915, así que sus edificios son reconstrucciones; Tsumago conserva estructuras originales -- por eso los dos pueblos se sienten tan distintos a pesar de estar a solo 8 km.",
+      "El servicio de transporte de equipaje entre ambos pueblos funciona de finales de marzo a finales de noviembre, con entrega sobre las 13:00.",
+      "Un mismo tramo del Nakasendō aparece mencionado en la novela \"Antes del amanecer\" de Shimazaki Tōson, ambientada precisamente en esta zona del valle de Kiso.",
+    ],
+    tip: "Los minshuku sirven la cena a hora fija, normalmente 18:00-18:30. Conviene salir de Magome antes de las 14:30 para no ir con prisa.",
+  },
+
+  "magome": {
+    name: "Magome-juku",
+    jp: "馬籠宿",
+    founded: "Siglo XVII (reconstruido tras incendios de 1895 y 1915)",
+    wiki: "Magome-juku",
+    tagline: "El pueblo-posta en cuesta, con vistas al valle -- reconstruido dos veces, pero fiel a su trazado original.",
+    sections: [
+      {
+        title: "El pueblo en cuesta",
+        body: "A diferencia de Tsumago, que es prácticamente llano, Magome está construido sobre una pendiente pronunciada, con la calle principal empedrada subiendo entre casas de madera, tiendas y miradores. Se quemó completamente dos veces (1895 y 1915), así que ningún edificio es original del periodo Edo -- son reconstrucciones fieles, pero reconstrucciones.",
+      },
+      {
+        title: "Rueda de molino y mirador",
+        body: "Cerca de la parte alta del pueblo hay una rueda de molino de agua (suisha) tradicional en funcionamiento, y un mirador con vistas al valle del Kiso y, en días despejados, hacia el monte Ena o incluso el propio Fuji en la distancia.",
+      },
+      {
+        title: "Tateba-chaya, la casa de té del camino",
+        body: "Ya en el tramo de senderismo hacia Tsumago, la Tateba-chaya es una casa de té tradicional donde, según la costumbre, se ofrece té gratuito a los caminantes que pasan -- un gesto que viene directamente de la función original de este tipo de casas en el periodo Edo, pensadas como paradas de descanso a mitad de camino entre pueblos.",
+      },
+      {
+        title: "Especialidades de Magome",
+        body: "El pueblo es conocido por el gohei-mochi (bolas de arroz a la brasa glaseadas con una salsa dulce de miso o nueces) y el oyaki (una especie de empanadilla al vapor o a la plancha, rellena de verduras o pasta de judía). Ambos se venden en puestos por la calle principal, ideales para picar durante el paseo.",
+      },
+    ],
+    curiosities: [
+      "El escritor Shimazaki Tōson, autor de la novela histórica \"Antes del amanecer\" ambientada en esta zona, nació en Magome -- hay un pequeño museo dedicado a él.",
+      "A pesar de las reconstrucciones, el trazado de la calle -- su curva, su pendiente, la disposición de las parcelas -- es el mismo desde el periodo Edo.",
+    ],
+    tip: "Si vais a comprar gohei-mochi u oyaki, mejor hacerlo nada más llegar o antes de iniciar la caminata -- los puestos pueden cerrar antes de que volváis por la tarde.",
+  },
+
+  "tsumago": {
+    name: "Tsumago-juku",
+    jp: "妻籠宿",
+    founded: "Siglo XVII (restaurado desde 1968)",
+    wiki: "Tsumago-juku",
+    tagline: "El primer pueblo de Japón en restaurarse a propósito -- y el que mejor conserva edificios originales del periodo Edo.",
+    sections: [
+      {
+        title: "Por qué se llama Tsumago-juku",
+        body: "El sufijo \"-juku\" (宿) significa \"pueblo de posta\" o \"alojamiento\": todos los pueblos con esta función en el Nakasendō lo llevaban en su nombre oficial. Tsumago-juku significa literalmente \"el pueblo-posta de Tsumago\".",
+      },
+      {
+        title: "Templo Kōtoku-ji",
+        body: "Reconocible por sus paredes blancas y su base de piedra, este templo budista data del año 1500 y se alza sobre un pequeño altozano que domina el pueblo. Es uno de los pocos edificios religiosos de la zona anterior al propio desarrollo del Nakasendō como ruta oficial.",
+      },
+      {
+        title: "Waki-Honjin Okuya y el Museo de Nagiso",
+        body: "El Waki-Honjin era la posada secundaria del pueblo (de respaldo al honjin principal), y su edificio actual, del siglo XIX, es original -- Bien Cultural Importante de Japón. Justo al lado está el Museo de Historia de Nagiso (Nagiso Rekishi Shiryokan), centrado en la historia del valle de Kiso y de la propia ruta Nakasendō, con piezas y documentos de la familia que gestionó la posada durante generaciones.",
+      },
+      {
+        title: "Qué es un minshuku",
+        body: "Un minshuku es un alojamiento familiar japonés, normalmente de tamaño pequeño y gestionado por sus propios dueños, que suele incluir cena y desayuno caseros en el precio -- el equivalente japonés a un B&B rural. Los pueblos-posta como Tsumago y Magome viven en gran parte de este tipo de alojamiento desde el periodo Edo, cuando cumplían la misma función para los viajeros del Nakasendō.",
+      },
+    ],
+    curiosities: [
+      "Tsumago fue el primer pueblo de Japón en firmar un pacto vecinal de restauración en 1968: no vender, no alquilar, no destruir -- el modelo que después copiaron otros pueblos históricos del país.",
+      "Los coches están prohibidos en la calle principal de 9:00 a 17:00, y todos los cables eléctricos están enterrados -- por eso no se ve ni un solo elemento moderno mirando la calle.",
+      "A diferencia de Magome, que se quemó dos veces, buena parte de los edificios de Tsumago son originales del periodo Edo -- por eso se siente notablemente más \"antiguo\" a pesar de estar a solo 8 km.",
+    ],
+    tip: "Con el tiempo justo de una excursión de un día, no da para entrar con calma en el Waki-Honjin ni en el museo -- mejor centrarse en pasear la calle principal y ver el templo Kōtoku-ji por fuera.",
+  },
+
+  "nikko": {
+    name: "Nikko",
+    jp: "日光",
+    founded: "Santuario Toshogu: 1617",
+    wiki: "Nikko, Tochigi",
+    tagline: "El mausoleo más opulento de Japón, escondido entre montañas a 2 horas de Tokio.",
+    sections: [
+      {
+        title: "El santuario Toshogu",
+        body: "Construido en 1617 como mausoleo de Tokugawa Ieyasu, el fundador del shogunato que gobernó Japón durante más de 250 años. Su nieto Iemitsu lo amplió entre 1634 y 1636 hasta convertirlo en el conjunto profusamente decorado que se ve hoy, con más de 5 millones de hojas de pan de oro repartidas entre sus edificios -- un contraste deliberado con la sobriedad habitual de la arquitectura religiosa japonesa, pensado para proyectar el poder del clan Tokugawa.",
+      },
+      {
+        title: "La puerta Yomeimon y los tres monos",
+        body: "La puerta Yomeimon, con más de 500 tallas distintas de animales, plantas y figuras mitológicas, es tan detallada que se la conoce como \"la puerta que se contempla hasta el atardecer\" (higurashi-mon). En los establos sagrados del recinto está el relieve original de los tres monos sabios -- \"no ver, no oír, no hablar\" (mizaru, kikazaru, iwazaru) -- una talla del siglo XVII que se hizo mundialmente famosa mucho después de crearse.",
+      },
+      {
+        title: "Rinno-ji y Futarasan",
+        body: "El conjunto de Nikko, declarado Patrimonio de la Humanidad por la UNESCO en 1999, incluye también el templo Rinno-ji (con el salón Sanbutsudo y sus tres grandes budas dorados) y el santuario sintoísta Futarasan, dedicado a las montañas sagradas de la zona -- una convivencia de budismo y sintoísmo en un mismo recinto, típica del Japón anterior a la separación forzosa de ambas religiones en el periodo Meiji.",
+      },
+      {
+        title: "Más allá del santuario: Chuzenji y Kegon",
+        body: "Quien tenga tiempo puede subir por la carretera de montaña Irohazaka (48 curvas cerradas, una para subir y otra distinta para bajar) hasta el lago Chuzenji, formado hace unos 20.000 años cuando una erupción del cercano monte Nantai represó el río Daiya. Muy cerca están las cataratas Kegon, de 97 m de caída, consideradas una de las tres grandes cascadas de Japón.",
+      },
+    ],
+    curiosities: [
+      "Existe un dicho japonés: \"Nikko wo minai uchi wa, kekkou to iu na\" -- \"no digas 'magnífico' hasta que hayas visto Nikko\".",
+      "El propio nombre de Nikko significa \"luz solar\", y aunque hoy se escribe con los caracteres de ese significado, originalmente el monte se llamaba Futara-san (de ahí el santuario Futarasan), y el cambio de nombre a Nikko se atribuye al monje budista Kukai en el siglo IX.",
+      "El monte Nantai, sagrado desde el siglo VIII, sigue siendo objeto de peregrinación religiosa cada año, con una ceremonia de ascenso ritual en verano.",
+    ],
+    tip: "Si el grupo prefiere no alargar el día con Chuzenji/Kegon, el propio conjunto de Toshogu-Rinno-ji-Futarasan ya justifica de sobra la excursión -- no hace falta sentir que os falta algo por no subir a la carretera de montaña.",
+  },
+
+  "odaiba": {
+    name: "Odaiba",
+    jp: "お台場",
+    founded: "1853 (islas-fortaleza) / años 90 (reconversión moderna)",
+    wiki: "Odaiba",
+    tagline: "De islas-fortaleza defensivas del siglo XIX al distrito futurista favorito de Tokio.",
+    sections: [
+      {
+        title: "Islas hechas para la guerra",
+        body: "Odaiba nació en 1853 como un conjunto de islas artificiales de defensa (\"odaiba\" significa literalmente \"batería de cañones\"), construidas por orden del shogunato tras la llegada de los \"barcos negros\" del comodoro estadounidense Matthew Perry, que forzaron la apertura de Japón al comercio exterior. Se planearon 11 fuertes; solo se completaron unos pocos antes de que el shogunato cayera y la amenaza se disipara.",
+      },
+      {
+        title: "De zona industrial a distrito futurista",
+        body: "Durante buena parte del siglo XX la zona se usó para actividades industriales y de relleno de tierra. En los años 80 y 90, el gobierno metropolitano de Tokio impulsó su reconversión en un distrito de ocio y tecnología, apostando por edificios de arquitectura llamativa (como la sede de Fuji TV, con su esfera metálica suspendida) y grandes espacios comerciales frente al mar.",
+      },
+      {
+        title: "El Gundam a tamaño real: una historia con final abierto",
+        body: "Desde 2009 hasta 2017 hubo una estatua a tamaño real (18 m) del RX-78-2, el Gundam original de la serie de 1979, instalada primero en el Shiokaze Park y luego frente al DiverCity Tokyo Plaza. En septiembre de 2017 la sustituyó el Unicorn Gundam (RX-0), 1,7 m más alto y con un mecanismo real de transformación entre \"Unicorn Mode\" y \"Destroy Mode\" varias veces al día. ⚠️ **Esta segunda estatua terminó su exhibición pública el 31 de agosto de 2026, justo antes de este viaje** -- a fecha de esta guía no hay confirmación de ninguna sustituta, así que no contéis con ver ningún Gundam en Odaiba durante la visita.",
+      },
+      {
+        title: "El Rainbow Bridge",
+        body: "El puente colgante que conecta Odaiba con el resto de Tokio, inaugurado en 1993, debe su nombre a un sistema de iluminación con tres colores (blanco, rojo y verde) que se alimenta de energía solar almacenada durante el día. El tren automático Yurikamome lo cruza sin conductor, ofreciendo una de las mejores vistas gratuitas de la bahía de Tokio.",
+      },
+    ],
+    curiosities: [
+      "El nombre real completo de la zona en documentos oficiales es \"Daiba\", sin la \"O\" honorífica -- \"Odaiba\" es la forma coloquial, pero es la que ha acabado imponiéndose en el uso diario.",
+      "Parte de la iluminación del Rainbow Bridge se apagó durante un tiempo tras el terremoto y tsunami de 2011, como medida de ahorro energético a nivel nacional.",
+      "La réplica de la Estatua de la Libertad de Odaiba, más pequeña que el original, se instaló originalmente en 1998 de forma temporal como parte de un evento cultural franco-japonés, y se hizo tan popular que se quedó de forma permanente.",
+    ],
+    tip: "El atardecer visto desde el paseo marítimo de Odaiba, con el Rainbow Bridge y el skyline de Tokio de fondo, sigue siendo de las vistas más fotografiadas de la ciudad -- merece la pena llegar con margen antes de que se ponga el sol, con o sin Gundam.",
+  },
+
+
+  "toyosu": {
+    name: "Mercado de Toyosu",
+    jp: "豊洲市場",
+    founded: "2018 (sucesor del histórico mercado de Tsukiji)",
+    wiki: "Toyosu Market",
+    tagline: "El mercado de pescado más grande del mundo, heredero de más de 400 años de historia.",
+    sections: [
+      {
+        title: "Más de 400 años de historia",
+        body: "El origen del mercado se remonta al periodo Edo, cuando la creciente demanda de pescado de la ciudad llevó a establecer un mercado mayorista en Nihonbashi. De ahí pasó a Tsukiji, donde funcionó durante más de 80 años y se convirtió en una de las atracciones turísticas más famosas de Tokio, hasta que en octubre de 2018 se trasladó definitivamente a Toyosu.",
+      },
+      {
+        title: "Por qué se mudó",
+        body: "Las instalaciones de Tsukiji, diseñadas originalmente para un sistema de transporte por ferrocarril, se habían quedado obsoletas frente al transporte moderno por camión, y el mercado sufría problemas de espacio, higiene y plagas de roedores. El traslado, planteado ya en 2001, se retrasó varios años por la contaminación del suelo del nuevo emplazamiento -- una antigua planta de gas de Tokyo Gas -- que obligó a una limpieza exhaustiva antes de poder construir.",
+      },
+      {
+        title: "El nuevo mercado",
+        body: "Toyosu es prácticamente el doble de grande que Tsukiji, y está considerado el mercado de pescado más grande del mundo. A diferencia del espacio abierto de Tsukiji, Toyosu son edificios completamente cerrados y climatizados, cumpliendo los estándares internacionales de seguridad alimentaria HACCP, con mejor control de temperatura y menor riesgo de contaminación. Consta de tres edificios conectados entre sí y con la estación de Shijo-mae de la línea Yurikamome.",
+      },
+      {
+        title: "La subasta de atún",
+        body: "La famosa subasta de atún, uno de los grandes atractivos turísticos de la época de Tsukiji, se retomó en Toyosu en enero de 2019, unos meses después de la reapertura del mercado. Se puede observar desde una plataforma con cristal, sin acceso directo a la sala, lo que limita algo la experiencia respecto a la cercanía que permitía el antiguo Tsukiji.",
+      },
+    ],
+    curiosities: [
+      "El coste total de construcción del nuevo mercado rondó los 5.100 millones de dólares.",
+      "Aunque el mercado mayorista se trasladó, el famoso \"mercado exterior\" de Tsukiji (Tsukiji Outer Market), con sus puestos de comida callejera, se quedó en su ubicación original y sigue siendo un destino gastronómico por derecho propio, ahora abastecido con pescado que llega directamente de Toyosu.",
+      "Más del 80% de los mayoristas de pescado se opusieron al traslado en su momento, según una encuesta de un colectivo que luchó activamente contra el cambio de sede.",
+    ],
+    tip: "La entrada es gratuita y se puede visitar sin reserva, pero para el desayuno de sushi conviene llegar temprano -- los restaurantes más conocidos suelen tener cola desde primera hora de la mañana.",
+  },
+
+  "ueno": {
+    name: "Ueno",
+    jp: "上野",
+    founded: "Parque desde 1873 · sobre los terrenos del templo Kan'ei-ji (s. XVII)",
+    wiki: "Ueno, Tokyo",
+    tagline: "De templo funerario de los Tokugawa a campo de batalla y, después, al primer parque público de Japón.",
+    sections: [
+      {
+        title: "El templo que dominaba la colina",
+        body: "Antes de ser un parque, la colina de Ueno albergaba el Kan'ei-ji, uno de los templos más poderosos de Edo y templo funerario de varios shogunes Tokugawa, con un recinto que en su momento de máximo esplendor rivalizaba en tamaño con el propio castillo de Edo. Del complejo original, arrasado casi por completo en 1868, sobrevive hoy muy poco -- entre otras piezas, una pagoda de cinco pisos que ahora se encuentra, curiosamente, dentro del recinto del zoo.",
+      },
+      {
+        title: "La batalla que decidió el fin del shogunato",
+        body: "En julio de 1868, durante la Guerra Boshin que puso fin a más de 250 años de gobierno Tokugawa, el Kan'ei-ji fue el último bastión de los Shogitai, un grupo de samuráis leales al shogun derrotado. Las fuerzas imperiales aplastaron la resistencia en un solo día de combate, y el terreno arrasado quedó abandonado hasta que, pocos años después, el nuevo gobierno Meiji decidió convertirlo en un parque público al estilo occidental.",
+      },
+      {
+        title: "El primer parque público de Japón",
+        body: "Inaugurado en 1873, Ueno fue uno de los primeros parques públicos de todo Japón, parte de un esfuerzo del gobierno Meiji por modernizar el país a imagen de las capitales europeas. Hoy reúne, dentro de un mismo recorrido a pie, el Museo Nacional de Tokio (1872, el museo más antiguo y grande del país), el zoo más antiguo de Japón (1882) y el estanque de Shinobazu, con su santuario en una isla dedicado a la diosa Benzaiten.",
+      },
+      {
+        title: "Ameyoko, el mercado nacido del mercado negro",
+        body: "Justo a la salida de la estación, la calle de Ameyoko ('Ameya Yokocho') surgió en los años de posguerra como mercado negro, cuando escaseaba de todo y se vendían aquí desde caramelos artesanales hasta excedentes del ejército estadounidense -- ambos usos compiten por explicar su nombre, ya que 'ame' significa tanto 'caramelo' como es la forma abreviada de 'América'. Hoy sigue siendo un mercado callejero bullicioso, con pescado fresco, marisco a la brasa, ropa barata y puestos de comida, mucho más informal que cualquier centro comercial de Tokio.",
+      },
+    ],
+    curiosities: [
+      "La estatua más fotografiada del parque es la de Saigo Takamori, el samurái que ayudó a derrocar al shogunato -- y que, pocos años después, encabezó él mismo una rebelión contra el gobierno que había contribuido a instaurar. Se le representa paseando a su perro, en una pose deliberadamente cercana y poco heroica.",
+      "Ueno recibió en 1972 la primera pareja de pandas gigantes que llegó a Japón, regalo del gobierno chino tras la normalización de relaciones diplomáticas -- desde entonces el zoo de Ueno es sinónimo de pandas para el público japonés.",
+      "El estanque de Shinobazu se llena cada verano de flores de loto que lo cubren casi por completo, una estampa que dista mucho de la lámina de agua despejada que se ve el resto del año.",
+    ],
+    tip: "Si os apetece picar algo por el camino, los puestos de Ameyoko son buena parada para marisco a la brasa (ostras, anguila) a precio de calle, mucho más barato que sentarse en un restaurante.",
+  },
+
+  "kappabashi": {
+    name: "Kappabashi Dori",
+    jp: "かっぱ橋道具街",
+    founded: "Hacia 1912",
+    wiki: "Kappabashi-dori",
+    tagline: "\"La Calle de la Cocina\": 800 metros dedicados por completo al mundo de la restauración, con la mascota mítica de un espíritu acuático.",
+    sections: [
+      {
+        title: "De marisma a capital del menaje",
+        body: "La zona empezó a desarrollarse hacia 1912 como un mercado de herramientas y utensilios de segunda mano, en un terreno pantanoso propenso a inundaciones entre los barrios de Ueno y Asakusa. Tras la Segunda Guerra Mundial, con la expansión del sector de la restauración en Tokio, la calle se especializó por completo en abastecer a cocineros y dueños de restaurantes, hasta convertirse en el mayor distrito de menaje profesional de Japón, con más de 170 tiendas en apenas 800 metros.",
+      },
+      {
+        title: "De dónde viene el nombre",
+        body: "El origen del nombre \"Kappabashi\" (literalmente \"puente del impermeable\") se disputa entre dos versiones: que viene de los impermeables (kappa, 合羽) que los vecinos tendían a secar sobre un puente cercano, o que se debe a un comerciante del siglo XIX llamado Kihachi Kappaya, que financió obras de canalización del río en la zona. Como \"kappa\" también es el nombre de un espíritu acuático travieso de la mitología japonesa (河童, con otros caracteres, pero pronunciado igual), las propias tiendas de la calle adoptaron a esta criatura como mascota oficial, y hay estatuas suyas repartidas por todo el barrio -- incluida una dorada en un pequeño parque de bolsillo.",
+      },
+      {
+        title: "Los sampuru: comida de plástico hiperrealista",
+        body: "Kappabashi es el lugar de nacimiento de los sampuru (del inglés \"sample\"), las réplicas de comida hiperrealistas que se exhiben en los escaparates de restaurantes por todo Japón. Fabricadas artesanalmente en cera o plástico, una sola pieza de sushi de imitación puede costar unos ¥2.000 (~13€). Varias tiendas de la calle, como Gansho Shokuhin Sample-ya, ofrecen incluso talleres para hacer tu propia réplica.",
+      },
+      {
+        title: "Qué más hay en la calle",
+        body: "Además de los sampuru, Kappabashi es célebre por sus cuchillos japoneses forjados a mano -- tiendas especializadas ofrecen afilado al momento y grabado personalizado del nombre en la hoja. También hay vajilla al por mayor, uniformes de camarero y cocinero, faroles de papel (chōchin) para decorar la entrada de izakayas, y todo tipo de mobiliario y maquinaria de cocina profesional. En la entrada sur de la calle hay una gigantesca cabeza de cocinero sobre el edificio Niimi Cooker, imposible de pasar por alto.",
+      },
+    ],
+    curiosities: [
+      "Cerca de la calle está el templo Sōgen-ji, conocido popularmente como \"Kappa-dera\" (el templo del kappa), donde los vecinos todavía dejan pepinos como ofrenda para apaciguar al espíritu -- el alimento favorito del kappa según la tradición.",
+      "Cada julio, la calle se llena de decoraciones colgantes de colores para el Shitamachi Tanabata Matsuri, el festival de las estrellas del casco antiguo de Tokio.",
+      "La calle está justo a medio camino entre Asakusa y Ueno, por lo que era tradicionalmente un buen punto de parada para reponer fuerzas entre ambos barrios -- función que sigue cumpliendo hoy.",
+    ],
+    tip: "No hace falta comprar nada para disfrutar de la calle -- simplemente pasear mirando escaparates llenos de sampuru ya es una experiencia en sí misma, y es gratis.",
+  },
+
+  "harajuku": {
+    name: "Harajuku y la calle Takeshita",
+    jp: "原宿・竹下通り",
+    founded: "Como epicentro de moda juvenil: años 70-80",
+    wiki: "Harajuku",
+    tagline: "El laboratorio de las modas callejeras más extravagantes de Japón, en apenas 400 metros de calle peatonal.",
+    sections: [
+      {
+        title: "De estación tranquila a epicentro de la moda",
+        body: "Harajuku era una zona residencial tranquila hasta la ocupación estadounidense tras la Segunda Guerra Mundial, cuando la cercana Washington Heights (una base militar con viviendas para familias de oficiales) introdujo en la zona tiendas y modas occidentales que no existían en el resto de Japón. Con la retirada de la base en los años 60 y los Juegos Olímpicos de Tokio de 1964, la zona quedó libre para un desarrollo comercial que en los años 70-80 la convirtió en el epicentro de las modas juveniles más atrevidas del país.",
+      },
+      {
+        title: "La calle Takeshita",
+        body: "Esta calle peatonal de apenas 400 metros concentra tiendas de moda alternativa, cosmética kawaii, crepes y merchandising de cultura pop, y es históricamente el escaparate de subculturas como el gothic lolita, el decora o el visual-kei -- estilos que surgieron precisamente aquí antes de difundirse por el resto de Japón y, más tarde, internacionalmente gracias a internet.",
+      },
+      {
+        title: "Omotesando, la otra cara de Harajuku",
+        body: "A pocos metros de Takeshita Dori, la avenida Omotesando ofrece un contraste total: bulevar arbolado flanqueado por tiendas insignia de marcas de lujo internacionales, diseñado en los años 20 como el camino de acceso ceremonial al santuario Meiji. Harajuku y Omotesando conviven así como dos caras de la misma moneda: la moda callejera más extrema y el lujo más establecido, separados por apenas una manzana.",
+      },
+      {
+        title: "El barrio hoy",
+        body: "Aunque las subculturas más extremas de los 90 y 2000 han perdido algo de visibilidad en la propia calle Takeshita (más orientada hoy a un público turista y juvenil general), Harajuku sigue siendo un buen termómetro de las tendencias emergentes japonesas, y el punto de partida obligado antes de cruzar hacia la calma del santuario Meiji, a solo unos minutos andando.",
+      },
+    ],
+    curiosities: [
+      "El crepe relleno al estilo Harajuku (enrollado en cono con nata, fruta y toppings dulces) se popularizó precisamente en esta calle en los años 70, y sigue siendo uno de los snacks más fotografiados de la zona.",
+      "La palabra \"kawaii\" (\"mono\"/\"adorable\"), hoy un concepto cultural exportado a todo el mundo, tiene una de sus cunas urbanas más importantes en la estética que se desarrolló en Harajuku desde los años 90.",
+      "Los domingos, antes de la pandemia, era habitual ver a jóvenes vestidos con looks elaborados de cosplay o subculturas concretas reunirse cerca del puente de Jingu-bashi, junto a la entrada del santuario Meiji -- una costumbre que se ha reducido notablemente pero que a veces todavía se puede ver.",
+    ],
+    tip: "Takeshita Dori es muy estrecha y se llena mucho, sobre todo los findes -- si buscáis fotos sin aglomeraciones, mejor ir a primera hora de la mañana entre semana.",
+  },
+
+  "shinjuku": {
+    name: "Shinjuku",
+    jp: "新宿",
+    founded: "Estación desde 1885 · distrito de ocio nocturno desde la posguerra",
+    wiki: "Shinjuku",
+    tagline: "La estación más transitada del planeta y, de noche, el neón más denso de Tokio.",
+    sections: [
+      {
+        title: "La estación más transitada del mundo",
+        body: "La Estación de Shinjuku ostenta el récord Guinness a la estación de tren más concurrida del mundo, con una media histórica de más de 3,5 millones de pasajeros al día antes de la pandemia -- más gente en una jornada que la población entera de muchos países. El complejo conecta varias líneas JR, Metro y privadas a través de más de 200 salidas, hasta el punto de que perderse dentro de la propia estación es una experiencia casi ritual para cualquier visitante primerizo.",
+      },
+      {
+        title: "Kabukicho, el barrio que nunca tuvo su teatro kabuki",
+        body: "Tras la Segunda Guerra Mundial, un plan de reconstrucción de 1948 pretendía levantar aquí un gran teatro de kabuki como ancla cultural del nuevo barrio. El teatro nunca llegó a construirse, pero el nombre 'Kabukicho' se quedó para siempre. Con el tiempo se convirtió en el mayor distrito de ocio nocturno y entretenimiento adulto de Japón, apodado 'la ciudad que nunca duerme' -- hoy conviven ahí restaurantes, karaokes, cines, bares temáticos y salas de pachinko con el barrio rojo.",
+      },
+      {
+        title: "Omoide Yokocho, el callejón que sobrevivió al mercado negro",
+        body: "Pegado a las vías del tren, este racimo de callejones estrechos con minúsculos puestos de yakitori nació como mercado negro en los años de posguerra, cuando la comida escaseaba y la zona no tenía ni siquiera baños propios -- de ahí su apodo informal entre extranjeros, 'Piss Alley'. Sobrevivió a varios intentos de demolición y hoy es uno de los pocos rincones de Shinjuku que conserva la escala y el ambiente de la Tokio de mediados del siglo XX.",
+      },
+      {
+        title: "El edificio del Gobierno Metropolitano",
+        body: "Diseñado por el arquitecto Kenzo Tange e inaugurado en 1991, el Tocho (Tokyo Metropolitan Government Building) tiene dos torres gemelas de 243 metros inspiradas, según el propio Tange, en un circuito impreso y en las catedrales góticas europeas a la vez. Sus dos miradores gratuitos, a 202 metros de altura, ofrecen una de las pocas vistas panorámicas de Tokio sin coste alguno -- en días muy despejados se llega a ver el monte Fuji.",
+      },
+    ],
+    curiosities: [
+      "Golden Gai, a un paso de Kabukicho, agrupa unos 200 bares minúsculos repartidos en seis callejones estrechísimos -- muchos caben literalmente 5-6 personas. Desde los años 60 ha sido punto de encuentro de escritores, cineastas y músicos, y hoy sigue siendo uno de los rincones con más carácter de todo Tokio.",
+      "El cruce de Kabukicho tiene una pantalla gigante en 3D con un gato gigante (el 'Shinjuku Cat') que se asoma sobre los edificios -- se ha convertido en uno de los puntos más fotografiados de la zona desde su estreno en 2021.",
+      "Antes de la Era Meiji, Shinjuku ('nueva estación de posta', literalmente) fue una de las cuatro estaciones de posta que abastecían de viajeros y mercancías la ruta que conectaba Edo con el resto de Japón.",
+    ],
+    tip: "El mirador gratuito del Tocho es la alternativa perfecta al Shibuya Sky de pago: mismas vistas de la ciudad iluminada, coste cero -- solo hay que guardar cola para el ascensor en las horas punta del atardecer.",
+  },
+
+  "tokyo-skytree": {
+    name: "Tokyo Skytree",
+    jp: "東京スカイツリー",
+    founded: "2008-2012 (construcción) · Inaugurada el 22 de mayo de 2012",
+    wiki: "Tokyo Skytree",
+    tagline: "634 metros elegidos a propósito para sonar como \"Musashi\" -- la torre autoportante más alta del mundo.",
+    sections: [
+      {
+        title: "Por qué se construyó",
+        body: "El Skytree nació como sustituto de la Torre de Tokio (333 m, 1958): a medida que crecían los rascacielos de la ciudad, la señal de radiodifusión de la vieja torre empezó a quedar bloqueada por los edificios más altos. Se necesitaba una nueva torre de transmisión, más alta, y el proyecto -- originalmente llamado \"New Tokyo Tower\" -- acabó convirtiéndose en un símbolo por derecho propio, mucho más allá de su función técnica original.",
+      },
+      {
+        title: "Por qué mide exactamente 634 metros",
+        body: "La cifra no es casual: en la pronunciación clásica japonesa de los números, 6-3-4 se lee \"mu-sa-shi\", en referencia a la antigua provincia de Musashi, que cubría lo que hoy es Tokio, Saitama y parte de Kanagawa. Los ingenieros ajustaron la altura final expresamente para lograr este juego de palabras, además de asegurarse de que fuera la torre autoportante más alta del mundo -- un récord Guinness certificado el 17 de noviembre de 2011.",
+      },
+      {
+        title: "Una construcción que sobrevivió a un terremoto",
+        body: "La obra empezó el 14 de julio de 2008 y se completó el 29 de febrero de 2012, con la estructura alcanzando su altura final en marzo de 2011 -- justo cuando el gran terremoto de Tōhoku sacudió Japón. El edificio, todavía en obras, resistió sin daños gracias a un sistema de amortiguación sísmica inspirado en el principio constructivo de las antiguas pagodas japonesas de cinco pisos, que llevan siglos resistiendo terremotos con una columna central que actúa como contrapeso.",
+      },
+      {
+        title: "Los miradores",
+        body: "Tiene dos miradores acristalados: el Tembo Deck, a 350 m, y el Tembo Galleria, a 450 m -- los más altos de Japón. Los ascensores suben los 350 m en menos de un minuto. En días despejados de invierno se puede llegar a ver el monte Fuji, a más de 100 km de distancia.",
+      },
+      {
+        title: "Tokyo Solamachi, la base comercial",
+        body: "A los pies de la torre se extiende Tokyo Solamachi, un centro comercial de más de 300 tiendas y restaurantes repartido en varias plantas, con el acuario Sumida y un planetario Konica Minolta incluidos en el mismo complejo. No hace falta subir al mirador para que la visita merezca la pena: basta con pasear por su base y verla de cerca.",
+      },
+    ],
+    curiosities: [
+      "El nombre \"Skytree\" se eligió por votación pública entre varias opciones, con un 30% de los votos (unos 33.000) -- la segunda opción más votada fue \"Tokyo Edo Tower\".",
+      "Con 634 m es la 3ª estructura más alta del mundo, por detrás del Burj Khalifa (829,8 m) y el Merdeka 118 (678,9 m) -- pero sigue siendo la torre autoportante (no rascacielos habitable) más alta del planeta.",
+      "En su primera semana abierta al público, en mayo de 2012, subieron al mirador unos 1,6 millones de personas.",
+      "Cruzando el puente Azumabashi hacia la torre está el edificio de la cervecera Asahi, coronado por una escultura dorada gigante (la \"Flamme d'Or\", diseñada por Philippe Starck) que representa una llama -- pero cuya forma ha hecho que los propios tokiotas la apoden cariñosamente \"la boñiga dorada\" (kin no unko).",
+    ],
+    tip: "Los tickets con fecha y hora fija se pueden comprar con antelación para saltarse la cola más larga -- muy recomendable para el turno de atardecer, que se agota con facilidad en días de buena previsión.",
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // TOKIO
+  // ══════════════════════════════════════════════════════════════════
+
+  "senso-ji": {
+    name: "Senso-ji y Asakusa",
+    jp: "浅草寺",
+    founded: "Año 645 (edificio actual: 1958)",
+    wiki: "Sensō-ji",
+    tagline: "El templo más antiguo de Tokio, reconstruido en hormigón tras los bombardeos de 1945.",
+    sections: [
+      {
+        title: "La leyenda fundacional",
+        body: "Según la tradición, en el año 628 dos hermanos pescadores encontraron una pequeña estatua dorada de Kannon, la bodhisattva de la compasión, en sus redes en el río Sumida. La devolvieron al agua y volvió a aparecer. El jefe de la aldea reconoció su valor sagrado, convirtió su casa en templo y en 645 se construyó el edificio formal. La estatua nunca se ha mostrado al público — ni siquiera los monjes la ven.",
+      },
+      {
+        title: "Destruido en 1945",
+        body: "El templo original sobrevivió siglos, incluido el gran terremoto de 1923. Pero en el bombardeo incendiario de Tokio del 10 de marzo de 1945 — la incursión aérea más mortífera de la historia, con unos 100.000 muertos en una noche — Asakusa quedó arrasada y el Senso-ji ardió por completo. Lo que ves es una reconstrucción de 1958, financiada por donaciones populares, hecha en hormigón armado precisamente para que no volviera a arder.",
+      },
+      {
+        title: "Kaminarimon y el farol",
+        body: "La 'puerta del trueno' lleva el farol rojo gigante de 3,9 metros y 700 kg. El actual es de 2013, donado como todos los anteriores por el fundador de Panasonic, Kōnosuke Matsushita, que atribuyó a Kannon la curación de su reumatismo. El farol se pliega en acordeón cuando pasan las carrozas de los festivales. A los lados están Raijin (dios del trueno) y Fūjin (dios del viento).",
+      },
+      {
+        title: "Nakamise-dōri",
+        body: "La calle comercial de 250 metros que lleva del Kaminarimon al templo funciona desde principios del siglo XVIII y es una de las calles comerciales más antiguas de Japón. Surgió cuando a los vecinos que limpiaban el recinto se les concedió el derecho a montar puestos. Hoy tiene unas 90 tiendas de dulces tradicionales, abanicos y artesanía.",
+      },
+      {
+        title: "El omikuji",
+        body: "Aquí es famoso el sistema de adivinación: se agita una caja metálica, sale un palito con un número, y se recoge el papel del cajón correspondiente. Senso-ji tiene fama de dar muchos kyō (mala suerte) — se dice que alrededor del 30%, cuando lo habitual en otros templos es mucho menos. Si sale mala suerte, se ata en las barras metálicas del recinto para dejarla allí.",
+      },
+    ],
+    curiosities: [
+      "El árbol de ginkgo del recinto sobrevivió al bombardeo y sigue vivo, con las cicatrices visibles.",
+      "El humo del incensario grande (jōkōro) se atrae con la mano hacia la parte del cuerpo que se quiere curar.",
+      "Desde el otro lado del río se ve el Tokyo Skytree (634 m), la torre más alta de Japón, en contraste directo con el templo.",
+    ],
+    tip: "De noche el templo queda espectacular: la iluminación se mantiene encendida desde el atardecer hasta las 23:00 aprox., la calle Nakamise cierra sobre las 18:00-19:00 y el recinto se queda con hasta un 70-80% menos de gente que de día — una visita completamente distinta. Justo enfrente de la puerta Kaminarimon está el Asakusa Culture Tourist Information Center (edificio de madera y cristal del arquitecto Kengo Kuma): entrada libre, y su mirador gratuito de la 8ª planta abre hasta las 22:00, con vistas de la puerta, la calle Nakamise, el templo iluminado y el Tokyo Skytree de fondo. Como os alojáis en Asakusa toda esa parte del viaje, no hace falta encajarlo en un día concreto: podéis acercaros cualquier noche sin desviaros de la ruta.",
+  },
+
+  "meiji-jingu": {
+    name: "Meiji Jingū",
+    jp: "明治神宮",
+    founded: "1920 (reconstruido en 1958)",
+    wiki: "Meiji Shrine",
+    tagline: "Un bosque de 100.000 árboles plantado a mano en pleno Tokio, dedicado al emperador de la modernización.",
+    sections: [
+      {
+        title: "A quién está dedicado",
+        body: "Al emperador Meiji (1852-1912) y a la emperatriz Shōken. Bajo su reinado Japón pasó de ser un país feudal cerrado a una potencia industrial en apenas 45 años: se abolieron los samuráis, se creó un ejército moderno, se instauró una constitución y se ganó una guerra a Rusia. Al morir, una petición popular reclamó un santuario en su memoria.",
+      },
+      {
+        title: "El bosque es artificial",
+        body: "Esto es lo más sorprendente del lugar. Los 70 hectáreas de bosque que rodean el santuario no son un bosque antiguo preservado: se plantaron desde cero entre 1915 y 1920. Ciudadanos de todo Japón donaron unos 100.000 árboles de 365 especies, y unos 110.000 voluntarios los plantaron a mano. Los botánicos diseñaron la plantación para que evolucionara por sí sola hacia un bosque autosuficiente en unos 150 años, sin mantenimiento. El plan está funcionando: hoy es un ecosistema estable con especies que llegaron solas.",
+      },
+      {
+        title: "Reconstruido tras la guerra",
+        body: "El santuario original de 1920 fue destruido en los bombardeos de 1945. El edificio actual se completó en 1958, de nuevo con fondos de donación pública.",
+      },
+      {
+        title: "Los barriles de sake",
+        body: "El muro de barriles decorados de la entrada son ofrendas de destilerías de todo Japón. Están vacíos: son barriles ceremoniales. Enfrente hay un muro paralelo de barricas de vino de Borgoña, donadas por bodegas francesas, en recuerdo de que el emperador Meiji fue un gran defensor de la adopción de costumbres occidentales, incluido el vino.",
+      },
+    ],
+    curiosities: [
+      "Es el santuario que más visitas de Año Nuevo recibe de todo Japón: más de tres millones de personas en los tres primeros días de enero.",
+      "Es habitual ver bodas sintoístas tradicionales cruzando el patio, con la novia de blanco y sombrero shiromuku.",
+      "Al lado está Harajuku y la calle Takeshita, el epicentro de la moda juvenil: el contraste entre ambos en 200 metros es brutal.",
+    ],
+    tip: "El paseo desde el torii de entrada hasta el santuario son unos 10-15 minutos entre árboles. Es parte de la experiencia, no un trámite.",
+  },
+
+  "shibuya": {
+    name: "Shibuya",
+    jp: "渋谷",
+    founded: "Cruce actual: 1973",
+    wiki: "Shibuya Crossing",
+    tagline: "El cruce peatonal más transitado del mundo y el perro que esperó nueve años.",
+    sections: [
+      {
+        title: "El cruce",
+        body: "El Shibuya Scramble Crossing es un cruce diagonal en el que se detiene todo el tráfico a la vez y los peatones cruzan en todas direcciones. Pasan entre 1.000 y 3.000 personas en cada ciclo de semáforo, y hasta 500.000 al día en total. Su configuración actual es de 1973. La imagen se ha convertido en el símbolo visual de Tokio y aparece en 'Lost in Translation', 'Resident Evil' y 'Fast & Furious: Tokyo Drift'.",
+      },
+      {
+        title: "Hachikō",
+        body: "La estatua del perro junto a la salida es de 1934, aunque la actual es una réplica de 1948. Hachikō era un akita que acompañaba cada día a su dueño, el profesor Ueno, a la estación y le esperaba a la vuelta. El 21 de mayo de 1925 el profesor murió de una hemorragia cerebral en la universidad y no volvió. Hachikō siguió acudiendo a la estación cada día a la hora exacta del tren durante nueve años y nueve meses, hasta su muerte en 1935. Su cuerpo está disecado en el Museo Nacional de Ciencias de Ueno.",
+      },
+      {
+        title: "Cómo verlo bien",
+        body: "Las mejores vistas gratuitas son desde el Starbucks del Tsutaya (segunda planta, ventanales) y desde el paso elevado de la estación. De pago está el mirador Shibuya Sky, a 229 m, con terraza al aire libre — hay que reservar con antelación y el atardecer se agota rápido.",
+      },
+    ],
+    curiosities: [
+      "En Nochevieja y tras victorias importantes de la selección japonesa, el cruce se llena de decenas de miles de personas y la policía despliega el 'DJ Police', agentes con megáfono que dirigen a la multitud con humor.",
+      "El nombre Shibuya significa literalmente 'valle amargo' — es efectivamente un valle, por eso todas las calles suben desde la estación.",
+      "El edificio 109, la torre cilíndrica del cruce, es desde 1979 el templo de la moda juvenil femenina japonesa.",
+    ],
+    tip: "De noche con los neones encendidos es cuando la imagen es más espectacular. A partir de las 19:00 y con lluvia, mejor todavía por los reflejos.",
+  },
+
+  "akihabara": {
+    name: "Akihabara",
+    jp: "秋葉原",
+    founded: "Como barrio electrónico: 1945",
+    wiki: "Akihabara",
+    tagline: "De mercado negro de radios en la posguerra a capital mundial del anime y el manga.",
+    sections: [
+      {
+        title: "El origen",
+        body: "Tras la guerra, en las ruinas alrededor de la estación de Akihabara se montó un mercado negro de componentes de radio, alimentado por estudiantes de la cercana Universidad Electrotécnica de Tokio que reparaban y montaban aparatos. El gobierno de ocupación toleró la actividad y en los años 50 el barrio ya era el centro de electrónica doméstica de Japón: aquí se compraron los primeros televisores, neveras y lavadoras del milagro económico japonés.",
+      },
+      {
+        title: "La transformación",
+        body: "En los 80 el negocio pasó de electrodomésticos a ordenadores personales, y con ellos llegaron el software, los videojuegos y el manga. En los 90, con el auge del anime y la cultura otaku, las tiendas de figuras, dōjinshi (manga autoeditado) y merchandising desplazaron a la electrónica. El término otaku, que originalmente era despectivo, se reapropió aquí.",
+      },
+      {
+        title: "Qué hay",
+        body: "Mandarake Complex (ocho plantas de manga y coleccionismo de segunda mano), Super Potato (videojuegos retro), Yodobashi Camera (nueve plantas de electrónica), los salones recreativos de Taito y GiGO con máquinas de premios y juegos de ritmo, y las tiendas de gachapon con cientos de máquinas de cápsulas.",
+      },
+      {
+        title: "Los maid cafés",
+        body: "Aparecieron a finales de los 90 como extensión de los cafés temáticos de anime. Las camareras van vestidas de doncella y tratan al cliente como 'amo', con juegos, canciones y dibujos en la comida. Es un fenómeno específicamente japonés de servicio-espectáculo, no un local de contacto físico. Suelen cobrar entrada por tiempo además del consumo, y está prohibido fotografiar al personal.",
+      },
+    ],
+    curiosities: [
+      "Los domingos por la tarde la calle principal, Chūō-dōri, se cierra al tráfico y se convierte en 'paraíso peatonal' (hokōsha tengoku).",
+      "El nombre viene de un santuario dedicado a un dios del fuego que estuvo aquí — irónico para un barrio que ardió repetidamente.",
+      "Super Potato tiene en la última planta un salón recreativo con máquinas de los 80 en funcionamiento y a 100 ¥ (~0,50€) la partida.",
+    ],
+    tip: "Los precios de segunda mano en Mandarake y Book-Off son sorprendentemente buenos, y el estado de conservación de los artículos japoneses de segunda mano suele ser impecable.",
+  },
+
+  "teamlab": {
+    name: "teamLab",
+    jp: "チームラボ",
+    founded: "2001 (colectivo)",
+    wiki: "TeamLab",
+    tagline: "Arte digital inmersivo donde las obras reaccionan a tu presencia y nunca se repiten.",
+    sections: [
+      {
+        title: "Qué es",
+        body: "teamLab es un colectivo interdisciplinar japonés fundado en 2001 por Toshiyuki Inoko, que reúne a artistas, programadores, ingenieros, animadores, matemáticos y arquitectos. Sus instalaciones no son proyecciones de vídeo grabado: son programas que se renderizan en tiempo real y cambian según la presencia y el movimiento de los visitantes. Ninguna imagen se repite nunca — lo que ves no lo verá nadie más igual.",
+      },
+      {
+        title: "El concepto",
+        body: "La idea central es disolver la frontera entre el espectador y la obra, y entre las propias obras: las mariposas de una sala pueden volar a otra y morir si las tocas; las flores nacen, florecen y se marchitan según el ciclo real del año. Se inspiran en la pintura tradicional japonesa, que no usa perspectiva única y permite al espectador moverse por el espacio pictórico.",
+      },
+      {
+        title: "Los espacios en Tokio",
+        body: "teamLab Planets, en Toyosu, es el que combina agua: se recorre descalzo y hay salas donde se camina con el agua por las rodillas, con peces koi proyectados que se convierten en flores al chocar contigo. teamLab Borderless, reabierto en Azabudai Hills en 2024, es el laberinto sin mapa donde las obras migran entre salas.",
+      },
+    ],
+    curiosities: [
+      "En Planets hay que ir con ropa que se pueda remangar por encima de la rodilla; prestan pantalones cortos si hace falta.",
+      "Los suelos de espejo hacen que las faldas no sean buena idea; ofrecen mallas en la entrada.",
+      "Las entradas son por franja horaria y se agotan con semanas de antelación, especialmente fines de semana.",
+    ],
+    tip: "Reservar online con antelación es prácticamente obligatorio. Ir a última hora del día suele estar menos concurrido.",
+  },
+
+  "fuji": {
+    name: "Monte Fuji",
+    jp: "富士山",
+    founded: "Cono actual: hace 10.000 años",
+    wiki: "Mount Fuji",
+    tagline: "Volcán activo, montaña sagrada y el símbolo más reconocible de Japón — cuando se deja ver.",
+    sections: [
+      {
+        title: "La montaña",
+        body: "Con 3.776 metros es el pico más alto de Japón. Es un estratovolcán activo, no extinto: su última erupción fue la de Hōei, en diciembre de 1707, que duró 16 días y cubrió Edo (a 100 km) con varios centímetros de ceniza. Se formó por la superposición de tres volcanes, y el cono actual y casi perfectamente simétrico tiene unos 10.000 años.",
+      },
+      {
+        title: "Montaña sagrada",
+        body: "Es objeto de culto desde al menos el siglo VII. El sintoísmo la asocia a la diosa Konohanasakuya-hime, cuyo santuario principal (Fujisan Hongū Sengen Taisha) posee legalmente el terreno por encima de los 3.360 metros. Hasta 1868 las mujeres tenían prohibido subir. Fue declarada Patrimonio de la Humanidad en 2013, y no por su valor natural sino cultural: por su influencia en el arte y la peregrinación.",
+      },
+      {
+        title: "Por qué cuesta tanto verlo",
+        body: "Esto es clave para planificar: el Fuji está despejado bastante menos de lo que la gente espera. En verano, la visibilidad clara es de apenas unos días al mes por la humedad y las nubes que genera la propia montaña. Los mejores meses son de noviembre a febrero. En septiembre las probabilidades son intermedias, y casi siempre mejores a primera hora de la mañana, antes de que el calor forme nubes. De ahí que la estrategia de reservar varios días y ejecutar el que amanezca despejado tenga todo el sentido.",
+      },
+      {
+        title: "La excursión: qué se visita",
+        body: "La excursión reservada con GetYourGuide (Japan Visionary Tour) recorre cuatro paradas en la zona norte del Fuji, en la región de los Cinco Lagos:\n1. Lago Kawaguchiko y Parque Oishi: paseo junto al lago con vistas clásicas del Fuji, famoso por sus campos de flores de temporada.\n2. Aldea Saiko Iyashi-no-Sato Nemba: réplica de un poblado tradicional de casas con tejado de paja, reconstruido tras un tifón en 1966.\n3. Manantiales de Oshino Hakkai: ocho estanques de agua cristalina alimentados por el deshielo del Fuji, declarados lugar de belleza natural.\n4. Pagoda Chureito (Arakurayama Sengen): la imagen postal más icónica de Japón, con la pagoda de cinco pisos y el Fuji al fondo -- 400 escalones para subir al mirador.",
+      },
+      {
+        title: "Logística y precios",
+        body: "• Precio: 42€ / persona (~210€ grupo), ya pagado.\n• Punto de encuentro: Tokyo Mode Gakuen (1-7-3 Nishishinjuku, Shinjuku), frente a la estación. Encuentro a las 08:10 (salida puntual del autobús a las 08:20).\n• Duración: aproximadamente 10 horas, con regreso previsto a Shinjuku sobre las 18:30.\n• Idioma: guía en inglés.\n• Comida NO incluida: no se puede comer en el autobús, conviene desayunar bien y llevar efectivo en yenes para los puestos locales de las paradas.",
+      },
+      {
+        title: "Predicción de Visibilidad y Cámaras Web",
+        body: "• isfujivisible.com: Algoritmo técnico con puntuación de 1 a 10 y previsión por tramos horarios.\n• mtfujitoday.com: Previsión a 7 días y acceso directo a webcams en directo de la zona.\n• La Regla de Oro: Abrir las cámaras web a las 06:30 AM desde el hotel en Tokio. Si a las 07:00 AM no se ve, es altamente improbable que aparezca más tarde (a partir de las 09:00 AM el calor evapora humedad y crea nubes sobre el cono).",
+      },
+    ],
+    curiosities: [
+      "La temporada oficial de ascenso a pie es de julio a principios de septiembre; fuera de esas fechas las estaciones cierran y subir es peligroso.",
+      "Hay un dicho japonés: 'Es sabio subir el Fuji una vez, y necio subirlo dos'.",
+      "El primer sueño del año con el Fuji se considera de muy buena suerte, especialmente combinado con un halcón y una berenjena.",
+    ],
+    tip: "Excursión confirmada para el miércoles 16 de septiembre (Día 10) con GetYourGuide (reserva GYGX7M7NZBNL). Comprobar cámaras web a las 06:30 AM la mañana del día.",
+  },
+  "tokyo-tower": {
+    name: "Torre de Tokio",
+    jp: "東京タワー",
+    founded: "1958",
+    wiki: "Torre de Tokio",
+    tagline: "El símbolo del renacimiento económico de posguerra de Japón, inspirado en la Torre Eiffel pero más alta.",
+    sections: [
+      {
+        title: "Una torre más alta que su inspiración",
+        body: "Construida en 1958, mide 333 metros -- unos 20 metros más que la Torre Eiffel, en la que se inspira claramente su diseño. Fue el símbolo del renacimiento económico de Japón tras la devastación de la Segunda Guerra Mundial, y durante décadas la estructura más alta del país, hasta que el propio Tokyo Skytree la sustituyó como torre de transmisión principal en 2012. Un dato curioso: un tercio del acero utilizado en su construcción se recicló de tanques estadounidenses dañados durante la Guerra de Corea.",
+      },
+      {
+        title: "Los dos miradores",
+        body: "El Main Deck, a 150 metros, es el mirador estándar, con entrada normal sin reserva. El Top Deck, entre 150 y 250 metros, incluye tramos de suelo de cristal y requiere reservar una franja horaria con antelación -- más caro, pero con las vistas más altas de la torre.",
+      },
+      {
+        title: "Por qué es blanca y naranja",
+        body: "El color no es una elección estética: la normativa japonesa de seguridad aérea obliga a pintar de blanco y naranja internacional cualquier estructura de más de 60 metros, para que sea bien visible para los aviones. El mismo motivo por el que el Skytree, más moderno, lleva un tono de blanco distinto (el 'Skytree White').",
+      },
+    ],
+    curiosities: [
+      "El atardecer es el momento más codiciado en los miradores; conviene llegar con margen para hacerse con un buen sitio junto a los cristales antes de que se ponga el sol.",
+      "La Torre de Tokio tiene dos patrones de iluminación nocturna: el 'Landmark Light' (el clásico naranja cálido) y el 'Infinity Diamond Veil' (luces LED de colores que cambian según el mes o eventos especiales).",
+      "A pesar de la llegada del Skytree, la Torre de Tokio sigue en activo como torre de transmisión de reserva y sigue siendo uno de los símbolos más reconocibles de la ciudad, con más de 150 millones de visitantes acumulados desde su apertura.",
+    ],
+    tip: "El Main Deck no requiere reserva y suele bastar para disfrutar del atardecer -- el Top Deck merece la pena solo si hay disponibilidad de última hora y apetece pagar el extra por subir más alto.",
+  },
+  "nakano-broadway": {
+    name: "Nakano Broadway",
+    jp: "中野ブロードウェイ",
+    founded: "1966",
+    wiki: "Nakano Broadway",
+    tagline: "De complejo residencial de lujo a la meca subterránea del coleccionismo retro y la cultura otaku.",
+    sections: [
+      {
+        title: "Qué es",
+        body: "Si Akihabara es el escaparate brillante y *mainstream* de la electrónica y el anime actual, Nakano Broadway es su reverso oscuro y profundo. Es un centro comercial de pasillos estrechos y sin ventanas dedicado obsesivamente al coleccionismo retro, descatalogado y de nicho. Es el lugar donde los coleccionistas serios buscan artículos que ya no se fabrican.",
+      },
+      {
+        title: "El imperio Mandarake",
+        body: "El edificio se inauguró en 1966 como un complejo residencial de lujo (el primer ministro de Japón llegó a vivir en los apartamentos superiores). Sin embargo, en 1980, una pequeña tienda de manga de segunda mano de apenas 7 metros cuadrados abrió en la segunda planta. Se llamaba Mandarake. Con el tiempo, fue comprando los locales vacíos del edificio. Hoy, Mandarake opera unas 30 tiendas distintas dentro de Nakano Broadway, cada una especializada en una obsesión diferente.",
+      },
+      {
+        title: "El laberinto del coleccionismo",
+        body: "Al perderse por la segunda y tercera planta, se pueden encontrar tiendas dedicadas exclusivamente a celuloides de animación originales (cels) de los años 80 y 90, juguetes de hojalata de la posguerra, robots *mecha* antiguos, relojes vintage, trenes a escala, tarjetas de béisbol y figuras de Godzilla de edición limitada.",
+      },
+    ],
+    curiosities: [
+      "Horario otaku: Las tiendas de Nakano Broadway no están hechas para madrugadores. La mayoría rara vez abre antes de las 12:00, siendo las 14:00 la hora en la que el centro comercial está funcionando a pleno rendimiento.",
+      "En el sótano se encuentra un mercado de comida y ropa que conserva el ambiente del Tokio de la era Showa, contrastando radicalmente con la cultura friki de los pisos superiores.",
+      "La icónica tienda de relojes JackRoad, situada en la tercera planta, es mundialmente conocida entre los coleccionistas de Rolex y Omega vintage.",
+    ],
+  },
+
+  "imperial-palace": {
+    name: "Palacio Imperial (East Gardens)",
+    jp: "皇居東御苑",
+    founded: "Jardines abiertos al público desde 1968, sobre el antiguo Castillo de Edo",
+    wiki: "Palacio Imperial de Tokio",
+    tagline: "Los jardines del castillo más grande que existió en Japón, y hogar del emperador desde 1868.",
+    sections: [
+      {
+        title: "El castillo que fue el más grande del mundo",
+        body: "El recinto ocupa el emplazamiento del Castillo de Edo, sede del shogunato Tokugawa desde 1603 y, en su momento de máxima extensión, la fortaleza más grande jamás construida en el mundo -- con varios anillos de fosos y murallas concéntricas que hoy todavía delimitan buena parte del centro de Tokio. Tras la Restauración Meiji de 1868, el emperador se trasladó aquí desde Kioto y el castillo se convirtió en Palacio Imperial.",
+      },
+      {
+        title: "La torre que nunca se reconstruyó",
+        body: "En los East Gardens se conserva la base de piedra (ishigaki) de la antigua torre del homenaje (tenshu), que con sus más de 50 metros fue la más alta que tuvo jamás un castillo japonés. Ardió por completo en el gran incendio de Meireki de 1657, uno de los mayores desastres urbanos de la historia de Japón, y el shogunato decidió no reconstruirla nunca -- una muestra de que ya no hacía falta proyectar poder militar en tiempos de paz.",
+      },
+    ],
+    curiosities: [
+      "Los East Gardens son una de las pocas zonas del recinto imperial abiertas al público sin restricciones todo el año; el resto del palacio solo se puede visitar con reserva previa o los días 2 de enero y 23 de febrero (cumpleaños del emperador).",
+      "Cierran los lunes y los viernes, además de en ocasiones especiales -- conviene comprobarlo si se visita entre semana.",
+    ],
+    tip: "La entrada es gratuita y no requiere reserva -- basta con recoger una ficha numerada en la puerta (Ote-mon, Hirakawa-mon o Kita-hanebashi-mon) que se devuelve al salir, un sistema pensado para llevar el control de aforo.",
+  },
+
+  "tokyo-character-street": {
+    name: "Tokyo Character Street",
+    jp: "東京キャラクターストリート",
+    founded: "2010",
+    wiki: "Tokyo Character Street",
+    tagline: "Un pasillo entero de tiendas oficiales de los personajes más famosos de Japón, en el sótano de la propia Estación de Tokio.",
+    sections: [
+      {
+        title: "Qué es",
+        body: "Una galería subterránea dentro de Tokyo Station Ichibangai, con más de 30 tiendas oficiales dedicadas cada una a una franquicia distinta: Pokémon, Dragon Ball, One Piece, Jump (la revista que publica la mayoría del manga más popular de Japón), Studio Ghibli, Sanrio (Hello Kitty y compañía) y muchas más, todas con productos exclusivos que no siempre se encuentran en otras tiendas.",
+      },
+    ],
+    curiosities: [
+      "Está justo al lado de otra galería temática, Tokyo Ramen Street, así que es fácil combinar las compras con la comida sin salir de la estación.",
+      "Al estar dentro de la propia Estación de Tokio, es un buen plan de reserva para un día de lluvia -- se accede sin salir a la calle.",
+    ],
+  },
+
+  "kitte": {
+    name: "KITTE e Intermediatheque",
+    jp: "KITTE / インターメディアテク",
+    founded: "KITTE: 2013 (sobre el antiguo edificio de Correos de Tokio, de 1931) · Intermediatheque: 2013",
+    wiki: "KITTE (shopping mall)",
+    tagline: "Un centro comercial construido dentro de la fachada del antiguo edificio central de Correos, con un museo científico gratuito en su interior.",
+    sections: [
+      {
+        title: "Un edificio reciclado",
+        body: "KITTE ocupa el antiguo edificio central de Correos de Tokio (1931), justo enfrente de la Estación de Tokio. En la reforma de 2013 se conservó la fachada histórica y se construyó el centro comercial dentro de ella, con un atrio triangular que sube varias plantas hasta un techo de cristal. El nombre 'KITTE' juega con la palabra japonesa para 'sello postal' (切手, kitte) y con 'venir' (来て, kite), invitando a visitarlo.",
+      },
+      {
+        title: "Intermediatheque, el museo dentro del centro comercial",
+        body: "En las plantas 2ª y 3ª de KITTE, gestionado conjuntamente por la Universidad de Tokio y Japan Post, este museo gratuito expone piezas de las colecciones científicas e históricas de la universidad -- esqueletos de animales, instrumentos de medición antiguos, minerales, taxidermia decimonónica -- en un montaje deliberadamente atmosférico, con iluminación tenue y sin apenas carteles explicativos, muy distinto al típico museo didáctico.",
+      },
+    ],
+    curiosities: [
+      "Desde la terraza de KITTE hay una de las mejores vistas gratuitas de los andenes del Shinkansen entrando y saliendo de la Estación de Tokio.",
+    ],
+    tip: "Intermediatheque es gratuito pero cierra antes que el resto de KITTE -- conviene comprobar el horario del día concreto antes de planificar la visita.",
+  },
+
+  "ginza": {
+    name: "Ginza",
+    jp: "銀座",
+    founded: "Ceca de plata desde 1612 · reconstruido con arquitectura occidental tras 1872",
+    wiki: "Ginza",
+    tagline: "'La casa de la plata': de ceca del shogunato a la calle comercial más elegante de Japón.",
+    sections: [
+      {
+        title: "De dónde viene el nombre",
+        body: "Ginza significa literalmente 'asiento de plata' o 'casa de la plata' -- aquí instaló el shogunato Tokugawa su ceca de plata en 1612, la institución encargada de acuñar la moneda de plata que circulaba por todo Japón durante el periodo Edo. La ceca se trasladó de sitio en 1800, pero el nombre del barrio se quedó para siempre.",
+      },
+      {
+        title: "El incendio que lo cambió todo",
+        body: "En 1872 un incendio arrasó buena parte del barrio. El gobierno Meiji, en pleno proceso de modernización del país, aprovechó para reconstruirlo con arquitectura de ladrillo al estilo occidental -- la primera zona de Tokio con ese aspecto -- convirtiendo Ginza en el escaparate de la modernidad japonesa y, con el tiempo, en la dirección comercial más cara y prestigiosa del país.",
+      },
+    ],
+    curiosities: [
+      "Los domingos (y sábados en algunas épocas) Chuo-dori, la calle principal, se cierra al tráfico entre las 12:00 y las 18:00 para convertirse en una zona totalmente peatonal (Hokosha Tengoku, 'paraíso de los peatones') -- salvo que el mal tiempo obligue a cancelarlo.",
+      "El precio del suelo en Ginza ha sido durante décadas de los más altos del mundo; en la zona de Kyukyodo, cerca de la intersección de Ginza 4-chome, se han llegado a pagar más de 40 millones de yenes por metro cuadrado.",
+    ],
+  },
+};
+
+// Mapa de qué guías corresponden a cada día del itinerario
+export const guidesByDay = {
+  1: [],
+  2: ["fushimi-inari", "todai-ji"],
+  3: ["ginkaku-ji", "nishiki", "gion"],
+  4: ["kinkaku-ji", "arashiyama"],
+  5: ["kiyomizu-dera", "osaka"],
+  6: ["kanazawa", "kenroku-en", "nagamachi", "higashi-chaya"],
+  7: ["shirakawa-go", "takayama"],
+  8: ["nakasendo", "magome", "tsumago"],
+  9: ["kappabashi", "tokyo-skytree"],
+  10: ["senso-ji", "fuji"],
+  11: ["meiji-jingu", "shibuya", "harajuku", "shinjuku"],
+  12: ["odaiba", "toyosu", "ueno", "tokyo-tower"],
+  13: ["nakano-broadway", "akihabara", "tokyo-skytree"],
+  14: ["imperial-palace", "tokyo-character-street", "kitte", "ginza"],
+  15: [],
+};
+
+// Metadatos y palabras clave para vincular cada guía con los eventos del itinerario
+export const guideMeta = {
+  "fushimi-inari": {
+    shortName: "Fushimi Inari",
+    keywords: ["fushimi inari", "santuario fushimi"],
+  },
+  "todai-ji": {
+    shortName: "Todai-ji y Gran Buda",
+    keywords: ["todai-ji", "gran buda", "daibutsuden", "tōdai-ji"],
+  },
+  "kinkaku-ji": {
+    shortName: "Kinkaku-ji (Pab. Dorado)",
+    keywords: ["kinkaku-ji", "pabellon dorado", "kinkakuji"],
+  },
+  "ginkaku-ji": {
+    shortName: "Ginkaku-ji (Pab. de Plata)",
+    keywords: ["ginkaku-ji", "pabellon de plata", "ginkakuji"],
+  },
+  "kiyomizu-dera": {
+    shortName: "Kiyomizu-dera",
+    keywords: ["kiyomizu-dera", "kiyomizudera", "escenario de kiyomizu"],
+  },
+  "arashiyama": {
+    shortName: "Arashiyama y Bambú",
+    keywords: ["arashiyama", "bosque de bambu", "otagi nenbutsu", "saga-toriimoto"],
+  },
+  "gion": {
+    shortName: "Gion y Geishas",
+    keywords: ["gion", "hanamikoji", "pontocho", "miyagawacho"],
+  },
+  "nishiki": {
+    shortName: "Mercado Nishiki",
+    keywords: ["mercado de nishiki", "nishiki market", "mercado nishiki"],
+  },
+  "osaka": {
+    shortName: "Castillo de Osaka y Dotonbori",
+    keywords: ["castillo de osaka", "dotonbori", "shinsekai", "morinomiya"],
+  },
+  "kenroku-en": {
+    shortName: "Jardín Kenroku-en",
+    keywords: ["kenroku-en", "kenrokuen", "jardin kenroku"],
+  },
+  "nagamachi": {
+    shortName: "Nagamachi y casa Nomura",
+    keywords: ["nagamachi", "nomura-ke", "samurai district"],
+  },
+  "higashi-chaya": {
+    shortName: "Higashi Chaya",
+    keywords: ["higashi chaya", "higashi-chaya", "shima", "kaikaro"],
+  },
+  "kanazawa": {
+    shortName: "Kanazawa",
+    keywords: ["castillo de kanazawa", "kanazawa-jo", "ishikawa-mon"],
+  },
+  "shirakawa-go": {
+    shortName: "Shirakawa-go",
+    keywords: ["shirakawa-go", "shirakawago", "ogimachi"],
+  },
+  "takayama": {
+    shortName: "Takayama (Sanmachi)",
+    keywords: ["sanmachi", "casco historico de takayama", "villa de takayama", "calles tradicionales de sanmachi"],
+  },
+  "nakasendo": {
+    shortName: "Ruta Nakasendō (historia)",
+    keywords: ["ruta nakasendo", "caminata nakasendo", "sendero nakasendo", "sankin-kotai", "gokaido"],
+  },
+  "magome": {
+    shortName: "Magome-juku",
+    keywords: ["magome", "magome-juku", "tateba-chaya", "gohei-mochi", "oyaki"],
+  },
+  "tsumago": {
+    shortName: "Tsumago-juku",
+    keywords: ["tsumago", "tsumago-juku", "kotoku-ji", "waki-honjin", "nagiso", "minshuku"],
+  },
+  "senso-ji": {
+    shortName: "Senso-ji y Asakusa",
+    keywords: ["senso-ji", "sensoji", "kaminarimon", "templo senso"],
+  },
+  "meiji-jingu": {
+    shortName: "Santuario Meiji",
+    keywords: ["meiji", "meiji jingu", "santuario meiji"],
+  },
+  "shibuya": {
+    shortName: "Shibuya",
+    keywords: ["cruce de shibuya", "shibuya crossing", "miyashita park"],
+  },
+  "akihabara": {
+    shortName: "Akihabara",
+    keywords: ["electric town", "radio kaikan", "mandarake", "tarde en akihabara"],
+  },
+  "teamlab": {
+    shortName: "Odaiba y teamLab",
+    keywords: ["odaiba", "gundam", "rainbow bridge", "yurikamome"],
+  },
+  "fuji": {
+    shortName: "Monte Fuji",
+    keywords: ["chureito", "oshino hakkai", "pagoda chureito", "kawaguchiko", "lago kawaguchi", "parque oishi", "saiko"],
+  },
+  "tokyo-tower": {
+    shortName: "Torre de Tokio",
+    keywords: ["tokyo tower", "torre de tokio", "main deck", "top deck"],
+  },
+  "nakano-broadway": {
+    shortName: "Nakano Broadway",
+    keywords: ["nakano", "nakano broadway", "mandarake", "coleccionismo", "retro"],
+  },
+  "imperial-palace": {
+    shortName: "Palacio Imperial",
+    keywords: ["palacio imperial", "east gardens", "castillo de edo", "otemachi", "ote-mon"],
+  },
+  "tokyo-character-street": {
+    shortName: "Tokyo Character Street",
+    keywords: ["tokyo character street", "character street", "ichibangai"],
+  },
+  "kitte": {
+    shortName: "KITTE",
+    keywords: ["kitte", "intermediatheque", "marunouchi"],
+  },
+  "ginza": {
+    shortName: "Ginza",
+    keywords: ["ginza", "chuo-dori", "ginza six", "sony park", "itoya", "kyobashi"],
+  },
+  "nikko": {
+    shortName: "Nikko",
+    keywords: ["nikko", "toshogu", "tokugawa ieyasu", "rinno-ji", "futarasan", "chuzenji", "kegon"],
+  },
+  "odaiba": {
+    shortName: "Odaiba",
+    keywords: ["odaiba", "gundam", "rainbow bridge", "divercity", "yurikamome"],
+  },
+  "toyosu": {
+    shortName: "Mercado de Toyosu",
+    keywords: ["toyosu", "mercado de toyosu", "tsukiji", "subasta de atun"],
+  },
+  "kappabashi": {
+    shortName: "Kappabashi Dori",
+    keywords: ["kappabashi", "kappabashi dori", "sampuru", "comida de plastico", "calle de la cocina"],
+  },
+  "harajuku": {
+    shortName: "Harajuku",
+    keywords: ["harajuku", "takeshita", "takeshita dori", "omotesando", "kawaii"],
+  },
+  "tokyo-skytree": {
+    shortName: "Tokyo Skytree",
+    keywords: ["tokyo skytree", "skytree", "musashi", "tembo deck", "torre de tokio"],
+  },
+  "shinjuku": {
+    shortName: "Shinjuku",
+    keywords: ["shinjuku", "kabukicho", "omoide yokocho", "gobierno metropolitano", "golden gai", "tocho"],
+  },
+  "ueno": {
+    shortName: "Ueno",
+    keywords: ["ueno", "parque de ueno", "ameyoko", "shinobazu"],
+  },
+};

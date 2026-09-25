@@ -1,0 +1,249 @@
+import { useState, useEffect, useRef } from "react";
+import { useSwipeable } from "react-swipeable";
+import Nav, { Sidebar, DesktopTopBar } from "./components/Nav";
+import Footer from "./components/Footer";
+import AccessGate, { isUnlocked } from "./components/AccessGate";
+import ErrorBoundary from "./components/ErrorBoundary";
+import ScrollToTopButton from "./components/ScrollToTopButton";
+
+import InicioPage from "./pages/InicioPage";
+import Home from "./pages/Home";
+import CalendarPage from "./pages/CalendarPage";
+import Itinerary from "./pages/Itinerary";
+import InfoPage from "./pages/InfoPage";
+import BudgetPage from "./pages/BudgetPage";
+import TransportPage from "./pages/TransportPage";
+import HotelsPage from "./pages/HotelsPage";
+import PlacesPage from "./pages/PlacesPage";
+import FoodsPage from "./pages/FoodsPage";
+import MapPage from "./pages/MapPage";
+import WeatherPage from "./pages/WeatherPage";
+import PhrasesPage from "./pages/PhrasesPage";
+import PrepPage from "./pages/PrepPage";
+import UtilsPage from "./pages/UtilsPage";
+import EmergencyPage from "./pages/EmergencyPage";
+import PendingPage from "./pages/PendingPage";
+import HistoryPage from "./pages/HistoryPage";
+import AboutPage from "./pages/AboutPage";
+import FrikadasPage from "./pages/FrikadasPage";
+import { useHighlight } from "./context/HighlightContext";
+import { slug } from "./utils/slug";
+import { getTripStatus, getDefaultTripDay } from "./utils/date";
+
+function defaultTab() {
+  const status = getTripStatus();
+  if (status.phase === "during") {
+    return "itinerario";
+  }
+  return "inicio";
+}
+
+export default function App() {
+  const [unlocked, setUnlocked] = useState(() => isUnlocked());
+  const [tab, setTab] = useState(defaultTab);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [openDay, setOpenDay] = useState(getDefaultTripDay);
+  const [quickView, setQuickView] = useState(false);
+  const [mapInitialDay, setMapInitialDay] = useState(null);
+  const scrollContainerRef = useRef(null);
+  const { triggerHighlight } = useHighlight();
+
+  function goToDay(num) {
+    setOpenDay(num);
+    setQuickView(false); // Default to full view when searching/home
+    setTab("itinerario");
+    // Mismo pulso dorado que usa el buscador: confirma visualmente a qué
+    // día concreto se ha saltado, venga la navegación de "Hoy" o del mapa.
+    window.setTimeout(() => triggerHighlight(slug("itinerary-day", num)), 120);
+  }
+
+  function goToDayQuickView(num) {
+    setOpenDay(num);
+    setQuickView(true);
+    setTab("itinerario");
+  }
+
+  function goToMapDay(num) {
+    setMapInitialDay(num);
+    setTab("mapa");
+    // Se consume una sola vez al montar MapPage: si luego se vuelve al
+    // Mapa desde el menú normal, que no arrastre el filtro de este día.
+    window.setTimeout(() => setMapInitialDay(null), 300);
+  }
+
+  function handleSearchNavigate(result) {
+    const { tab: nextTab, day, targetId, silent, scrollBlock, highlightDelay } = result;
+    if (day != null) setOpenDay(day);
+    setTab(nextTab);
+    // Se dispara con un pequeño margen para dar tiempo a que la nueva
+    // página (y, si hace falta, el día/acordeón correspondiente) se
+    // monten antes de intentar el scrollIntoView.
+    if (targetId) {
+      const delay = highlightDelay ?? (silent ? 220 : 120);
+      window.setTimeout(
+        () => triggerHighlight(targetId, {
+          block: scrollBlock || "center",
+          // Tras abrir un acordeón, esperar un poco más para scroll al top.
+          delay: scrollBlock === "start" ? 80 : 60,
+        }),
+        delay,
+      );
+    }
+  }
+
+  function handleTabChange(nextTab) {
+    if (nextTab === "itinerario" && getTripStatus().phase === "after") {
+      setOpenDay(null);
+    }
+    setTab(nextTab);
+  }
+
+  // Scroll to top of the scrollable container when tab changes
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTo({ top: 0, behavior: "auto" });
+    }
+  }, [tab]);
+
+  // Prevenir que el botón "atrás" en móviles salga de la app accidentalmente
+  useEffect(() => {
+    window.history.pushState({ preventBack: true }, "");
+
+    const handlePopState = (e) => {
+      if (!e.state || !e.state.preventBack) {
+        const confirmExit = window.confirm("¿Seguro que quieres salir de la aplicación?");
+        if (confirmExit) {
+          window.history.back();
+        } else {
+          window.history.pushState({ preventBack: true }, "");
+        }
+      }
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
+  // Preload silencioso en segundo plano de las imágenes históricas para que al abrir la sección no haya saltos
+  useEffect(() => {
+    const preload = () => {
+      const imgs = [
+        "/images/history/jomon-dogu.jpg",
+        "/images/history/nara-daibutsu.jpg",
+        "/images/history/heian-genji.jpg",
+        "/images/history/muromachi-kinkakuji.jpg",
+        "/images/history/azuchi-himeji.jpg",
+        "/images/history/edo-kanagawa.jpg",
+        "/images/history/meiji-yamagata.jpg",
+        "/images/history/taisho-tokio.jpg",
+        "/images/history/showa-shinkansen.jpg",
+        "/images/history/heisei-shibuya.jpg",
+      ];
+      imgs.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+      });
+    };
+    if ("requestIdleCallback" in window) {
+      window.requestIdleCallback(preload, { timeout: 2500 });
+    } else {
+      window.setTimeout(preload, 1200);
+    }
+  }, []);
+
+  // Configuración de gestos (swipe)
+  const swipeHandlers = useSwipeable({
+    onSwipedRight: (e) => {
+      // Se ignora del todo mientras se está en la pestaña del Mapa: ahí
+      // los gestos de arrastre son constantes (mover el mapa) y no
+      // tienen nada que ver con la intención de abrir el menú.
+      if (tab === "mapa") return;
+      // Se ignora si hay una selección de texto activa en ese momento
+      // (mantener pulsado y arrastrar para seleccionar/copiar un PIN,
+      // una dirección, etc.) -- ese arrastre es indistinguible a nivel
+      // táctil del gesto de abrir el menú, así que se comprueba si el
+      // navegador tiene algo seleccionado justo al soltar el dedo.
+      if (window.getSelection && window.getSelection().toString().length > 0) return;
+      // Ignoramos si el evento se originó muy al borde izquierdo (< 30px) 
+      // porque suele ser capturado por el "ir atrás" nativo de iOS.
+      // Así aseguramos que solo un gesto intencionado en la zona central lo abra.
+      if (e.initial[0] > 30) {
+        setMenuOpen(true);
+      }
+    },
+    onSwipedLeft: () => {
+      setMenuOpen(false);
+    },
+    delta: 40, // Distancia mínima de arrastre
+    preventScrollOnSwipe: false,
+    trackMouse: false,
+  });
+
+  if (!unlocked) {
+    return <AccessGate onUnlock={() => setUnlocked(true)} />;
+  }
+
+  return (
+    <div {...swipeHandlers} className="full-viewport-height app-shell" style={{ display: "flex", flexDirection: "column", touchAction: "pan-y" }}>
+
+      {/* Desktop: cabecera a todo el ancho (lupa + idioma a la derecha) */}
+      <DesktopTopBar active={tab} onNavigate={handleSearchNavigate} />
+
+      <div style={{ display: "flex", flex: 1, minHeight: 0 }}>
+
+        {/* Mobile top bar + drawer */}
+        <Nav active={tab} onChange={handleTabChange} onNavigate={handleSearchNavigate} open={menuOpen} setOpen={setMenuOpen} />
+
+        {/* Desktop sidebar */}
+        <Sidebar active={tab} onChange={handleTabChange} />
+
+        {/* Right column — scrollable */}
+        <div id="main-scroll-container" ref={scrollContainerRef} style={{
+          flex: 1, display: "flex", flexDirection: "column",
+          minWidth: 0, overflowY: "auto", height: "100%",
+        }}>
+
+          <main style={{
+            flex: 1,
+            width: "100%",
+            maxWidth: 1100,
+            margin: "0 auto",
+            // Solo móvil: offset bajo la top bar fija
+            paddingTop: "var(--mobile-topbar)",
+          }}>
+            <ErrorBoundary resetKey={tab}>
+              <div>
+                {tab === "pendientes"   && <PendingPage />}
+                {tab === "historia"     && <HistoryPage />}
+                {tab === "inicio"       && <InicioPage onNavigate={handleTabChange} />}
+                {tab === "hoy"          && <Home onGoToDay={goToDay} />}
+                {tab === "calendario"   && <CalendarPage onGoToMapDay={goToMapDay} />}
+                {tab === "itinerario"   && <Itinerary openDay={openDay} setOpenDay={setOpenDay} quickView={quickView} setQuickView={setQuickView} onGoToMapDay={goToMapDay} />}
+                {tab === "vuelos"       && <InfoPage />}
+                {tab === "hoteles"      && <HotelsPage />}
+                {tab === "transportes"  && <TransportPage onNavigate={handleSearchNavigate} />}
+                {tab === "presupuesto"  && <BudgetPage />}
+                {tab === "lugares"      && <PlacesPage />}
+                {tab === "comidas"      && <FoodsPage />}
+                {tab === "mapa"         && <MapPage onGoToDay={goToDay} initialDay={mapInitialDay} />}
+                {tab === "clima"        && <WeatherPage />}
+                {tab === "frases"       && <PhrasesPage />}
+                {tab === "preparativos" && <PrepPage />}
+                {tab === "herramientas" && <UtilsPage />}
+                {tab === "emergencias"  && <EmergencyPage />}
+                {tab === "frikadas"     && <FrikadasPage />}
+                {tab === "about"        && <AboutPage />}
+                {tab === "futuro-viajes" && <Itinerary openDay={openDay} setOpenDay={setOpenDay} quickView={quickView} setQuickView={setQuickView} onGoToMapDay={goToMapDay} />}
+                {tab === "futuro-mapa"   && <MapPage onGoToDay={goToDay} initialDay={mapInitialDay} />}
+              </div>
+            </ErrorBoundary>
+          </main>
+
+          <Footer />
+        </div>
+      </div>
+
+      <ScrollToTopButton containerRef={scrollContainerRef} resetKey={tab} />
+    </div>
+  );
+}
