@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
-  base: './',
+  base: '/viaje-japon-futuro/',
   define: {
     // Marca de tiempo real de cuándo se generó este build, para poder
     // comprobar en la propia web si un cambio ya se ha desplegado o no.
@@ -27,8 +27,8 @@ export default defineConfig({
         name: 'Viaje a Japón — Planificador Futuro',
         short_name: 'Japón Futuro',
         description: 'Guía y planificador interactivo de ruta para el futuro viaje a Japón',
-        start_url: './',
-        scope: './',
+        start_url: '/viaje-japon-futuro/',
+        scope: '/viaje-japon-futuro/',
         display: 'standalone',
         background_color: '#1D3557',
         theme_color: '#4d1c1e',
@@ -47,7 +47,7 @@ export default defineConfig({
         skipWaiting: true,
         clientsClaim: true,
         globPatterns: ['**/*.{js,css,html,png,svg,ico,webp}'],
-        navigateFallback: '/index.html',
+        navigateFallback: '/viaje-japon-futuro/index.html',
         // El contenido del sitio (itinerario, guías, mapa) ha crecido más
         // allá del límite por defecto de precaché de Workbox (2 MiB) --
         // sin esto el build falla en vez de simplemente avisar.
