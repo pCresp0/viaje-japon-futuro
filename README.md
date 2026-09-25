@@ -189,8 +189,12 @@ npm run dev
 npm run build
 ```
 
-### Despliegue en GitHub Pages:
-El repositorio cuenta con un flujo automatizado de integración y despliegue continuo en `.github/workflows/deploy.yml`. Cada `git push` a la rama `main` compila y publica automáticamente la versión más reciente en GitHub Pages.
+### Automatizaciones y Flujos de GitHub Actions (CI/CD):
+El repositorio cuenta con 4 flujos de trabajo automatizados en `.github/workflows/`:
+1. **Despliegue a GitHub Pages** ([`deploy.yml`](.github/workflows/deploy.yml)): Cada `push` a la rama `main` compila y publica automáticamente la versión más reciente en GitHub Pages.
+2. **Sincronización diaria con develop** ([`sync-develop.yml`](.github/workflows/sync-develop.yml)): A última hora del día (23:50 CEST), si se han producido commits en `main`, fusiona automáticamente los cambios hacia la rama `develop`.
+3. **Backup diario de ramas** ([`daily-backup.yml`](.github/workflows/daily-backup.yml)): A las 23:55 CEST, si hubo actividad en `main`, genera una rama de seguridad con la nomenclatura `Backup_YYYYMMDD_XCommits`.
+4. **Registro automático de cambios** ([`update-changelog.yml`](.github/workflows/update-changelog.yml)): Registra cada commit subido a `main` en el archivo `CHANGELOG_AUTO.md` sin requerir mantenimiento manual.
 
 ---
 
