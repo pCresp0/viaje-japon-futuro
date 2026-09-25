@@ -21,7 +21,7 @@ export default function FutureTripsPrintView({ days, lang }) {
       colType: "Tipo de experiencia",
       colAccess: "Acceso principal",
       budgetPrefix: "Presupuesto y logística:",
-      footer: "Documento generado desde la web de Viaje a Japón 2026 · Información verificada y actualizada.",
+      footer: "Documento generado desde la web de Viaje a Japón 20XX · Información verificada y actualizada.",
     },
     en: {
       docTag: "🇯🇵 Japan Trip · Future Trips Guide",
@@ -38,7 +38,7 @@ export default function FutureTripsPrintView({ days, lang }) {
       colType: "Experience Type",
       colAccess: "Main Access",
       budgetPrefix: "Budget & Logistics:",
-      footer: "Generated from the Japan Trip 2026 guide · Verified and updated details.",
+      footer: "Generated from the Japan Trip 20XX guide · Verified and updated details.",
     },
     fr: {
       docTag: "🇯🇵 Voyage au Japon · Guide des Voyages Futurs",
@@ -55,7 +55,7 @@ export default function FutureTripsPrintView({ days, lang }) {
       colType: "Type d'expérience",
       colAccess: "Accès principal",
       budgetPrefix: "Budget et logistique :",
-      footer: "Document généré depuis le guide Voyage au Japon 2026 · Données vérifiées.",
+      footer: "Document généré depuis le guide Voyage au Japon 20XX · Données vérifiées.",
     },
     tl: {
       docTag: "🇯🇵 Biyahe sa Japan · Gabay sa Susunod na Biyahe",
@@ -72,7 +72,7 @@ export default function FutureTripsPrintView({ days, lang }) {
       colType: "Uri ng Karanasan",
       colAccess: "Pangunahing Byahe",
       budgetPrefix: "Badyet at Logistics:",
-      footer: "Dokumentong nabuo mula sa Japan Trip 2026 website.",
+      footer: "Dokumentong nabuo mula sa Japan Trip 20XX website.",
     },
   };
 

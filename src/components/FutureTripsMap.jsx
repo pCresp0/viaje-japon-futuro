@@ -1,8 +1,8 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { MapContainer, TileLayer, Marker, Popup, Polyline, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import { Compass, Calendar, ExternalLink, MapPin } from "lucide-react";
+import { Compass, Calendar, ExternalLink, MapPin, Layers } from "lucide-react";
 import { futureLocationCoords } from "../data/pendingDays";
 import PlaceText from "./PlaceText";
 
@@ -46,14 +46,29 @@ function createIcon(emoji, color, order) {
 
 function MapController({ targetMarker, allMarkers, isSingleDay }) {
   const map = useMap();
+
+  // Force Leaflet to compute the correct pixel geometry on mount & tab activation
   useEffect(() => {
+    map.invalidateSize();
+    const t1 = setTimeout(() => map.invalidateSize(), 80);
+    const t2 = setTimeout(() => map.invalidateSize(), 300);
+    const t3 = setTimeout(() => map.invalidateSize(), 700);
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      clearTimeout(t3);
+    };
+  }, [map]);
+
+  useEffect(() => {
+    map.invalidateSize();
     if (isSingleDay && targetMarker) {
       map.flyTo([targetMarker.lat, targetMarker.lng], 9.5, {
-        duration: 0.9,
+        duration: 0.8,
       });
     } else if (allMarkers && allMarkers.length > 0) {
       const bounds = L.latLngBounds(allMarkers.map((s) => [s.lat, s.lng]));
-      map.fitBounds(bounds, { padding: [40, 40], maxZoom: 14 });
+      map.fitBounds(bounds, { padding: [35, 35], maxZoom: 11 });
     }
   }, [map, targetMarker, allMarkers, isSingleDay]);
 
@@ -66,15 +81,19 @@ export default function FutureTripsMap({ days, selectedId, onSelectDay, onGoToIt
   const [activeId, setActiveId] = useState(selectedId || null);
   const markerRefs = useRef({});
 
+  const [tileStyle, setTileStyle] = useState("voyager"); // "voyager" | "osm"
+
   // Merge days with coordinates: exactly 1 point per future day
-  const markers = days.map((d, index) => {
-    const coords = futureLocationCoords[d.id] || { lat: 35.6762, lng: 139.6503, emoji: "📍", color: "#e63946" };
-    return {
-      ...d,
-      ...coords,
-      order: index + 1,
-    };
-  });
+  const markers = useMemo(() => {
+    return days.map((d, index) => {
+      const coords = futureLocationCoords[d.id] || { lat: 35.6762, lng: 139.6503, emoji: "📍", color: "#e63946" };
+      return {
+        ...d,
+        ...coords,
+        order: index + 1,
+      };
+    });
+  }, [days]);
 
   const selectedMarker = markers.find((m) => m.id === activeId);
   const selectedDayMarker = subDay != null ? markers.find((m) => m.order === subDay) : selectedMarker;
@@ -93,7 +112,7 @@ export default function FutureTripsMap({ days, selectedId, onSelectDay, onGoToIt
         }, 150);
       }
     }
-  }, [selectedId]);
+  }, [selectedId, markers]);
 
   const handleMarkerClick = (id) => {
     setActiveId(id);
@@ -119,9 +138,11 @@ export default function FutureTripsMap({ days, selectedId, onSelectDay, onGoToIt
   const isRutaFilter = filter === "ruta";
   const isSingleDay = isDaysFilter && subDay != null;
 
-  const displayedMarkers = isSingleDay
-    ? markers.filter((m) => m.order === subDay)
-    : markers;
+  const displayedMarkers = useMemo(() => {
+    return isSingleDay
+      ? markers.filter((m) => m.order === subDay)
+      : markers;
+  }, [isSingleDay, markers, subDay]);
 
   return (
     <div className="space-y-3">
@@ -245,24 +266,61 @@ export default function FutureTripsMap({ days, selectedId, onSelectDay, onGoToIt
 
       {/* Map view matching MapPage styling */}
       <div
-        className="rounded-2xl overflow-hidden border shadow-sm"
+        className="rounded-2xl overflow-hidden border shadow-sm relative"
         style={{
           borderColor: "var(--line)",
           height: 520,
           position: "relative",
           isolation: "isolate",
-          background: "var(--paper-raised)",
+          background: "#d4dadc",
         }}
       >
+        {/* Discrete map layer style switcher */}
+        <div style={{ position: "absolute", top: 12, right: 12, zIndex: 1000 }}>
+          <button
+            type="button"
+            onClick={() => setTileStyle((s) => (s === "voyager" ? "osm" : "voyager"))}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold shadow-md transition-all cursor-pointer"
+            style={{
+              background: "rgba(255, 255, 255, 0.95)",
+              color: "var(--indigo)",
+              border: "1px solid var(--line)",
+              backdropFilter: "blur(6px)",
+            }}
+            title={lang === "en" ? "Toggle map style" : "Cambiar estilo de mapa"}
+          >
+            <Layers size={13} />
+            <span>{tileStyle === "voyager" ? "🎨 Carto" : "🗺️ OSM"}</span>
+          </button>
+        </div>
+
         <MapContainer
-          center={[35.0, 135.5]}
+          center={[36.2, 138.25]}
           zoom={5}
           style={{ width: "100%", height: "100%" }}
           scrollWheelZoom={true}
         >
           <TileLayer
-            url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+            key={tileStyle}
+            url={
+              tileStyle === "osm"
+                ? "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                : "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+            }
+            attribution={
+              tileStyle === "osm"
+                ? '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                : '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+            }
+            subdomains={tileStyle === "osm" ? "abc" : "abcd"}
+            maxZoom={19}
+            eventHandlers={{
+              tileerror: () => {
+                if (tileStyle !== "osm") {
+                  setTileStyle("osm");
+                }
+              },
+            }}
           />
 
           {isRutaFilter && markers.length > 1 && (

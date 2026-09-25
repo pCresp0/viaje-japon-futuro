@@ -218,7 +218,7 @@ function Drawer({ active, onChange, open, onClose }) {
                 <span style={{
                   fontFamily: "var(--font-display)", fontSize: 15,
                   fontWeight: 700, color: "#fff", letterSpacing: "0.02em"
-                }}>Japón 2026</span>
+                }}>Japón 20XX</span>
               </div>
             </div>
             <button onClick={onClose}
@@ -365,7 +365,7 @@ export function DesktopTopBar({ active, onNavigate }) {
           fontFamily: "var(--font-display)", fontSize: 22,
           fontWeight: 700, color: "#fff", letterSpacing: "0.01em",
         }}>
-          Japón 2026
+          Japón 20XX
         </span>
         {currentTab && (
           <>

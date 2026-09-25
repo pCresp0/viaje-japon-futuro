@@ -78,7 +78,7 @@ export default function Footer() {
 
           {/* GitHub */}
           <a
-            href="https://github.com/pCresp0/viaje-japon-sept-2026"
+            href="https://github.com/pCresp0/viaje-japon-futuro"
             target="_blank" rel="noopener noreferrer"
             aria-label="GitHub"
             style={{
@@ -118,7 +118,7 @@ export default function Footer() {
             <strong style={{ color: "#fff", fontWeight: 600 }}>Pablo Crespo Bellido</strong>
           </p>
           <p style={{ margin: 0, fontSize: 11, color: "rgba(255,255,255,0.4)" }}>
-            © 2026 · Viaje Japón
+            © 20XX · Viaje Japón
           </p>
         </div>
       </div>

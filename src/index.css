@@ -383,18 +383,25 @@ main > div > * {
   box-shadow: 0 1px 2px rgba(0,0,0,0.15) !important;
 }
 
-/* ── Leaflet z-index containment ───────────────────────────────────────
-   Leaflet's internal panes (tiles, markers, controls, popups) use z-index
-   values up to ~1000 by default, which floats above our own overlays
-   (mobile topbar=150, nav drawer=200/210, modal=100). Force its stacking
-   context to stay low so it can never bleed through them. */
+/* ── Leaflet z-index containment & tile rendering ───────────────────────
+   Leaflet's internal panes use stacking contexts; ensure images render
+   with correct dimensions under Tailwind CSS rules and background stays natural. */
 .leaflet-container {
   z-index: 0;
+  width: 100% !important;
+  height: 100% !important;
+  background: #d4dadc !important;
 }
-.leaflet-pane,
-.leaflet-top,
-.leaflet-bottom {
-  z-index: 10 !important;
+.leaflet-container img {
+  max-width: none !important;
+  max-height: none !important;
+}
+.leaflet-tile {
+  visibility: inherit !important;
+}
+.leaflet-tile-container img {
+  width: 256px !important;
+  height: 256px !important;
 }
 .leaflet-popup {
   z-index: 15 !important;

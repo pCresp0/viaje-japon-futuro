@@ -37,7 +37,7 @@ export default function HistoryPrintView() {
               textTransform: "uppercase",
             }}
           >
-            🇯🇵 Viaje a Japón · Septiembre 2026 · Guía de Lectura
+            🇯🇵 Viaje a Japón · Septiembre 20XX · Guía de Lectura
           </span>
           <span style={{ fontSize: 9.5, color: "#5a6070", fontStyle: "italic" }}>
             Edición completa para viaje y vuelos

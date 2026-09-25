@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import { useSwipeable } from "react-swipeable";
 import Nav, { Sidebar, DesktopTopBar } from "./components/Nav";
 import Footer from "./components/Footer";
-import AccessGate, { isUnlocked } from "./components/AccessGate";
 import ErrorBoundary from "./components/ErrorBoundary";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 
@@ -39,7 +38,6 @@ function defaultTab() {
 }
 
 export default function App() {
-  const [unlocked, setUnlocked] = useState(() => isUnlocked());
   const [tab, setTab] = useState(defaultTab);
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDay, setOpenDay] = useState(getDefaultTripDay);
@@ -172,10 +170,6 @@ export default function App() {
     preventScrollOnSwipe: false,
     trackMouse: false,
   });
-
-  if (!unlocked) {
-    return <AccessGate onUnlock={() => setUnlocked(true)} />;
-  }
 
   return (
     <div {...swipeHandlers} className="full-viewport-height app-shell" style={{ display: "flex", flexDirection: "column", touchAction: "pan-y" }}>
