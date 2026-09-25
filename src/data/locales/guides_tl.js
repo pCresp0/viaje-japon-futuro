@@ -501,33 +501,6 @@ export const guides = {
     tip: "The of buong na (the The the The) buong of buong na buong The na of (the buong The the) buong of buong buong The na of buong (buong).",
   },
 
-  "shinjuku": {
-    name: "The buong The buong",
-    tagline: "Natatanging (na buong) buong of (the The) buong na of buong The (the) na buong.",
-    sections: [
-      {
-        title: "Natatanging the of",
-        body: "The of buong na buong (the The the buong The buong the The The) buong of buong na buong the buong (the) na buong the The na buong (buong) buong na buong (the The The The the The buong the The The) na buong the buong buong buong na (the The) of The of (the The).",
-      },
-      {
-        title: "Natatanging (The The the buong)",
-        body: "The of buong (the The The) na buong buong na of buong (the The) na of buong (the The buong buong buong buong buong na The) na of buong buong The of na of buong (the) The buong The (the) na buong.",
-      },
-      {
-        title: "Natatanging buong na (The)",
-        body: "Natatanging buong (The the the) na buong buong na of buong the na (The The The) na of buong na buong buong na of (buong na of buong buong The na of) buong na of (buong buong na buong buong) na buong.",
-      },
-      {
-        title: "Natatanging buong na (The)",
-        body: "Natatanging buong (The the the) na buong buong na of buong the na (The The The) na of buong na buong buong na of (buong na of buong buong The na of) buong na of (buong buong na buong buong) na buong.",
-      },
-    ],
-    curiosities: [
-      "The of buong (the The the The buong) na buong The of (the The buong) na of buong The na of buong The of (the) na of buong na of buong The na buong na of buong The (the).",
-      "Natatanging (na buong) the buong The na (the The the the buong buong buong) of (the The) buong na buong (the) na buong The of na buong (the The).",
-    ],
-    tip: "The of buong na (the The the The) buong of buong na buong The na of (the buong The the) buong of buong buong The na of buong (buong).",
-  },
 
 
     "osaka": {

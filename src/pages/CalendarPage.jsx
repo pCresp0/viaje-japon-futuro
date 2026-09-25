@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { useContent, useT } from "../i18n/LanguageContext";
 import DayCard from "../components/DayCard";
-import { X, CalendarPlus, Download, ExternalLink, MapPin } from "lucide-react";
+import { X, CalendarPlus, Download, ExternalLink } from "lucide-react";
 import { downloadIcsCalendar } from "../utils/exportCalendar";
 import { getTripStatus } from "../utils/date";
 import { QuickDayCard } from "../components/ItineraryQuickView";

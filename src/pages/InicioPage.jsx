@@ -1,5 +1,5 @@
 import { useContent, useT } from "../i18n/LanguageContext";
-import { Compass, Map, Plane, Hotel, Train, UtensilsCrossed, CalendarDays, ArrowRight, Sparkles, ShieldCheck, Hammer, ListChecks } from "lucide-react";
+import { Compass, Map, Plane, ArrowRight, Sparkles, ShieldCheck, Hammer, ListChecks } from "lucide-react";
 import { tabs as navTabs } from "../components/Nav";
 
 export default function InicioPage({ onNavigate }) {

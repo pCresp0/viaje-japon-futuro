@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { ScrollText, ChevronDown, ChevronUp, Map, BookOpen, List, X } from "lucide-react";
 import { useContent, useT } from "../i18n/LanguageContext";
-import { useHighlight } from "../context/HighlightContext";
 import { guidesByDay, guideMeta } from "../data/guides";
 import DayWeatherBar from "./DayWeatherBar";
 import ScheduleEntryBody from "./ScheduleEntryBody";
@@ -11,24 +10,6 @@ import StayOption from "./StayOption";
 import PlaceText from "./PlaceText";
 import { formatDateLong, getTripStatus, findCurrentScheduleIndex } from "../utils/date";
 import { parseDayNumbers } from "../utils/mapDay";
-import { slug } from "../utils/slug";
-
-function normalize(str) {
-  return str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-}
-
-function findMatchedGuideIds(text, dayGuides) {
-  if (!dayGuides || dayGuides.length === 0) return [];
-  // Evitar vincular en logística de regreso al hotel o check-in
-  if (/regreso al hotel|check-in/i.test(text)) return [];
-
-  const normText = normalize(text);
-  return dayGuides.filter((gid) => {
-    const meta = guideMeta[gid];
-    if (!meta) return false;
-    return meta.keywords.some((kw) => normText.includes(normalize(kw)));
-  });
-}
 
 // Auto-detect transport type from schedule text and return matching emoji
 function getScheduleEmoji(text) {
@@ -114,7 +95,7 @@ function CollapsibleScheduleItem({ s, color }) {
           {(() => {
             let formattedText = s.text.replace(/\n{2,}/g, '\n');
             if (!formattedText.trim().startsWith('**')) {
-              const match = formattedText.match(/^([^\.]{5,100}?)\.\s+/);
+              const match = formattedText.match(/^([^.]{5,100}?)\.\s+/);
               if (match) {
                 formattedText = `**${match[1]}.** ` + formattedText.slice(match[0].length);
               }
@@ -168,8 +149,7 @@ export default function DayCard({ day, defaultOpenHistory = false, onClose, onVi
     return () => { clearTimeout(timer); clearTimeout(clearTimer); };
   }, [day.num, day.schedule]);
   const [selectedGuide, setSelectedGuide] = useState(null);
-  const { blocks, stays, days, mapStops, guides } = useContent();
-  const { triggerHighlight } = useHighlight();
+  const { blocks, stays, mapStops, guides } = useContent();
   const blockById = Object.fromEntries(blocks.map((b) => [b.id, b]));
   const block = blockById[day.block];
   const stay = stays.find((s) => s.afterDay === day.num);
@@ -298,7 +278,7 @@ export default function DayCard({ day, defaultOpenHistory = false, onClose, onVi
               
               // 2. Autoponer en negrita la primera frase si actúa como título
               if (!formattedText.trim().startsWith('**')) {
-                const match = formattedText.match(/^([^\.]{5,100}?)\.\s+/);
+                const match = formattedText.match(/^([^.]{5,100}?)\.\s+/);
                 if (match) {
                   formattedText = `**${match[1]}.** ` + formattedText.slice(match[0].length);
                 }

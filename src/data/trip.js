@@ -1,5 +1,5 @@
 // Datos del viaje — Guía y Planificación de la Ruta Futura a Japón
-import { pendingDays } from "./pendingDays";
+import { pendingDays } from "./pendingDays.js";
 
 export const tripMeta = {
   title: "Viaje a Japón",

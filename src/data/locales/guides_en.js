@@ -492,33 +492,6 @@ export const guides = {
     tip: "For the best view of the crossing (and the city), go up to Shibuya Sky, a 230-meter high open-air observation deck. Book sunset tickets weeks in advance.",
   },
 
-  "shinjuku": {
-    name: "Shinjuku",
-    tagline: "Neon lights, the world's busiest station, and a labyrinth of nightlife alleys.",
-    sections: [
-      {
-        title: "The Station",
-        body: "Shinjuku Station is officially the busiest train station in the world, handling over 3.5 million passengers a day. It has over 200 exits and is famously easy to get lost in.",
-      },
-      {
-        title: "Kabukicho",
-        body: "Asia's largest red-light and entertainment district, packed with host clubs, love hotels, restaurants, and arcades. Despite its reputation, it is quite safe for tourists, though touts should be ignored.",
-      },
-      {
-        title: "Omoide Yokocho",
-        body: "Also known affectionately as 'Piss Alley', this is a narrow network of alleys near the tracks packed with tiny, atmospheric yakitori (grilled chicken skewer) stalls seating only 5-10 people. It preserves the chaotic, smoky feel of post-war Tokyo.",
-      },
-      {
-        title: "Golden Gai",
-        body: "A small block containing over 200 tiny bars crammed into six narrow alleys. Many bars have a specific theme (jazz, punk rock, cinema) and only seat a handful of people. It's a glimpse into Tokyo's bohemia.",
-      },
-    ],
-    curiosities: [
-      "In Kabukicho, you can spot a life-size Godzilla head peering over the Toho Cinema building, occasionally roaring and breathing 'fire'.",
-      "The west side of Shinjuku is the skyscraper district, home to the Tokyo Metropolitan Government Building, which offers free panoramic views from its 202-meter high observatories.",
-    ],
-    tip: "In Golden Gai, look for bars with signs in English or 'no cover charge' outside if you want an easy entry; some bars are regulars-only.",
-  },
 
 
     "osaka": {

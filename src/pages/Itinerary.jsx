@@ -4,12 +4,10 @@ import { useLang } from "../i18n/LanguageContext";
 import { pendingDays, futureLocationCoords } from "../data/pendingDays";
 import PlaceText from "../components/PlaceText";
 import FutureTripsPrintView from "../components/FutureTripsPrintView";
-import { useHighlight } from "../context/HighlightContext";
 
 export default function Itinerary({ openDay, setOpenDay, quickView, setQuickView, onGoToMapDay }) {
   const { lang } = useLang();
   const days = pendingDays[lang] || pendingDays.es;
-  const { highlightId } = useHighlight();
 
   const [openId, setOpenId] = useState(() => {
     if (openDay != null) {

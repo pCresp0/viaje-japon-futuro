@@ -57,12 +57,6 @@ export default function App() {
     window.setTimeout(() => triggerHighlight(slug("itinerary-day", num)), 120);
   }
 
-  function goToDayQuickView(num) {
-    setOpenDay(num);
-    setQuickView(true);
-    setTab("itinerario");
-  }
-
   function goToMapDay(num) {
     setMapInitialDay(num);
     setTab("mapa");

@@ -492,33 +492,6 @@ export const guides = {
     tip: "Pour avoir la meilleure vue sur le carrefour (et la ville), montez à Shibuya Sky, une plate-forme d'observation en plein air de 230 mètres de haut. Réservez les billets pour le coucher du soleil des semaines à l'avance.",
   },
 
-  "shinjuku": {
-    name: "Shinjuku",
-    tagline: "Des néons, la gare la plus fréquentée au monde et un labyrinthe de ruelles nocturnes.",
-    sections: [
-      {
-        title: "La Gare",
-        body: "La gare de Shinjuku est officiellement la gare ferroviaire la plus fréquentée au monde, accueillant plus de 3,5 millions de passagers par jour. Elle compte plus de 200 sorties et il est notoirement facile de s'y perdre.",
-      },
-      {
-        title: "Kabukicho",
-        body: "Le plus grand quartier rouge et de divertissement d'Asie, regorgeant de clubs d'hôtes, de love hotels, de restaurants et de salles d'arcade. Malgré sa réputation, c'est assez sûr pour les touristes, bien qu'il faille ignorer les racoleurs.",
-      },
-      {
-        title: "Omoide Yokocho",
-        body: "Aussi connu affectueusement sous le nom de 'l'allée des pisses', il s'agit d'un réseau étroit de ruelles près des voies ferrées, remplies de minuscules et très atmosphériques stands de yakitori (brochettes de poulet grillé) ne pouvant asseoir que 5 à 10 personnes. Elle préserve l'ambiance chaotique et enfumée du Tokyo de l'après-guerre.",
-      },
-      {
-        title: "Golden Gai",
-        body: "Un petit pâté de maisons contenant plus de 200 bars minuscules entassés dans six ruelles étroites. De nombreux bars ont un thème spécifique (jazz, punk rock, cinéma) et ne peuvent accueillir qu'une poignée de personnes. C'est un aperçu de la bohème tokyoïte.",
-      },
-    ],
-    curiosities: [
-      "Dans Kabukicho, vous pouvez apercevoir une tête de Godzilla grandeur nature dépassant du bâtiment Toho Cinema, rugissant occasionnellement et crachant du 'feu'.",
-      "Le côté ouest de Shinjuku est le quartier des gratte-ciel, où se trouve le siège du gouvernement métropolitain de Tokyo, qui offre des vues panoramiques gratuites depuis ses observatoires situés à 202 mètres de hauteur.",
-    ],
-    tip: "Au Golden Gai, cherchez des bars avec des panneaux en anglais ou 'no cover charge' (pas de frais de couverture) à l'extérieur si vous voulez y entrer facilement ; certains bars sont réservés aux habitués.",
-  },
 
 
     "osaka": {
