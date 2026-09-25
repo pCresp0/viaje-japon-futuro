@@ -2,9 +2,10 @@ export const tripMeta = {
   title: "Voyage au Japon",
   subtitle: "Itinéraire en 13 Étapes : Kanto, Fuji, Kansai, Chugoku, Okinawa & Hokkaido",
   welcomeParagraphs: [
-    "Bienvenue sur le guide et planificateur interactif de notre <strong>prochain voyage au Japon</strong> ! Une grande traversée de l'archipel nippon du nord au sud à travers <strong>13 étapes mémorables</strong>.",
+    "Bienvenue sur la plateforme interactive de notre <strong>futur voyage au Japon</strong> ! Cette application web est un projet vivant et en <strong>développement continu</strong>, conçue comme le centre opérationnel digital pour préparer, budgétiser et coordonner notre prochaine expédition à travers <strong>13 étapes mémorables</strong>.",
     "Des temples séculaires et gratte-ciel futuristes de Tokyo, la majesté sacrée de Nikko et Kamakura, jusqu'à l'ascension du <strong>Mont Fuji</strong> (3 776 m) à l'aube. En continuant vers l'effervescence d'Osaka, la mémoire d'Hiroshima et le torii flottant de l'île sacrée de Miyajima ; puis envol vers les eaux turquoise et le ciel étoilé d'Okinawa et Iriomote, avant de culminer dans la nature sauvage et la gastronomie d'Hokkaido.",
-    "L'application fonctionne <strong>100% hors-ligne</strong> et réunit tout le nécessaire : l'<strong>itinéraire étape par étape</strong>, la <strong>carte interactive</strong>, les conseils de transports (Shinkansen, pass régionaux et ferries), les hébergements recommandés et les guides gastronomiques et culturels.",
+    "<strong>État d'avancement du projet :</strong> Le site sert de laboratoire et de carnet de bord interactif : itinéraires en cours d'élaboration, estimations budgétaires, liaisons en Shinkansen, vols intérieurs, ferries et sélection d'hébergements stratégiques. Le contenu est régulièrement affiné et enrichi.",
+    "L'application fonctionne <strong>100% hors-ligne (PWA)</strong> : une fois chargée, elle peut être consultée n'importe où (en plein vol, en train à grande vitesse ou en altitude) sans connexion internet. Explorez les sections, testez la carte et suivez les préparatifs !",
     "Vous pouvez changer de langue à tout moment (Espagnol, Anglais, Français, Tagalog) via le sélecteur supérieur."
   ],
   about: {

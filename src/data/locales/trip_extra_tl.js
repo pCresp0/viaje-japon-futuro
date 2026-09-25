@@ -2,9 +2,10 @@ export const tripMeta = {
   title: "Biyahe sa Hapon",
   subtitle: "13-Yugtong Ruta: Kanto, Fuji, Kansai, Chugoku, Okinawa & Hokkaido",
   welcomeParagraphs: [
-    "Maligayang pagdating sa gabay at tagaplano para sa aming <strong>darating na biyahe sa Hapon</strong>! Isang kumpletong pakikipagsapalaran mula hilaga hanggang timog sa <strong>13 kahanga-hangang yugto</strong>.",
+    "Maligayang pagdating sa interactive na plataporma para sa aming <strong>darating na biyahe sa Hapon</strong>! Ang web app na ito ay isang aktibong proyekto na <strong>patuloy na binubuo at pinapaganda</strong> bilang command center upang planuhin, tantyahin ang badyet, at idokumento ang aming susunod na ekspedisyon sa <strong>13 kahanga-hangang yugto</strong>.",
     "Mula sa mga sinaunang templo at modernong gusali sa Tokyo, ang kabanalan ng Nikko at Kamakura, hanggang sa pag-akyat sa <strong>Mount Fuji</strong> (3,776 m) sa bukang-liwayway. Patungo sa masiglang Osaka, kasaysayan ng Hiroshima at lumulutang na torii sa banal na isla ng Miyajima; paglipad patungo sa malinaw na dagat ng Okinawa at Iriomote, at pagtatapos sa kalikasan at masarap na pagkain ng Hokkaido.",
-    "Gumagana ang app nang <strong>100% offline</strong> at naglalaman ng lahat ng kailangan mo: ang <strong>itineraryo bawat yugto</strong>, ang <strong>interactive na mapa</strong>, gabay sa transportasyon (Shinkansen, regional passes, at ferries), mga inirekumendang hotel, at gabay sa pagkain at kultura.",
+    "<strong>Katayuan ng Proyekto:</strong> Nagsisilbi itong live na gabay bago ang biyahe: patuloy na inaayos ang mga yugto, iskedyul ng Shinkansen, domestic flights, ferries, at pagpili ng mga hotel at ryokan. Regular na ina-update ang bawat bahagi habang natutukoy ang mga pinal na detalye.",
+    "Gumagana ang app nang <strong>100% offline (PWA)</strong>: kapag na-load na, magagamit ito kahit saan (sa eroplano, bullet train, o sa tuktok ng bundok) nang walang koneksyon sa internet. Huwag mag-atubiling tuklasin ang mapa at ang mga ruta habang binubuo ang plano!",
     "Maaari mong palitan ang wika anumang oras (Espanyol, Ingles, Pranses, Tagalog) gamit ang selector sa itaas."
   ],
   about: {

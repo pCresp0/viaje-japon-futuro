@@ -2,9 +2,10 @@ export const tripMeta = {
   title: "Trip to Japan",
   subtitle: "13-Stage Route: Kanto, Fuji, Kansai, Chugoku, Okinawa & Hokkaido",
   welcomeParagraphs: [
-    "Welcome to the interactive guide and planner for our <strong>upcoming trip to Japan</strong>! A comprehensive journey traveling across the Japanese archipelago from north to south across <strong>13 memorable stages</strong>.",
+    "Welcome to the interactive platform for our <strong>upcoming future trip to Japan</strong>! This web app is a living project in <strong>active development</strong>, designed as the digital command center to plan, budget, and document our next expedition across the Japanese archipelago across <strong>13 memorable stages</strong>.",
     "From ancient temples and futuristic skylines in Tokyo, the sacred grandeur of Nikko and Kamakura, to summiting <strong>Mount Fuji</strong> (3,776 m) at dawn. Continuing to vibrant Osaka, the historical memory of Hiroshima and the floating torii gate of holy Miyajima island; then flying south to the turquoise waters and starry skies of Okinawa and Iriomote, culminating in the wild alpine nature and world-class cuisine of Hokkaido.",
-    "The app works <strong>100% offline</strong> and gathers everything you need: the <strong>stage-by-stage itinerary</strong>, the <strong>interactive Leaflet map</strong>, transport guidance (Shinkansen bullet trains, regional passes, and ferries), recommended accommodation bases, and cultural & dining guides.",
+    "<strong>Project Status & Purpose:</strong> It serves as a working laboratory and digital roadmap prior to departure: consolidating itineraries under active construction, budget projections, bullet train (Shinkansen) schedules, domestic flights, ferries, and strategic accommodation bases. Content is continuously refined and expanded as bookings and schedules solidify.",
+    "The application is built with a <strong>100% offline (PWA)</strong> architecture: once loaded, it works anywhere (on flights, high-speed trains, or mountaintops) without cellular data. Enjoy exploring the interactive map, itinerary drafts, and following the journey's preparation!",
     "You can switch languages anytime (Spanish, English, French, Tagalog) using the selector above."
   ],
   about: {

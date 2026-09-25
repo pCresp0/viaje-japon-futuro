@@ -1,5 +1,5 @@
 import { useContent, useT } from "../i18n/LanguageContext";
-import { Compass, Map, Plane, Hotel, Train, UtensilsCrossed, CalendarDays, ArrowRight, Sparkles, ShieldCheck } from "lucide-react";
+import { Compass, Map, Plane, Hotel, Train, UtensilsCrossed, CalendarDays, ArrowRight, Sparkles, ShieldCheck, Hammer, ListChecks } from "lucide-react";
 import { tabs as navTabs } from "../components/Nav";
 
 export default function InicioPage({ onNavigate }) {
@@ -8,12 +8,64 @@ export default function InicioPage({ onNavigate }) {
 
   return (
     <div className="px-4 pt-3 pb-12 max-w-5xl mx-auto">
-      {/* ── Encabezado ────────────────────────────────────────── */}
-      <div className="mb-6">
-        <p className="eyebrow mb-1" style={{ color: "var(--shu)" }}>{tripMeta.subtitle}</p>
+      {/* ── Encabezado & Contexto de Proyecto ──────────────────── */}
+      <div className="mb-5">
+        <div className="flex items-center gap-2 mb-2 flex-wrap">
+          <span className="px-2.5 py-1 rounded-full text-xs font-bold inline-flex items-center gap-1.5" style={{ background: "rgba(188, 71, 73, 0.12)", color: "var(--shu)" }}>
+            ⛩️ Futura Expedición a Japón
+          </span>
+          <span className="px-2.5 py-1 rounded-full text-xs font-bold inline-flex items-center gap-1.5" style={{ background: "rgba(201, 162, 39, 0.16)", color: "#855808" }}>
+            <Hammer size={12} /> Web en Desarrollo Activo
+          </span>
+        </div>
         <h1 className="font-display text-3xl font-bold" style={{ color: "var(--indigo)", margin: 0, lineHeight: 1.2 }}>
           {tripMeta.title}
         </h1>
+        <p className="text-sm mt-1" style={{ color: "var(--ink-soft)" }}>
+          {tripMeta.subtitle}
+        </p>
+      </div>
+
+      {/* ── Tarjeta Destacada: Proyecto en Desarrollo Activo ───────── */}
+      <div className="mb-6 p-4 sm:p-5 rounded-2xl border transition-all" style={{
+        background: "linear-gradient(135deg, rgba(254, 243, 199, 0.5) 0%, rgba(255, 255, 255, 0.95) 100%)",
+        borderColor: "rgba(232, 183, 74, 0.55)",
+        boxShadow: "0 4px 18px rgba(188, 71, 73, 0.05)"
+      }}>
+        <div className="flex items-start gap-3.5">
+          <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 shadow-sm" style={{ background: "linear-gradient(135deg, #e8b74a, #d49520)", color: "white" }}>
+            <Hammer size={20} />
+          </div>
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2 flex-wrap mb-1.5">
+              <h3 className="font-display text-base font-bold m-0" style={{ color: "var(--indigo)" }}>
+                Planificador de Viaje Futuro · Web en Construcción
+              </h3>
+              <span className="text-[11px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider" style={{ background: "rgba(201, 162, 39, 0.22)", color: "#855808" }}>
+                Work in Progress
+              </span>
+            </div>
+            <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed mb-3">
+              Esta web es el <strong>centro de operaciones y cuaderno de bitácora digital</strong> para un <strong>futuro viaje a Japón</strong>. El proyecto está actualmente en <strong>fase activa de planificación y desarrollo</strong>: estamos diseñando las 13 etapas, investigando conexiones de tren bala Shinkansen, vuelos internos y ferris, seleccionando alojamientos estratégicos y calculando presupuestos de referencia.
+            </p>
+
+            {/* Chips de estado del proyecto */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-2.5 border-t border-amber-200/70">
+              <div className="flex items-center gap-2 text-xs text-neutral-700">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
+                <span><strong>13 Etapas:</strong> Trazado y ruta base definidos</span>
+              </div>
+              <div className="flex items-center gap-2 text-xs text-neutral-700">
+                <span className="w-2 h-2 rounded-full bg-amber-500 shrink-0"></span>
+                <span><strong>Logística:</strong> En investigación continua</span>
+              </div>
+              <div className="flex items-center gap-2 text-xs text-neutral-700">
+                <span className="w-2 h-2 rounded-full bg-sky-500 shrink-0"></span>
+                <span><strong>App PWA:</strong> 100% offline para el viaje</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* ── Banner de Presentación & Métricas de la Ruta ─────── */}
@@ -28,7 +80,7 @@ export default function InicioPage({ onNavigate }) {
           {/* Badge decorativo */}
           <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
             <span className="px-3 py-1 rounded-full text-xs font-bold inline-flex items-center gap-1.5" style={{ background: "rgba(232,183,74,0.2)", color: "#fef08a", border: "1px solid rgba(232,183,74,0.35)" }}>
-              <Sparkles size={13} /> Planificación Oficial · Futuro Viaje
+              <Sparkles size={13} /> Planificación Oficial · Futuro Viaje en Desarrollo
             </span>
             <span className="text-xs text-white/70 font-medium inline-flex items-center gap-1">
               <ShieldCheck size={14} style={{ color: "#7ae0ad" }} /> 100% Offline Ready
@@ -80,6 +132,14 @@ export default function InicioPage({ onNavigate }) {
             >
               <Map size={17} />
               <span>Mapa Interactivo</span>
+            </button>
+            <button
+              onClick={() => onNavigate?.("pendientes")}
+              className="px-4 py-2.5 rounded-full text-sm font-bold flex items-center gap-2 cursor-pointer transition-all active:scale-95 text-white/90 hover:text-white"
+              style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)" }}
+            >
+              <ListChecks size={16} />
+              <span>Estado de Tareas</span>
             </button>
           </div>
         </div>
