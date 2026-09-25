@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
-  base: '/',
+  base: './',
   define: {
     // Marca de tiempo real de cuándo se generó este build, para poder
     // comprobar en la propia web si un cambio ya se ha desplegado o no.

@@ -1,5 +1,7 @@
 # 🗻 Viaje a Japón — Planificador de la Ruta Futura 🇯🇵
 
+🌐 **Web en directo (GitHub Pages):** [https://pcresp0.github.io/viaje-japon-futuro/](https://pcresp0.github.io/viaje-japon-futuro/)
+
 Guía de viaje interactiva, *mobile-first* e instalable como **Progressive Web App (PWA)**, diseñada a medida para la planificación y realización de la **gran expedición futura por Japón** a lo largo de **13 etapas inolvidables** que recorren el archipiélago de norte a sur.
 
 Esta aplicación reúne todo lo necesario para preparar y disfrutar del viaje: el **itinerario etapa por etapa**, el **mapa interactivo** con el trazado geográfico, las recomendaciones de vuelos y transportes (Shinkansen, pases regionales y ferris), las bases de alojamiento, guías culturales y gastronómicas, y herramientas prácticas 100% disponibles **sin conexión a internet**.
