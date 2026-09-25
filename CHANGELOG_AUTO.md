@@ -216,3 +216,4 @@ Una línea por cada commit subido a main, generada sola por GitHub Actions en ca
 - **2026-09-25 10:25 UTC** — feat(future-trips): add Narita arrival day (Day 1) and return to ... (`148eb4e`)
 - **2026-09-25 12:33 UTC** — ci: anadir workflows de sync-develop, daily-backup y update-changelog (`c7b06bc`)
 - **2026-09-25 12:33 UTC** — docs: anadir documentacion de los 4 workflows en README (`5d04b09`)
+- **2026-09-25 12:38 UTC** — fix: resolver advertencias de linting, claves duplicadas y sincronizar metadatos ... (`2d173c5`)
