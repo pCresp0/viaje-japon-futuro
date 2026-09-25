@@ -218,3 +218,4 @@ Una línea por cada commit subido a main, generada sola por GitHub Actions en ca
 - **2026-09-25 12:33 UTC** — docs: anadir documentacion de los 4 workflows en README (`5d04b09`)
 - **2026-09-25 12:38 UTC** — fix: resolver advertencias de linting, claves duplicadas y sincronizar metadatos ... (`2d173c5`)
 - **2026-09-25 15:37 UTC** — fix(deploy): configurar base /viaje-japon-futuro/, .nojekyll y despliegue dual en deploy.yml (`b4666ad`)
+- **2026-09-25 15:39 UTC** — ci: anadir continue-on-error a deploy step en deploy.yml (`47e2a42`)
