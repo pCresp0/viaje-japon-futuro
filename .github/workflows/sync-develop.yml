@@ -1,0 +1,55 @@
+name: Sync main to develop diario
+
+on:
+  schedule:
+    - cron: "50 21 * * *" # 23:50 CEST (verano) / 22:50 CET (invierno)
+  workflow_dispatch: {}
+
+jobs:
+  sync-branches:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout main con historial completo
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Contar commits de hoy en main
+        id: count
+        run: |
+          TODAY=$(date -u +%Y-%m-%d)
+          COUNT=$(git log main --since="${TODAY} 00:00:00" --until="${TODAY} 23:59:59" --oneline | wc -l | tr -d ' ')
+          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+          echo "Commits de hoy ($TODAY) en main: $COUNT"
+
+      - name: Checkout develop branch
+        if: steps.count.outputs.count != '0'
+        uses: actions/checkout@v4
+        with:
+          ref: develop
+          fetch-depth: 0
+
+      - name: Merge main into develop
+        if: steps.count.outputs.count != '0'
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+          
+          # Fetch the latest main
+          git fetch origin main
+          
+          # Merge main into develop
+          git merge origin/main --no-edit || {
+            echo "Merge conflict detected! Please resolve manually."
+            exit 1
+          }
+          
+          # Push the updated develop branch
+          git push origin develop
+
+      - name: Sin commits hoy — no se hace merge
+        if: steps.count.outputs.count == '0'
+        run: echo "No ha habido commits hoy en main. No se mergea a develop."
