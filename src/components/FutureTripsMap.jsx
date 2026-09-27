@@ -111,7 +111,7 @@ export default function FutureTripsMap({ days, selectedId, onSelectDay, onGoToIt
   const [activeId, setActiveId] = useState(selectedId || null);
   const markerRefs = useRef({});
 
-  // Default to OSM so map never loads blank or with Carto API key requirement
+  // Default to Topo so terrain, relief and mountains are highlighted by default
   const [tileStyle, setTileStyle] = useState(() => {
     try {
       const saved = localStorage.getItem("japan_map_layer");
@@ -119,10 +119,10 @@ export default function FutureTripsMap({ days, selectedId, onSelectDay, onGoToIt
     } catch {
       // ignore
     }
-    return "osm";
+    return "topo";
   });
 
-  const activeTile = TILE_PROVIDERS[tileStyle] || TILE_PROVIDERS.osm;
+  const activeTile = TILE_PROVIDERS[tileStyle] || TILE_PROVIDERS.topo;
 
   const handleSwitchTile = (styleId) => {
     setTileStyle(styleId);
