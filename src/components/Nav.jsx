@@ -60,18 +60,18 @@ const overlay = {
   background: "linear-gradient(160deg, rgba(77,28,30,0.85) 0%, rgba(122,44,46,0.78) 100%)",
 };
 
-// Cabecera / footer: olas centradas con degradado translúcido para máxima visibilidad
+// Cabecera / footer: olas continuas con degradado translúcido para visibilidad
 const chromeBg = {
   backgroundImage: `url('${wavesSidebarUrl}')`,
-  backgroundSize: "630px auto",
-  backgroundPosition: "center 30%",
+  backgroundSize: "cover",
+  backgroundPosition: "center top",
   position: "relative",
 };
 
 const chromeOverlay = {
   position: "absolute",
   inset: 0,
-  background: "linear-gradient(160deg, rgba(77,28,30,0.82) 0%, rgba(122,44,46,0.76) 100%)",
+  background: "linear-gradient(160deg, rgba(77,28,30,0.85) 0%, rgba(122,44,46,0.78) 100%)",
   pointerEvents: "none",
 };
 
@@ -205,6 +205,7 @@ function Drawer({ active, onChange, open, onClose }) {
         style={{
           width: 252,
           zIndex: 210,
+          backgroundColor: "var(--shu-darker)",
           ...sidebarBg,
           transform: open ? "translateX(0)" : "translateX(-100%)",
           transition: "transform 0.3s cubic-bezier(.4,0,.2,1)",
@@ -295,6 +296,7 @@ export function TopBar({ active, onOpenDrawer, onNavigate }) {
         paddingTop: "env(safe-area-inset-top, 0px)",
         boxSizing: "border-box",
         zIndex: 150,
+        backgroundColor: "var(--shu-darker)",
         ...chromeBg,
         position: "fixed",
         top: 0,
@@ -351,6 +353,7 @@ export function DesktopTopBar({ active, onNavigate }) {
         height: 68,
         boxSizing: "border-box",
         zIndex: 150,
+        backgroundColor: "var(--shu-darker)",
         ...chromeBg,
         borderBottom: "none",
         boxShadow: "0 2px 0 0 var(--shu-darker), 0 4px 14px rgba(0,0,0,0.12)",
@@ -403,7 +406,7 @@ export function Sidebar({ active, onChange }) {
   return (
     <aside
       className="hidden md:flex flex-col h-full sticky top-0 shrink-0 sidebar-waves-bg"
-      style={{ width: 230, ...sidebarBg }}
+      style={{ width: 230, backgroundColor: "var(--shu-darker)", ...sidebarBg }}
     >
       <div style={{ ...overlay, display: "flex", flexDirection: "column", height: "100%" }}>
         <nav 

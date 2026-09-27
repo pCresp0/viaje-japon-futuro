@@ -57,17 +57,17 @@ html, body, #root {
 }
 
 /* ── Textura de olas sobre el fondo de la app ────────────────────────
-   Fondo de olas tradicionales japonesas (seigaiha) nítido y visible
-   sobre el papel crema tradicional de la web. */
+   Fondo de olas tradicionales japonesas (seigaiha) visible con
+   elegancia sobre el papel crema tradicional de la web. */
 body::before {
   content: "";
   position: fixed;
-  inset: 0;
+  inset: -12px;
   background-image: url('./assets/waves-sidebar.webp');
-  background-size: 720px auto;
-  background-position: right top;
-  background-repeat: repeat;
-  opacity: 0.22;
+  background-size: cover;
+  background-position: center top;
+  opacity: 0.16;
+  filter: blur(1.5px);
   pointer-events: none;
   z-index: 0;
 }
@@ -81,14 +81,14 @@ body::before {
 
 .chrome-waves-bg {
   background-image: url('./assets/waves-sidebar.webp');
-  background-size: 630px auto;
-  background-position: center 30%;
+  background-size: cover;
+  background-position: center top;
 }
 
 .footer-waves-bg {
   background-image: url('./assets/waves-sidebar.webp');
-  background-size: 630px auto;
-  background-position: center center;
+  background-size: cover;
+  background-position: center bottom;
 }
 
 body {

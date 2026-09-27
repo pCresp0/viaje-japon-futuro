@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import { X, Clock, RefreshCw } from "lucide-react";
 import changelogRaw from "../../CHANGELOG_AUTO.md?raw";
 
-const LONG_PRESS_MS = 500;
+const LONG_PRESS_MS = 700;
 
 /**
  * Bandera de Japón centrada en la cabecera móvil.
@@ -34,6 +34,15 @@ export default function BuildInfoButton() {
     .filter((line) => line.trim().startsWith("- "))
     .reverse();
 
+  const handleClick = (e) => {
+    e.preventDefault();
+    if (longPressFired.current) {
+      longPressFired.current = false;
+      return;
+    }
+    hardRefresh();
+  };
+
   const startPress = () => {
     longPressFired.current = false;
     pressTimer.current = window.setTimeout(() => {
@@ -44,52 +53,66 @@ export default function BuildInfoButton() {
 
   const endPress = () => {
     if (pressTimer.current) window.clearTimeout(pressTimer.current);
-    if (!longPressFired.current) {
-      // Toque rápido -> recarga "dura": desregistra el service worker de
-      // la PWA y borra toda la caché antes de recargar, para asegurar
-      // que se ve la última versión real y no una copia cacheada. Esto
-      // tarda un poco de verdad (borrar 50+ archivos cacheados no es
-      // instantáneo), así que mostramos un giro inmediato en la bandera
-      // para que quede claro que está trabajando y no colgado.
-      setRefreshing(true);
-      hardRefresh();
-    }
-  };
-
-  const hardRefresh = async () => {
-    try {
-      if ("serviceWorker" in navigator) {
-        const registrations = await navigator.serviceWorker.getRegistrations();
-        await Promise.all(registrations.map((r) => r.unregister()));
-      }
-      if ("caches" in window) {
-        const keys = await caches.keys();
-        await Promise.all(keys.map((k) => caches.delete(k)));
-      }
-    } catch {
-      // Si algo falla (navegador sin soporte, etc.), seguimos con la
-      // recarga normal igualmente -- nunca debe quedarse sin hacer nada.
-    } finally {
-      window.location.href = "/";
-      window.location.reload();
-    }
   };
 
   const cancelPress = () => {
     if (pressTimer.current) window.clearTimeout(pressTimer.current);
   };
 
+  const hardRefresh = async () => {
+    if (refreshing) return;
+    setRefreshing(true);
+    try {
+      // 1. Desregistrar todos los Service Workers activos
+      if ("serviceWorker" in navigator) {
+        const registrations = await Promise.race([
+          navigator.serviceWorker.getRegistrations(),
+          new Promise((resolve) => setTimeout(() => resolve([]), 1200)),
+        ]);
+        await Promise.all(registrations.map((r) => r.unregister()));
+      }
+      // 2. Eliminar toda la caché de la Cache Storage API
+      if ("caches" in window) {
+        const keys = await Promise.race([
+          caches.keys(),
+          new Promise((resolve) => setTimeout(() => resolve([]), 1200)),
+        ]);
+        await Promise.all(keys.map((k) => caches.delete(k)));
+      }
+      // 3. Limpiar almacenamiento local y de sesión
+      try {
+        localStorage.clear();
+        sessionStorage.clear();
+      } catch (e) {
+        console.warn("Storage clear error:", e);
+      }
+    } catch (err) {
+      console.error("Error al limpiar caché:", err);
+    } finally {
+      // 4. Recargar limpiamente en la ruta actual con parámetro anti-caché
+      const currentUrl = new URL(window.location.href);
+      currentUrl.searchParams.set("nocache", Date.now().toString());
+      window.location.replace(currentUrl.toString());
+      setTimeout(() => {
+        window.location.reload();
+      }, 300);
+    }
+  };
+
   return (
     <>
       <button
-        onMouseDown={startPress}
-        onMouseUp={endPress}
-        onMouseLeave={cancelPress}
+        onClick={handleClick}
+        onContextMenu={(e) => {
+          e.preventDefault();
+          setShowInfo(true);
+        }}
         onTouchStart={startPress}
         onTouchEnd={endPress}
         onTouchCancel={cancelPress}
         disabled={refreshing}
-        aria-label="Ir al inicio (toque) o ver registro de cambios (mantener pulsado)"
+        title="Clic: limpiar toda la caché y actualizar la web | Mantener pulsado: registro de cambios"
+        aria-label="Limpiar caché y recargar web (clic) o ver cambios (mantener pulsado)"
         style={{
           position: "relative",
           zIndex: 1,
@@ -106,6 +129,20 @@ export default function BuildInfoButton() {
           "🇯🇵"
         )}
       </button>
+
+      {refreshing && (
+        <div
+          className="fixed top-14 md:top-20 left-1/2 -translate-x-1/2 z-[999] px-4 py-2 rounded-full shadow-2xl flex items-center gap-2.5 text-xs font-bold text-white pointer-events-none"
+          style={{
+            background: "linear-gradient(135deg, #1d3557, #12213a)",
+            border: "1px solid rgba(255,255,255,0.3)",
+            boxShadow: "0 8px 24px rgba(0,0,0,0.35)",
+          }}
+        >
+          <RefreshCw size={15} className="animate-spin text-amber-300" />
+          <span>Borrando caché y actualizando...</span>
+        </div>
+      )}
 
       {showInfo && (
         <div

@@ -17,9 +17,10 @@ export default function Footer() {
         style={{
           position: "absolute",
           inset: 0,
+          backgroundColor: "var(--shu-darker)",
           backgroundImage: `url('${wavesSidebarUrl}')`,
-          backgroundSize: "630px auto",
-          backgroundPosition: "center center",
+          backgroundSize: "cover",
+          backgroundPosition: "center bottom",
           pointerEvents: "none",
         }}
       />
