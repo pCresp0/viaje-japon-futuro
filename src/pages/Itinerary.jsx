@@ -73,7 +73,7 @@ export default function Itinerary({ openDay, setOpenDay, quickView, setQuickView
       <div className="flex items-start justify-between gap-3 mb-4">
         <div>
           <p className="eyebrow mb-1" style={{ color: "var(--shu)" }}>
-            {lang === "en" ? "13-Stage Route" : lang === "fr" ? "Itinéraire en 13 Étapes" : lang === "tl" ? "13-Yugtong Ruta" : "Ruta de 13 Etapas"}
+            {lang === "en" ? `${days.length}-Stage Route` : lang === "fr" ? `Itinéraire en ${days.length} Étapes` : lang === "tl" ? `${days.length}-Yugtong Ruta` : `Ruta de ${days.length} Etapas`}
           </p>
           <div className="flex items-center gap-2">
             <Compass size={22} style={{ color: "var(--indigo)" }} />

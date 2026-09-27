@@ -20,12 +20,12 @@ export default function MapPage({ onGoToDay, initialDay }) {
         </h1>
         <p style={{ fontSize: 13.5, color: "var(--ink-soft)", margin: "4px 0 0" }}>
           {lang === "en"
-            ? "Interactive map featuring all 13 stages, key waypoints, and the recommended travel route from Hokkaido to Okinawa."
+            ? "Interactive map featuring all 15 stages, key waypoints, and the recommended travel route from Hokkaido to Okinawa."
             : lang === "fr"
-            ? "Carte interactive avec les 13 étapes, les points d'intérêt et l'itinéraire recommandé d'Hokkaido à Okinawa."
+            ? "Carte interactive avec les 15 étapes, les points d'intérêt et l'itinéraire recommandé d'Hokkaido à Okinawa."
             : lang === "tl"
-            ? "Interactive na mapa na may 13 yugto, mga pangunahing lugar, at inirekumendang ruta mula Hokkaido hanggang Okinawa."
-            : "Mapa interactivo con las 13 etapas, puntos clave y la ruta geográfica recomendada de norte a sur, desde Hokkaido hasta Okinawa."}
+            ? "Interactive na mapa na may 15 yugto, mga pangunahing lugar, at inirekumendang ruta mula Hokkaido hanggang Okinawa."
+            : "Mapa interactivo con las 15 etapas, puntos clave y la ruta geográfica recomendada de norte a sur, desde Hokkaido hasta Okinawa."}
         </p>
       </div>
 

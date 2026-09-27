@@ -15,7 +15,7 @@ const guideFor = {
   harajuku: "harajuku",
 };
 
-/** Categorías y paradas destacadas de la ruta futura de 13 etapas */
+/** Categorías y paradas destacadas de la ruta futura de 15 etapas */
 const places = [
   {
     category: "Templos, Santuarios y Patrimonio UNESCO",
@@ -27,9 +27,11 @@ const places = [
       { id: "nikko", name: "Santuario Toshogu & Rinno-ji", city: "Nikko", stage: 3, desc: "Mausoleo de Tokugawa Ieyasu, cumbre del arte y talla en madera dorada en plena naturaleza." },
       { id: "kamakura-buda", name: "Gran Buda Kotoku-in & Hachimangu", city: "Kamakura", stage: 4, desc: "Colosal estatua de bronce al aire libre del siglo XIII y la capital del primer shogunato." },
       { id: "osaka-castillo", name: "Castillo de Osaka & Santuario Namba Yasaka", city: "Osaka", stage: 7, desc: "Símbolo de la unificación militar de Toyotomi Hideyoshi y el impactante santuario cabeza de león." },
-      { id: "itsukushima", name: "Santuario Itsukushima & Daisho-in", city: "Miyajima", stage: 8, desc: "El gran torii rojo flotante sobre la marea del mar interior de Seto y el místico Daisho-in." },
-      { id: "shuri", name: "Castillo de Shuri & Santuario Naminoue", city: "Okinawa (Naha)", stage: 10, desc: "Cuna del antiguo Reino independiente de Ryukyu, con arquitectura y murallas de piedra coralina." },
-      { id: "hokkaido-jingu", name: "Santuario Hokkaido Jingu", city: "Sapporo", stage: 12, desc: "El mayor santuario de la isla septentrional, rodeado por los bosques del Parque Maruyama." },
+      { id: "kumano-hongu", name: "Kumano Hongu Taisha & Oyunohara", city: "Wakayama", stage: 8, desc: "Santuario milenario entre cedros y el torii gigante de 34 m en el delta sagrado." },
+      { id: "kumano-nachi", name: "Kumano Nachi Taisha & Seiganto-ji", city: "Wakayama", stage: 9, desc: "La icónica pagoda bermellón de tres pisos frente a la caída de agua sagrada." },
+      { id: "itsukushima", name: "Santuario Itsukushima & Daisho-in", city: "Miyajima", stage: 11, desc: "El gran torii rojo flotante sobre la marea del mar interior de Seto y el místico Daisho-in." },
+      { id: "shuri", name: "Castillo de Shuri & Santuario Naminoue", city: "Okinawa (Naha)", stage: 12, desc: "Cuna del antiguo Reino independiente de Ryukyu, con arquitectura y murallas de piedra coralina." },
+      { id: "hokkaido-jingu", name: "Santuario Hokkaido Jingu", city: "Sapporo", stage: 14, desc: "El mayor santuario de la isla septentrional, rodeado por los bosques del Parque Maruyama." },
     ],
   },
   {
@@ -40,10 +42,11 @@ const places = [
       { id: "fuji", name: "Cima del Monte Fuji (3.776 m)", city: "Monte Fuji", stage: 5, desc: "El volcán sagrado de Japón. Ascenso por la ruta Yoshida para contemplar el amanecer Goraiko." },
       { id: "kegon", name: "Cascadas Kegon & Lago Chuzenji", city: "Nikko", stage: 3, desc: "Una de las tres cataratas más bellas de Japón, con casi 100 metros de caída de agua volcánica." },
       { id: "enoshima", name: "Isla de Enoshima & Vistas del Fuji", city: "Kamakura / Shonan", stage: 4, desc: "Acantilados marinos, santuarios en cuevas y miradores de la costa con el perfil del Fuji al fondo." },
-      { id: "misen", name: "Monte Misen (Mirador Mar de Seto)", city: "Miyajima", stage: 9, desc: "Cima sagrada con vistas panorámicas de las islas del mar interior y fuego sagrado encendido por Kobo Daishi." },
-      { id: "arrecifes-okinawa", name: "Arrecifes de Coral & Aguas Turquesa", city: "Okinawa", stage: 10, desc: "Playas tropicales con aguas cristalinas para snorkel y avistamiento de fauna marina autóctona." },
-      { id: "iriomote-jungla", name: "Río Urauchi & Jungla Virgen", city: "Isla de Iriomote", stage: 11, desc: "Parque Nacional en la isla más salvaje de Japón: manglares, cascadas y hábitat del gato leopardo." },
-      { id: "moiwa", name: "Monte Moiwa & Mirador Nocturno", city: "Sapporo", stage: 12, desc: "Teleférico a la cima para contemplar una de las mejores tres vistas nocturnas de Japón." },
+      { id: "nachi-catarata", name: "Cascada de Nachi (133 m)", city: "Wakayama", stage: 9, desc: "La cascada vertical ininterrumpida más alta de Japón, venerada como deidad shintai." },
+      { id: "misen", name: "Monte Misen (Mirador Mar de Seto)", city: "Miyajima", stage: 11, desc: "Cima sagrada con vistas panorámicas de las islas del mar interior y fuego sagrado encendido por Kobo Daishi." },
+      { id: "arrecifes-okinawa", name: "Arrecifes de Coral & Aguas Turquesa", city: "Okinawa", stage: 12, desc: "Playas tropicales con aguas cristalinas para snorkel y avistamiento de fauna marina autóctona." },
+      { id: "iriomote-jungla", name: "Río Urauchi & Jungla Virgen", city: "Isla de Iriomote", stage: 13, desc: "Parque Nacional en la isla más salvaje de Japón: manglares, cascadas y hábitat del gato leopardo." },
+      { id: "moiwa", name: "Monte Moiwa & Mirador Nocturno", city: "Sapporo", stage: 14, desc: "Teleférico a la cima para contemplar una de las mejores tres vistas nocturnas de Japón." },
     ],
   },
   {
@@ -54,9 +57,9 @@ const places = [
       { id: "shibuya", name: "Cruce Scramble & Shibuya Sky", city: "Tokio", stage: 2, desc: "El cruce peatonal más transitado del planeta y la terraza panorámica a 230 metros de altura." },
       { id: "shinjuku", name: "Rascacielos & Callejón Omoide Yokocho", city: "Tokio", stage: 2, desc: "Contraste entre los colosos de cristal de Shinjuku y los diminutos puestos de yakitori tradicionales." },
       { id: "dotonbori", name: "Distrito Dotonbori & Shinsekai", city: "Osaka", stage: 6, desc: "Epicentro gastronómico y nocturno de Kansai, con el histórico cartel de Glico Man y la torre Tsutenkaku." },
-      { id: "hiroshima-paz", name: "Cúpula de la Bomba Atómica & Parque de la Paz", city: "Hiroshima", stage: 8, desc: "Monumento Patrimonio de la Humanidad en memoria de las víctimas y alegato mundial por la paz." },
-      { id: "odori-sapporo", name: "Parque Odori & Torre de Televisión", city: "Sapporo", stage: 12, desc: "Bulevar verde que vertebra el centro neurálgico de la capital de Hokkaido." },
-      { id: "canal-otaru", name: "Canal Histórico & Farolas de Gas", city: "Otaru", stage: 13, desc: "Almacenes de ladrillo y piedra reconvertidos en cafeterías, talleres de vidrio y cajas de música." },
+      { id: "hiroshima-paz", name: "Cúpula de la Bomba Atómica & Parque de la Paz", city: "Hiroshima", stage: 10, desc: "Monumento Patrimonio de la Humanidad en memoria de las víctimas y alegato mundial por la paz." },
+      { id: "odori-sapporo", name: "Parque Odori & Torre de Televisión", city: "Sapporo", stage: 14, desc: "Bulevar verde que vertebra el centro neurálgico de la capital de Hokkaido." },
+      { id: "canal-otaru", name: "Canal Histórico & Farolas de Gas", city: "Otaru", stage: 14, desc: "Almacenes de ladrillo y piedra reconvertidos en cafeterías, talleres de vidrio y cajas de música." },
     ],
   },
   {
@@ -68,10 +71,11 @@ const places = [
       { id: "yuba-nikko", name: "Yuba de Nikko (Piel de tofu artesano)", city: "Nikko", stage: 3, desc: "Manjar culinario budista servido en múltiples texturas: rollos fritos, caldo y sashimi de soja." },
       { id: "shirasu-kamakura", name: "Shirasu Don (Pescadito de Enoshima)", city: "Kamakura", stage: 4, desc: "Cuenco de arroz cubierto con diminuto pescado blanco fresco capturado en la bahía de Sagami." },
       { id: "takoyaki-osaka", name: "Takoyaki & Okonomiyaki de Kansai", city: "Osaka", stage: 6, desc: "Bolitas calientes rellenas de pulpo y tortillas japonesas preparadas al momento sobre la plancha teppan." },
-      { id: "hiroshima-okonomiyaki", name: "Okonomiyaki estilo Hiroshima (con fideos)", city: "Hiroshima", stage: 8, desc: "Versión en capas con abundante col fresca, fideos yakisoba y salsa dulce con huevo frito." },
-      { id: "ostras-miyajima", name: "Ostras Asadas & Momiji Manju", city: "Miyajima", stage: 9, desc: "Ostras gigantes del mar interior abiertas a la parrilla y bizcochitos en forma de hoja de arce." },
-      { id: "okinawa-soba", name: "Okinawa Soba & Cerdo Rafute", city: "Okinawa", stage: 10, desc: "Fideos gruesos de trigo en caldo de cerdo y bonito seco con panceta melosa estofada en awamori." },
-      { id: "ramen-sapporo", name: "Miso Ramen & Cangrejo de Hokkaido", city: "Sapporo", stage: 12, desc: "Caldo espeso aromatizado con pasta de miso tostado, maíz, mantequilla y marisco septentrional." },
+      { id: "atun-katsuura", name: "Atún Fresco Maguro de Kii-Katsuura", city: "Wakayama", stage: 9, desc: "El mayor puerto de atún fresco del país: degustación de cortes akami y otoro recién descargados." },
+      { id: "hiroshima-okonomiyaki", name: "Okonomiyaki estilo Hiroshima (con fideos)", city: "Hiroshima", stage: 10, desc: "Versión en capas con abundante col fresca, fideos yakisoba y salsa dulce con huevo frito." },
+      { id: "ostras-miyajima", name: "Ostras Asadas & Momiji Manju", city: "Miyajima", stage: 11, desc: "Ostras gigantes del mar interior abiertas a la parrilla y bizcochitos en forma de hoja de arce." },
+      { id: "okinawa-soba", name: "Okinawa Soba & Cerdo Rafute", city: "Okinawa", stage: 12, desc: "Fideos gruesos de trigo en caldo de cerdo y bonito seco con panceta melosa estofada en awamori." },
+      { id: "ramen-sapporo", name: "Miso Ramen & Cangrejo de Hokkaido", city: "Sapporo", stage: 14, desc: "Caldo espeso aromatizado con pasta de miso tostado, maíz, mantequilla y marisco septentrional." },
     ],
   },
 ];
@@ -103,7 +107,7 @@ export default function PlacesPage() {
         <p className="eyebrow mb-1" style={{ color: "var(--shu)" }}>{t("places.eyebrow") || "Destinos y Experiencias"}</p>
         <h2 className="font-display text-2xl" style={{ color: "var(--indigo)" }}>{t("places.title") || "Lugares Clave de la Ruta"}</h2>
         <p style={{ fontSize: 13, color: "var(--ink-soft)", marginTop: 6, lineHeight: 1.5, marginBottom: 0 }}>
-          Selección temática de templos, maravillas naturales, miradores futuristas y gastronomía regional organizada según las 13 etapas del viaje.
+          Selección temática de templos, maravillas naturales, miradores futuristas y gastronomía regional organizada según las 15 etapas del viaje.
         </p>
       </div>
 

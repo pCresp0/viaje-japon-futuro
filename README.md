@@ -8,15 +8,15 @@
 
 > 🌐 **Aplicación web en producción:** [https://pcresp0.github.io/viaje-japon-futuro/](https://pcresp0.github.io/viaje-japon-futuro/)
 
-Aplicación web progresiva (**PWA**), interactiva, *mobile-first* y **100% disponible sin conexión a internet**, diseñada expresamente para la planificación y realización de la **gran expedición futura por Japón**: una ruta transversal de **13 etapas memorables** que recorre el archipiélago de norte a sur, desde las cumbres de Hokkaido y el sagrado Monte Fuji hasta los arrecifes subtropicales de Okinawa y la jungla virgen de Iriomote.
+Aplicación web progresiva (**PWA**), interactiva, *mobile-first* y **100% disponible sin conexión a internet**, diseñada expresamente para la planificación y realización de la **gran expedición futura por Japón**: una ruta transversal de **15 etapas memorables** que recorre el archipiélago de norte a sur, desde las cumbres de Hokkaido y el sagrado Monte Fuji, pasando por los milenarios senderos de peregrinación del **Kumano Kodo**, hasta los arrecifes subtropicales de Okinawa y la jungla virgen de Iriomote.
 
-Esta plataforma reúne en un único lugar interactivo todo lo necesario para preparar y vivir el viaje: el **itinerario etapa por etapa**, el **mapa vectorial interactivo** con el trazado geográfico, recomendaciones de vuelos y transportes (Shinkansen, pases regionales y ferris), las 7 bases estratégicas de alojamiento, guías gastronómicas y culturales, y herramientas prácticas con persistencia local.
+Esta plataforma reúne en un único lugar interactivo todo lo necesario para preparar y vivir el viaje: el **itinerario etapa por etapa**, el **mapa vectorial interactivo** con el trazado geográfico, recomendaciones de vuelos y transportes (Shinkansen, Limited Express Kuroshio, pases regionales y ferris), las 8 bases estratégicas de alojamiento, guías gastronómicas y culturales, y herramientas prácticas con persistencia local.
 
 ---
 
-## 🗺️ La Gran Ruta de 13 Etapas
+## 🗺️ La Gran Ruta de 15 Etapas
 
-La expedición está estructurada en **6 bloques regionales** diseñados con un orden geográfico y logístico óptimo:
+La expedición está estructurada en **7 bloques regionales** diseñados con un orden geográfico y logístico óptimo:
 
 | Etapa | Bloque Regional | Destinos Principales | Hito Destacado | Base de Alojamiento |
 | :---: | :--- | :--- | :--- | :--- |
@@ -27,12 +27,14 @@ La expedición está estructurada en **6 bloques regionales** diseñados con un 
 | **5** | 🗻 **Monte Fuji** | Tokio → 5ª Estación → 8ª Estación | Ascenso por la ruta Yoshida hasta los 3.400 m | 🛖 Refugio Yamagoya (Fuji) |
 | **6** | 🏯 **Kansai** | Cumbre Fuji (3.776 m) → Osaka | Amanecer *Goraiko* en el cráter, descenso y noche en Dotonbori | 🏨 Hotel en Osaka |
 | **7** | 🏯 **Kansai** | Osaka histórica y moderna | Castillo de Osaka, santuario Namba Yasaka y Shinsekai | 🏨 Hotel en Osaka |
-| **8** | ⛩️ **Chugoku** | Osaka → Hiroshima → Isla de Miyajima | Parque y Cúpula de la Paz, ferry y gran torii flotante | ⛩️ Ryokan en Miyajima |
-| **9** | ⛩️ **Chugoku** | Miyajima (Monte Misen) → Vuelo Sur | Teleférico al Monte Misen, templos y vuelo a Okinawa | ✈️ Tránsito / Base Okinawa |
-| **10** | 🌺 **Okinawa** | Naha & Playas de Ryukyu | Castillo de Shuri, calle Kokusai-dori y snorkel en arrecifes | 🏨 Hotel en Naha (Okinawa) |
-| **11** | 🌺 **Okinawa** | Isla salvaje de Iriomote | Parque Nacional Yaeyama, río Urauchi y manglares | 🏕️ Eco-lodge en Iriomote |
-| **12** | ❄️ **Hokkaido** | Vuelo a Sapporo (Hokkaido) | Parque Odori, Miso Ramen en Susukino y Monte Moiwa | 🏨 Hotel en Sapporo |
-| **13** | ❄️ **Hokkaido / Kanto** | Excursión a Otaru → Tokio / Vuelo | Canal histórico de Otaru, almacenes de piedra y vuelo de vuelta | ✈️ Vuelo internacional de regreso |
+| **8** | ⛩️ **Kumano Kodo** | Osaka → Kii-Tanabe → Hongu | Senda Nakahechi, Gran Santuario Hongu Taisha, Oyunohara y Tsuboyu | ♨️ Ryokan en Yunomine Onsen |
+| **9** | ⛩️ **Kumano Kodo** | Yunomine → Daimon-zaka → Katsuura | Escaleras milenarias de cedros, Nachi Taisha y Cascada de Nachi (133 m) | 🐟 Hotel en Kii-Katsuura / Hiroshima |
+| **10** | 🕊️ **Chugoku** | Hiroshima & Parque de la Paz | Parque y Museo Memorial, Cúpula Genbaku y Okonomimura | 🏨 Hotel en Hiroshima |
+| **11** | ⛩️ **Chugoku** | Isla de Miyajima | Torii flotante en pleamar, Monte Misen y ciervos sika | ⛩️ Ryokan en Miyajima |
+| **12** | 🌺 **Okinawa** | Naha & Playas de Ryukyu | Castillo de Shuri, calle Kokusai-dori y gastronomía isleña | 🏨 Hotel en Naha (Okinawa) |
+| **13** | 🌺 **Okinawa** | Isla salvaje de Iriomote | Parque Nacional Yaeyama, Dark Sky Park y kayak en manglares | 🏕️ Eco-lodge en Iriomote |
+| **14** | ❄️ **Hokkaido** | Vuelo a Sapporo (Hokkaido) | Parque Odori, Miso Ramen en Susukino y Monte Moiwa | 🏨 Hotel en Sapporo |
+| **15** | 🛫 **Kanto / Salida** | Sapporo → Tokio → Narita (NRT) | Compras finales omiyage, banquete de despedida y vuelo internacional | ✈️ Vuelo internacional de regreso |
 
 ---
 
@@ -44,18 +46,18 @@ La expedición está estructurada en **6 bloques regionales** diseñados con un 
 - **Exportación a PDF:** Generador de documento imprimible y guardable en el dispositivo para llevar en mano.
 
 ### 2. 🗺️ Mapa Vectorial Interactivo (Leaflet)
-- **26 Paradas Geolocalizadas:** Marcadores con coordenadas exactas distribuidos por todo Japón.
-- **Trazado de Ruta:** Polilínea continua que une visualmente las 13 etapas a través de la geografía insular.
+- **33 Paradas Geolocalizadas:** Marcadores con coordenadas exactas distribuidos por todo Japón.
+- **Trazado de Ruta:** Polilínea continua que une visualmente las 15 etapas a través de la geografía insular.
 - **Filtros Dinámicos:** Selector para aislar regiones concretas o ver todas las etapas simultáneamente.
 - **Navegación Cruzada:** Botones directos para saltar del mapa al día correspondiente del itinerario y viceversa.
 
 ### 3. 📅 Calendario & Exportador `.ICS`
-- **Cronograma de la Expedición:** Cuadrícula de 2 semanas con código de colores por región y etiquetas de alojamiento.
+- **Cronograma de la Expedición:** Cuadrícula de etapas con código de colores por región y etiquetas de alojamiento.
 - **Exportación Universal:** Descarga en un clic de archivo de calendario compatible con **Apple Calendar (iPhone / Mac)** y **Google Calendar**.
 
 ### 4. 🧭 Explorador de Etapas (`Inicio` / `Hoy`)
 - **Modo Planificación:** Selector dinámico de etapas para explorar en profundidad cualquier día del itinerario sin esperar a fechas reales de viaje.
-- **Dashboard de Bienvenida:** Métricas clave de la expedición (13 jornadas, 6 regiones, 7 alojamientos base) con accesos directos al mapa y transportes.
+- **Dashboard de Bienvenida:** Métricas clave de la expedición (15 jornadas, 7 regiones, 8 alojamientos base) con accesos directos al mapa y transportes.
 
 ### 5. ✈️ Vuelos Internacionales y Domésticos
 - **Vuelo Internacional:** Información de rutas desde España (Madrid/Barcelona) hacia Tokio (Narita o Haneda) con escalas recomendadas.
@@ -66,20 +68,20 @@ La expedición está estructurada en **6 bloques regionales** diseñados con un 
   4. *Sapporo → Tokio (Narita / Haneda)*
 - **Visit Japan Web:** Instrucciones paso a paso para tramitar el registro oficial de Inmigración y Aduanas con código QR.
 
-### 6. 🏨 Las 7 Bases de Alojamiento
-- **Guía de Alojamientos:** Tipologías de hospedaje (Business hotels urbanos, refugio Yamagoya en Fuji, Ryokans centenarios con cena Kaiseki y eco-lodges en la jungla).
+### 6. 🏨 Las 8 Bases de Alojamiento
+- **Guía de Alojamientos:** Tipologías de hospedaje (Business hotels urbanos, refugio Yamagoya en Fuji, onsen en Kumano Kodo, Ryokans centenarios con cena Kaiseki y eco-lodges en la jungla).
 - **Cultura Onsen:** Normas de etiqueta en aguas termales japonesas (lavado previo, gestión de tatuajes, protocolo de toallas).
 - **Takkyubin:** Guía del servicio de reenvío de maletas pesadas entre hoteles para viajar ligero en etapas de montaña.
 
 ### 7. 🚅 Transportes, Shinkansen y Pases
-- **Trenes Bala (Shinkansen):** Líneas Tokaido y Sanyo (Nozomi, Hikari), reserva de asientos y compra anticipada mediante SmartEX.
+- **Trenes Bala (Shinkansen) y Limited Express:** Shinkansen Tokaido/Sanyo y JR Kuroshio hacia Kumano Kodo.
 - **Análisis de Rentabilidad JR Pass:** Comparativa financiera detallada que demuestra por qué comprar billetes punto a punto y pases regionales es más económico que el pase nacional tras la subida de tarifas.
-- **Pases Locales:** Tobu Nikko Pass, Osaka Metro Day Pass y ferris de Miyajima e Iriomote.
+- **Pases Locales:** Tobu Nikko Pass, buses de Kumano, Osaka Metro Day Pass y ferris de Miyajima e Iriomote.
 - **IC Cards Digitales:** Instrucciones para dar de alta Suica o Pasmo directamente en Apple Wallet o Google Pay.
 
 ### 8. 💰 Presupuesto Estimado y Transparente
-- **Desglose por Categorías:** Vuelos internacionales e internos (~1.150€), transportes por tierra y mar (~480€), 13 noches de alojamiento (~980€), alimentación y restaurantes (~650€), entradas y actividades (~340€), seguro y conectividad (~150€).
-- **Presupuesto Total Estimado:** ~3.750€ por persona (con opción de optimización en hoteles y billetes anticipados).
+- **Desglose por Categorías:** Vuelos internacionales e internos (~1.210€), transportes por tierra y mar (~475€), 14 noches de alojamiento (~1.280€), alimentación y restaurantes (~750€), entradas y actividades (~220€), seguro y contingencia (~260€).
+- **Presupuesto Total Estimado:** ~4.150€ por persona (con opción de optimización en hoteles y billetes anticipados).
 
 ### 9. ⛩️ Destinos y Experiencias (`Lugares`)
 - Catálogo clasificado en cuatro grandes categorías:

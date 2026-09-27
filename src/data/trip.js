@@ -3,12 +3,12 @@ import { pendingDays } from "./pendingDays.js";
 
 export const tripMeta = {
   title: "Viaje a Japón",
-  subtitle: "Ruta de 13 Etapas: Kanto, Fuji, Kansai, Chugoku, Okinawa y Hokkaido",
+  subtitle: "Ruta de 15 Etapas: Kanto, Fuji, Kansai, Kumano Kodo, Chugoku, Okinawa y Hokkaido",
   status: "planning",
   people: 2,
   welcomeParagraphs: [
-    "¡Bienvenidos a la plataforma interactiva del <strong>futuro viaje a Japón</strong>! Esta aplicación web es un proyecto vivo y en <strong>continuo desarrollo</strong>, concebido como el centro de operaciones digital para diseñar, presupuestar y coordinar nuestra próxima gran expedición nipona a lo largo de <strong>13 etapas memorables</strong>.",
-    "Desde los templos milenarios y los rascacielos vanguardistas de Tokio, la majestuosidad sagrada de Nikko y Kamakura, hasta coronar el <strong>Monte Fuji</strong> (3.776 m) al amanecer. Continuando hacia la vibrante Osaka, la memoria histórica de Hiroshima y el torii flotante de la isla sagrada de Miyajima; para después volar hacia las aguas turquesa y el cielo estrellado de Okinawa e Iriomote, culminando en la indómita naturaleza y gastronomía de Hokkaido.",
+    "¡Bienvenidos a la plataforma interactiva del <strong>futuro viaje a Japón</strong>! Esta aplicación web es un proyecto vivo y en <strong>continuo desarrollo</strong>, concebido como el centro de operaciones digital para diseñar, presupuestar y coordinar nuestra próxima gran expedición nipona a lo largo de <strong>15 etapas memorables</strong>.",
+    "Desde los templos milenarios y los rascacielos vanguardistas de Tokio, la majestuosidad sagrada de Nikko y Kamakura, hasta coronar el <strong>Monte Fuji</strong> (3.776 m) al amanecer. Continuando hacia la vibrante Osaka, la milenaria ruta de peregrinación de <strong>Kumano Kodo</strong> entre bosques de cedros gigantes y cascadas sagradas; la memoria histórica de Hiroshima y el torii flotante de la isla sagrada de Miyajima; para después volar hacia las aguas turquesa y el cielo estrellado de Okinawa e Iriomote, culminando en la indómita naturaleza y gastronomía de Hokkaido.",
     "<strong>¿Por qué esta web y en qué estado se encuentra?</strong> Funciona como un banco de pruebas y cuaderno de bitácora previo a la partida: reúne el itinerario en construcción, los cálculos de presupuesto estimado, las simulaciones de conexiones en tren bala (Shinkansen), vuelos internos, ferris y las bases de alojamiento sugeridas. Todo el contenido se amplía y se revisa con regularidad a medida que se fijan fechas definitivas y nuevas ideas.",
     "Además, la aplicación está programada con arquitectura <strong>100% offline (PWA)</strong>: una vez cargada, puede consultarse en cualquier momento y lugar (en pleno vuelo, en los trenes bala o en las cumbres montañosas) sin requerir conexión a internet. ¡Explora las secciones, interactúa con el mapa y acompáñanos durante el proceso de planificación!",
     "Puedes cambiar el idioma de la aplicación en cualquier momento (Español, English, Français, Tagalog) utilizando el selector superior."
@@ -23,8 +23,8 @@ export const tripMeta = {
       },
       {
         icon: "🗺️",
-        title: "Ruta Completa de 13 Etapas & Mapa Interactivo",
-        text: "Las 13 etapas de la aventura enlazadas geográficamente con un <strong>mapa vectorial interactivo (Leaflet)</strong>, con filtros por etapa y región, y trazado completo de la ruta por todo Japón."
+        title: "Ruta Completa de 15 Etapas & Mapa Interactivo",
+        text: "Las 15 etapas de la aventura enlazadas geográficamente con un <strong>mapa vectorial interactivo (Leaflet)</strong>, con filtros por etapa y región, y trazado completo de la ruta por todo Japón."
       },
       {
         icon: "🗓️",
@@ -39,7 +39,7 @@ export const tripMeta = {
       {
         icon: "🏨",
         title: "Bases y Alojamientos Recomendados",
-        text: "Guía práctica de las 7 bases del itinerario (Tokio, refugio en Monte Fuji, Osaka, ryokan en Miyajima, Okinawa, Iriomote y Sapporo) con tipos de habitación, onsens y consejos de reserva."
+        text: "Guía práctica de las 8 bases del itinerario (Tokio, refugio en Monte Fuji, Osaka, onsen en Kumano Kodo, ryokan en Miyajima, Okinawa, Iriomote y Sapporo) con tipos de habitación, onsens y consejos de reserva."
       },
       {
         icon: "📜",
@@ -105,7 +105,7 @@ export const flights = {
   back: {
     dir: "back",
     label: "Vuelo Internacional de Regreso",
-    date: "Día 13 / 14",
+    date: "Día 15 / 16",
     text: "Vuelo internacional de regreso a casa desde Tokio Narita (NRT) o Tokio Haneda (HND) tras el vuelo doméstico de conexión desde Hokkaido.",
     flightNumber: "Vuelo Internacional de Retorno",
     leg1: {
@@ -117,7 +117,7 @@ export const flights = {
       arrTime: "Llegada",
       trackUrl: "https://www.google.com/travel/flights",
     },
-    depart: { city: "Tokio Narita (NRT)", time: "Día 13/14", terminal: "T2 / T1" },
+    depart: { city: "Tokio Narita (NRT)", time: "Día 15/16", terminal: "T2 / T1" },
     arrive: { city: "Madrid / Barcelona", time: "Llegada", terminal: "T4 / T1" },
     totalDuration: "15h–18h",
     layover: {
@@ -190,11 +190,20 @@ export const blocks = [
     bestArea: "Namba / Dotonbori para vida nocturna y gastronomía, o Umeda para conexiones Shinkansen.",
   },
   {
+    id: "kumano",
+    emoji: "⛩️",
+    title: "Kumano Kodo: Ruta Nakahechi y Santuarios Sagrados",
+    color: "#2A9D8F", // verde bosque espiritual
+    days: [8, 9],
+    sleepSummary: "Yunomine Onsen / Kii-Katsuura (2 noches)",
+    bestArea: "Ryokan tradicional con onsen en Yunomine (Tsuboyu) y hotel costero en Kii-Katsuura junto al puerto atunero.",
+  },
+  {
     id: "chugoku",
     emoji: "⛩️",
     title: "Chugoku: Hiroshima y Miyajima",
     color: "#C9A227", // oro / ámbar
-    days: [8, 9],
+    days: [10, 11],
     sleepSummary: "Hiroshima / Ryokan en Miyajima (2 noches)",
     bestArea: "Ryokan tradicional en la isla de Miyajima para disfrutar de la marea nocturna y el monte Misen.",
   },
@@ -203,7 +212,7 @@ export const blocks = [
     emoji: "🌺",
     title: "Islas Ryukyu: Okinawa e Iriomote",
     color: "#2E7D5B", // verde esmeralda
-    days: [10, 11],
+    days: [12, 13],
     sleepSummary: "Naha y Eco-lodge en Iriomote (2 noches)",
     bestArea: "Naha centro (cerca de Kokusai-dori) y resort o eco-lodge integrado en la selva de Iriomote.",
   },
@@ -212,7 +221,7 @@ export const blocks = [
     emoji: "❄️",
     title: "Hokkaido & Despedida en Tokio",
     color: "#3A506B", // azul alpino
-    days: [12, 13],
+    days: [14, 15],
     sleepSummary: "Sapporo (1 noche) y Tokio / Narita (1 noche)",
     bestArea: "Sapporo centro cerca de Odori o Susukino, y hotel en Tokio o junto al aeropuerto de Narita.",
   },
@@ -223,12 +232,13 @@ const blockForDay = (num) => {
   if (num <= 4) return "kanto";
   if (num === 5) return "fuji";
   if (num <= 7) return "kansai";
-  if (num <= 9) return "chugoku";
-  if (num <= 11) return "okinawa";
+  if (num <= 9) return "kumano";
+  if (num <= 11) return "chugoku";
+  if (num <= 13) return "okinawa";
   return "hokkaido";
 };
 
-// Las 13 etapas de la ruta futura
+// Las 15 etapas de la ruta futura
 export const days = pendingDays.es.map((d) => ({
   ...d,
   block: blockForDay(d.num),
@@ -303,10 +313,32 @@ export const stays = [
     ],
   },
   {
-    id: "miyajima",
-    city: "Hiroshima & Miyajima",
+    id: "kumano",
+    city: "Kumano Kodo & Kii-Katsuura",
     nights: "Días 8 y 9 (2 noches)",
     afterDay: 8,
+    options: [
+      {
+        name: "Ryokan con Onsen en Yunomine / Hotel Costero en Kii-Katsuura",
+        total: "Aprox. 110€–180€ / noche",
+        paid: false,
+        address: "Yunomine Onsen / Nachi-Katsuura, Prefectura de Wakayama, Japón",
+        phone: "+81 735 00 0000",
+        checkIn: "Día 8 · 15:00",
+        checkOut: "Día 10 · 09:30",
+        rooms: "Habitación tradicional con tatami y vistas al desfiladero o al océano",
+        guests: "A definir según grupo",
+        cancel: "Cancelación flexible recomendada",
+        onsen: { has: true, hours: "Baños de aguas termales curativas milenarias (Tsuboyu) y rotenburo exterior." },
+        note: "Bañarse en Yunomine Onsen (única fuente termal Patrimonio de la Humanidad donde bañarse) y degustar atún maguro fresco en la bahía de Kii-Katsuura.",
+      },
+    ],
+  },
+  {
+    id: "miyajima",
+    city: "Hiroshima & Miyajima",
+    nights: "Días 10 y 11 (2 noches)",
+    afterDay: 10,
     options: [
       {
         name: "Ryokan Tradicional en Isla de Miyajima / Hotel en Hiroshima Station",
@@ -314,8 +346,8 @@ export const stays = [
         paid: false,
         address: "Miyajima-cho, Hatsukaichi, Hiroshima, Japón",
         phone: "+81 829 00 0000",
-        checkIn: "Día 8 · 15:00",
-        checkOut: "Día 10 · 10:00",
+        checkIn: "Día 10 · 15:00",
+        checkOut: "Día 12 · 10:00",
         rooms: "Habitación japonesa tradicional con tatami, puertas shoji y futón",
         guests: "A definir según grupo",
         cancel: "Consultar política del establecimiento",
@@ -327,11 +359,11 @@ export const stays = [
   {
     id: "okinawa",
     city: "Okinawa & Archipiélago Yaeyama",
-    nights: "Días 10 y 11 (2 noches)",
-    afterDay: 10,
+    nights: "Días 12 y 13 (2 noches)",
+    afterDay: 12,
     options: [
       {
-        name: "Hotel en Naha (Noche 10) & Eco-Lodge en Iriomote/Ishigaki (Noche 11)",
+        name: "Hotel en Naha (Noche 12) & Eco-Lodge en Iriomote/Ishigaki (Noche 13)",
         total: "Aprox. 110€–170€ / noche",
         paid: false,
         address: "Naha / Isla de Iriomote, Prefectura de Okinawa, Japón",
@@ -349,8 +381,8 @@ export const stays = [
   {
     id: "hokkaido",
     city: "Sapporo (Hokkaido)",
-    nights: "Día 12 (1 noche)",
-    afterDay: 12,
+    nights: "Día 14 (1 noche)",
+    afterDay: 14,
     options: [
       {
         name: "Hotel en Sapporo Centro (Zona Parque Odori / Susukino)",
@@ -358,8 +390,8 @@ export const stays = [
         paid: false,
         address: "Chuo-ku, Sapporo, Hokkaido, Japón",
         phone: "+81 11 0000 0000",
-        checkIn: "Día 12 · 15:00",
-        checkOut: "Día 13 · 10:00",
+        checkIn: "Día 14 · 15:00",
+        checkOut: "Día 15 · 10:00",
         rooms: "Habitación funcional y moderna",
         guests: "A definir según grupo",
         cancel: "Cancelación gratuita recomendada",
@@ -371,8 +403,8 @@ export const stays = [
   {
     id: "tokio-despedida",
     city: "Tokio / Narita",
-    nights: "Día 13 (Noche de despedida o enlace a Narita)",
-    afterDay: 13,
+    nights: "Día 15 (Noche de despedida o enlace a Narita)",
+    afterDay: 15,
     options: [
       {
         name: "Hotel en Tokio Centro o Hotel de Aeropuerto en Narita",
@@ -380,7 +412,7 @@ export const stays = [
         paid: false,
         address: "Ginza / Tokyo Station / Narita Airport, Japón",
         phone: "+81 3 0000 0000",
-        checkIn: "Día 13 · 15:00",
+        checkIn: "Día 15 · 15:00",
         checkOut: "Día de salida internacional",
         rooms: "Habitación cómoda con espacio para organizar maletas y compras",
         guests: "A definir según grupo",
@@ -392,7 +424,7 @@ export const stays = [
   },
 ];
 
-// Transportes y conexiones para las 13 etapas de la ruta
+// Transportes y conexiones para las 15 etapas de la ruta
 export const transports = [
   {
     day: 1,
@@ -481,10 +513,36 @@ export const transports = [
   },
   {
     day: 8,
+    kind: "train",
+    name: "JR Limited Express Kuroshio + Bus Ryujin a Hosshinmon-oji",
+    type: "Tren Express Panorámico & Bus de Montaña",
+    route: "Shin-Osaka / Tennoji → Kii-Tanabe (2h 10m) + Bus Ryujin a Hongu (1h 15m)",
+    duration: "3h 25m total",
+    time: "Salida matinal (07:35 o 07:59)",
+    jpy: 6800,
+    real: 42,
+    reserved: true,
+    desc: "Tren panorámico costero hacia la península de Kii cubierto por JR Pass. Enlace con bus de montaña para iniciar la senda Nakahechi a pie hacia Hongu Taisha.",
+  },
+  {
+    day: 9,
+    kind: "train",
+    name: "Bus Gobo Nankai a Nachi + JR Kuroshio + Shinkansen a Hiroshima",
+    type: "Bus Regional, Tren Kuroshio & Shinkansen Sanyo",
+    route: "Yunomine → Daimon-zaka/Nachi (1h 10m) + Kii-Katsuura → Shin-Osaka (3h 30m) → Hiroshima (1h 25m)",
+    duration: "Bus local + 4h 55m tren bala",
+    time: "Tarde / Noche",
+    jpy: 14800,
+    real: 95,
+    reserved: true,
+    desc: "Visita de Nachi Taisha y cascada, almuerzo de atún en Kii-Katsuura y enlace ferroviario de alta velocidad hacia Hiroshima para descansar.",
+  },
+  {
+    day: 10,
     kind: "shinkansen",
     name: "Shinkansen Sanyo (Nozomi / Sakura) + Tranvía Hiroden",
     type: "Tren Bala Shinkansen & Tranvía Histórico",
-    route: "Shin-Osaka → Hiroshima Station (1h 25m) + Tranvía a Cúpula Atómica",
+    route: "Shin-Osaka / Hiroshima Station (1h 25m) + Tranvía a Cúpula Atómica",
     duration: "1h 25m tren bala + 15 min tranvía",
     time: "Salida matinal (08:00 – 09:00)",
     jpy: 10500,
@@ -492,7 +550,7 @@ export const transports = [
     desc: "Tren bala ultrarrápido al oeste de Japón. En Hiroshima el tranvía urbano Hiroden conecta con el Parque de la Paz.",
   },
   {
-    day: 9,
+    day: 11,
     kind: "ferry",
     name: "Línea JR Sanyo + Ferry JR West Miyajima",
     type: "Tren de Cercanías & Ferry Panorámico",
@@ -504,7 +562,7 @@ export const transports = [
     desc: "El ferry de JR navega haciendo una curva especial frente al Gran Torii Flotante para la mejor panorámica desde el agua.",
   },
   {
-    day: 10,
+    day: 12,
     kind: "plane",
     name: "Vuelo Doméstico a Okinawa + Monorraíl Yui Rail",
     type: "Vuelo Interior & Monorraíl",
@@ -516,7 +574,7 @@ export const transports = [
     desc: "Vuelo hacia el archipiélago subtropical de Ryukyu. El monorraíl elevado conecta el aeropuerto directo con Kokusai-dori y el Castillo Shuri.",
   },
   {
-    day: 11,
+    day: 13,
     kind: "ferry",
     name: "Vuelo Naha → Ishigaki + Ferry Rápido a Isla de Iriomote",
     type: "Vuelo Interinsular & Ferry Rápido de Alta Velocidad",
@@ -528,7 +586,7 @@ export const transports = [
     desc: "Traslado al Japón más salvaje y virgen. Reserva Dark Sky Park internacional para observación de estrellas y kayak por manglares.",
   },
   {
-    day: 12,
+    day: 14,
     kind: "plane",
     name: "Vuelo Doméstico hacia Hokkaido + Tren Rápido JR Airport",
     type: "Vuelo Interior & Tren Rápido",
@@ -540,7 +598,7 @@ export const transports = [
     desc: "Salto al gran norte de Japón. Tren rápido directo desde el aeropuerto New Chitose al corazón de Sapporo.",
   },
   {
-    day: 13,
+    day: 15,
     kind: "plane",
     name: "Vuelo Sapporo → Tokio + Narita Express",
     type: "Vuelo Interior & Tren Narita Express",
@@ -553,12 +611,12 @@ export const transports = [
   },
 ];
 
-// Presupuesto estimado por viajero para la ruta de 13 etapas
+// Presupuesto estimado por viajero para la ruta de 15 etapas
 export const budget = {
   people: 1,
-  totalPerPerson: "3.750€",
-  totalGroup: "3.750€ / viajero (estimación completa)",
-  note: "Presupuesto orientativo y realista para la ruta completa de 13 días, incluyendo vuelos internacionales, vuelos domésticos, alojamientos, transportes de alta velocidad, comidas y actividades.",
+  totalPerPerson: "4.150€",
+  totalGroup: "4.150€ / viajero (estimación completa)",
+  note: "Presupuesto orientativo y realista para la ruta completa de 15 días, incluyendo Kumano Kodo, vuelos internacionales, vuelos domésticos, alojamientos, transportes de alta velocidad, comidas y actividades.",
   categories: [
     {
       title: "Vuelos Internacionales (España ↔ Japón)",
@@ -580,13 +638,14 @@ export const budget = {
       ],
     },
     {
-      title: "Alojamientos (12 noches)",
-      total: "1.100€",
-      perPerson: "1.100€",
+      title: "Alojamientos (14 noches)",
+      total: "1.280€",
+      perPerson: "1.280€",
       items: [
         { label: "Tokio (4 noches iniciales)", cost: "320€ (~80€/noche compartida)", note: "Shinjuku o Asakusa" },
         { label: "Refugio Monte Fuji (1 noche)", cost: "85€", note: "Yamagoya con cena y desayuno" },
         { label: "Osaka (2 noches)", cost: "150€ (~75€/noche)", note: "Namba / Umeda" },
+        { label: "Kumano Kodo (Yunomine / Kii-Katsuura, 2 noches)", cost: "180€", note: "Ryokan tradicional con onsen y hotel costero" },
         { label: "Ryokan tradicional en Miyajima / Hiroshima (2 noches)", cost: "240€", note: "Con onsen y cena kaiseki" },
         { label: "Okinawa e Iriomote (2 noches)", cost: "170€", note: "Hotel costero y eco-lodge" },
         { label: "Sapporo, Hokkaido (1 noche)", cost: "65€", note: "Centro de Sapporo" },
@@ -595,8 +654,8 @@ export const budget = {
     },
     {
       title: "Transportes Terrestres y Pases Regionales",
-      total: "420€",
-      perPerson: "420€",
+      total: "475€",
+      perPerson: "475€",
       items: [
         { label: "Narita Express / Skyliner (Ida y Vuelta)", cost: "40€", note: "Conexión rápida al aeropuerto" },
         { label: "Tokyo Subway 72h + Tarjeta IC Suica urbana", cost: "35€", note: "Desplazamientos en Tokio" },
@@ -605,6 +664,7 @@ export const budget = {
         { label: "Autobús Express Busta Shinjuku → Monte Fuji 5ª Estación", cost: "24€", note: "Subida al Fuji" },
         { label: "Shinkansen Tokaido (Mishima → Osaka)", cost: "80€", note: "Tren bala tras el Fuji" },
         { label: "Metro de Osaka (Pases 1-Day)", cost: "10€", note: "Moverse por Osaka" },
+        { label: "JR Kuroshio + Autobuses Kumano Kodo", cost: "55€", note: "Tren panorámico y buses Ryujin a Hongu" },
         { label: "Shinkansen Sanyo (Osaka → Hiroshima)", cost: "65€", note: "Tren bala hacia Chugoku" },
         { label: "Ferry JR a Miyajima + Tranvía Hiroden", cost: "8€", note: "Visita al torii flotante" },
         { label: "Ferry rápido Ishigaki ↔ Isla de Iriomote", cost: "30€", note: "Archipiélago Yaeyama" },
@@ -613,28 +673,29 @@ export const budget = {
       ],
     },
     {
-      title: "Gastronomía y Comidas (13 días)",
-      total: "650€",
-      perPerson: "650€ (~50€/día)",
+      title: "Gastronomía y Comidas (15 días)",
+      total: "750€",
+      perPerson: "750€ (~50€/día)",
       items: [
-        { label: "Desayunos en Konbini / cafeterías (13 días)", cost: "100€ (~7€/día)", note: "Onigiris, café, fruta, repostería" },
-        { label: "Almuerzos en ruta (Ramen, Soba, Udon, Donburi)", cost: "195€ (~15€/día)", note: "Comida informal y rápida de calidad" },
-        { label: "Cenas especiales e Izakayas (Sukiyaki, Wagyu, Sushi, Ostras)", cost: "355€ (~27€/día)", note: "Disfrutar de la cultura izakaya, Dotonbori y Sapporo" },
+        { label: "Desayunos en Konbini / cafeterías (15 días)", cost: "115€ (~7€/día)", note: "Onigiris, café, fruta, repostería" },
+        { label: "Almuerzos en ruta (Ramen, Soba, Udon, Atún de Katsuura)", cost: "225€ (~15€/día)", note: "Comida informal, fresca y de calidad" },
+        { label: "Cenas especiales e Izakayas (Sukiyaki, Wagyu, Sushi, Ostras)", cost: "410€ (~27€/día)", note: "Cultura izakaya, Dotonbori, kaiseki y Sapporo" },
       ],
     },
     {
       title: "Entradas, Actividades y Visitas",
-      total: "210€",
-      perPerson: "210€",
+      total: "220€",
+      perPerson: "220€",
       items: [
         { label: "Mirador Shibuya Sky / Umeda Sky", cost: "25€", note: "Vistas panorámicas 360°" },
         { label: "Santuarios de Nikko (Toshogu + Rinnoji)", cost: "12€", note: "Patrimonio de la Humanidad" },
         { label: "Gran Buda Kotoku-in y Hasedera (Kamakura)", cost: "6€", note: "Templos de Kamakura" },
         { label: "Tasa oficial de escalada Monte Fuji", cost: "18€", note: "Tasa de preservación y acceso" },
+        { label: "Baño termal Tsuboyu y Nachi Falls (Kumano Kodo)", cost: "8€", note: "Onsen UNESCO y cascada sagrada" },
         { label: "Castillo de Osaka y Museo Memorial Hiroshima", cost: "6€", note: "Entradas históricas" },
         { label: "Teleférico Monte Misen (Miyajima)", cost: "13€", note: "Panorámica del mar interior" },
         { label: "Tour en kayak por manglares y cascada en Iriomote", cost: "50€", note: "Excursión en la naturaleza" },
-        { label: "Museos, templos y jardines varios", cost: "40€", note: "Fondo para visitas espontáneas" },
+        { label: "Museos, templos y jardines varios", cost: "42€", note: "Fondo para visitas espontáneas" },
         { label: "Batería de souvenirs y recuerdos (Omiyage)", cost: "40€", note: "Dulces típicos, amuletos omamori" },
       ],
     },

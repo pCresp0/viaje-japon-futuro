@@ -202,7 +202,7 @@ export default function HotelsPage() {
           Bases y Hoteles Recomendados
         </h1>
         <p style={{ fontSize: 13.5, color: "var(--ink-soft)", marginTop: 6, lineHeight: 1.5 }}>
-          Las 7 bases estratégicas de alojamiento para las 13 etapas de la ruta por Japón: zonas óptimas, tipología de estancia y logística de equipaje.
+          Las 8 bases estratégicas de alojamiento para las 15 etapas de la ruta por Japón: zonas óptimas, tipología de estancia y logística de equipaje.
         </p>
       </div>
 

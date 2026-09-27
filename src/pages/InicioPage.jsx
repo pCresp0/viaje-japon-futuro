@@ -46,14 +46,14 @@ export default function InicioPage({ onNavigate }) {
               </span>
             </div>
             <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed mb-3">
-              Esta web es el <strong>centro de operaciones y cuaderno de bitácora digital</strong> para un <strong>futuro viaje a Japón</strong>. El proyecto está actualmente en <strong>fase activa de planificación y desarrollo</strong>: estamos diseñando las 13 etapas, investigando conexiones de tren bala Shinkansen, vuelos internos y ferris, seleccionando alojamientos estratégicos y calculando presupuestos de referencia.
+              Esta web es el <strong>centro de operaciones y cuaderno de bitácora digital</strong> para un <strong>futuro viaje a Japón</strong>. El proyecto está actualmente en <strong>fase activa de planificación y desarrollo</strong>: estamos diseñando las 15 etapas, investigando conexiones de tren bala Shinkansen, vuelos internos y ferris, seleccionando alojamientos estratégicos y calculando presupuestos de referencia.
             </p>
 
             {/* Chips de estado del proyecto */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-2.5 border-t border-amber-200/70">
               <div className="flex items-center gap-2 text-xs text-neutral-700">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
-                <span><strong>13 Etapas:</strong> Trazado y ruta base definidos</span>
+                <span><strong>15 Etapas:</strong> Trazado y ruta base definidos</span>
               </div>
               <div className="flex items-center gap-2 text-xs text-neutral-700">
                 <span className="w-2 h-2 rounded-full bg-amber-500 shrink-0"></span>
@@ -88,24 +88,24 @@ export default function InicioPage({ onNavigate }) {
           </div>
 
           <h2 className="font-display text-2xl sm:text-3xl font-bold mb-2 text-white leading-tight">
-            13 Etapas de Norte a Sur por Japón
+            15 Etapas de Norte a Sur por Japón
           </h2>
           <p className="text-sm sm:text-base text-white/85 max-w-2xl leading-relaxed mb-6">
-            Kanto (Tokio, Nikko, Kamakura) → Cumbre del Monte Fuji (3.776 m) → Kansai (Osaka) → Chugoku (Hiroshima y Miyajima) → Islas Ryukyu (Okinawa e Iriomote) → Hokkaido (Sapporo) → Tokio.
+            Kanto (Tokio, Nikko, Kamakura) → Cumbre del Monte Fuji (3.776 m) → Kansai (Osaka) → Kumano Kodo (Ruta Nakahechi, Hongu Taisha y Nachi) → Chugoku (Hiroshima y Miyajima) → Islas Ryukyu (Okinawa e Iriomote) → Hokkaido (Sapporo) → Tokio.
           </p>
 
           {/* Estadísticas de la ruta */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
             <div className="p-3 rounded-xl bg-white/10 border border-white/15 text-center">
-              <p className="font-display text-2xl font-bold text-yellow-300 m-0">13</p>
+              <p className="font-display text-2xl font-bold text-yellow-300 m-0">15</p>
               <p className="text-[11px] text-white/75 font-semibold uppercase tracking-wider m-0 mt-0.5">Etapas</p>
             </div>
             <div className="p-3 rounded-xl bg-white/10 border border-white/15 text-center">
-              <p className="font-display text-2xl font-bold text-emerald-300 m-0">6</p>
+              <p className="font-display text-2xl font-bold text-emerald-300 m-0">7</p>
               <p className="text-[11px] text-white/75 font-semibold uppercase tracking-wider m-0 mt-0.5">Regiones</p>
             </div>
             <div className="p-3 rounded-xl bg-white/10 border border-white/15 text-center">
-              <p className="font-display text-2xl font-bold text-sky-300 m-0">7</p>
+              <p className="font-display text-2xl font-bold text-sky-300 m-0">8</p>
               <p className="text-[11px] text-white/75 font-semibold uppercase tracking-wider m-0 mt-0.5">Bases</p>
             </div>
             <div className="p-3 rounded-xl bg-white/10 border border-white/15 text-center">

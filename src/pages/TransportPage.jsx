@@ -85,7 +85,7 @@ export default function TransportPage({ onNavigate }) {
         </button>
       </div>
 
-      {/* ── Pestaña 1: Conexiones de las 13 Etapas ────────────── */}
+      {/* ── Pestaña 1: Conexiones de las 15 Etapas ────────────── */}
       {activeTab === "trayectos" && (
         <div className="space-y-4">
           {transports.map((tr) => {
@@ -205,7 +205,7 @@ export default function TransportPage({ onNavigate }) {
                 <strong>Veredicto para esta ruta: ❌ NO sale a cuenta comprar el JR Pass nacional de 7 o 14 días.</strong>
               </p>
               <p className="m-0 text-neutral-600">
-                El JR Pass nacional de 7 días cuesta actualmente <strong>50.000 ¥ (~315 €)</strong> y el de 14 días <strong>80.000 ¥ (~505 €)</strong>. En nuestra ruta de 13 etapas, los desplazamientos en tren bala Shinkansen principales (Mishima → Osaka y Osaka → Hiroshima) suman aprox. <strong>23.300 ¥ (~148 €)</strong>.
+                El JR Pass nacional de 7 días cuesta actualmente <strong>50.000 ¥ (~315 €)</strong> y el de 14 días <strong>80.000 ¥ (~505 €)</strong>. En nuestra ruta de 15 etapas, los desplazamientos en tren bala Shinkansen principales y trenes Limited Express (Mishima → Osaka, Kuroshio a Kumano y Osaka → Hiroshima) suman aprox. <strong>29.000 ¥ (~185 €)</strong>.
               </p>
               <p className="m-0 text-neutral-600">
                 La estrategia más económica y flexible es comprar <strong>billetes individuales de Shinkansen en SmartEX</strong> con antelación, combinados con la tarjeta Suica digital y pases regionales específicos (como el <strong>Tobu Nikko Pass</strong> de ~25 €).

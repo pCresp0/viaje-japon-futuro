@@ -69,10 +69,10 @@ export default function CalendarPage({ onGoToMapDay }) {
               {t("calendar.eyebrow") || "Cronograma de la Ruta"}
             </p>
             <h2 className="font-display text-2xl" style={{ color: "var(--indigo)" }}>
-              {t("calendar.title") || "Calendario de las 13 Etapas"}
+              {t("calendar.title") || "Calendario de las 15 Etapas"}
             </h2>
             <p style={{ fontSize: 13, color: "var(--ink-soft)", marginTop: 6, lineHeight: 1.6 }}>
-              Visualización cronológica de la expedición a través de Japón: 13 jornadas temáticas organizadas por regiones, de Tokio a Hokkaido pasando por Fuji, Kansai y Okinawa.
+              Visualización cronológica de la expedición a través de Japón: 15 jornadas temáticas organizadas por regiones, de Tokio a Hokkaido pasando por Fuji, Kansai, Kumano Kodo y Okinawa.
             </p>
           </div>
 
@@ -109,7 +109,7 @@ export default function CalendarPage({ onGoToMapDay }) {
             ))}
         </div>
 
-        {/* Expedition Stage Grid (2 weeks layout: Stage 1 to 13) */}
+        {/* Expedition Stage Grid (Stage 1 to 15) */}
         <div
           className="rounded-2xl overflow-hidden border mb-8"
           style={{ borderColor: "var(--line)", background: "var(--paper-raised)" }}
@@ -119,10 +119,10 @@ export default function CalendarPage({ onGoToMapDay }) {
             style={{ borderColor: "var(--line)", background: "var(--paper)" }}
           >
             <span className="text-xs font-bold uppercase tracking-wider" style={{ color: "var(--ink-soft)" }}>
-              Esquema de las 13 Etapas del Viaje
+              Esquema de las 15 Etapas del Viaje
             </span>
             <span className="text-xs font-semibold" style={{ color: "var(--forest)" }}>
-              13 días · 6 regiones · 7 alojamientos
+              15 días · 7 regiones · 8 alojamientos
             </span>
           </div>
 
@@ -374,7 +374,7 @@ export default function CalendarPage({ onGoToMapDay }) {
               </div>
 
               <p style={{ fontSize: 13, color: "var(--ink-soft)", marginBottom: 18, lineHeight: 1.5 }}>
-                Añade automáticamente las 13 etapas del viaje con sus descripciones, ciudades y planes a tu aplicación de calendario favorita.
+                Añade automáticamente las 15 etapas del viaje con sus descripciones, ciudades y planes a tu aplicación de calendario favorita.
               </p>
 
               <div className="space-y-3 mb-4">

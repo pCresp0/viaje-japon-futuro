@@ -1,7 +1,4 @@
-// Días que se habían planeado pero que finalmente no se hicieron en este viaje
-// (por ejemplo, por mal tiempo) o ideas seleccionadas para futuros viajes.
-// Formato editorial enriquecido con títulos temáticos, orden geográfico lógico y transportes detallados.
-
+// Datos del itinerario futuro completo y estructurado para la planificación del viaje
 export const pendingDays = {
   "es": [
     {
@@ -273,6 +270,70 @@ export const pendingDays = {
       "num": 7
     },
     {
+      "id": "kumano-hongu",
+      "title": "Osaka → Kumano Kodo (I): Senda Nakahechi, Hongu Taisha y Yunomine Onsen",
+      "cities": "Wakayama (Kii-Tanabe, Hongu, Yunomine Onsen)",
+      "reason": "Enlace Kansai → Kumano Kodo: Salida matinal en tren JR Kuroshio hacia la península sagrada de Kii para recorrer la senda milenaria de peregrinación.",
+      "summary": "Primera jornada en los milenarios senderos de peregrinación del Kumano Kodo (declarado Patrimonio de la Humanidad por la UNESCO). Caminata clásica por la histórica senda Nakahechi entre bosques umbríos de cedros gigantes, visita al sobrecogedor Gran Santuario Kumano Hongu Taisha, el gigantesco Torii de Oyunohara (el más alto del planeta, 34 m) y baño termal reparador en el legendario balneario de Yunomine Onsen (Tsuboyu).",
+      "history": "Junto con el Camino de Santiago en España, la red de Kumano Kodo es la única ruta de peregrinación del mundo declarada Patrimonio de la Humanidad por la UNESCO. Durante más de un milenio, emperadores retirados, aristócratas y samuráis recorrieron a pie estos bosques sagrados buscando la purificación física y el renacimiento espiritual, fusionando el sintoísmo animista con el budismo esotérico (Shinbutsu-shugo). Yunomine Onsen, descubierto hace más de 1.800 años, es la única fuente termal del mundo inscrita en la UNESCO donde está permitido sumergirse en sus aguas medicinales ricas en azufre.",
+      "schedule": [
+        {
+          "time": "🚆 Transporte y enlace Osaka → Kumano Kodo (Día 8)",
+          "text": "• Salida matinal hacia la Península de Kii: Check-out en Osaka llevando mochila ligera de 2 días (el equipaje principal puede enviarse por Takkyubin directo a Hiroshima o dejarse en consigna).\n• Tren Limited Express Kuroshio: Directo desde Shin-Osaka (07:35) o Tennoji (07:59) hasta la estación de Kii-Tanabe (**2 horas y 10 minutos**, tren panorámico costero con vistas al océano, 100% cubierto por JR Pass).\n• Autobús local de montaña Ryujin Bus: En la puerta de Kii-Tanabe Station, tomar el autobús local hasta la parada de Hosshinmon-oji (1h 15 min, ~1.500¥).\n• Caminata de peregrinación: Tramo Hosshinmon-oji → Kumano Hongu Taisha (7 km, 2h–2h 30m de marcha suave en descenso entre bosques de cedros y aldeas de té).\n• Conexión a Yunomine Onsen: Bus local de 10 min desde Hongu Taisha hasta Yunomine Onsen (~310¥).\n• Alojamiento: Ryokan tradicional en Yunomine Onsen o Wataze Onsen con baños termales al aire libre y cena kaiseki."
+        },
+        {
+          "time": "Senda Nakahechi: Caminata clásica de Hosshinmon-oji a Hongu Taisha (7 km)",
+          "text": "El tramo más accesible y evocador del Kumano Kodo. Hosshinmon-oji ('la puerta del despertar de la aspiración espiritual') marca la entrada al recinto sagrado del santuario principal. El sendero serpentea por calzadas de piedra cubiertas de musgo, bancales de té verde de montaña y pequeñas capillas subsidiarias (oji) donde los antiguos peregrinos dejaban ofrendas poéticas de waka y rezaban a las deidades locales de los árboles y arroyos."
+        },
+        {
+          "time": "Gran Santuario Kumano Hongu Taisha",
+          "text": "El corazón neurálgico hacia el que convergen todos los ramales del Kumano Kodo. Destaca por su majestuosa sobriedad arquitectónica, con pabellones construidos en madera de ciprés sin pintar y tejados de corteza de ciprés (hiwada-buki) que armonizan enteramente con la montaña. El emblema del santuario es el Yatagarasu, el mítico cuervo gigante de tres patas que, según la leyenda del Kojiki, guió al primer emperador Jinmu a través de las brumas de Kumano para fundar la nación japonesa."
+        },
+        {
+          "time": "Oyunohara: El Torii gigante más alto del mundo (34 m)",
+          "text": "A 500 metros del santuario actual, en el delta donde confluían originalmente los ríos Kumano, Otonashi e Iwada, se erige el colosal O-Torii de Oyunohara. Con 34 metros de altura y 42 metros de anchura de acero oscuro, se alza imponente en mitad de un mar de arrozales verdes. Marca el enclave sagrado original donde estuvo Hongu Taisha hasta que una devastadora crecida fluvial en 1889 obligó a trasladar los pabellones a la ladera alta."
+        },
+        {
+          "time": "Yunomine Onsen y la terma milenaria de Tsuboyu",
+          "text": "Un diminuto y mágico pueblo termal encajado en un angosto desfiladero de montaña con vapores de azufre emergiendo del propio lecho del río. Tsuboyu es una pequeña cabaña de madera sobre el agua que alberga una poza natural de piedra para dos personas: sus aguas termales cambian de tonalidad hasta siete veces al día según la luz y los minerales. En la fuente pública Yutou, los viajeros compran huevos frescos y verduras en redes para cocerlos directamente en las burbujeantes aguas a 90 °C."
+        }
+      ],
+      "money": "Tren JR Kuroshio incluido en JR Pass (o ~35€) + 12€ autobuses locales Ryujin + 5€ entrada Tsuboyu + 70€–110€ noche en Ryokan con cena kaiseki y desayuno.",
+      "num": 8
+    },
+    {
+      "id": "kumano-nachi",
+      "title": "Kumano Kodo (II): Daimon-zaka, Santuario Nachi Taisha y Cascada de Nachi",
+      "cities": "Wakayama (Nachi-Katsuura, Kii-Katsuura)",
+      "reason": "Segunda jornada en Kumano Kodo: Ascenso por las escaleras milenarias de Daimon-zaka, la mítica estampa de la pagoda y la cascada sagrada, y puerto de Kii-Katsuura.",
+      "summary": "La imagen más icónica y deslumbrante de todo Kumano: la ascensión a pie por la calzada empedrada de Daimon-zaka entre cedros monumentales de 800 años, la visita al Gran Santuario Kumano Nachi Taisha y la Pagoda Seiganto-ji recortada con la estruendosa Cascada de Nachi (133 metros de caída vertical directa). Para culminar, descenso al pintoresco puerto marinero de Kii-Katsuura para degustar atún rojo fresco antes del enlace vespertino hacia Hiroshima.",
+      "history": "Kumano Nachi Taisha representa el origen del culto a la naturaleza viva en Japón: mucho antes de que existieran santuarios o templos de madera, los primeros pobladores ya veneraban la monumental Cascada de Nachi como un dios primordial (shintai). Cuando el budismo penetró en la región, la deidad de la cascada fue identificada con la compasiva bodhisattva Kannon de mil brazos. El templo budista Seiganto-ji y el santuario sintoísta Nachi Taisha permanecieron unidos como un único complejo de culto durante siglos, constituyendo hoy uno de los mejores testimonios vivos del sincretismo religioso japonés.",
+      "schedule": [
+        {
+          "time": "🌲 Transporte y cómo moverse por Nachi y Kii-Katsuura (Día 9)",
+          "text": "• De Yunomine a la Costa de Nachi: Bus temprano desde Yunomine Onsen a Shingu o Kii-Katsuura (1h 10 min, ~1.600¥), o bus directo a la base de Daimon-zaka.\n• Cuesta de Daimon-zaka: Subida a pie por la calzada de piedra (600 metros, 267 escalones, 30-40 min a ritmo sosegado contemplando los cedros gigantes).\n• Recinto sagrado: Visita a Kumano Nachi Taisha, la Pagoda Seiganto-ji de tres pisos y mirador de la Cascada de Nachi (1h 30 min).\n• Bajada a la costa: Autobús de Kumano Gobo Nankai desde la parada Nachi Falls hasta la estación JR Kii-Katsuura (**25 minutos**, ~620¥).\n• Tarde marinera y enlace a Hiroshima: Almuerzo en el puerto de Kii-Katsuura (atún maguro fresco recién subastado). A media tarde, tren Limited Express Kuroshio directo a Shin-Osaka (3h 30m, cubierto por JR Pass) y conexión inmediata en Shinkansen Sanyo a Hiroshima Station (1h 25m), para dormir en Hiroshima listos para el Día 10."
+        },
+        {
+          "time": "Daimon-zaka: La calzada empedrada de los cedros milenarios",
+          "text": "Una imponente escalinata de adoquines de piedra musgosa construida durante el periodo Heian que asciende por la ladera de la montaña. En su base se alzan los Meoto Sugi ('los cedros esposos'), dos árboles gigantescos entrelazados con más de 800 años de antigüedad que enmarcan la antigua puerta torii. Subir esta cuesta envuelto por el aroma a bosque húmedo es la experiencia senderista por excelencia de Kumano."
+        },
+        {
+          "time": "Kumano Nachi Taisha y la Pagoda Seiganto-ji",
+          "text": "Uno de los Tres Grandes Santuarios de Kumano, encaramado a 350 metros de altitud frente al cañón. Justo a su lado se eleva el templo budista Seiganto-ji, primer punto de la histórica peregrinación Saigoku Kannon de 33 templos. Su elegante pagoda bermellón de tres plantas conforma la postal más celebrada de Japón, con el velo blanco de la cascada precipitándose al fondo entre la bruma."
+        },
+        {
+          "time": "Cascada de Nachi (Nachi no Otaki, 133 m)",
+          "text": "La cascada vertical de un solo salto más alta de Japón (133 metros de caída libre ininterrumpida y 13 metros de anchura, con un caudal constante de una tonelada de agua por segundo). Venerada como deidad viviente desde hace miles de años, se puede acceder a la plataforma Hiro-jinja al pie de la cascada para beber el agua mineral purificadora de su poza, que la tradición local asegura que concede longevidad y buena salud."
+        },
+        {
+          "time": "Puerto pesquero de Kii-Katsuura y festín de atún rojo",
+          "text": "Kii-Katsuura es el principal puerto de desembarco de atún fresco capturado con palangre de todo Japón. En los pequeños restaurantes y lonjas junto a los muelles se sirven cuencos Maguro-don con múltiples cortes de atún (Akami, Chutoro y Otoro) recién descargados, una parada culinaria exquisita antes de subir al tren Limited Express Kuroshio de regreso a Kansai y poner rumbo a Hiroshima."
+        }
+      ],
+      "money": "Aprox. 15€ autobuses regionales Kumano + 3€ mirador Hiro-jinja / pagoda + 20€–28€ almuerzo de atún en Kii-Katsuura + trenes cubiertos con JR Pass.",
+      "num": 9
+    },
+    {
       "id": "hiroshima-nagasaki",
       "title": "Osaka → Hiroshima y Nagasaki: Memoria de paz e historia",
       "cities": "Hiroshima, Nagasaki",
@@ -281,7 +342,7 @@ export const pendingDays = {
       "history": "El 6 de agosto de 1945, Hiroshima fue devastada por la primera bomba atómica de la historia bélica; tres días después, el 9 de agosto, Nagasaki sufrió el segundo impacto. Ambas ciudades transformaron la tragedia en un mensaje mundial de abolición nuclear. Nagasaki, además, atesora una historia única: durante los más de 200 años de la estricta política de aislamiento nacional (sakoku), la pequeña isla artificial de Dejima fue la única puerta de entrada para comerciantes holandeses, científicos y médicos occidentales en todo Japón.",
       "schedule": [
         {
-          "time": "🕊️ Transporte y enlace Osaka → Hiroshima (Día 8)",
+          "time": "🕊️ Transporte y enlace Osaka → Hiroshima (Día 10)",
           "text": "• Salida matinal hacia el oeste: Check-out en el hotel de Osaka.\n• Conexión en tren bala Shinkansen: Shinkansen Sanyo (trenes frecuentes Nozomi, Sakura o Mizuho) directo desde Shin-Osaka hasta Hiroshima Station en **solo 1 hora y 25 minutos** (aprox. 10.000¥, cubierto por JR Pass).\n• Transporte en Hiroshima: Al salir de la estación de Hiroshima, tomar el tranvía urbano Hiroden (líneas 2 o 6) hasta la parada Genbaku Dome-mae (15 min, ~220¥).\n• Visitas: Parque y Museo Memorial de la Paz, Cúpula de la Bomba Atómica, y cena de okonomiyaki estilo Hiroshima en el edificio gastronómico Okonomimura.\n• Alojamiento: Hotel en Hiroshima (cerca de la estación JR o cerca del muelle de Miyajimaguchi)."
         },
         {
@@ -318,7 +379,7 @@ export const pendingDays = {
         }
       ],
       "money": "Shinkansen incluido en JR Pass (o ~65€) + 3€ tranvía Hiroden + 1,20€ Museo de la Paz + 20€ cena en Okonomimura.",
-      "num": 8
+      "num": 10
     },
     {
       "id": "miyajima",
@@ -329,7 +390,7 @@ export const pendingDays = {
       "history": "En la antigüedad, la isla entera era considerada un kami (deidad viviente) tan sagrado que ningún ser humano tenía permitido pisarla ni nacer o morir en ella. Para que los fieles pudieran rezar sin profanar el suelo sagrado, Taira no Kiyomori remodeló en 1168 el santuario Itsukushima enteramente sobre pilotes de madera clavados en la arena de la bahía. Declarada Patrimonio de la Humanidad por la UNESCO en 1996.",
       "schedule": [
         {
-          "time": "⛩️ Transporte y enlace Hiroshima → Isla de Miyajima (Día 9)",
+          "time": "⛩️ Transporte y enlace Hiroshima → Isla de Miyajima (Día 11)",
           "text": "• Enlace ultra corto desde Hiroshima: Miyajima se encuentra justo frente a la costa de Hiroshima.\n• Tren de cercanías: Línea JR Sanyo Main Line desde Hiroshima Station hasta Miyajimaguchi Station (**28 minutos**, trenes cada 10 min, ~420¥ con Suica/JR Pass).\n• Ferry panorámico a la isla: A 2 minutos a pie de la estación está el muelle. Tomar el ferry JR West Miyajima Ferry (**10 minutos**; este ferry navega haciendo una curva especial pegada al Gran Torii Flotante para la mejor foto desde el agua; 100% incluido en el JR Pass o ~200¥ con Suica).\n• En la isla: Todo se recorre a pie entre ciervos sika (Santuario Itsukushima, templo Daisho-in, pabellón Senjokaku). Para subir al Monte Misen (535 m): Teleférico Miyajima Ropeway (~2.000¥ ida/vuelta).\n• Alojamiento: Noche mágica en ryokan tradicional en la isla de Miyajima (o regreso en 28 min a hotel en Hiroshima)."
         },
         {
@@ -366,7 +427,7 @@ export const pendingDays = {
         }
       ],
       "money": "Tren y ferry incluidos en JR Pass (o ~5€) + 2€ entrada Itsukushima + 12€ teleférico Monte Misen + 25€ ostras a la plancha y Momiji manju.",
-      "num": 9
+      "num": 11
     },
     {
       "id": "okinawa",
@@ -377,7 +438,7 @@ export const pendingDays = {
       "history": "Durante más de 450 años, estas islas conformaron el independiente y próspero Reino de Ryukyu, un emporio comercial marítimo que comerciaba libremente con China, Japón, Corea y el sudeste asiático. Anexionado a Japón en 1879, Okinawa sufrió la devastadora Batalla de Okinawa en 1945 y permaneció bajo administración militar estadounidense hasta 1972, forjando una identidad cultural mestiza y resiliente.",
       "schedule": [
         {
-          "time": "🌺 Transporte y enlace hacia Okinawa (Día 10)",
+          "time": "🌺 Transporte y enlace hacia Okinawa (Día 12)",
           "text": "• Enlace aéreo hacia el trópico: Check-out temprano en Hiroshima.\n• Vuelo directo a Okinawa: Traslado en autobús express al Aeropuerto de Hiroshima (HIJ, 45 min) o tren rápido al Aeropuerto de Osaka Kansai (KIX). Vuelo doméstico directo a Naha Airport (OKA) en Okinawa (**1 hora y 55 minutos de vuelo**, operado por ANA, JAL o Peach).\n• Transporte en Okinawa: Monorraíl elevado Yui Rail directo desde la terminal del aeropuerto hasta el centro de Naha (estación Kencho-mae para Kokusai-dori en 12 min, y estación Shuri para el Castillo de Shuri en 27 min, ~300¥).\n• Visitas: Castillo de Shuri (antiguo palacio imperial del Reino de Ryukyu), calle comercial Kokusai-dori, degustación de Okinawa Soba y playas de aguas cristalinas.\n• Alojamiento: Hotel o resort costero en Naha / costa de Okinawa."
         },
         {
@@ -406,7 +467,7 @@ export const pendingDays = {
         }
       ],
       "money": "Vuelo interno Hiroshima/Osaka-Naha (~60€–90€) + 3€ monorraíl Yui Rail + 3€ entrada Shuri Castle + 25€ gastronomía Ryukyu.",
-      "num": 10
+      "num": 12
     },
     {
       "id": "iriomote-stargazing",
@@ -417,7 +478,7 @@ export const pendingDays = {
       "history": "Iriomote es famosa en el mundo zoológico por ser el único hogar del gato de Iriomote (Prionailurus bengalensis iriomotensis), un felino salvaje nocturno descubierto apenas en 1967 que representa un linaje evolutivo aislado durante milenios. Su latitud meridional (24° N) permite divisar la Cruz del Sur a ras del horizonte marino, una constelación imposible de observar desde España o Europa continental.",
       "schedule": [
         {
-          "time": "✨ Transporte y enlace a la Isla de Iriomote (Día 11)",
+          "time": "✨ Transporte y enlace a la Isla de Iriomote (Día 13)",
           "text": "• Conexión interinsular en el Archipiélago de Yaeyama: El Japón más virgen y salvaje.\n• Vuelo Naha → Ishigaki: Vuelo corto desde Naha Airport (OKA) hasta el Aeropuerto de New Ishigaki (ISG) (**55 minutos**, operado por JTA/ANA, con vistas aéreas de los atolones de coral).\n• Ferry a Iriomote: Autobús del aeropuerto de Ishigaki al puerto de ferrys (30 min). En el muelle, tomar el ferry rápido de alta velocidad hasta la isla de Iriomote (**45 minutos**, hacia el puerto de Ohara o Uehara, ~2.500¥).\n• Actividades: Kayak guiado por los ríos de manglares vírgenes (Nakama o Urauchi) y caminata hacia la cascada Pinaisara (55 m).\n• Noche estelar: Observación de estrellas en la Reserva Internacional de Cielo Oscuro (DarkSky Park) contemplando la Vía Láctea y la Cruz del Sur sobre el mar.\n• Alojamiento: Eco-lodge integrado en la naturaleza en Iriomote o regreso en ferry a Ishigaki."
         },
         {
@@ -450,7 +511,7 @@ export const pendingDays = {
         }
       ],
       "money": "Vuelo Naha-Ishigaki (~45€) + ferry a Iriomote (~16€) + tour guiado en kayak (~45€) + cena local.",
-      "num": 11
+      "num": 13
     },
     {
       "id": "hokkaido",
@@ -461,7 +522,7 @@ export const pendingDays = {
       "history": "Hokkaido ('camino del mar del norte') fue colonizada e incorporada plenamente a Japón a partir de la Restauración Meiji a finales del siglo XIX. Antes de ello era conocida como Ezochi, tierra ancestral del pueblo indígena Ainu, una cultura con cosmovisión animista, tradiciones orales y lengua propias que hoy cuenta con museos y centros culturales dedicados como Upopoy en Shiraoi.",
       "schedule": [
         {
-          "time": "❄️ Transporte y enlace hacia Hokkaido (Día 12)",
+          "time": "❄️ Transporte y enlace hacia Hokkaido (Día 14)",
           "text": "• Del extremo sur subtropical al gran norte alpino: El gran colofón del viaje.\n• Vuelo hacia Hokkaido: Traslado al aeropuerto de Ishigaki o Naha y vuelo directo o con escala rápida vía Tokio Haneda hacia el Aeropuerto de Sapporo New Chitose (CTS).\n• Tren rápido a Sapporo: En la terminal del aeropuerto de Chitose, tomar el tren rápido JR Rapid Airport directo hasta Sapporo Station (**37 minutos**, trenes cada 12 min, ~1.150¥ con Suica/JR Pass).\n• Transporte en Sapporo: Red de metro de Sapporo (líneas Namboku y Tozai) y tranvía municipal.\n• Visitas: Parque Odori, Torre de televisión, Mercado Nijo de marisco fresco (cangrejo gigante y donburi de salmón), Museo de la Cerveza de Sapporo, callejón Ganso Ramen Yokocho en Susukino y onsen de aguas termales en Jozankei.\n• Vuelo de regreso internacional: Desde el aeropuerto de Sapporo New Chitose (CTS) con enlace a Tokio o vuelos directos intercontinentales."
         },
         {
@@ -494,11 +555,11 @@ export const pendingDays = {
         }
       ],
       "money": "Vuelo interno a Sapporo (~75€–110€) + 7€ tren JR Airport + 25€–35€ cuenco de marisco fresco en Mercado Nijo y ramen de miso.",
-      "num": 12
+      "num": 14
     },
     {
       "id": "tokyo-departure",
-      "num": 13,
+      "num": 15,
       "title": "Regreso a Tokio, noche de despedida y vuelo de vuelta desde Narita",
       "cities": "Hokkaido / Tokio → Aeropuerto de Narita (NRT) → Vuelo internacional",
       "reason": "Día final imprescindible: Vuelo de regreso a Tokio, compras de última hora (omiyage), noche de despedida y traslado a Narita para volar a casa.",
@@ -506,7 +567,7 @@ export const pendingDays = {
       "history": "Comprar regalos de recuerdo, conocidos en Japón como 'omiyage' (お土産), es una de las tradiciones sociales más arraigadas del país. Los viajeros japoneses siempre llevan dulces y especialidades locales empaquetadas con primor a sus familiares y compañeros de trabajo. Despedirse de Japón recorriendo por última vez las calles de Tokio y tomando el tren hacia Narita completa un viaje inolvidable por todo el archipiélago.",
       "schedule": [
         {
-          "time": "🛫 Transporte y enlace hacia Tokio y Narita (Día 13)",
+          "time": "🛫 Transporte y enlace hacia Tokio y Narita (Día 15)",
           "text": "• Vuelo doméstico Hokkaido → Tokio: Vuelo desde Sapporo New Chitose (CTS) a Tokio Haneda (HND, 1h 40m) o Tokio Narita (NRT).\n• Noche en Tokio (opcional/recomendada): Si el vuelo internacional es al día siguiente o nocturno, hacer base en Tokio para disfrutar de las últimas horas sin estrés de conexiones.\n• Traslado final a Narita: Tomar el tren Narita Express (JR N'EX) desde Tokyo Station (58 min) o Shinjuku (75 min) directo a la terminal de Narita Airport (NRT).\n• En Narita: Facturación de maletas, devolución de Pocket WiFi en los buzones de la terminal, paso por control de seguridad y compras libres de impuestos (Duty Free) de dulces tradicionales como Royce Nama Chocolate o Tokyo Banana."
         },
         {
@@ -795,6 +856,70 @@ export const pendingDays = {
       "num": 7
     },
     {
+      "id": "kumano-hongu",
+      "title": "Osaka → Kumano Kodo (I): Nakahechi Trail, Hongu Taisha & Yunomine Onsen",
+      "cities": "Wakayama (Kii-Tanabe, Hongu, Yunomine Onsen)",
+      "reason": "Kansai → Kumano Kodo connection: Scenic JR Kuroshio train to the sacred Kii Peninsula for the ancient pilgrimage trail.",
+      "summary": "First day hiking the millennium-old pilgrimage paths of the Kumano Kodo (UNESCO World Heritage Site). Walk the classic Nakahechi trail amidst colossal cedar forests, discover the grand Kumano Hongu Taisha shrine, marvel at the colossal Oyunohara torii gate (the world's tallest, 34 m), and soak in the sulfurous healing waters of Yunomine Onsen (Tsuboyu), Japan's oldest onsen.",
+      "history": "Alongside the Camino de Santiago in Spain, the Kumano Kodo is one of only two pilgrimage routes on Earth designated as UNESCO World Heritage. For over a millennium, emperors, aristocrats, and samurai trekked these mist-shrouded peaks seeking physical purification and spiritual rebirth through a unique synthesis of indigenous Shinto and esoteric Buddhism (Shinbutsu-shugo). Yunomine Onsen, discovered over 1,800 years ago, is the only hot spring in the world registered by UNESCO where visitors can bathe.",
+      "schedule": [
+        {
+          "time": "🚆 Transport & Link Osaka → Kumano Kodo (Day 8)",
+          "text": "• Morning Departure to Kii Peninsula: Check out of Osaka hotel with a light 2-day pack (forward bulky luggage to Hiroshima via Takkyubin or use station lockers).\n• JR Limited Express Kuroshio: Direct from Shin-Osaka (07:35) or Tennoji (07:59) to Kii-Tanabe Station (**2h 10m**, scenic Pacific coastal train, 100% JR Pass covered).\n• Ryujin Mountain Bus: Board the local mountain bus outside Kii-Tanabe Station to Hosshinmon-oji stop (1h 15m, ~¥1,500).\n• Pilgrimage Hike: Hosshinmon-oji → Kumano Hongu Taisha (7 km, 2h to 2.5h gentle downhill walk through giant cedars and mountain tea hamlets).\n• Yunomine Onsen: 10-minute local bus from Hongu Taisha to Yunomine Onsen (~¥310).\n• Stay: Traditional ryokan in Yunomine Onsen with outdoor hot springs and kaiseki dinner."
+        },
+        {
+          "time": "Nakahechi Trail: Classic Walk from Hosshinmon-oji to Hongu Taisha (7 km)",
+          "text": "The most atmospheric and scenic section of the Kumano Kodo. Hosshinmon-oji ('the gate of awakening spiritual aspiration') marks the outer sanctum. Mossy cobblestone paths lead past centuries-old cryptomeria cedars, small stone oji shrines, and mountain tea terraces where pilgrims historically composed sacred poetry."
+        },
+        {
+          "time": "Kumano Hongu Taisha Grand Shrine",
+          "text": "The spiritual heart where all Kumano pilgrimage routes converge. Built with unpainted natural cypress wood and bark-thatched roofs (hiwada-buki), blending seamlessly into the mountain slopes. Revering the three-legged sacred crow Yatagarasu, who according to the Kojiki guided Japan's first Emperor Jinmu through the Kumano wilderness."
+        },
+        {
+          "time": "Oyunohara: The World's Tallest Torii Gate (34 m)",
+          "text": "Standing 500 meters from the current shrine grounds on the river sandbar where the Kumano, Otonashi, and Iwada rivers converge. Rising 34 meters high and 42 meters wide, this colossal black steel torii dominates the emerald rice paddies, marking the original sacred sanctuary site prior to the 1889 flood."
+        },
+        {
+          "time": "Yunomine Onsen & Millennial Tsuboyu Bath",
+          "text": "A fairytale hot spring village nestled in a steep mountain ravine with sulfurous steam wafting from the riverbed. Tsuboyu is a historic riverside wooden cabin sheltering a natural stone tub for two whose mineral-rich waters change color seven times daily. At the Yutou public hot water well, visitors boil fresh eggs and sweet potatoes in the 90°C spring."
+        }
+      ],
+      "money": "JR Kuroshio covered by JR Pass (or ~€35) + €12 Ryujin bus + €5 Tsuboyu entry + €70–€110 onsen ryokan with dinner & breakfast.",
+      "num": 8
+    },
+    {
+      "id": "kumano-nachi",
+      "title": "Kumano Kodo (II): Daimon-zaka, Kumano Nachi Taisha & Nachi Falls",
+      "cities": "Wakayama (Nachi-Katsuura, Kii-Katsuura)",
+      "reason": "Second day in Kumano Kodo: Ancient mossy stairway of Daimon-zaka, iconic pagoda against Nachi Falls, and coastal port of Kii-Katsuura.",
+      "summary": "Japan's most iconic and breathtaking spiritual postcard: ascend the moss-covered stone steps of Daimon-zaka framed by 800-year-old Meoto Sugi cedars, explore Kumano Nachi Taisha and the three-story Seiganto-ji Pagoda silhouetted against the roaring Nachi Falls (133-meter unbroken plunge). Conclude at the coastal port of Kii-Katsuura for fresh bluefin tuna before heading toward Hiroshima.",
+      "history": "Nachi Falls (Nachi no Otaki) was revered as a living deity (shintai) long before wooden shrines existed. When Buddhism arrived, the falls were identified with the thousand-armed Kannon. The Buddhist temple Seiganto-ji and Shinto shrine Nachi Taisha stood as one unified sanctuary for centuries, preserving the harmonious essence of Japanese spiritual syncretism.",
+      "schedule": [
+        {
+          "time": "🌲 Transport & Getting Around Nachi and Kii-Katsuura (Day 9)",
+          "text": "• From Yunomine to Nachi Coast: Morning local bus from Yunomine/Hongu to Shingu or Kii-Katsuura (1h 10m, ~¥1,600) or directly to Daimon-zaka base.\n• Daimon-zaka Stairway: 600-meter cobblestone climb (267 steps, 30-40 min relaxed pace under the 800-year-old Meoto Sugi husband-and-wife cedars).\n• Sacred Complex: Visit Kumano Nachi Taisha, Seiganto-ji Pagoda, and the Nachi Falls observation deck (1h 30m).\n• Coastwards to Kii-Katsuura: Kumano Gobo Nankai bus from Nachi Falls to JR Kii-Katsuura Station (**25 minutes**, ~¥620).\n• Seafood Feast & High-Speed Link to Hiroshima: Fresh bluefin maguro tuna lunch at the port. In the afternoon, board the JR Limited Express Kuroshio back to Shin-Osaka (3h 30m, JR Pass covered) and transfer immediately to the Sanyo Shinkansen bullet train to Hiroshima Station (1h 25m) to rest before Day 10."
+        },
+        {
+          "time": "Daimon-zaka: The Ancient Cedar-Lined Cobblestone Stairway",
+          "text": "A breathtaking stone staircase dating back to the Heian period. At the trailhead stand the Meoto Sugi ('married couple cedars'), two gigantic intertwined trees standing watch over the ancient torii. Hiking up under the canopy of ancient mossy forest is Kumano's quintessential trekking moment."
+        },
+        {
+          "time": "Kumano Nachi Taisha & Seiganto-ji Pagoda",
+          "text": "One of the Three Grand Shrines of Kumano perched 350 meters above the valley. Adjacent stands Tendai Buddhist temple Seiganto-ji, the first temple on the historic 33-temple Saigoku Kannon pilgrimage. Its vivid vermilion three-story pagoda aligns in flawless harmony with the cascading waterfall behind it."
+        },
+        {
+          "time": "Nachi Falls (Nachi no Otaki, 133 m)",
+          "text": "Japan's tallest single uninterrupted waterfall, dropping 133 meters vertically with one ton of water per second. Worshipped directly as a living kami; visitors can sip the blessed mineral water at the Hiro-jinja pavilion basin, believed to grant health and longevity."
+        },
+        {
+          "time": "Kii-Katsuura Port & Fresh Bluefin Tuna Market",
+          "text": "Kii-Katsuura is Japan's premier port for fresh, non-frozen longline bluefin tuna. Savoring a steaming Maguro-don bowl with ruby-red slices of akami, chutoro, and otoro right on the wharf is the perfect culinary finale before hopping on the afternoon train to Hiroshima."
+        }
+      ],
+      "money": "Approx. €15 regional buses + €3 pagoda/falls view + €20–€28 tuna meal in Kii-Katsuura + JR train rides covered by JR Pass.",
+      "num": 9
+    },
+    {
       "id": "hiroshima-nagasaki",
       "title": "Osaka → Hiroshima & Nagasaki: Peace Memorial & History",
       "cities": "Hiroshima, Nagasaki",
@@ -803,7 +928,7 @@ export const pendingDays = {
       "history": "On August 6, 1945, Hiroshima was devastated by the first wartime atomic bomb; three days later, on August 9, Nagasaki suffered the second bombing. Both cities transformed this harrowing chapter into a global campaign for nuclear disarmament. Nagasaki also boasts a much older cosmopolitan heritage: for more than 200 years of strict national isolation (sakoku), the man-made fan-shaped island of Dejima was Japan's only authorized window for Dutch trade, medicine, and scientific exchange.",
       "schedule": [
         {
-          "time": "🕊️ Transport & Link Osaka → Hiroshima (Day 8)",
+          "time": "🕊️ Transport & Link Osaka → Hiroshima (Day 10)",
           "text": "• Heading West: Morning check-out from your Osaka hotel.\n• Shinkansen Bullet Train: Sanyo Shinkansen (Nozomi, Sakura or Mizuho) direct from Shin-Osaka to Hiroshima Station in **just 1 hour 25 minutes** (~¥10,000, JR Pass covered).\n• In Hiroshima: Hop on the Hiroden streetcar (Line 2 or 6) right outside Hiroshima Station to Genbaku Dome-mae stop (15 min, ~¥220).\n• Sights: Peace Memorial Park, Museum, A-Bomb Dome, and Hiroshima-style layered okonomiyaki at Okonomimura.\n• Accommodation: Hotel in Hiroshima (near JR Station or Miyajimaguchi port)."
         },
         {
@@ -840,7 +965,7 @@ export const pendingDays = {
         }
       ],
       "money": "Shinkansen (JR Pass or ~€65) + €3 streetcar + €1.20 Peace Museum + €20 okonomiyaki dinner.",
-      "num": 8
+      "num": 10
     },
     {
       "id": "miyajima",
@@ -851,7 +976,7 @@ export const pendingDays = {
       "history": "In ancient times, the entire island was worshipped as a living kami (Shinto deity) so sacred that humans were forbidden from setting foot on its soil, and neither births nor deaths were permitted. To allow worshippers to pray without desecrating the sacred ground, warlord Taira no Kiyomori rebuilt Itsukushima Shrine in 1168 entirely on wooden pilings over the tidal flats. Designated a UNESCO World Heritage Site in 1996.",
       "schedule": [
         {
-          "time": "⛩️ Transport & Link Hiroshima → Miyajima Island (Day 9)",
+          "time": "⛩️ Transport & Link Hiroshima → Miyajima Island (Day 11)",
           "text": "• Seamless connection right next to Hiroshima: Miyajima sits just across the bay.\n• Local Commuter Train: JR Sanyo Main Line from Hiroshima Station to Miyajimaguchi Station (**28 minutes**, trains every 10 min, ~¥420 or JR Pass).\n• Scenic Ferry to Island: 2 min walk from station to pier. Board the JR West Miyajima Ferry (**10 minutes**; sails close to the Floating Torii Gate for breathtaking water views; JR Pass covered or ~¥200).\n• On the Island: Walkable pathways shared with wild deer. Take the Miyajima Ropeway to Mount Misen summit (535 m, ~¥2,000 round-trip).\n• Accommodation: Traditional ryokan on Miyajima island (or 28 min return to Hiroshima hotel)."
         },
         {
@@ -888,7 +1013,7 @@ export const pendingDays = {
         }
       ],
       "money": "Train & ferry covered by JR Pass (or ~€5) + €2 Itsukushima + €12 ropeway + €25 grilled oysters & momiji cakes.",
-      "num": 9
+      "num": 11
     },
     {
       "id": "okinawa",
@@ -899,7 +1024,7 @@ export const pendingDays = {
       "history": "For more than 450 years, these islands formed the prosperous Ryukyu Kingdom, an independent maritime trading hub linking China, Japan, Korea, and Southeast Asia. Annexed by Japan in 1879, Okinawa endured the horrific Battle of Okinawa in 1945 and was administered by the US military until 1972, cultivating a resilient, multicultural identity celebrated for longevity and community spirit.",
       "schedule": [
         {
-          "time": "🌺 Transport & Flight to Okinawa (Day 10)",
+          "time": "🌺 Transport & Flight to Okinawa (Day 12)",
           "text": "• Flying to the Subtropics: Morning check-out in Hiroshima.\n• Direct Flight to Okinawa: Express bus to Hiroshima Airport (HIJ, 45 min) or train to Kansai (KIX). Direct domestic flight to Naha Airport (OKA) in Okinawa (**1 hour 55 min flight**, via ANA, JAL or Peach).\n• In Okinawa: Elevated monorail Yui Rail runs directly from airport terminal to downtown Naha (Kencho-mae stop for Kokusai-dori in 12 min, Shuri stop for Shuri Castle in 27 min, ~¥300).\n• Sights: Shuri Castle (palace of the ancient Ryukyu Kingdom), bustling Kokusai-dori, Okinawa Soba, and turquoise coral shores.\n• Accommodation: Hotel or beach resort in Naha / Okinawa main island."
         },
         {
@@ -928,7 +1053,7 @@ export const pendingDays = {
         }
       ],
       "money": "Domestic flight (~€60–€90) + €3 Yui Rail + €3 Shuri Castle + €25 Ryukyu dinner.",
-      "num": 10
+      "num": 12
     },
     {
       "id": "iriomote-stargazing",
@@ -939,7 +1064,7 @@ export const pendingDays = {
       "history": "Iriomote is biologically famous as the sole habitat of the Iriomote wildcat (Yamaneko), a critically endangered nocturnal feline discovered only in 1967 representing an ancient lineage isolated for thousands of years. Its southerly latitude (24°N) allows stargazers to observe the Southern Cross constellation on the horizon between February and June, an impossible sight from Europe.",
       "schedule": [
         {
-          "time": "✨ Transport & Link to Iriomote Island (Day 11)",
+          "time": "✨ Transport & Link to Iriomote Island (Day 13)",
           "text": "• Island Hopping in the Yaeyama Archipelago: Japan's most untamed wilderness.\n• Flight Naha → Ishigaki: Short domestic flight from Naha (OKA) to New Ishigaki Airport (ISG) (**55 minutes**, breathtaking coral reef aerial views).\n• High-Speed Ferry to Iriomote: Airport bus to Ishigaki Ferry Terminal (30 min). Board high-speed catamaran ferry to Iriomote Island (**45 minutes** to Ohara or Uehara port, ~¥2,500).\n• Activities: Guided mangrove kayaking up Nakama or Urauchi River, jungle trek to Pinaisara Falls (55 m).\n• Stargazing Night: Explore the certified International Dark Sky Reserve, spotting the Milky Way and Southern Cross on the ocean horizon.\n• Accommodation: Eco-lodge immersed in nature on Iriomote or return ferry to Ishigaki."
         },
         {
@@ -972,7 +1097,7 @@ export const pendingDays = {
         }
       ],
       "money": "Flight Naha-Ishigaki (~€45) + ferry to Iriomote (~€16) + guided kayak tour (~€45) + local dinner.",
-      "num": 11
+      "num": 13
     },
     {
       "id": "hokkaido",
@@ -983,7 +1108,7 @@ export const pendingDays = {
       "history": "Hokkaido ('Circuit of the Northern Sea') was formally colonized and integrated during the Meiji Restoration in the late 19th century. Formerly known as Ezochi, it is the ancestral homeland of the indigenous Ainu people, whose animist spiritual beliefs, oral folklore, and distinct language are celebrated at cultural centers such as Upopoy in Shiraoi.",
       "schedule": [
         {
-          "time": "❄️ Transport & Flight to Hokkaido (Day 12)",
+          "time": "❄️ Transport & Flight to Hokkaido (Day 14)",
           "text": "• From Subtropical South to Alpine North: The grand finale journey.\n• Flight to Hokkaido: Flight from Ishigaki/Naha (direct or via Tokyo Haneda) to Sapporo New Chitose Airport (CTS).\n• Rapid Train to Sapporo: Direct JR Rapid Airport train from airport terminal to Sapporo Station (**37 minutes**, departures every 12 min, ~¥1,150, JR Pass covered).\n• In Sapporo: Sapporo Subway (Namboku & Tozai lines) and streetcar.\n• Sights: Odori Park, Nijo Seafood Market (fresh king crab & salmon roe donburi), Sapporo Beer Museum, Ganso Ramen Yokocho in Susukino, and Jozankei hot springs.\n• International Return Flight: Depart from New Chitose Airport (CTS) connecting through Tokyo or direct international routes."
         },
         {
@@ -1016,11 +1141,11 @@ export const pendingDays = {
         }
       ],
       "money": "Domestic flight to Sapporo (~€75–€110) + €7 JR train + €25–€35 Nijo Market seafood & miso ramen.",
-      "num": 12
+      "num": 14
     },
     {
       "id": "tokyo-departure",
-      "num": 13,
+      "num": 15,
       "title": "Return to Tokyo, Farewell Night & Narita Departure",
       "cities": "Hokkaido / Tokyo → Narita Airport (NRT) → International Flight",
       "reason": "Essential finale: Domestic flight back to Tokyo, last-minute souvenir shopping (omiyage), farewell dinner, and transfer to Narita Airport.",
@@ -1028,7 +1153,7 @@ export const pendingDays = {
       "history": "The tradition of 'omiyage' (souvenir gifting) is a cherished Japanese cultural practice where travelers bring home meticulously wrapped delicacies and regional crafts. Wrapping up your journey in Tokyo before heading to Narita creates the perfect full-circle itinerary.",
       "schedule": [
         {
-          "time": "🛫 Transport & Transfer to Tokyo and Narita (Day 13)",
+          "time": "🛫 Transport & Transfer to Tokyo and Narita (Day 15)",
           "text": "• Domestic Flight Hokkaido → Tokyo: Short flight from Sapporo (CTS) to Tokyo Haneda (HND, 1h 40m) or Narita (NRT).\n• Farewell Night in Tokyo: Highly recommended to unwind, shop, and pack without same-day connection anxiety.\n• Final Transfer to Narita: Board the direct Narita Express (JR N'EX) from Tokyo Station (58 min) or Shinjuku (75 min) to Narita Airport terminals.\n• At Narita: Drop off Pocket WiFi, check bags, clear security, and pick up duty-free treats like Royce Matcha Chocolate and Tokyo Banana."
         },
         {
@@ -1317,6 +1442,70 @@ export const pendingDays = {
       "num": 7
     },
     {
+      "id": "kumano-hongu",
+      "title": "Osaka → Kumano Kodo (I) : Sentier Nakahechi, Hongu Taisha et Yunomine Onsen",
+      "cities": "Wakayama (Kii-Tanabe, Hongu, Yunomine Onsen)",
+      "reason": "Liaison Kansai → Kumano Kodo : Train JR Kuroshio vers la péninsule sacrée de Kii pour parcourir la route millénaire de pèlerinage.",
+      "summary": "Première journée sur les sentiers millénaires du Kumano Kodo (classé au patrimoine mondial de l'UNESCO). Randonnée classique sur le sentier Nakahechi parmi les cèdres géants, visite du sanctuaire Kumano Hongu Taisha, torii géant d'Oyunohara (le plus haut du monde, 34 m) et bain thermal réparateur dans la station historique de Yunomine Onsen (Tsuboyu).",
+      "history": "Avec les chemins de Saint-Jacques-de-Compostelle en Espagne, le Kumano Kodo est l'unique itinéraire de pèlerinage au monde inscrit au patrimoine mondial de l'UNESCO. Durant plus d'un millénaire, empereurs, courtisans et guerriers samouraïs marchèrent dans ces forêts sacrées en quête de purification et de renouveau spirituel, fusionnant le shintoïsme animiste et le bouddhisme ésotérique (Shinbutsu-shugo). Yunomine Onsen, découverte il y a plus de 1 800 ans, est la seule source thermale UNESCO au monde où l'on peut se baigner.",
+      "schedule": [
+        {
+          "time": "🚆 Transports et liaison Osaka → Kumano Kodo (Jour 8)",
+          "text": "• Départ matinal vers la péninsule de Kii : Check-out à Osaka avec un sac à dos léger de 2 jours (les gros bagages partent vers Hiroshima par Takkyubin).\n• Train Limited Express Kuroshio : Direct depuis Shin-Osaka (07h35) ou Tennoji vers Kii-Tanabe (**2h 10 min**, trajet côtier inclus avec le JR Pass).\n• Bus de montagne Ryujin : De Kii-Tanabe jusqu'à l'arrêt Hosshinmon-oji (1h 15 min, ~1 500¥).\n• Randonnée de pèlerinage : Hosshinmon-oji → Kumano Hongu Taisha (7 km, 2h à 2h30 de descente douce en forêt de cèdres).\n• Yunomine Onsen : Bus local de 10 min depuis Hongu Taisha (~310¥).\n• Hébergement : Ryokan traditionnel à Yunomine Onsen avec bains chauds et dîner kaiseki."
+        },
+        {
+          "time": "Sentier Nakahechi : Marche classique de Hosshinmon-oji à Hongu Taisha (7 km)",
+          "text": "Le tronçon le plus bucolique et accessible du Kumano Kodo. Des dallages de pierre couverts de mousse serpentent sous les cèdres centenaires entre plantations de thé et petits sanctuaires oji où les pèlerins priaient autrefois les divinités de la nature."
+        },
+        {
+          "time": "Grand Sanctuaire Kumano Hongu Taisha",
+          "text": "Le centre névralgique de tous les chemins de Kumano. Ses pavillons en bois de cyprès sans peinture et ses toits en écorce de cyprès se fondent dans la montagne. Il vénère le corbeau sacré à trois pattes Yatagarasu, guide du premier empereur Jinmu."
+        },
+        {
+          "time": "Oyunohara : Le plus grand Torii du monde (34 m)",
+          "text": "Dressé à 500 mètres du sanctuaire actuel dans le delta d'origine des rivières sacrées. Haut de 34 mètres et large de 42 mètres, ce portail d'acier sombre domine les rizières verdoyantes à l'endroit exact où se dressait le sanctuaire avant l'inondation de 1889."
+        },
+        {
+          "time": "Yunomine Onsen et le bain ancestral de Tsuboyu",
+          "text": "Un village thermal enchâssé dans une gorge de montagne où s'élèvent des vapeurs de soufre. Tsuboyu est une petite cabane sur pilotis abritant un bassin de pierre naturelle dont l'eau change de nuance sept fois par jour. À la source bouillante Yutou (90°C), on cuit des œufs frais dans l'eau thermale."
+        }
+      ],
+      "money": "Train JR Kuroshio inclus dans JR Pass + 12€ bus locaux Ryujin + 5€ bain Tsuboyu + 70€–110€ nuit en ryokan avec dîner et petit-déjeuner.",
+      "num": 8
+    },
+    {
+      "id": "kumano-nachi",
+      "title": "Kumano Kodo (II) : Daimon-zaka, Sanctuaire Nachi Taisha et Cascade de Nachi",
+      "cities": "Wakayama (Nachi-Katsuura, Kii-Katsuura)",
+      "reason": "Deuxième journée au Kumano Kodo : Les marches ancestrales de Daimon-zaka, la célèbre pagode et la cascade sacrée, puis le port de Kii-Katsuura.",
+      "summary": "La carte postale la plus emblématique du Japon : montée des marches moussues de Daimon-zaka entre cèdres octocentenaires, visite du sanctuaire Kumano Nachi Taisha et de la pagode Seiganto-ji devant la cascade mugissante de Nachi (133 m de chute libre). Après-midi au port de pêche de Kii-Katsuura pour déguster le thon frais avant la liaison vers Hiroshima.",
+      "history": "La cascade de Nachi (Nachi no Otaki) est vénérée depuis des temps immémoriaux comme une divinité vivante (shintai). Avec l'arrivée du bouddhisme, elle fut assimilée à la déesse de la compassion Kannon aux mille bras. Le temple bouddhiste Seiganto-ji et le sanctuaire shinto Nachi Taisha sont restés intimement unis, offrant l'un des plus vibrants témoins de l'harmonie religieuse japonaise.",
+      "schedule": [
+        {
+          "time": "🌲 Transports et visites à Nachi et Kii-Katsuura (Jour 9)",
+          "text": "• De Yunomine vers la côte de Nachi : Bus matinal de Yunomine vers Daimon-zaka (1h 10 min, ~1 600¥).\n• Montée de Daimon-zaka : 600 mètres de calzada empierrée (267 marches, 30 min sous les cèdres séculaires Meoto Sugi).\n• Enceinte sacrée : Visite de Kumano Nachi Taisha, de la pagode à 3 étages de Seiganto-ji et point de vue sur la cascade de Nachi (1h 30 min).\n• Descente vers la côte : Bus Kumano Gobo Nankai jusqu'à la gare JR de Kii-Katsuura (**25 minutes**, ~620¥).\n• Festin marin et liaison vers Hiroshima : Déjeuner de thon rouge frais (maguro) sur le port. En milieu d'après-midi, train Limited Express Kuroshio vers Shin-Osaka (3h 30 min, JR Pass) puis Shinkansen vers Hiroshima (1h 25 min) pour s'installer avant le Jour 10."
+        },
+        {
+          "time": "Daimon-zaka : La chaussée pavée des cèdres millénaires",
+          "text": "Un majestueux escalier de dalles de pierre moussue datant de l'époque Heian. À sa base se dressent les Meoto Sugi ('les cèdres époux'), deux géants enlacés vieux de 800 ans gardant l'ancien torii."
+        },
+        {
+          "time": "Kumano Nachi Taisha et la Pagode Seiganto-ji",
+          "text": "L'un des trois grands sanctuaires de Kumano, perché à 350 mètres d'altitude. La pagode vermillon à trois étages de Seiganto-ji s'aligne magistralement avec la chute vertigineuse de Nachi en toile de fond."
+        },
+        {
+          "time": "Cascade de Nachi (Nachi no Otaki, 133 m)",
+          "text": "La plus haute cascade continue du Japon, plongeant de 133 mètres d'un seul jet avec un débit régulier d'une tonne d'eau par seconde. L'eau de sa vasque sacrée est réputée dispenser santé et longévité."
+        },
+        {
+          "time": "Port de Kii-Katsuura et dégustation de thon rouge",
+          "text": "Kii-Katsuura est le grand port de débarquement du thon rouge frais pêché à la palangre. On y déguste de succulents bols de Maguro-don avant de prendre le train vers Shin-Osaka et Hiroshima."
+        }
+      ],
+      "money": "Env. 15€ bus régionaux + 3€ pagode/cascade + 20€–28€ déjeuner thon à Kii-Katsuura + trains inclus dans JR Pass.",
+      "num": 9
+    },
+    {
       "id": "hiroshima-nagasaki",
       "title": "Osaka → Hiroshima et Nagasaki : Devoir de mémoire et histoire",
       "cities": "Hiroshima, Nagasaki",
@@ -1325,7 +1514,7 @@ export const pendingDays = {
       "history": "Le 6 août 1945, Hiroshima fut anéantie par la première bombe atomique ; trois jours plus tard, Nagasaki subissait le second bombardement. Les deux cités ont métamorphosé ce drame en un plaidoyer universel pour le désarmement nucléaire. Nagasaki possède en outre un passé singulier : durant les plus de deux siècles de fermeture totale du pays (sakoku), l'île artificielle de Dejima fut l'unique enclave autorisée pour le commerce avec les marchands néerlandais et l'introduction des sciences occidentales (Rangaku).",
       "schedule": [
         {
-          "time": "🕊️ Transports et liaison Osaka → Hiroshima (Jour 8)",
+          "time": "🕊️ Transports et liaison Osaka → Hiroshima (Jour 10)",
           "text": "• Cap vers l'ouest : Départ matinal d'Osaka.\n• Train Shinkansen Sanyo : Direct depuis Shin-Osaka jusqu'à la gare d'Hiroshima en **seulement 1h 25 min** (inclus avec le JR Pass).\n• À Hiroshima : Tramway urbain Hiroden (lignes 2 ou 6) jusqu'à l'arrêt Genbaku Dome-mae (15 min).\n• Visites : Parc mémorial de la Paix, Musée, Dôme de Genbaku et dîner d'okonomiyaki feuilleté à Okonomimura.\n• Hébergement : Hôtel à Hiroshima (près de la gare ou du port de Miyajimaguchi)."
         },
         {
@@ -1362,7 +1551,7 @@ export const pendingDays = {
         }
       ],
       "money": "Shinkansen (inclus JR Pass ou ~65€) + 3€ tramway + 1,20€ musée + 20€ repas Okonomimura.",
-      "num": 8
+      "num": 10
     },
     {
       "id": "miyajima",
@@ -1373,7 +1562,7 @@ export const pendingDays = {
       "history": "Dans les temps anciens, l'île tout entière était vénérée comme un kami vivant si sacré qu'aucun mortel n'avait le droit d'y poser le pied, d'y naître ou d'y mourir. Afin que les pèlerins puissent prier sans profaner la terre sacrée, le chef de guerre Taira no Kiyomori fit reconstruire en 1168 le sanctuaire d'Itsukushima entièrement sur pilotis au-dessus de l'estran. Classé au patrimoine mondial de l'UNESCO en 1996.",
       "schedule": [
         {
-          "time": "⛩️ Transports et liaison Hiroshima → Île de Miyajima (Jour 9)",
+          "time": "⛩️ Transports et liaison Hiroshima → Île de Miyajima (Jour 11)",
           "text": "• Trajet ultra-fluide : L'île sacrée se trouve juste en face de la baie d'Hiroshima.\n• Train de banlieue : Ligne JR Sanyo depuis Hiroshima Station jusqu'à Miyajimaguchi (**28 minutes**).\n• Ferry panoramique : À 2 min de la gare. Prendre le ferry JR West (**10 minutes** ; il effectue une courbe spectaculaire au plus près du Torii flottant ; inclus dans le JR Pass ou ~200¥).\n• Sur l'île : Tout se visite à pied parmi les cerfs en liberté. Téléphérique Miyajima Ropeway pour le mont Misen (535 m).\n• Hébergement : Nuit en ryokan traditionnel sur l'île de Miyajima ou retour en 28 min à Hiroshima."
         },
         {
@@ -1410,7 +1599,7 @@ export const pendingDays = {
         }
       ],
       "money": "Train et ferry inclus avec JR Pass (ou ~5€) + 2€ Itsukushima + 12€ téléphérique + 25€ huîtres grillées et gâteaux momiji.",
-      "num": 9
+      "num": 11
     },
     {
       "id": "okinawa",
@@ -1421,7 +1610,7 @@ export const pendingDays = {
       "history": "Pendant plus de 450 ans, ces îles constituèrent le prospère Royaume des Ryukyu, carrefour maritime marchand indépendant entre la Chine, le Japon et l'Asie du Sud-Est. Annexée par le Japon en 1879, Okinawa traversa la dramatique bataille d'Okinawa en 1945 avant de demeurer sous tutelle américaine jusqu'en 1972, forgeant une culture métissée et renommée pour l'exceptionnelle longévité de ses aînés.",
       "schedule": [
         {
-          "time": "🌺 Transports et vol vers Okinawa (Jour 10)",
+          "time": "🌺 Transports et vol vers Okinawa (Jour 12)",
           "text": "• Cap vers les tropiques : Check-out matinal à Hiroshima.\n• Vol direct vers Okinawa : Navette vers l'aéroport d'Hiroshima (45 min) ou Osaka Kansai (KIX). Vol direct vers l'aéroport de Naha (OKA) en **1h 55 min** (vols ANA, JAL ou Peach).\n• À Okinawa : Monorail aérien Yui Rail reliant directement l'aéroport au centre de Naha (Kokusai-dori en 12 min, château de Shuri en 27 min, ~300¥).\n• Visites : Château royal de Shuri, artère animée de Kokusai-dori et cuisine de longévité okinawaïenne.\n• Hébergement : Hôtel ou resort en bord de mer à Naha / Okinawa."
         },
         {
@@ -1450,7 +1639,7 @@ export const pendingDays = {
         }
       ],
       "money": "Vol intérieur (~60€–90€) + 3€ monorail Yui Rail + 3€ château de Shuri + 25€ spécialités culinaires.",
-      "num": 10
+      "num": 12
     },
     {
       "id": "iriomote-stargazing",
@@ -1461,7 +1650,7 @@ export const pendingDays = {
       "history": "Iriomote est mondialement réputée comme l'unique sanctuaire du chat sauvage d'Iriomote (Yamaneko), félin nocturne découvert en 1967 et en danger critique d'extinction. Sa situation méridionale (24° N) offre le privilège d'observer la constellation de la Croix du Sud entre février et juin, invisible depuis la France ou l'Europe continentale.",
       "schedule": [
         {
-          "time": "✨ Transports et liaison vers l'île d'Iriomote (Jour 11)",
+          "time": "✨ Transports et liaison vers l'île d'Iriomote (Jour 13)",
           "text": "• Liaison inter-îles dans l'archipel Yaeyama : La nature sauvage absolue du Japon.\n• Vol Naha → Ishigaki : Court vol de **55 minutes** au-dessus des lagons turquoise.\n• Ferry rapide vers Iriomote : Navette jusqu'au port d'Ishigaki (30 min), puis ferry rapide vers l'île d'Iriomote (**45 minutes** vers le port d'Ohara ou Uehara, ~2 500¥).\n• Activités : Kayak au cœur de la mangrove vierge et randonnée vers la cascade de Pinaisara (55 m).\n• Nuit étoilée : Réserve internationale de ciel étoilé (Dark Sky Park), vue sur la Voie lactée et la Croix du Sud.\n• Hébergement : Éco-lodge au cœur de la jungle à Iriomote ou nuit à Ishigaki."
         },
         {
@@ -1494,7 +1683,7 @@ export const pendingDays = {
         }
       ],
       "money": "Vol Naha-Ishigaki (~45€) + ferry vers Iriomote (~16€) + excursion kayak (~45€) + dîner local.",
-      "num": 11
+      "num": 13
     },
     {
       "id": "hokkaido",
@@ -1505,7 +1694,7 @@ export const pendingDays = {
       "history": "Hokkaido ('le chemin de la mer du Nord') fut colonisée et pleinement rattachée au Japon à l'ère Meiji à la fin du XIXe siècle. Auparavant appelée Ezochi, c'est la terre des Aïnous, peuple indigène aux croyances animistes, aux traditions orales et à la langue uniques, aujourd'hui mis à l'honneur dans des musées spécialisés comme le centre Upopoy à Shiraoi.",
       "schedule": [
         {
-          "time": "❄️ Transports et vol vers Hokkaido (Jour 12)",
+          "time": "❄️ Transports et vol vers Hokkaido (Jour 14)",
           "text": "• Du sud subtropical au grand nord : L'apothéose du voyage au Japon.\n• Vol vers Hokkaido : Vol depuis Ishigaki/Naha (direct ou via Tokyo Haneda) vers l'aéroport de Sapporo New Chitose (CTS).\n• Train rapide vers Sapporo : Train direct JR Rapid Airport depuis le terminal jusqu'à la gare de Sapporo (**37 minutes**, trains toutes les 12 min, inclus JR Pass).\n• À Sapporo : Métro de Sapporo et tramway urbain.\n• Visites : Parc Odori, marché aux poissons de Nijo (crabe royal et donburi de saumon), musée de la bière de Sapporo et venelle Ganso Ramen Yokocho à Susukino.\n• Vol retour : Départ depuis Sapporo New Chitose (CTS) via Tokyo."
         },
         {
@@ -1538,11 +1727,11 @@ export const pendingDays = {
         }
       ],
       "money": "Vol vers Sapporo (~75€–110€) + 7€ train JR Airport + 25€–35€ festin de crabe et ramen.",
-      "num": 12
+      "num": 14
     },
     {
       "id": "tokyo-departure",
-      "num": 13,
+      "num": 15,
       "title": "Retour à Tokyo, soirée d'adieu et vol retour depuis Narita",
       "cities": "Hokkaido / Tokyo → Aéroport de Narita (NRT) → Vol international",
       "reason": "Journée finale indispensable : Vol intérieur vers Tokyo, derniers achats de souvenirs (omiyage), dîner d'adieu et transfert à Narita.",
@@ -1550,7 +1739,7 @@ export const pendingDays = {
       "history": "La tradition des 'omiyage' (cadeaux de retour) est incontournable au Japon : gâteaux régionaux et objets d'artisanat soigneusement emballés pour ses proches. Boucler la boucle à Tokyo avant de rejoindre Narita conclut ce grand périple en beauté.",
       "schedule": [
         {
-          "time": "🛫 Transports et liaison vers Tokyo et Narita (Jour 13)",
+          "time": "🛫 Transports et liaison vers Tokyo et Narita (Jour 15)",
           "text": "• Vol intérieur Hokkaido → Tokyo : Vol Sapporo (CTS) vers Tokyo Haneda ou Narita (1h 40 min).\n• Nuit à Tokyo : Idéale pour profiter d'une dernière soirée sereine sans stress de correspondance.\n• Transfert vers Narita : Narita Express direct depuis Tokyo Station (58 min) ou Shinjuku (75 min).\n• À l'aéroport : Dépôt du boîtier Pocket WiFi, enregistrement et derniers achats Duty Free (Tokyo Banana, chocolats Royce)."
         },
         {
@@ -1839,6 +2028,70 @@ export const pendingDays = {
       "num": 7
     },
     {
+      "id": "kumano-hongu",
+      "title": "Osaka → Kumano Kodo (I): Nakahechi Trail, Hongu Taisha at Yunomine Onsen",
+      "cities": "Wakayama (Kii-Tanabe, Hongu, Yunomine Onsen)",
+      "reason": "Kansai → Kumano Kodo: Tren na JR Kuroshio papuntang sagradong Kii Peninsula para sa sinaunang pilgrimage route.",
+      "summary": "Unang araw sa mga sinaunang landas ng Kumano Kodo (UNESCO World Heritage). Paglalakad sa Nakahechi trail sa gitna ng matatayog na cedar, pagbisita sa Kumano Hongu Taisha, ang higanteng Torii ng Oyunohara (pinakamataas sa mundo, 34 m), at pampaginhawang onsen sa Yunomine Onsen (Tsuboyu).",
+      "history": "Kasama ng Camino de Santiago sa Espanya, ang Kumano Kodo ay isa lamang sa dalawang pilgrimage trail sa buong daigdig na kinikilala ng UNESCO. Mahigit 1,000 taon nang nilalakad ng mga emperador at samuray ang mga bundok na ito para sa espirituwal na pagbabago, pinagsasama ang Shinto at Budismo. Ang Yunomine Onsen ay 1,800 taon nang dinarayo at tanging onsen ng UNESCO na maaaring paliguan.",
+      "schedule": [
+        {
+          "time": "🚆 Transportasyon Osaka → Kumano Kodo (Araw 8)",
+          "text": "• Byahe papuntang Kii Peninsula: Maagang check-out sa Osaka na may dalang 2-araw na backpack (ang malalaking bagahe ay ipadala sa Hiroshima via Takkyubin).\n• Tren JR Limited Express Kuroshio: Mula Shin-Osaka (07:35) o Tennoji papuntang Kii-Tanabe Station (**2 oras at 10 minuto**, kasama sa JR Pass).\n• Ryujin Bus: Mula sa labas ng Kii-Tanabe Station papuntang Hosshinmon-oji stop (1 oras at 15 minuto, ~¥1,500).\n• Pilgrimage Hike: Hosshinmon-oji → Kumano Hongu Taisha (7 km, 2 hanggang 2.5 oras na banayad na pababang lakaran sa kagubatan ng cedar).\n• Yunomine Onsen: 10 minutong bus mula sa Hongu Taisha papuntang Yunomine Onsen (~¥310).\n• Tuluyan: Tradisyonal na ryokan sa Yunomine Onsen na may mainit na onsen at kaiseki dinner."
+        },
+        {
+          "time": "Nakahechi Trail: Hosshinmon-oji hanggang Hongu Taisha (7 km)",
+          "text": "Ang pinakamagandang bahagi ng Kumano Kodo. Makikitang daanang bato na may lumot sa gitna ng matatayog na puno ng cedar, mga taniman ng tsaa, at maliliit na oji shrine kung saan nagdarasal ang mga sinaunang pilgrim."
+        },
+        {
+          "time": "Kumano Hongu Taisha Grand Shrine",
+          "text": "Ang sentro kung saan nagtatagpo ang lahat ng ruta ng Kumano Kodo. Yari sa natural na kahoy ng cypress at may hiwada-buki bubong. Dito pinararangalan ang banal na ibong Yatagarasu (tatlong-paang uwak)."
+        },
+        {
+          "time": "Oyunohara: Pinakamataas na Torii Gate sa Mundo (34 m)",
+          "text": "Nakatayo 500 metro mula sa kasalukuyang santuwaryo sa delta ng ilog. May taas na 34 metro at lapad na 42 metro, ito ang orihinal na kinatatayuan ng Hongu Taisha bago ang baha noong 1889."
+        },
+        {
+          "time": "Yunomine Onsen at ang Sinaunang Tsuboyu Bath",
+          "text": "Isang payapang nayon ng onsen sa gitna ng bangin. Ang Tsuboyu ay maliit na batong paliguan sa tabi ng ilog na nagbabago ng kulay ng tubig pitong beses sa isang araw. Sa Yutou spring, maaaring maglaga ng itlog sa 90°C na tubig."
+        }
+      ],
+      "money": "JR Kuroshio kasama sa JR Pass + ¥1,800 lokal na bus + ¥800 Tsuboyu + ¥10,000–¥16,000 ryokan na may hapunan at almusal.",
+      "num": 8
+    },
+    {
+      "id": "kumano-nachi",
+      "title": "Kumano Kodo (II): Daimon-zaka, Santuwaryo ng Nachi Taisha at Talon ng Nachi",
+      "cities": "Wakayama (Nachi-Katsuura, Kii-Katsuura)",
+      "reason": "Ikalawang araw sa Kumano Kodo: Hakbang ng Daimon-zaka, sikat na pagoda at sagradong talon, at daungan ng Kii-Katsuura.",
+      "summary": "Ang pinakasikat na tanawin sa Kumano: pag-akyat sa batong hagdanan ng Daimon-zaka sa pagitan ng mga dambuhalang puno ng cedar, Kumano Nachi Taisha, ang 3-palapag na Seiganto-ji Pagoda sa harap ng 133-metrong Talon ng Nachi, at sariwang tuna sa Kii-Katsuura bago magtungo sa Hiroshima.",
+      "history": "Ang Talon ng Nachi ay itinuturing na buhay na diyos (shintai) bago pa man itinayo ang mga santuwaryo. Nang dumating ang Budismo, iniugnay ito kay Kannon. Ang templo ng Seiganto-ji at santuwaryo ng Nachi Taisha ay nanatiling magkasama sa iisang banal na pook.",
+      "schedule": [
+        {
+          "time": "🌲 Transportasyon sa Nachi at Kii-Katsuura (Araw 9)",
+          "text": "• Mula Yunomine papuntang Nachi Coast: Umagang bus papuntang Daimon-zaka base (1h 10m, ~¥1,600).\n• Daimon-zaka: 600-metrong batong hagdanan (267 baitang, 30 minuto sa lilim ng 800-taong gulang na Meoto Sugi cedars).\n• Banal na Pook: Kumano Nachi Taisha, Seiganto-ji Pagoda, at viewing deck ng Talon ng Nachi (1h 30m).\n• Papuntang Baybayin: Bus papuntang JR Kii-Katsuura Station (**25 minuto**, ~¥620).\n• Tanghalian ng Tuna at Byahe sa Hiroshima: Sariwang maguro tuna sa daungan. Sa hapon, sakay ng JR Limited Express Kuroshio pabalik sa Shin-Osaka (3h 30m, kasama sa JR Pass) at Shinkansen papuntang Hiroshima (1h 25m) para sa Araw 10."
+        },
+        {
+          "time": "Daimon-zaka: Batong Hagdanan ng Sinaunang Cedar",
+          "text": "Kamangha-manghang batong hagdanan mula pa sa Heian period. Sa paanan nito nakatayo ang Meoto Sugi ('mag-asawang cedar'), dalawang dambuhalang puno na 800 taon na ang tanda."
+        },
+        {
+          "time": "Kumano Nachi Taisha at Seiganto-ji Pagoda",
+          "text": "Isa sa Tatlong Dakilang Dambana ng Kumano. Katabi nito ang 3-palapag na pulang pagoda ng Seiganto-ji na kapantay ng rumaragasang Talon ng Nachi sa likod nito."
+        },
+        {
+          "time": "Talon ng Nachi (Nachi no Otaki, 133 m)",
+          "text": "Pinakamataas na tuluy-tuloy na talon sa Japan (133 metro). Sinasabing ang tubig nito ay nagdudulot ng mahabang buhay at magandang kalusugan."
+        },
+        {
+          "time": "Daungan ng Kii-Katsuura at Sariwang Tuna",
+          "text": "Ang Kii-Katsuura ang pangunahing daungan ng sariwang tuna sa Japan. Masarap na Maguro-don bago sumakay ng tren papuntang Shin-Osaka at Hiroshima."
+        }
+      ],
+      "money": "Tinatayang ¥2,200 bus + ¥300 pagoda deck + ¥3,000 tanghalian ng tuna sa Kii-Katsuura + tren kasama sa JR Pass.",
+      "num": 9
+    },
+    {
       "id": "hiroshima-nagasaki",
       "title": "Osaka → Hiroshima at Nagasaki: Alaala ng Kapayapaan",
       "cities": "Hiroshima, Nagasaki",
@@ -1847,7 +2100,7 @@ export const pendingDays = {
       "history": "Noong Agosto 6, 1945, nawasak ang Hiroshima ng unang atomic bomb; makalipas ang tatlong araw, noong Agosto 9, binomba rin ang Nagasaki. Ginawa ng dalawang lungsod ang trahedya bilang panawagan para sa kapayapaan ng buong mundo. Bukod dito, ang Nagasaki ay naging bukod-tanging daungan ng Japan sa panahon ng mahigit 200 taon ng sakoku isolation kung saan ang artificial island ng Dejima ang tanging lugar ng kalakalan sa pagitan ng mga Dutch at Japan.",
       "schedule": [
         {
-          "time": "🕊️ Transportasyon Osaka → Hiroshima (Araw 8)",
+          "time": "🕊️ Transportasyon Osaka → Hiroshima (Araw 10)",
           "text": "• Byahe pakanluran: Umagang check-out sa hotel sa Osaka.\n• Shinkansen Bullet Train: Sanyo Shinkansen mula Shin-Osaka diretso sa Hiroshima Station sa loob ng **1 oras at 25 minuto lang** (kasama sa JR Pass).\n• Sa Hiroshima: Sakay ng Hiroden streetcar (Line 2 o 6) hanggang Genbaku Dome-mae stop (15 min).\n• Mga Pupuntahan: Peace Memorial Park, Museum, Atomic Bomb Dome, at masarap na Hiroshima-style okonomiyaki sa Okonomimura.\n• Tuluyan: Hotel sa Hiroshima (malapit sa JR Station o Miyajimaguchi)."
         },
         {
@@ -1884,7 +2137,7 @@ export const pendingDays = {
         }
       ],
       "money": "Shinkansen (JR Pass o ~¥10,000) + ¥440 streetcar + ¥200 museo + pagkain sa Okonomimura (~¥2,800).",
-      "num": 8
+      "num": 10
     },
     {
       "id": "miyajima",
@@ -1895,7 +2148,7 @@ export const pendingDays = {
       "history": "Noong sinaunang panahon, ang buong isla ay itinuturing na isang buhay na kami (diyos) kaya bawal apakan ng tao o magsilang o mamatay rito. Upang makapanalangin ang mga deboto nang hindi nilalapastangan ang lupa, muling itinayo ni Taira no Kiyomori ang Itsukushima Shrine noong 1168 sa ibabaw ng tubig sa pamamagitan ng mga haliging kahoy. Idineklarang UNESCO World Heritage Site noong 1996.",
       "schedule": [
         {
-          "time": "⛩️ Transportasyon Hiroshima → Miyajima Island (Araw 9)",
+          "time": "⛩️ Transportasyon Hiroshima → Miyajima Island (Araw 11)",
           "text": "• Napakadaling byahe: Katapat lang ng baybayin ng Hiroshima ang isla ng Miyajima.\n• Tren: JR Sanyo Main Line mula Hiroshima Station hanggang Miyajimaguchi (**28 minuto**, ~¥420 o JR Pass).\n• Ferry papuntang Isla: 2 minutong lakad papuntang pantalan. Sakay ng JR West Ferry (**10 minuto**; dumaraan malapit sa Floating Torii Gate; libre sa JR Pass o ~¥200).\n• Sa Isla: Malalakad ang Itsukushima Shrine at Daisho-in kasama ang mga maamong usa. Miyajima Ropeway paakyat ng Mount Misen (535 m).\n• Tuluyan: Tradisyonal na ryokan sa Miyajima o balik sa hotel sa Hiroshima."
         },
         {
@@ -1932,7 +2185,7 @@ export const pendingDays = {
         }
       ],
       "money": "Tren at ferry libre sa JR Pass (o ~¥650) + ¥300 Itsukushima + ¥2,000 ropeway + pagkain (~¥3,500).",
-      "num": 9
+      "num": 11
     },
     {
       "id": "okinawa",
@@ -1943,7 +2196,7 @@ export const pendingDays = {
       "history": "Sa loob ng mahigit 450 taon, ang mga islang ito ay naging malayang Ryukyu Kingdom na nakikipagkalakalan sa China, Japan, Korea, at Timog-Silangang Asya. Noong 1879 ay sapilitang isinama sa Japan, dumanas ng matinding labanan noong Battle of Okinawa noong 1945, at pinamahalaan ng US militar hanggang 1972, dahilan upang magkaroon ito ng kakaiba at makulay na pagkakakilanlan.",
       "schedule": [
         {
-          "time": "🌺 Transportasyon at Byahe papuntang Okinawa (Araw 10)",
+          "time": "🌺 Transportasyon at Byahe papuntang Okinawa (Araw 12)",
           "text": "• Byahe sa Isla: Check-out sa Hiroshima sa umaga.\n• Eroplano papuntang Okinawa: Bus papuntang Hiroshima Airport (HIJ) o Osaka Kansai (KIX). Direktang flight papuntang Naha Airport (OKA) sa loob ng **1 oras at 55 minuto** (ANA, JAL o Peach).\n• Sa Okinawa: Yui Rail monorail diretso mula airport papuntang sentro ng Naha (Kokusai-dori sa 12 min, Shuri Castle sa 27 min, ~¥300).\n• Mga Pupuntahan: Shuri Castle (palasyo ng Ryukyu Kingdom), Kokusai-dori, masarap na Okinawa Soba, at asul na dagat.\n• Tuluyan: Hotel o resort sa Naha / baybayin ng Okinawa."
         },
         {
@@ -1972,7 +2225,7 @@ export const pendingDays = {
         }
       ],
       "money": "Domestic flight (~¥10,000–¥14,000) + ¥300 monorail + ¥400 Shuri Castle + pagkain (~¥3,500).",
-      "num": 10
+      "num": 12
     },
     {
       "id": "iriomote-stargazing",
@@ -1983,7 +2236,7 @@ export const pendingDays = {
       "history": "Kilala sa buong daigdig ang Iriomote bilang nag-iisang tahanan ng Iriomote wildcat (Yamaneko), isang pusa sa gabi na natuklasan lamang noong 1967 at nanganganib nang maubos. Dahil sa timog na lokasyon nito (24° N), makikita mula rito ang Southern Cross constellation sa pagitan ng Pebrero at Hunyo, na hindi kailanman makikita mula sa Europa.",
       "schedule": [
         {
-          "time": "✨ Transportasyon papuntang Iriomote Island (Araw 11)",
+          "time": "✨ Transportasyon papuntang Iriomote Island (Araw 13)",
           "text": "• Byahe sa Yaeyama Archipelago: Ang pinakalikas at ligaw na bahagi ng Japan.\n• Flight Naha → Ishigaki: Maikling flight mula Naha papuntang Ishigaki (**55 minuto**).\n• High-Speed Ferry papuntang Iriomote: Bus mula airport papuntang port (30 min). Sakay ng fast ferry papuntang Iriomote Island (**45 minuto**, ~¥2,500).\n• Mga Gawain: Mangrove kayaking sa Nakama o Urauchi River at trekking papuntang Pinaisara Falls (55 m).\n• Gabi sa ilalim ng mga Bituin: International Dark Sky Park para makita ang Milky Way at Southern Cross sa kalangitan.\n• Tuluyan: Eco-lodge sa gitna ng kagubatan sa Iriomote o balik sa Ishigaki."
         },
         {
@@ -2016,7 +2269,7 @@ export const pendingDays = {
         }
       ],
       "money": "Flight Naha-Ishigaki (~¥6,500) + ferry papuntang Iriomote (~¥2,500) + kayak tour (~¥6,500) + pagkain.",
-      "num": 11
+      "num": 13
     },
     {
       "id": "hokkaido",
@@ -2027,7 +2280,7 @@ export const pendingDays = {
       "history": "Ang Hokkaido ('daan ng hilagang dagat') ay pormal na naging bahagi ng Japan noong panahon ng Meiji noong huling bahagi ng ika-19 siglo. Dati itong kilala bilang Ezochi, ang ninunong lupain ng mga Ainu, isang katutubong lahi na may sariling wika, paniniwala, at kultura na ipinagdiriwang ngayon sa mga sentro tulad ng Upopoy sa Shiraoi.",
       "schedule": [
         {
-          "time": "❄️ Transportasyon at Byahe papuntang Hokkaido (Araw 12)",
+          "time": "❄️ Transportasyon at Byahe papuntang Hokkaido (Araw 14)",
           "text": "• Mula Timog hanggang Hilaga: Ang huling yugto ng paglalakbay.\n• Eroplano papuntang Hokkaido: Flight mula Ishigaki/Naha (diretso o via Tokyo) patungong Sapporo New Chitose Airport (CTS).\n• Tren papuntang Sapporo: JR Rapid Airport train diretso mula airport terminal hanggang Sapporo Station (**37 minuto**, ~¥1,150 o JR Pass).\n• Sa Sapporo: Sapporo Subway at streetcar.\n• Mga Pupuntahan: Odori Park, Nijo Seafood Market (king crab at salmon roe donburi), Sapporo Beer Museum, at ramen sa Susukino.\n• Pag-uwi: Flight pabalik mula sa New Chitose Airport (CTS) via Tokyo."
         },
         {
@@ -2060,11 +2313,11 @@ export const pendingDays = {
         }
       ],
       "money": "Domestic flight (~¥12,000–¥16,000) + ¥1,150 JR train + pagkain sa Nijo Market (~¥4,500).",
-      "num": 12
+      "num": 14
     },
     {
       "id": "tokyo-departure",
-      "num": 13,
+      "num": 15,
       "title": "Pagbalik sa Tokyo, Huling Gabi at Paglipad mula sa Narita",
       "cities": "Hokkaido / Tokyo → Narita Airport (NRT) → International Flight",
       "reason": "Mahalagang huling araw: Domestic flight pabalik sa Tokyo, pamimili ng pasalubong (omiyage), huling hapunan, at byahe sa Narita.",
@@ -2072,7 +2325,7 @@ export const pendingDays = {
       "history": "Ang kultura ng 'omiyage' o pagdadala ng masasarap na pasalubong sa pamilya at kaibigan ay mahalagang bahagi ng bawat paglalakbay sa Japan.",
       "schedule": [
         {
-          "time": "🛫 Transportasyon papuntang Tokyo at Narita (Araw 13)",
+          "time": "🛫 Transportasyon papuntang Tokyo at Narita (Araw 15)",
           "text": "• Domestic Flight Hokkaido → Tokyo: Flight mula Sapporo (CTS) papuntang Tokyo (1h 40 min).\n• Huling Gabi sa Tokyo: Mas maganda para mag-enjoy bago ang flight pauwi.\n• Tren papuntang Narita: Sakay ng Narita Express (JR N'EX) mula Tokyo Station (58 min) o Shinjuku (75 min).\n• Sa Narita Airport: Ibalik ang Pocket WiFi, check-in ng maleta, at Duty Free shopping ng Tokyo Banana at Royce Chocolates."
         },
         {
@@ -2135,6 +2388,18 @@ export const futureLocationCoords = {
     "lng": 135.4967,
     "emoji": "🦁",
     "color": "#d62828"
+  },
+  "kumano-hongu": {
+    "lat": 33.8402,
+    "lng": 135.7739,
+    "emoji": "⛩️",
+    "color": "#2a9d8f"
+  },
+  "kumano-nachi": {
+    "lat": 33.6706,
+    "lng": 135.8906,
+    "emoji": "🌊",
+    "color": "#1d3557"
   },
   "hiroshima-nagasaki": {
     "lat": 34.3928,
@@ -2201,8 +2466,8 @@ export const futureSectionTabs = {
 };
 
 export const pendingSectionSubtitle = {
-  "es": "Itinerario completo de 13 días con vuelos internacionales y conexiones óptimas: Llegada a Narita (NRT) y traslado a Tokio → Kanto (Tokio, Nikko, Kamakura) → Monte Fuji → Kansai (Osaka) → Chugoku (Hiroshima y Miyajima) → Islas Ryukyu (Okinawa e Iriomote) → Hokkaido → Noche de despedida en Tokio y vuelo de regreso desde Narita.",
-  "en": "Complete 13-day journey with international flights and seamless connections: Narita (NRT) arrival and transfer to Tokyo → Kanto (Tokyo, Nikko, Kamakura) → Mount Fuji → Kansai (Osaka) → Chugoku (Hiroshima & Miyajima) → Ryukyu Islands (Okinawa & Iriomote) → Hokkaido → Farewell night in Tokyo and departure flight from Narita.",
-  "fr": "Grand voyage de 13 jours avec vols et liaisons complètes : Arrivée à Narita (NRT) et transfert à Tokyo → Kanto (Tokyo, Nikko, Kamakura) → Mont Fuji → Kansai (Osaka) → Chugoku (Hiroshima et Miyajima) → Îles Ryukyu (Okinawa et Iriomote) → Hokkaido → Nuit d'adieu à Tokyo et vol retour depuis Narita.",
-  "tl": "Kumpletong 13-araw na biyahe kasama ang international flights: Pagdating sa Narita (NRT) at byahe sa Tokyo → Kanto (Tokyo, Nikko, Kamakura) → Mount Fuji → Kansai (Osaka) → Chugoku (Hiroshima at Miyajima) → Ryukyu Islands (Okinawa at Iriomote) → Hokkaido → Huling gabi sa Tokyo at flight pauwi mula sa Narita."
+  "es": "Itinerario completo de 15 días con vuelos internacionales y conexiones óptimas: Llegada a Narita (NRT) y traslado a Tokio → Kanto (Tokio, Nikko, Kamakura) → Monte Fuji → Kansai (Osaka) → Kumano Kodo (Ruta Nakahechi, Hongu Taisha y Nachi Falls) → Chugoku (Hiroshima y Miyajima) → Islas Ryukyu (Okinawa e Iriomote) → Hokkaido → Noche de despedida en Tokio y vuelo de regreso desde Narita.",
+  "en": "Complete 15-day journey with international flights and seamless connections: Narita (NRT) arrival and transfer to Tokyo → Kanto (Tokyo, Nikko, Kamakura) → Mount Fuji → Kansai (Osaka) → Kumano Kodo (Nakahechi Route, Hongu Taisha & Nachi Falls) → Chugoku (Hiroshima & Miyajima) → Ryukyu Islands (Okinawa & Iriomote) → Hokkaido → Farewell night in Tokyo and departure flight from Narita.",
+  "fr": "Grand voyage de 15 jours avec vols et liaisons complètes : Arrivée à Narita (NRT) et transfert à Tokyo → Kanto (Tokyo, Nikko, Kamakura) → Mont Fuji → Kansai (Osaka) → Kumano Kodo (Route Nakahechi, Hongu Taisha et Chutes de Nachi) → Chugoku (Hiroshima et Miyajima) → Îles Ryukyu (Okinawa et Iriomote) → Hokkaido → Nuit d'adieu à Tokyo et vol retour depuis Narita.",
+  "tl": "Kumpletong 15-araw na biyahe kasama ang international flights: Pagdating sa Narita (NRT) at byahe sa Tokyo → Kanto (Tokyo, Nikko, Kamakura) → Mount Fuji → Kansai (Osaka) → Kumano Kodo (Nakahechi Route, Hongu Taisha at Talon ng Nachi) → Chugoku (Hiroshima at Miyajima) → Ryukyu Islands (Okinawa at Iriomote) → Hokkaido → Huling gabi sa Tokyo at flight pauwi mula sa Narita."
 };

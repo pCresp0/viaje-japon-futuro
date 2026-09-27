@@ -34,7 +34,7 @@ export default function Home({ onGoToDay }) {
                 Planificación del Viaje · Previsualización de Etapa
               </p>
               <p style={{ fontSize: 13, color: "var(--ink)", lineHeight: 1.55, margin: 0 }}>
-                Selecciona cualquiera de las <strong>13 etapas de la ruta</strong> para explorar el itinerario detallado, horarios recomendados, avisos clave y contexto cultural de cada jornada.
+                Selecciona cualquiera de las <strong>{days.length} etapas de la ruta</strong> para explorar el itinerario detallado, horarios recomendados, avisos clave y contexto cultural de cada jornada.
               </p>
             </div>
           </div>

@@ -1,5 +1,5 @@
 // Cosas pendientes de decidir o reservar antes del viaje a Japón.
-// Organizadas por orden de proximidad y relevancia para la ruta de 13 etapas.
+// Organizadas por orden de proximidad y relevancia para la ruta de 15 etapas.
 
 export const pendingItems = [
   {
