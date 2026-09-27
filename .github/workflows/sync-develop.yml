@@ -1,55 +1,71 @@
-name: Sync main to develop diario
+name: Sincronización nocturna de main a develop
 
+# Se ejecuta todas las noches a las 23:55 hora española (peninsular).
+# Si durante el día ha habido cambios/commits en main que aún no están en develop,
+# mergea automáticamente main sobre develop y sube los cambios.
 on:
   schedule:
-    - cron: "50 21 * * *" # 23:50 CEST (verano) / 22:50 CET (invierno)
-  workflow_dispatch: {}
+    # 23:55 hora de España:
+    # - 21:55 UTC en horario de verano (CEST, UTC+2)
+    # - 22:55 UTC en horario de invierno (CET, UTC+1)
+    - cron: "55 21 * * *"
+    - cron: "55 22 * * *"
+  workflow_dispatch: {} # Permite ejecutarlo manualmente en cualquier momento desde Actions
 
 jobs:
-  sync-branches:
+  sync-develop:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
-      - name: Checkout main con historial completo
-        uses: actions/checkout@v4
-        with:
-          ref: main
-          fetch-depth: 0
-
-      - name: Contar commits de hoy en main
-        id: count
+      - name: Verificar hora local en España
+        id: time_check
         run: |
-          TODAY=$(date -u +%Y-%m-%d)
-          COUNT=$(git log main --since="${TODAY} 00:00:00" --until="${TODAY} 23:59:59" --oneline | wc -l | tr -d ' ')
-          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
-          echo "Commits de hoy ($TODAY) en main: $COUNT"
+          MADRID_HOUR=$(TZ="Europe/Madrid" date +%H)
+          MADRID_MIN=$(TZ="Europe/Madrid" date +%M)
+          echo "Hora actual en España: ${MADRID_HOUR}:${MADRID_MIN}"
+          # Si se dispara por cron, asegurar que se ejecuta en la ventana de las 23h de España
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$MADRID_HOUR" != "23" ]; then
+            echo "should_run=false" >> "$GITHUB_OUTPUT"
+            echo "No son las 23h en España (corresponde a la otra franja estacional). Saltando."
+          else
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+          fi
 
-      - name: Checkout develop branch
-        if: steps.count.outputs.count != '0'
+      - name: Checkout develop con historial completo
+        if: steps.time_check.outputs.should_run == 'true'
         uses: actions/checkout@v4
         with:
           ref: develop
           fetch-depth: 0
 
-      - name: Merge main into develop
-        if: steps.count.outputs.count != '0'
+      - name: Comprobar si main tiene commits pendientes respecto a develop
+        if: steps.time_check.outputs.should_run == 'true'
+        id: check_diff
         run: |
-          git config user.name "GitHub Actions Bot"
-          git config user.email "<>"
-          
-          # Fetch the latest main
-          git fetch origin main
-          
-          # Merge main into develop
-          git merge origin/main --no-edit || {
-            echo "Merge conflict detected! Please resolve manually."
-            exit 1
-          }
-          
-          # Push the updated develop branch
-          git push origin develop
+          git fetch origin main:refs/remotes/origin/main
+          git fetch origin develop:refs/remotes/origin/develop
 
-      - name: Sin commits hoy — no se hace merge
-        if: steps.count.outputs.count == '0'
-        run: echo "No ha habido commits hoy en main. No se mergea a develop."
+          # Contar commits que están en main pero no en develop
+          COMMITS_AHEAD=$(git rev-list --count origin/develop..origin/main)
+          echo "commits_ahead=$COMMITS_AHEAD" >> "$GITHUB_OUTPUT"
+          echo "Commits en main pendientes de mergear a develop: $COMMITS_AHEAD"
+
+      - name: Mergear main en develop
+        if: steps.time_check.outputs.should_run == 'true' && steps.check_diff.outputs.commits_ahead != '0'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          echo "Mergeando origin/main en develop..."
+          git checkout develop
+          git merge origin/main --no-edit -m "chore(sync): sincronización automática nocturna de main a develop (23:55) [skip ci]"
+
+          echo "Subiendo develop a origin..."
+          git push origin develop
+          echo "✅ Develop sincronizado con éxito."
+
+      - name: Notificar que no hubo cambios pendientes
+        if: steps.time_check.outputs.should_run == 'true' && steps.check_diff.outputs.commits_ahead == '0'
+        run: |
+          echo "ℹ️ Develop ya está totalmente al día con main. No hay commits que mergear."
