@@ -229,3 +229,4 @@ Una línea por cada commit subido a main, generada sola por GitHub Actions en ca
 - **2026-09-27 11:31 UTC** — feat(map): fijar la capa Topo (relieve) como estilo de mapa ... (`6b80222`)
 - **2026-09-27 11:39 UTC** — fix(theme): ajustar contraste, encuadre y visibilidad de las olas en ... (`c0666bb`)
 - **2026-09-27 11:50 UTC** — fix(cache): forzar purga total de cache y service worker al ... (`df54c8a`)
+- **2026-09-27 11:57 UTC** — feat(map): anadir lineas de trayecto y conexion interactiva entre dias ... (`000ced5`)
