@@ -89,12 +89,12 @@ export default function FutureTripsPage({ initialTab = "itinerario", onTabChange
           <p style={{ fontSize: 13.5, color: "var(--ink-soft)", margin: "4px 0 0" }}>
             {activeTab === "mapa"
               ? (lang === "en"
-                  ? "Interactive map with the 11 future stages and recommended journey route."
+                  ? "Interactive map with the 15 stages and recommended journey route."
                   : lang === "fr"
-                  ? "Carte interactive avec les 11 étapes futures et itinéraire recommandé."
+                  ? "Carte interactive avec les 15 étapes et itinéraire recommandé."
                   : lang === "tl"
-                  ? "Interactive na mapa na may 11 yugto para sa susunod na biyahe."
-                  : "Mapa interactivo con las 11 etapas y ruta geográfica recomendada para futuros viajes.")
+                  ? "Interactive na mapa na may 15 yugto para sa susunod na biyahe."
+                  : "Mapa interactivo con las 15 etapas y ruta geográfica recomendada para futuros viajes.")
               : (pendingSectionSubtitle[lang] || pendingSectionSubtitle.es)}
           </p>
         </div>

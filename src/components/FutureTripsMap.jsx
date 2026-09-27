@@ -239,13 +239,13 @@ export default function FutureTripsMap({ days, selectedId, onSelectDay, onGoToIt
 
       {/* Sub-selector de días cuando está activo "Por días" */}
       {isDaysFilter && (
-        <div className="flex gap-1.5 overflow-x-auto pb-2" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
+        <div className="flex flex-wrap items-center gap-1.5 pb-2">
           <button
             onClick={() => {
               setSubDay(null);
               setActiveId(null);
             }}
-            className="px-3 py-1.5 rounded-full shrink-0 transition-all cursor-pointer font-semibold"
+            className="px-3 py-1.5 rounded-full transition-all cursor-pointer font-semibold shadow-xs"
             style={{
               fontSize: 12.5,
               backgroundColor: subDay == null ? "var(--indigo)" : "var(--paper-raised)",
@@ -269,7 +269,7 @@ export default function FutureTripsMap({ days, selectedId, onSelectDay, onGoToIt
                     }
                   }, 120);
                 }}
-                className="px-3 py-1.5 rounded-full shrink-0 transition-all flex items-center gap-1.5 cursor-pointer font-semibold"
+                className="px-2.5 sm:px-3 py-1.5 rounded-full transition-all flex items-center gap-1.5 cursor-pointer font-semibold shadow-xs"
                 style={{
                   fontSize: 12.5,
                   backgroundColor: isSelected ? "var(--indigo)" : "var(--paper-raised)",

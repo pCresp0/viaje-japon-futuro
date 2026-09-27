@@ -40,7 +40,7 @@ export default function Home({ onGoToDay }) {
           </div>
 
           {/* Stage pills selector */}
-          <div className="mb-6 overflow-x-auto pb-2 flex gap-2 no-scrollbar">
+          <div className="mb-6 flex flex-wrap gap-2 pb-1">
             {days.map((stage) => {
               const isSelected = stage.num === selectedStageNum;
               const blockColor = blockMap[stage.block]?.color || "#bc4749";
@@ -49,7 +49,7 @@ export default function Home({ onGoToDay }) {
                 <button
                   key={stage.num}
                   onClick={() => setSelectedStageNum(stage.num)}
-                  className="px-3.5 py-2 rounded-xl text-xs font-bold shrink-0 transition-all cursor-pointer flex items-center gap-1.5"
+                  className="px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5"
                   style={{
                     background: isSelected ? blockColor : "var(--paper-raised)",
                     color: isSelected ? "#ffffff" : "var(--ink)",
