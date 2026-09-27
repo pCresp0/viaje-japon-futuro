@@ -57,8 +57,9 @@ html, body, #root {
 }
 
 /* ── Textura de olas sobre el fondo de la app ────────────────────────
-   Fondo de olas tradicionales japonesas (seigaiha) visible con
-   elegancia sobre el papel crema tradicional de la web. */
+   Misma imagen que el panel lateral (waves-sidebar.webp) pero con
+   opacidad reducida y un leve blur para que sea más difuminada.
+   inset: -12px compensa el sangrado de bordes del filtro blur. */
 body::before {
   content: "";
   position: fixed;
@@ -66,8 +67,8 @@ body::before {
   background-image: url('./assets/waves-sidebar.webp');
   background-size: cover;
   background-position: center top;
-  opacity: 0.16;
-  filter: blur(1.5px);
+  opacity: 0.11;
+  filter: blur(2px);
   pointer-events: none;
   z-index: 0;
 }

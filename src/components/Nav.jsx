@@ -57,10 +57,10 @@ const sidebarBg = {
 
 const overlay = {
   position: "absolute", inset: 0,
-  background: "linear-gradient(160deg, rgba(77,28,30,0.85) 0%, rgba(122,44,46,0.78) 100%)",
+  background: "linear-gradient(160deg, rgba(77,28,30,0.94) 0%, rgba(122,44,46,0.89) 100%)",
 };
 
-// Cabecera / footer: olas continuas con degradado translúcido para visibilidad
+// Cabecera / footer: mismas olas, overlay más opaco → patrón más atenuado
 const chromeBg = {
   backgroundImage: `url('${wavesSidebarUrl}')`,
   backgroundSize: "cover",
@@ -71,7 +71,7 @@ const chromeBg = {
 const chromeOverlay = {
   position: "absolute",
   inset: 0,
-  background: "linear-gradient(160deg, rgba(77,28,30,0.85) 0%, rgba(122,44,46,0.78) 100%)",
+  background: "linear-gradient(160deg, rgba(77,28,30,0.97) 0%, rgba(122,44,46,0.95) 100%)",
   pointerEvents: "none",
 };
 
