@@ -4,6 +4,7 @@ import { useT } from "../i18n";
 import LanguageSwitcher from "./LanguageSwitcher";
 import GlobalSearch from "./GlobalSearch";
 import BuildInfoButton from "./BuildInfoButton";
+import wavesSidebarUrl from "../assets/waves-sidebar.webp";
 
 // El campo `labelKey` se resuelve en tiempo de render con la función de
 // traducción, para que el menú cambie de idioma sin recargar la página.
@@ -49,7 +50,7 @@ export const tabs = navStructure.reduce((acc, curr) => {
 }, []);
 
 const sidebarBg = {
-  backgroundImage: "url('/waves-sidebar.webp')",
+  backgroundImage: `url('${wavesSidebarUrl}')`,
   backgroundSize: "cover",
   backgroundPosition: "center top",
 };
@@ -198,7 +199,7 @@ function Drawer({ active, onChange, open, onClose }) {
         />
       )}
       <aside
-        className="fixed top-0 left-0 h-full flex flex-col"
+        className="fixed top-0 left-0 h-full flex flex-col sidebar-waves-bg"
         style={{
           width: 252,
           zIndex: 210,
@@ -222,7 +223,7 @@ function Drawer({ active, onChange, open, onClose }) {
               </div>
             </div>
             <button onClick={onClose}
-              style={{ color: "rgba(255,255,255,0.5)", padding: 4 }}>
+              style={{ color: "rgba(255,255,255,0.7)", padding: 4 }}>
               <X size={18} />
             </button>
           </div>
@@ -286,7 +287,7 @@ export function TopBar({ active, onOpenDrawer, onNavigate }) {
   const t = useT();
   const currentTab = tabs.find((tab) => tab.id === active);
   return (
-    <header className="fixed top-0 left-0 right-0 flex items-center gap-3 px-4"
+    <header className="fixed top-0 left-0 right-0 flex items-center gap-3 px-4 chrome-waves-bg"
       style={{
         height: "var(--mobile-topbar)",
         paddingTop: "env(safe-area-inset-top, 0px)",
@@ -344,7 +345,7 @@ export function DesktopTopBar({ active, onNavigate }) {
   const currentTab = tabs.find((tab) => tab.id === active);
   return (
     <header
-      className="hidden md:flex items-center gap-5 px-6 shrink-0 relative"
+      className="hidden md:flex items-center gap-5 px-6 shrink-0 relative chrome-waves-bg"
       style={{
         height: 68,
         boxSizing: "border-box",
@@ -401,7 +402,7 @@ export function DesktopTopBar({ active, onNavigate }) {
 export function Sidebar({ active, onChange }) {
   return (
     <aside
-      className="hidden md:flex flex-col h-full sticky top-0 shrink-0"
+      className="hidden md:flex flex-col h-full sticky top-0 shrink-0 sidebar-waves-bg"
       style={{ width: 230, ...sidebarBg }}
     >
       <div style={{ ...overlay, display: "flex", flexDirection: "column", height: "100%" }}>

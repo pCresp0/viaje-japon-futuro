@@ -1,3 +1,5 @@
+import wavesSidebarUrl from "../assets/waves-sidebar.webp";
+
 export default function Footer() {
   return (
     <footer style={{
@@ -11,10 +13,11 @@ export default function Footer() {
       {/* Fondo de olas (capa absoluta, no recorta el contenido) */}
       <div
         aria-hidden="true"
+        className="footer-waves-bg"
         style={{
           position: "absolute",
           inset: 0,
-          backgroundImage: "url('/waves-sidebar.webp')",
+          backgroundImage: `url('${wavesSidebarUrl}')`,
           backgroundSize: "cover",
           backgroundPosition: "center bottom",
           pointerEvents: "none",

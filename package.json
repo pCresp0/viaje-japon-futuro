@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && touch dist/.nojekyll && cp -r dist/assets .",
+    "build": "vite build && touch dist/.nojekyll && cp -r dist/assets . && cp dist/waves-*.webp . 2>/dev/null || true",
     "lint": "oxlint src",
     "preview": "vite preview"
   },

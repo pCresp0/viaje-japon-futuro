@@ -59,13 +59,32 @@ body::before {
   content: "";
   position: fixed;
   inset: -12px;
-  background-image: url('/waves-sidebar.webp');
+  background-image: url('./assets/waves-sidebar.webp');
   background-size: cover;
   background-position: center top;
   opacity: 0.11;
   filter: blur(2px);
   pointer-events: none;
   z-index: -1;
+}
+
+/* Clases de apoyo con textura de olas japonesas procesadas por Vite */
+.sidebar-waves-bg {
+  background-image: url('./assets/waves-sidebar.webp');
+  background-size: cover;
+  background-position: center top;
+}
+
+.chrome-waves-bg {
+  background-image: url('./assets/waves-sidebar.webp');
+  background-size: cover;
+  background-position: center top;
+}
+
+.footer-waves-bg {
+  background-image: url('./assets/waves-sidebar.webp');
+  background-size: cover;
+  background-position: center bottom;
 }
 
 body {
