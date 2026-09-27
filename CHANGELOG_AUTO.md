@@ -222,3 +222,4 @@ Una línea por cada commit subido a main, generada sola por GitHub Actions en ca
 - **2026-09-25 16:18 UTC** — fix(mapa): corregir renderizado del mapa de japon, quitar password y ... (`e39f2c2`)
 - **2026-09-25 16:28 UTC** — fix: anadir fallback visual con watchdog y bundles estaticos en ... (`8c7f534`)
 - **2026-09-27 11:09 UTC** — feat: incorporar la Ruta Kumano Kodo (2 días) ampliando el ... (`39a0b6e`)
+- **2026-09-27 11:13 UTC** — fix(map): sustituir Carto por OpenStreetMap por defecto y capas libres ... (`e98129b`)
