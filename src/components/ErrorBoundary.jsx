@@ -16,7 +16,7 @@ import { AlertTriangle, RotateCcw } from "lucide-react";
 export default class ErrorBoundary extends Component {
   constructor(props) {
     super(props);
-    this.state = { hasError: false, error: null };
+    this.state = { hasError: false, error: null, prevResetKey: props.resetKey };
   }
 
   static getDerivedStateFromError(error) {
@@ -28,10 +28,15 @@ export default class ErrorBoundary extends Component {
     console.error("Error capturado por ErrorBoundary:", error, info?.componentStack);
   }
 
-  componentDidUpdate(prevProps) {
-    if (this.state.hasError && prevProps.resetKey !== this.props.resetKey) {
-      this.setState({ hasError: false, error: null });
+  static getDerivedStateFromProps(props, state) {
+    if (state.prevResetKey !== props.resetKey) {
+      return {
+        hasError: false,
+        error: null,
+        prevResetKey: props.resetKey,
+      };
     }
+    return null;
   }
 
   render() {

@@ -1,36 +1,41 @@
 import { useState, useEffect, useRef, useMemo } from "react";
-import { MapContainer, TileLayer, Marker, Popup, Polyline, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, Polyline, Tooltip, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { Compass, Calendar, ExternalLink, MapPin } from "lucide-react";
 import { futureLocationCoords } from "../data/pendingDays";
 import PlaceText from "./PlaceText";
 
-function createIcon(emoji, color, order) {
+function createIcon(emoji, color, order, isFocus = false, isNeighbor = false, isDimmed = false) {
+  const size = isFocus ? 44 : isNeighbor ? 38 : isDimmed ? 26 : 40;
+  const pinHeight = size + 6;
+  const badgeSize = isFocus ? 22 : isNeighbor ? 19 : 18;
+  const opacity = isDimmed ? 0.35 : 1;
+
   return L.divIcon({
     html: `
-      <div style="position: relative; width: 40px; height: 46px;">
+      <div style="position: relative; width: ${size}px; height: ${pinHeight}px; opacity: ${opacity}; transition: all 0.25s ease;">
         <div style="
-          width: 40px; height: 40px;
+          width: ${size}px; height: ${size}px;
           background: ${color};
           border-radius: 50% 50% 50% 0;
           transform: rotate(-45deg);
-          border: 3px solid white;
-          box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+          border: ${isFocus ? "3.5px solid #ffffff" : "2.5px solid #ffffff"};
+          box-shadow: ${isFocus ? "0 4px 18px rgba(0,0,0,0.5), 0 0 0 3px rgba(188,71,73,0.4)" : "0 2px 8px rgba(0,0,0,0.3)"};
           display: flex; align-items: center; justify-content: center;
         ">
-          <span style="transform: rotate(45deg); font-size: 16px; line-height: 1;">${emoji}</span>
+          <span style="transform: rotate(45deg); font-size: ${isFocus ? 18 : isDimmed ? 12 : 16}px; line-height: 1;">${emoji}</span>
         </div>
         ${order ? `
         <div style="
           position: absolute; top: -6px; right: -6px;
-          width: 20px; height: 20px;
-          background: #1d3557;
+          width: ${badgeSize}px; height: ${badgeSize}px;
+          background: ${isFocus ? "#bc4749" : "#1d3557"};
           color: white;
           border: 2px solid white;
           border-radius: 50%;
           display: flex; align-items: center; justify-content: center;
-          font-size: 10px; font-weight: 700;
+          font-size: ${isFocus ? 11 : 9.5}px; font-weight: 800;
           font-family: -apple-system, sans-serif;
           box-shadow: 0 1px 4px rgba(0,0,0,0.35);
         ">${order}</div>
@@ -38,13 +43,13 @@ function createIcon(emoji, color, order) {
       </div>
     `,
     className: "",
-    iconSize: [40, 46],
-    iconAnchor: [20, 40],
-    popupAnchor: [0, -40],
+    iconSize: [size, pinHeight],
+    iconAnchor: [size / 2, pinHeight - 2],
+    popupAnchor: [0, -pinHeight + 2],
   });
 }
 
-function MapController({ targetMarker, allMarkers, isSingleDay }) {
+function MapController({ targetMarker, allMarkers, isSingleDay, activeMovementPoints }) {
   const map = useMap();
 
   // Force Leaflet to compute the correct pixel geometry on mount & tab activation
@@ -62,7 +67,11 @@ function MapController({ targetMarker, allMarkers, isSingleDay }) {
 
   useEffect(() => {
     map.invalidateSize();
-    if (isSingleDay && targetMarker) {
+    if (isSingleDay && activeMovementPoints && activeMovementPoints.length > 1) {
+      // Ajustar encuadre abarcando el corredor de movimiento (de dónde vienes, dónde estás y a dónde vas)
+      const bounds = L.latLngBounds(activeMovementPoints.map((s) => [s.lat, s.lng]));
+      map.fitBounds(bounds, { padding: [55, 55], maxZoom: 10 });
+    } else if (isSingleDay && targetMarker) {
       map.flyTo([targetMarker.lat, targetMarker.lng], 9.5, {
         duration: 0.8,
       });
@@ -70,7 +79,7 @@ function MapController({ targetMarker, allMarkers, isSingleDay }) {
       const bounds = L.latLngBounds(allMarkers.map((s) => [s.lat, s.lng]));
       map.fitBounds(bounds, { padding: [35, 35], maxZoom: 11 });
     }
-  }, [map, targetMarker, allMarkers, isSingleDay]);
+  }, [map, targetMarker, allMarkers, isSingleDay, activeMovementPoints]);
 
   return null;
 }
@@ -188,11 +197,78 @@ export default function FutureTripsMap({ days, selectedId, onSelectDay, onGoToIt
   const isRutaFilter = filter === "ruta";
   const isSingleDay = isDaysFilter && subDay != null;
 
-  const displayedMarkers = useMemo(() => {
-    return isSingleDay
-      ? markers.filter((m) => m.order === subDay)
-      : markers;
-  }, [isSingleDay, markers, subDay]);
+  const prevDayMarker = isSingleDay && subDay > 1 ? markers.find((m) => m.order === subDay - 1) : null;
+  const nextDayMarker = isSingleDay && subDay < markers.length ? markers.find((m) => m.order === subDay + 1) : null;
+
+  const activeMovementPoints = useMemo(() => {
+    if (!isSingleDay || !selectedDayMarker) return [];
+    const pts = [];
+    if (prevDayMarker) pts.push(prevDayMarker);
+    pts.push(selectedDayMarker);
+    if (nextDayMarker) pts.push(nextDayMarker);
+    return pts;
+  }, [isSingleDay, selectedDayMarker, prevDayMarker, nextDayMarker]);
+
+  // Precalcular los tramos de desplazamiento entre días consecutivos con información de transporte
+  const routeSegments = useMemo(() => {
+    const list = [];
+    for (let i = 0; i < markers.length - 1; i++) {
+      const from = markers[i];
+      const to = markers[i + 1];
+      const fromOrder = from.order;
+      const toOrder = to.order;
+
+      const isFlight =
+        (fromOrder === 11 && toOrder === 12) || // Miyajima -> Okinawa
+        (fromOrder === 13 && toOrder === 14) || // Iriomote -> Hokkaido
+        (fromOrder === 14 && toOrder === 15);   // Hokkaido -> Tokyo
+
+      const isFerry = fromOrder === 12 && toOrder === 13; // Okinawa -> Iriomote
+
+      let transportLabel = lang === "en" ? "JR Train / Subway / Shinkansen" : lang === "fr" ? "Train JR / Métro / Shinkansen" : lang === "tl" ? "JR Train / Subway" : "Tren JR / Metro / Shinkansen";
+      let transportIcon = "🚆";
+
+      if (isFlight) {
+        transportLabel = lang === "en" ? "Domestic direct flight" : lang === "fr" ? "Vol direct intérieur" : lang === "tl" ? "Domestic flight" : "Vuelo doméstico directo";
+        transportIcon = "✈️";
+      } else if (isFerry) {
+        transportLabel = lang === "en" ? "High-speed ferry / Island boat" : lang === "fr" ? "Ferry rapide / Bateau" : lang === "tl" ? "Speed ferry" : "Ferry de alta velocidad / Barco";
+        transportIcon = "⛴️";
+      } else if (fromOrder === 5 && toOrder === 6) {
+        transportLabel = lang === "en" ? "Tokaido Shinkansen (Fuji ➔ Osaka)" : "Shinkansen Tokaido (Monte Fuji ➔ Osaka)";
+        transportIcon = "🚄";
+      } else if (fromOrder === 7 && toOrder === 8) {
+        transportLabel = lang === "en" ? "Kuroshio Express + Local Bus (Osaka ➔ Kumano Kodo)" : "Tren Kuroshio + Bus local (Osaka ➔ Kumano Kodo)";
+        transportIcon = "🚆";
+      } else if (fromOrder === 8 && toOrder === 9) {
+        transportLabel = lang === "en" ? "Nakahechi Trail / Kumano Kotsu Bus (Hongu ➔ Nachi)" : "Senda Nakahechi / Bus Kumano Kotsu (Hongu ➔ Nachi)";
+        transportIcon = "🥾";
+      } else if (fromOrder === 9 && toOrder === 10) {
+        transportLabel = lang === "en" ? "Kuroshio Express + Sanyo Shinkansen (Kii-Katsuura ➔ Hiroshima)" : "Tren Kuroshio + Shinkansen Sanyo (Kii-Katsuura ➔ Hiroshima)";
+        transportIcon = "🚄";
+      } else if (fromOrder === 10 && toOrder === 11) {
+        transportLabel = lang === "en" ? "JR Sanyo Line + JR Miyajima Ferry" : "Tren JR Sanyo + Ferry JR Miyajima";
+        transportIcon = "⛴️";
+      }
+
+      list.push({
+        id: `seg-${fromOrder}-${toOrder}`,
+        from,
+        to,
+        fromOrder,
+        toOrder,
+        isFlight,
+        isFerry,
+        transportLabel,
+        transportIcon,
+        positions: [
+          [from.lat, from.lng],
+          [to.lat, to.lng],
+        ],
+      });
+    }
+    return list;
+  }, [markers, lang]);
 
   return (
     <div className="space-y-3">
@@ -311,6 +387,89 @@ export default function FutureTripsMap({ days, selectedId, onSelectDay, onGoToIt
             style={{ color: "var(--ink)" }}
             linkStyle={{ color: "var(--shu)" }}
           />
+
+          {/* Barra de desplazamiento: De dónde vienes y hacia dónde te mueves */}
+          <div className="mt-3.5 p-3 rounded-xl border flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 shadow-xs" style={{ background: "rgba(29, 53, 87, 0.03)", borderColor: "var(--line)" }}>
+            {/* Origen previo */}
+            {prevDayMarker ? (
+              <button
+                type="button"
+                onClick={() => {
+                  setSubDay(prevDayMarker.order);
+                  setActiveId(prevDayMarker.id);
+                }}
+                className="flex items-center gap-2.5 text-left p-2 rounded-lg transition-all hover:bg-black/5 cursor-pointer flex-1"
+                style={{ border: "1px solid var(--line)", background: "var(--paper-raised)" }}
+              >
+                <span className="text-xl">⬅️</span>
+                <div className="min-w-0">
+                  <p className="eyebrow m-0 text-[10px]" style={{ color: "#2e7d5b" }}>
+                    {lang === "en" ? `Coming from (Day ${prevDayMarker.order})` : lang === "fr" ? `Arrivée depuis (Jour ${prevDayMarker.order})` : lang === "tl" ? `Galing sa (Araw ${prevDayMarker.order})` : `Vienes de (Día ${prevDayMarker.order})`}
+                  </p>
+                  <p className="text-xs font-bold truncate m-0" style={{ color: "var(--indigo)" }}>
+                    {prevDayMarker.cities.split("→")[0].trim() || prevDayMarker.title}
+                  </p>
+                </div>
+              </button>
+            ) : (
+              <div className="flex items-center gap-2.5 p-2 rounded-lg flex-1 opacity-70" style={{ border: "1px dashed var(--line)", background: "var(--paper-raised)" }}>
+                <span className="text-xl">🛬</span>
+                <div>
+                  <p className="eyebrow m-0 text-[10px]" style={{ color: "var(--ink-soft)" }}>
+                    {lang === "en" ? "First Stage" : lang === "fr" ? "Première étape" : lang === "tl" ? "Unang Yugto" : "Primera etapa"}
+                  </p>
+                  <p className="text-xs font-bold m-0" style={{ color: "var(--ink)" }}>
+                    {lang === "en" ? "International Arrival" : lang === "fr" ? "Arrivée internationale" : lang === "tl" ? "Pagdating sa Japan" : "Aterrizaje en Japón (Narita)"}
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {/* Trayecto / Transporte central */}
+            <div className="flex flex-col items-center justify-center px-2 py-1 text-center shrink-0">
+              <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full" style={{ background: "rgba(188,71,73,0.12)", color: "var(--shu)" }}>
+                {lang === "en" ? `Day ${selectedDayMarker.order}` : lang === "fr" ? `Jour ${selectedDayMarker.order}` : lang === "tl" ? `Araw ${selectedDayMarker.order}` : `Día ${selectedDayMarker.order}`}
+              </span>
+              <span className="text-[11px] text-neutral-500 font-medium mt-0.5">
+                {selectedDayMarker.cities}
+              </span>
+            </div>
+
+            {/* Siguiente destino */}
+            {nextDayMarker ? (
+              <button
+                type="button"
+                onClick={() => {
+                  setSubDay(nextDayMarker.order);
+                  setActiveId(nextDayMarker.id);
+                }}
+                className="flex items-center justify-end gap-2.5 text-right p-2 rounded-lg transition-all hover:bg-black/5 cursor-pointer flex-1"
+                style={{ border: "1px solid var(--line)", background: "var(--paper-raised)" }}
+              >
+                <div className="min-w-0">
+                  <p className="eyebrow m-0 text-[10px]" style={{ color: "var(--shu)" }}>
+                    {lang === "en" ? `Next stage (Day ${nextDayMarker.order})` : lang === "fr" ? `Étape suivante (Jour ${nextDayMarker.order})` : lang === "tl" ? `Susunod (Araw ${nextDayMarker.order})` : `Siguiente etapa (Día ${nextDayMarker.order})`}
+                  </p>
+                  <p className="text-xs font-bold truncate m-0" style={{ color: "var(--indigo)" }}>
+                    {nextDayMarker.cities.split("→")[0].trim() || nextDayMarker.title}
+                  </p>
+                </div>
+                <span className="text-xl">➡️</span>
+              </button>
+            ) : (
+              <div className="flex items-center justify-end gap-2.5 p-2 rounded-lg flex-1 opacity-70" style={{ border: "1px dashed var(--line)", background: "var(--paper-raised)" }}>
+                <div className="text-right">
+                  <p className="eyebrow m-0 text-[10px]" style={{ color: "var(--ink-soft)" }}>
+                    {lang === "en" ? "Final Stage" : lang === "fr" ? "Dernière étape" : lang === "tl" ? "Huling Yugto" : "Etapa final"}
+                  </p>
+                  <p className="text-xs font-bold m-0" style={{ color: "var(--ink)" }}>
+                    {lang === "en" ? "Return Flight" : lang === "fr" ? "Vol de retour" : lang === "tl" ? "Flight pauwi" : "Vuelo de regreso"}
+                  </p>
+                </div>
+                <span className="text-xl">🛫</span>
+              </div>
+            )}
+          </div>
         </div>
       )}
 
@@ -378,32 +537,149 @@ export default function FutureTripsMap({ days, selectedId, onSelectDay, onGoToIt
             }}
           />
 
-          {isRutaFilter && markers.length > 1 && (
-            <Polyline
-              positions={markers.map((s) => [s.lat, s.lng])}
-              pathOptions={{ color: "#1d3557", weight: 3, opacity: 0.55, dashArray: "8, 8" }}
-            />
+          {/* 1. Modo Ruta Completa o "Todos los días": Líneas continuas entre días con halo blanco */}
+          {!isSingleDay && routeSegments.map((seg) => (
+            <span key={seg.id}>
+              {/* Halo blanco de contraste para que resalte sobre cualquier mapa */}
+              <Polyline
+                positions={seg.positions}
+                pathOptions={{
+                  color: "#ffffff",
+                  weight: 6.5,
+                  opacity: 0.9,
+                  lineCap: "round",
+                  lineJoin: "round",
+                }}
+              />
+              {/* Línea temática de ruta */}
+              <Polyline
+                positions={seg.positions}
+                pathOptions={{
+                  color: seg.isFlight ? "#0284c7" : seg.isFerry ? "#0d9488" : "#bc4749",
+                  weight: 3.8,
+                  opacity: 0.95,
+                  dashArray: seg.isFlight ? "8, 8" : seg.isFerry ? "4, 6" : undefined,
+                  lineCap: "round",
+                  lineJoin: "round",
+                }}
+              >
+                <Tooltip sticky>
+                  <div style={{ fontFamily: "var(--font-body)", fontSize: 12, padding: "2px 4px" }}>
+                    <strong style={{ color: "var(--indigo)" }}>{seg.transportIcon} Día {seg.fromOrder} ➔ Día {seg.toOrder}</strong>
+                    <div style={{ fontWeight: 600, color: "var(--ink)", marginTop: 2 }}>
+                      {seg.from.cities.split("→")[0].trim() || seg.from.title} ➔ {seg.to.cities.split("→")[0].trim() || seg.to.title}
+                    </div>
+                    <div style={{ color: "#5a6070", fontSize: 11, marginTop: 1 }}>
+                      {seg.transportLabel}
+                    </div>
+                  </div>
+                </Tooltip>
+              </Polyline>
+            </span>
+          ))}
+
+          {/* 2. Modo Por Día (día concreto seleccionado): Trazado enfocado de desplazamiento */}
+          {isSingleDay && (
+            <>
+              {/* Ruta global de fondo atenuada para contexto geográfico */}
+              <Polyline
+                positions={markers.map((s) => [s.lat, s.lng])}
+                pathOptions={{
+                  color: "#1d3557",
+                  weight: 2.5,
+                  opacity: 0.25,
+                  dashArray: "6, 6",
+                }}
+              />
+
+              {/* Línea de llegada: Desde dónde vienes (Día previo ➔ Día actual) */}
+              {prevDayMarker && selectedDayMarker && (
+                <>
+                  <Polyline
+                    positions={[[prevDayMarker.lat, prevDayMarker.lng], [selectedDayMarker.lat, selectedDayMarker.lng]]}
+                    pathOptions={{
+                      color: "#ffffff",
+                      weight: 8,
+                      opacity: 0.95,
+                      lineCap: "round",
+                    }}
+                  />
+                  <Polyline
+                    positions={[[prevDayMarker.lat, prevDayMarker.lng], [selectedDayMarker.lat, selectedDayMarker.lng]]}
+                    pathOptions={{
+                      color: "#2e7d5b", // Verde bosque: Origen/Llegada
+                      weight: 4.5,
+                      opacity: 1,
+                      dashArray: "6, 6",
+                      lineCap: "round",
+                    }}
+                  >
+                    <Tooltip permanent direction="center">
+                      <div style={{ fontSize: 11, fontWeight: 700, color: "#2e7d5b", background: "#fff", padding: "1px 6px", borderRadius: 10, boxShadow: "0 1px 4px rgba(0,0,0,0.2)" }}>
+                        ⬅️ Vienes de Día {prevDayMarker.order} ({prevDayMarker.cities.split("→")[0].trim()})
+                      </div>
+                    </Tooltip>
+                  </Polyline>
+                </>
+              )}
+
+              {/* Línea de salida: Hacia dónde te mueves (Día actual ➔ Día siguiente) */}
+              {nextDayMarker && selectedDayMarker && (
+                <>
+                  <Polyline
+                    positions={[[selectedDayMarker.lat, selectedDayMarker.lng], [nextDayMarker.lat, nextDayMarker.lng]]}
+                    pathOptions={{
+                      color: "#ffffff",
+                      weight: 8,
+                      opacity: 0.95,
+                      lineCap: "round",
+                    }}
+                  />
+                  <Polyline
+                    positions={[[selectedDayMarker.lat, selectedDayMarker.lng], [nextDayMarker.lat, nextDayMarker.lng]]}
+                    pathOptions={{
+                      color: "#bc4749", // Rojo shu: Destino siguiente
+                      weight: 4.5,
+                      opacity: 1,
+                      dashArray: "8, 6",
+                      lineCap: "round",
+                    }}
+                  >
+                    <Tooltip permanent direction="center">
+                      <div style={{ fontSize: 11, fontWeight: 700, color: "#bc4749", background: "#fff", padding: "1px 6px", borderRadius: 10, boxShadow: "0 1px 4px rgba(0,0,0,0.2)" }}>
+                        ➡️ Hacia Día {nextDayMarker.order} ({nextDayMarker.cities.split("→")[0].trim()})
+                      </div>
+                    </Tooltip>
+                  </Polyline>
+                </>
+              )}
+            </>
           )}
 
           <MapController
             targetMarker={selectedDayMarker}
-            allMarkers={displayedMarkers}
+            allMarkers={markers}
             isSingleDay={isSingleDay}
+            activeMovementPoints={activeMovementPoints}
           />
 
-          {displayedMarkers.map((m) => (
-            <Marker
-              key={m.id}
-              ref={(ref) => {
-                if (ref) markerRefs.current[m.id] = ref;
-              }}
-              position={[m.lat, m.lng]}
-              icon={createIcon(m.emoji, m.color, m.order)}
-              eventHandlers={{
-                click: () => handleMarkerClick(m.id),
-              }}
-              opacity={activeId && activeId !== m.id ? 0.75 : 1}
-            >
+          {markers.map((m) => {
+            const isFocus = isSingleDay && m.order === subDay;
+            const isNeighbor = isSingleDay && (m.order === subDay - 1 || m.order === subDay + 1);
+            const isDimmed = isSingleDay && !isFocus && !isNeighbor;
+            return (
+              <Marker
+                key={m.id}
+                ref={(ref) => {
+                  if (ref) markerRefs.current[m.id] = ref;
+                }}
+                position={[m.lat, m.lng]}
+                icon={createIcon(m.emoji, m.color, m.order, isFocus, isNeighbor, isDimmed)}
+                eventHandlers={{
+                  click: () => handleMarkerClick(m.id),
+                }}
+                zIndexOffset={isFocus ? 1000 : isNeighbor ? 500 : 0}
+              >
               <Popup>
                 <div style={{ fontFamily: "var(--font-body)", minWidth: 200, maxWidth: 280 }}>
                   <p style={{ fontSize: 11, color: m.color, fontWeight: 700, marginBottom: 2 }}>
@@ -429,7 +705,8 @@ export default function FutureTripsMap({ days, selectedId, onSelectDay, onGoToIt
                 </div>
               </Popup>
             </Marker>
-          ))}
+          );
+        })}
         </MapContainer>
       </div>
 
