@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useMemo } from "react";
-import { MapContainer, TileLayer, Marker, Popup, Polyline, Tooltip, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, Polyline, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { Compass, Calendar, ExternalLink, MapPin } from "lucide-react";
@@ -537,12 +537,12 @@ export default function FutureTripsMap({ days, selectedId, onSelectDay, onGoToIt
             }}
           />
 
-          {/* 1. Modo Ruta Completa o "Todos los días": Líneas continuas entre días con halo blanco */}
-          {!isSingleDay && routeSegments.map((seg) => (
-            <span key={seg.id}>
-              {/* Halo blanco de contraste para que resalte sobre cualquier mapa */}
+          {/* 1. Modo Ruta Completa o "Todos los días": Líneas continuas conectando las etapas con halo de contraste */}
+          {!isSingleDay && (
+            <>
+              {/* Halo blanco de contraste para que resalte nítido sobre cualquier mapa (topo, relieve, satélite) */}
               <Polyline
-                positions={seg.positions}
+                positions={markers.map((s) => [s.lat, s.lng])}
                 pathOptions={{
                   color: "#ffffff",
                   weight: 6.5,
@@ -551,32 +551,35 @@ export default function FutureTripsMap({ days, selectedId, onSelectDay, onGoToIt
                   lineJoin: "round",
                 }}
               />
-              {/* Línea temática de ruta */}
+              {/* Trazado continuo temático en rojo bermellón */}
               <Polyline
-                positions={seg.positions}
+                positions={markers.map((s) => [s.lat, s.lng])}
                 pathOptions={{
-                  color: seg.isFlight ? "#0284c7" : seg.isFerry ? "#0d9488" : "#bc4749",
-                  weight: 3.8,
+                  color: "#bc4749",
+                  weight: 3.5,
                   opacity: 0.95,
-                  dashArray: seg.isFlight ? "8, 8" : seg.isFerry ? "4, 6" : undefined,
+                  dashArray: "8, 6",
                   lineCap: "round",
                   lineJoin: "round",
                 }}
-              >
-                <Tooltip sticky>
-                  <div style={{ fontFamily: "var(--font-body)", fontSize: 12, padding: "2px 4px" }}>
-                    <strong style={{ color: "var(--indigo)" }}>{seg.transportIcon} Día {seg.fromOrder} ➔ Día {seg.toOrder}</strong>
-                    <div style={{ fontWeight: 600, color: "var(--ink)", marginTop: 2 }}>
-                      {seg.from.cities.split("→")[0].trim() || seg.from.title} ➔ {seg.to.cities.split("→")[0].trim() || seg.to.title}
-                    </div>
-                    <div style={{ color: "#5a6070", fontSize: 11, marginTop: 1 }}>
-                      {seg.transportLabel}
-                    </div>
-                  </div>
-                </Tooltip>
-              </Polyline>
-            </span>
-          ))}
+              />
+              {/* Resaltado especial de vuelos y ferries con sus colores temáticos */}
+              {routeSegments.filter((seg) => seg.isFlight || seg.isFerry).map((seg) => (
+                <Polyline
+                  key={seg.id}
+                  positions={seg.positions}
+                  pathOptions={{
+                    color: seg.isFlight ? "#0284c7" : "#0d9488",
+                    weight: 4.2,
+                    opacity: 1,
+                    dashArray: seg.isFlight ? "8, 8" : "4, 6",
+                    lineCap: "round",
+                    lineJoin: "round",
+                  }}
+                />
+              ))}
+            </>
+          )}
 
           {/* 2. Modo Por Día (día concreto seleccionado): Trazado enfocado de desplazamiento */}
           {isSingleDay && (
@@ -613,13 +616,7 @@ export default function FutureTripsMap({ days, selectedId, onSelectDay, onGoToIt
                       dashArray: "6, 6",
                       lineCap: "round",
                     }}
-                  >
-                    <Tooltip permanent direction="center">
-                      <div style={{ fontSize: 11, fontWeight: 700, color: "#2e7d5b", background: "#fff", padding: "1px 6px", borderRadius: 10, boxShadow: "0 1px 4px rgba(0,0,0,0.2)" }}>
-                        ⬅️ Vienes de Día {prevDayMarker.order} ({prevDayMarker.cities.split("→")[0].trim()})
-                      </div>
-                    </Tooltip>
-                  </Polyline>
+                  />
                 </>
               )}
 
@@ -644,13 +641,7 @@ export default function FutureTripsMap({ days, selectedId, onSelectDay, onGoToIt
                       dashArray: "8, 6",
                       lineCap: "round",
                     }}
-                  >
-                    <Tooltip permanent direction="center">
-                      <div style={{ fontSize: 11, fontWeight: 700, color: "#bc4749", background: "#fff", padding: "1px 6px", borderRadius: 10, boxShadow: "0 1px 4px rgba(0,0,0,0.2)" }}>
-                        ➡️ Hacia Día {nextDayMarker.order} ({nextDayMarker.cities.split("→")[0].trim()})
-                      </div>
-                    </Tooltip>
-                  </Polyline>
+                  />
                 </>
               )}
             </>

@@ -54,10 +54,27 @@ export default class ErrorBoundary extends Component {
           <p style={{ fontSize: 16, fontWeight: 700, color: "var(--ink)", marginBottom: 6 }}>
             Este apartado ha fallado al cargar
           </p>
-          <p style={{ fontSize: 13, color: "var(--ink-soft)", lineHeight: 1.6, marginBottom: 20 }}>
+          <p style={{ fontSize: 13, color: "var(--ink-soft)", lineHeight: 1.6, marginBottom: 14 }}>
             El resto de la app sigue funcionando con normalidad — prueba a
             recargar sólo esta parte, o cambia a otra pestaña y vuelve.
           </p>
+          {this.state.error && (
+            <div style={{
+              margin: "0 auto 18px",
+              maxWidth: 420,
+              padding: "8px 12px",
+              background: "rgba(188,71,73,0.06)",
+              border: "1px solid rgba(188,71,73,0.2)",
+              borderRadius: 8,
+              fontSize: 11.5,
+              color: "var(--shu)",
+              textAlign: "left",
+              fontFamily: "monospace",
+              wordBreak: "break-word"
+            }}>
+              {this.state.error?.message || String(this.state.error)}
+            </div>
+          )}
           <button
             onClick={() => this.setState({ hasError: false, error: null })}
             style={{
