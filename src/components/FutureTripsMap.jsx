@@ -705,7 +705,7 @@ export default function FutureTripsMap({ days, selectedId, onSelectDay, onGoToIt
       {(!isSingleDay) && (
         <div className="pt-1">
           <p className="eyebrow mb-2" style={{ color: "var(--shu)" }}>
-            {lang === "en" ? `${displayedMarkers.length} Destinations on the Map` : lang === "fr" ? `${displayedMarkers.length} Destinations sur la carte` : lang === "tl" ? `${displayedMarkers.length} Destinasyon sa Mapa` : `${displayedMarkers.length} Destinos en el mapa`}
+            {lang === "en" ? `${markers.length} Destinations on the Map` : lang === "fr" ? `${markers.length} Destinations sur la carte` : lang === "tl" ? `${markers.length} Destinasyon sa Mapa` : `${markers.length} Destinos en el mapa`}
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
