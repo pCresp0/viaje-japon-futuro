@@ -18,18 +18,18 @@ export default function Footer() {
           position: "absolute",
           inset: 0,
           backgroundImage: `url('${wavesSidebarUrl}')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center bottom",
+          backgroundSize: "630px auto",
+          backgroundPosition: "center center",
           pointerEvents: "none",
         }}
       />
-      {/* Overlay más opaco que el menú lateral → olas más atenuadas */}
+      {/* Overlay con opacidad equilibrada para que se aprecien las olas */}
       <div
         aria-hidden="true"
         style={{
           position: "absolute",
           inset: 0,
-          background: "linear-gradient(160deg, rgba(77,28,30,0.97) 0%, rgba(122,44,46,0.95) 100%)",
+          background: "linear-gradient(160deg, rgba(77,28,30,0.84) 0%, rgba(122,44,46,0.78) 100%)",
           pointerEvents: "none",
         }}
       />

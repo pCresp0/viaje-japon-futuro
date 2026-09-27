@@ -57,19 +57,21 @@ const sidebarBg = {
 
 const overlay = {
   position: "absolute", inset: 0,
-  background: "linear-gradient(160deg, rgba(77,28,30,0.94) 0%, rgba(122,44,46,0.89) 100%)",
+  background: "linear-gradient(160deg, rgba(77,28,30,0.85) 0%, rgba(122,44,46,0.78) 100%)",
 };
 
-// Cabecera / footer: mismas olas, overlay más opaco → patrón más atenuado
+// Cabecera / footer: olas centradas con degradado translúcido para máxima visibilidad
 const chromeBg = {
-  ...sidebarBg,
+  backgroundImage: `url('${wavesSidebarUrl}')`,
+  backgroundSize: "630px auto",
+  backgroundPosition: "center 30%",
   position: "relative",
 };
 
 const chromeOverlay = {
   position: "absolute",
   inset: 0,
-  background: "linear-gradient(160deg, rgba(77,28,30,0.97) 0%, rgba(122,44,46,0.95) 100%)",
+  background: "linear-gradient(160deg, rgba(77,28,30,0.82) 0%, rgba(122,44,46,0.76) 100%)",
   pointerEvents: "none",
 };
 
@@ -293,7 +295,6 @@ export function TopBar({ active, onOpenDrawer, onNavigate }) {
         paddingTop: "env(safe-area-inset-top, 0px)",
         boxSizing: "border-box",
         zIndex: 150,
-        backgroundColor: "var(--shu-darker)",
         ...chromeBg,
         position: "fixed",
         top: 0,
@@ -350,7 +351,6 @@ export function DesktopTopBar({ active, onNavigate }) {
         height: 68,
         boxSizing: "border-box",
         zIndex: 150,
-        backgroundColor: "var(--shu-darker)",
         ...chromeBg,
         borderBottom: "none",
         boxShadow: "0 2px 0 0 var(--shu-darker), 0 4px 14px rgba(0,0,0,0.12)",

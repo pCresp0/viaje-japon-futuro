@@ -51,21 +51,25 @@ html, body, #root {
   height: 100%;
 }
 
+#root {
+  position: relative;
+  z-index: 1;
+}
+
 /* ── Textura de olas sobre el fondo de la app ────────────────────────
-   Misma imagen que el panel lateral (waves-sidebar.webp) pero con
-   opacidad reducida y un leve blur para que sea más difuminada.
-   inset: -12px compensa el sangrado de bordes del filtro blur. */
+   Fondo de olas tradicionales japonesas (seigaiha) nítido y visible
+   sobre el papel crema tradicional de la web. */
 body::before {
   content: "";
   position: fixed;
-  inset: -12px;
+  inset: 0;
   background-image: url('./assets/waves-sidebar.webp');
-  background-size: cover;
-  background-position: center top;
-  opacity: 0.11;
-  filter: blur(2px);
+  background-size: 720px auto;
+  background-position: right top;
+  background-repeat: repeat;
+  opacity: 0.22;
   pointer-events: none;
-  z-index: -1;
+  z-index: 0;
 }
 
 /* Clases de apoyo con textura de olas japonesas procesadas por Vite */
@@ -77,14 +81,14 @@ body::before {
 
 .chrome-waves-bg {
   background-image: url('./assets/waves-sidebar.webp');
-  background-size: cover;
-  background-position: center top;
+  background-size: 630px auto;
+  background-position: center 30%;
 }
 
 .footer-waves-bg {
   background-image: url('./assets/waves-sidebar.webp');
-  background-size: cover;
-  background-position: center bottom;
+  background-size: 630px auto;
+  background-position: center center;
 }
 
 body {
