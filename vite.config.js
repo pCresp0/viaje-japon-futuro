@@ -33,8 +33,8 @@ export default defineConfig({
         'og-image.png',
       ],
       manifest: {
-        name: 'Viaje a Japón — Planificador Futuro',
-        short_name: 'Japón Futuro',
+        name: 'Viaje Japón futuro 🇯🇵',
+        short_name: 'Viaje Japón futuro',
         description: 'Guía y planificador interactivo de ruta para el futuro viaje a Japón',
         start_url: '/viaje-japon-futuro/',
         scope: '/viaje-japon-futuro/',
