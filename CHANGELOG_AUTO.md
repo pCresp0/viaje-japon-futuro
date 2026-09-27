@@ -225,3 +225,4 @@ Una línea por cada commit subido a main, generada sola por GitHub Actions en ca
 - **2026-09-27 11:13 UTC** — fix(map): sustituir Carto por OpenStreetMap por defecto y capas libres ... (`e98129b`)
 - **2026-09-27 11:15 UTC** — fix(ui): permitir salto de línea en los botones de días ... (`6c414fd`)
 - **2026-09-27 11:26 UTC** — fix(theme): restaurar textura de olas tradicionales en cabecera, sidebar y ... (`f1fed04`)
+- **2026-09-27 11:29 UTC** — fix(branding): anadir favicon con bandera de Japon y actualizar titulo ... (`89c9b1f`)
