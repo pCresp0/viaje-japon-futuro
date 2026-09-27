@@ -63,14 +63,13 @@ export function getDefaultTripDay() {
 
 // Devuelve el id del hotel (de 'stays') en el que se duerme la noche del día indicado
 export function getHotelForDay(dayNum) {
-  if (dayNum == null) return "tokio";
-  if (dayNum <= 4) return "tokio";
+  if (dayNum == null || dayNum <= 4) return "tokio";
   if (dayNum === 5) return "fuji";
   if (dayNum <= 7) return "osaka";
-  if (dayNum <= 9) return "miyajima";
-  if (dayNum <= 11) return "okinawa";
-  if (dayNum === 12) return "hokkaido";
-  return "tokio-despedida";
+  if (dayNum <= 9) return "kumano";
+  if (dayNum <= 11) return "miyajima";
+  if (dayNum <= 13) return "okinawa";
+  return "sapporo";
 }
 
 // Minutos transcurridos desde medianoche, en la hora de Japón (o local si falla),

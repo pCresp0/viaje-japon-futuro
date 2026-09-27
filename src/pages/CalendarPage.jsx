@@ -11,6 +11,7 @@ const blockEmoji = {
   kanto: "🗼",
   fuji: "🗻",
   kansai: "🏯",
+  kumano: "🥾",
   chugoku: "⛩️",
   okinawa: "🌺",
   hokkaido: "❄️",
@@ -24,12 +25,14 @@ const stageHighlights = {
   5: { highlight: "🗻 Ascenso Monte Fuji (3.776m)", stay: "🛖 Refugio Yamagoya" },
   6: { highlight: "🌅 Amanecer Fuji & Osaka", stay: "🏨 Base Osaka" },
   7: { highlight: "🏯 Castillo Osaka & Dotonbori", stay: "🏨 Base Osaka" },
-  8: { highlight: "🕊️ Hiroshima & Ferry Miyajima", stay: "⛩️ Ryokan Miyajima" },
-  9: { highlight: "⛰️ Monte Misen & Vuelo Sur", stay: "✈️ Naha (Okinawa)" },
-  10: { highlight: "🌺 Naha, Shuri & Playas Ryukyu", stay: "🏨 Base Okinawa" },
-  11: { highlight: "🌿 Manglares & Selva Iriomote", stay: "🏕️ Eco-lodge Iriomote" },
-  12: { highlight: "❄️ Sapporo, Odori & Susukino", stay: "🏨 Base Sapporo" },
-  13: { highlight: "⚓ Canal Otaru & Vuelo Vuelta", stay: "✈️ Vuelo Retorno" },
+  8: { highlight: "🥾 Nakahechi & Hongu Taisha", stay: "♨️ Ryokan Yunomine" },
+  9: { highlight: "🌊 Cascadas Sagradas de Nachi", stay: "🏨 Base Kii-Katsuura" },
+  10: { highlight: "🕊️ Hiroshima & Parque Paz", stay: "🏨 Base Hiroshima" },
+  11: { highlight: "⛩️ Torii Flotante Miyajima", stay: "⛩️ Ryokan Miyajima" },
+  12: { highlight: "🌺 Naha, Shuri & Playas Ryukyu", stay: "🏨 Base Okinawa" },
+  13: { highlight: "🌿 Manglares & Selva Iriomote", stay: "🏕️ Eco-lodge Iriomote" },
+  14: { highlight: "❄️ Sapporo, Odori & Susukino", stay: "🏨 Base Sapporo" },
+  15: { highlight: "🛫 Canal Otaru & Vuelo Retorno", stay: "✈️ Vuelo de Vuelta" },
 };
 
 export default function CalendarPage({ onGoToMapDay }) {

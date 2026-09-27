@@ -29,16 +29,23 @@ function getDayDateLabel(dayNum) {
 }
 
 function getCityWeatherUrl(city) {
-  const queryCity = city === "Tsumago" ? "Nagiso Tsumago" : city === "Fuji" ? "Fujikawaguchiko" : city;
+  const queryCity = city === "Fuji" ? "Fujikawaguchiko" : city === "Iriomote" ? "Taketomi Iriomote" : city;
   return `https://www.google.com/search?q=${encodeURIComponent(`tiempo en ${queryCity} Japon`)}`;
 }
 
 const cityCoords = {
-  "Kioto": { lat: 35.0116, lon: 135.7681 },
-  "Kanazawa": { lat: 36.5613, lon: 136.6562 },
-  "Takayama": { lat: 36.1461, lon: 137.2522 },
-  "Tsumago": { lat: 35.5768, lon: 137.5954 },
-  "Tokio": { lat: 35.6895, lon: 139.6917 }
+  "Tokio": { lat: 35.6895, lon: 139.6917 },
+  "Nikko": { lat: 36.758, lon: 139.5989 },
+  "Kamakura": { lat: 35.3167, lon: 139.5361 },
+  "Fuji": { lat: 35.3606, lon: 138.7274 },
+  "Osaka": { lat: 34.6937, lon: 135.5023 },
+  "Kumano Kodo": { lat: 33.8402, lon: 135.7739 },
+  "Nachi": { lat: 33.6706, lon: 135.8906 },
+  "Hiroshima": { lat: 34.3928, lon: 132.4526 },
+  "Miyajima": { lat: 34.2959, lon: 132.3197 },
+  "Okinawa": { lat: 26.217, lon: 127.7195 },
+  "Iriomote": { lat: 24.3333, lon: 123.8167 },
+  "Sapporo": { lat: 43.0598, lon: 141.3533 }
 };
 
 function getSkyFromWMO(code) {

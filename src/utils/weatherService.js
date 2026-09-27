@@ -3,57 +3,65 @@ import { getTripStatus, todayISO, diffDays } from "./date";
 
 export const CITY_COORDS = {
   "Tokio": { lat: 35.6895, lon: 139.6917, name: "Tokio" },
-  "Kioto": { lat: 35.0116, lon: 135.7681, name: "Kioto" },
-  "Kanazawa": { lat: 36.5613, lon: 136.6562, name: "Kanazawa" },
-  "Takayama": { lat: 36.1461, lon: 137.2522, name: "Takayama" },
-  "Tsumago": { lat: 35.5768, lon: 137.5954, name: "Nakasendo (Tsumago/Magome)" },
-  "Osaka": { lat: 34.6937, lon: 135.5023, name: "Osaka" },
-  "Nara": { lat: 34.6851, lon: 135.8048, name: "Nara" },
+  "Nikko": { lat: 36.758, lon: 139.5989, name: "Nikkō" },
+  "Kamakura": { lat: 35.3167, lon: 139.5361, name: "Kamakura" },
   "Fuji": { lat: 35.3606, lon: 138.7274, name: "Monte Fuji" },
-  "Narita": { lat: 35.7767, lon: 140.3188, name: "Narita" }
+  "Osaka": { lat: 34.6937, lon: 135.5023, name: "Osaka" },
+  "Kumano Kodo": { lat: 33.8402, lon: 135.7739, name: "Kumano Kodō" },
+  "Nachi": { lat: 33.6706, lon: 135.8906, name: "Nachi Katsuura" },
+  "Hiroshima": { lat: 34.3928, lon: 132.4526, name: "Hiroshima" },
+  "Miyajima": { lat: 34.2959, lon: 132.3197, name: "Isla de Miyajima" },
+  "Okinawa": { lat: 26.217, lon: 127.7195, name: "Okinawa (Naha)" },
+  "Iriomote": { lat: 24.3333, lon: 123.8167, name: "Isla de Iriomote" },
+  "Sapporo": { lat: 43.0598, lon: 141.3533, name: "Sapporo (Hokkaido)" }
 };
 
 export const CITY_DISPLAY_NAMES = {
-  "Kioto": "Kioto",
   "Tokio": "Tokio",
-  "Kanazawa": "Kanazawa",
-  "Takayama": "Takayama",
-  "Tsumago": "Nakasendo",
-  "Osaka": "Osaka",
-  "Nara": "Nara",
+  "Nikko": "Nikkō",
+  "Kamakura": "Kamakura",
   "Fuji": "Mte. Fuji",
-  "Narita": "Narita",
+  "Osaka": "Osaka",
+  "Kumano Kodo": "Kumano Kodō",
+  "Nachi": "Nachi",
+  "Hiroshima": "Hiroshima",
+  "Miyajima": "Miyajima",
+  "Okinawa": "Okinawa",
+  "Iriomote": "Iriomote",
+  "Sapporo": "Sapporo",
 };
 
 export const DAY_CITIES = {
-  0: ["Tokio"],
-  1: ["Tokio", "Kioto"],
-  2: ["Kioto", "Nara"],
-  3: ["Kioto"],
-  4: ["Kioto"],
-  5: ["Kioto", "Osaka"],
-  6: ["Kioto", "Kanazawa"],
-  7: ["Kanazawa", "Takayama"],
-  8: ["Takayama", "Tsumago"],
-  9: ["Tsumago", "Tokio"],
-  10: ["Tokio"],
-  11: ["Tokio"],
-  12: ["Tokio"],
-  13: ["Tokio"],
-  14: ["Tokio", "Fuji"],
-  15: ["Tokio"]
+  1: ["Tokio"],
+  2: ["Tokio"],
+  3: ["Nikko", "Tokio"],
+  4: ["Kamakura", "Tokio"],
+  5: ["Fuji"],
+  6: ["Fuji", "Osaka"],
+  7: ["Osaka"],
+  8: ["Kumano Kodo"],
+  9: ["Nachi"],
+  10: ["Hiroshima"],
+  11: ["Miyajima", "Hiroshima"],
+  12: ["Okinawa"],
+  13: ["Iriomote"],
+  14: ["Sapporo"],
+  15: ["Sapporo", "Tokio"]
 };
 
 export const STATIC_CITY_WEATHER = {
-  "Kioto": { high: 29, low: 21, rain: 20, sky: "partly", condition: "Parcialmente nublado" },
-  "Tokio": { high: 28, low: 20, rain: 15, sky: "sun", condition: "Soleado" },
-  "Kanazawa": { high: 27, low: 20, rain: 60, sky: "rain", condition: "Lluvia posible" },
-  "Takayama": { high: 24, low: 18, rain: 40, sky: "cloud", condition: "Nublado" },
-  "Tsumago": { high: 23, low: 16, rain: 10, sky: "sun", condition: "Despejado" },
-  "Osaka": { high: 30, low: 22, rain: 15, sky: "sun", condition: "Soleado" },
-  "Nara": { high: 29, low: 21, rain: 20, sky: "partly", condition: "Parcialmente nublado" },
-  "Fuji": { high: 22, low: 14, rain: 25, sky: "partly", condition: "Nublado variable" },
-  "Narita": { high: 28, low: 20, rain: 15, sky: "sun", condition: "Soleado" },
+  "Tokio": { high: 28, low: 20, rain: 20, sky: "sun", condition: "Soleado y agradable" },
+  "Nikko": { high: 22, low: 14, rain: 35, sky: "partly", condition: "Templado en montaña" },
+  "Kamakura": { high: 27, low: 21, rain: 25, sky: "partly", condition: "Brisa marina costera" },
+  "Fuji": { high: 14, low: 5, rain: 30, sky: "cloud", condition: "Frío en altitud" },
+  "Osaka": { high: 30, low: 22, rain: 20, sky: "sun", condition: "Cálido y animado" },
+  "Kumano Kodo": { high: 25, low: 17, rain: 45, sky: "rain", condition: "Humedad y lluvia mística" },
+  "Nachi": { high: 26, low: 18, rain: 40, sky: "partly", condition: "Brisa de cascada y costa" },
+  "Hiroshima": { high: 29, low: 20, rain: 20, sky: "sun", condition: "Soleado y despejado" },
+  "Miyajima": { high: 28, low: 20, rain: 25, sky: "sun", condition: "Brisa marina en bahía" },
+  "Okinawa": { high: 31, low: 26, rain: 30, sky: "partly", condition: "Tropical y soleado" },
+  "Iriomote": { high: 31, low: 25, rain: 35, sky: "partly", condition: "Cálido selvático" },
+  "Sapporo": { high: 22, low: 13, rain: 25, sky: "partly", condition: "Fresco y otoñal" },
 };
 
 function getSkyFromWMO(code) {
@@ -77,7 +85,6 @@ const CACHE_KEY = "jp_weather_forecast_cache_v3";
 const CACHE_TTL = 2 * 60 * 60 * 1000; // 2 hours
 
 export const DAY_DATE_MAP = {
-  0: { date: "2026-09-06", label: "6 Sept" },
   1: { date: "2026-09-07", label: "7 Sept" },
   2: { date: "2026-09-08", label: "8 Sept" },
   3: { date: "2026-09-09", label: "9 Sept" },

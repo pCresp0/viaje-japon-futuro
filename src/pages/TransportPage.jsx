@@ -69,7 +69,7 @@ export default function TransportPage({ onNavigate }) {
           }}
         >
           <Train size={14} />
-          Conexiones por Etapa (13)
+          Conexiones por Etapa ({transports.length})
         </button>
         <button
           onClick={() => setActiveTab("pases")}

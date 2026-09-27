@@ -23,7 +23,10 @@ import {
 
 function isJrPassCovered(t) {
   if (typeof t.jrPassCovered === "boolean") return t.jrPassCovered;
-  return t.coverage === "jr" && !/nozomi/i.test(t.name || "");
+  if (t.coverage === "jr") return !/nozomi/i.test(t.name || "");
+  const str = `${t.name || ""} ${t.type || ""} ${t.route || ""}`.toLowerCase();
+  if (str.includes("nozomi") || str.includes("tobu") || str.includes("subway") || str.includes("metro") || str.includes("busta") || str.includes("vuelo") || str.includes("plane") || str.includes("ferry") || str.includes("fujikyu") || str.includes("ryujin") || str.includes("gobo")) return false;
+  return str.includes("jr") || str.includes("shinkansen") || str.includes("kuroshio") || str.includes("yokosuka");
 }
 
 function isNozomi(t) {
