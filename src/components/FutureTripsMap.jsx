@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useMemo } from "react";
 import { MapContainer, TileLayer, Marker, Popup, Polyline, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import { Compass, Calendar, ExternalLink, MapPin, Layers } from "lucide-react";
+import { Compass, Calendar, ExternalLink, MapPin } from "lucide-react";
 import { futureLocationCoords } from "../data/pendingDays";
 import PlaceText from "./PlaceText";
 
@@ -75,13 +75,63 @@ function MapController({ targetMarker, allMarkers, isSingleDay }) {
   return null;
 }
 
+const TILE_PROVIDERS = {
+  osm: {
+    id: "osm",
+    label: "🗺️ OSM",
+    name: "OpenStreetMap",
+    url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    subdomains: "abc",
+    maxZoom: 19,
+  },
+  topo: {
+    id: "topo",
+    label: "🏔️ Topo",
+    name: "Esri Relieve",
+    url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}",
+    attribution: 'Tiles &copy; Esri &mdash; Esri, USGS, METI',
+    subdomains: "abc",
+    maxZoom: 19,
+  },
+  sat: {
+    id: "sat",
+    label: "🛰️ Satélite",
+    name: "Esri Satélite",
+    url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+    attribution: 'Tiles &copy; Esri &mdash; USGS, AEX, GeoEye',
+    subdomains: "abc",
+    maxZoom: 18,
+  },
+};
+
 export default function FutureTripsMap({ days, selectedId, onSelectDay, onGoToItinerary, lang }) {
   const [filter, setFilter] = useState("ruta"); // "ruta" | "dias"
-  const [subDay, setSubDay] = useState(null); // null = todos, or number 1..13
+  const [subDay, setSubDay] = useState(null); // null = todos, or number 1..15
   const [activeId, setActiveId] = useState(selectedId || null);
   const markerRefs = useRef({});
 
-  const [tileStyle, setTileStyle] = useState("voyager"); // "voyager" | "osm"
+  // Default to OSM so map never loads blank or with Carto API key requirement
+  const [tileStyle, setTileStyle] = useState(() => {
+    try {
+      const saved = localStorage.getItem("japan_map_layer");
+      if (saved && TILE_PROVIDERS[saved]) return saved;
+    } catch {
+      // ignore
+    }
+    return "osm";
+  });
+
+  const activeTile = TILE_PROVIDERS[tileStyle] || TILE_PROVIDERS.osm;
+
+  const handleSwitchTile = (styleId) => {
+    setTileStyle(styleId);
+    try {
+      localStorage.setItem("japan_map_layer", styleId);
+    } catch {
+      // ignore
+    }
+  };
 
   // Merge days with coordinates: exactly 1 point per future day
   const markers = useMemo(() => {
@@ -275,23 +325,36 @@ export default function FutureTripsMap({ days, selectedId, onSelectDay, onGoToIt
           background: "#d4dadc",
         }}
       >
-        {/* Discrete map layer style switcher */}
+        {/* Layer style switcher */}
         <div style={{ position: "absolute", top: 12, right: 12, zIndex: 1000 }}>
-          <button
-            type="button"
-            onClick={() => setTileStyle((s) => (s === "voyager" ? "osm" : "voyager"))}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold shadow-md transition-all cursor-pointer"
+          <div
+            className="flex items-center gap-1 p-1 rounded-full shadow-md"
             style={{
               background: "rgba(255, 255, 255, 0.95)",
-              color: "var(--indigo)",
               border: "1px solid var(--line)",
               backdropFilter: "blur(6px)",
             }}
-            title={lang === "en" ? "Toggle map style" : "Cambiar estilo de mapa"}
           >
-            <Layers size={13} />
-            <span>{tileStyle === "voyager" ? "🎨 Carto" : "🗺️ OSM"}</span>
-          </button>
+            {Object.values(TILE_PROVIDERS).map((p) => {
+              const active = tileStyle === p.id;
+              return (
+                <button
+                  key={p.id}
+                  type="button"
+                  onClick={() => handleSwitchTile(p.id)}
+                  className="px-2.5 py-1 rounded-full text-xs font-semibold transition-all cursor-pointer"
+                  style={{
+                    backgroundColor: active ? "var(--indigo)" : "transparent",
+                    color: active ? "#ffffff" : "var(--ink-soft)",
+                    boxShadow: active ? "0 1px 4px rgba(29, 53, 87, 0.25)" : "none",
+                  }}
+                  title={p.name}
+                >
+                  {p.label}
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         <MapContainer
@@ -301,23 +364,15 @@ export default function FutureTripsMap({ days, selectedId, onSelectDay, onGoToIt
           scrollWheelZoom={true}
         >
           <TileLayer
-            key={tileStyle}
-            url={
-              tileStyle === "osm"
-                ? "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                : "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
-            }
-            attribution={
-              tileStyle === "osm"
-                ? '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                : '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-            }
-            subdomains={tileStyle === "osm" ? "abc" : "abcd"}
-            maxZoom={19}
+            key={activeTile.id}
+            url={activeTile.url}
+            attribution={activeTile.attribution}
+            subdomains={activeTile.subdomains || "abc"}
+            maxZoom={activeTile.maxZoom || 19}
             eventHandlers={{
               tileerror: () => {
                 if (tileStyle !== "osm") {
-                  setTileStyle("osm");
+                  handleSwitchTile("osm");
                 }
               },
             }}
