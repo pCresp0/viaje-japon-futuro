@@ -227,3 +227,4 @@ Una línea por cada commit subido a main, generada sola por GitHub Actions en ca
 - **2026-09-27 11:26 UTC** — fix(theme): restaurar textura de olas tradicionales en cabecera, sidebar y ... (`f1fed04`)
 - **2026-09-27 11:29 UTC** — fix(branding): anadir favicon con bandera de Japon y actualizar titulo ... (`89c9b1f`)
 - **2026-09-27 11:31 UTC** — feat(map): fijar la capa Topo (relieve) como estilo de mapa ... (`6b80222`)
+- **2026-09-27 11:39 UTC** — fix(theme): ajustar contraste, encuadre y visibilidad de las olas en ... (`c0666bb`)
