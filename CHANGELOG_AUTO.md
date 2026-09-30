@@ -235,3 +235,4 @@ Una línea por cada commit subido a main, generada sola por GitHub Actions en ca
 - **2026-09-27 12:22 UTC** — fix(map): corregir fallo en renderizado de mapa eliminando spans y ... (`2ea2be7`)
 - **2026-09-27 12:34 UTC** — fix(audit): resolver discrepancias de etapas, datos meteorologicos y buscador de ... (`ce469db`)
 - **2026-09-27 12:44 UTC** — fix(map): corregir referencia displayedMarkers is not defined en vista de ... (`fb40380`)
+- **2026-09-30 23:43 UTC** — feat(branding): anadir nuevo icono de Google Maps en alta resolucion ... (`3d6522d`)
