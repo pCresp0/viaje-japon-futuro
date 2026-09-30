@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && touch dist/.nojekyll && cp -r dist/assets . && cp dist/waves-*.webp . 2>/dev/null && cp dist/favicon.ico dist/icon-*.png dist/apple-touch-icon.png . 2>/dev/null || true",
+    "build": "vite build && touch dist/.nojekyll && cp -r dist/assets . && cp -r dist/icons . 2>/dev/null && cp dist/waves-*.webp . 2>/dev/null && cp dist/favicon.ico dist/icon-*.png dist/apple-touch-icon.png . 2>/dev/null || true",
     "lint": "oxlint src",
     "preview": "vite preview"
   },

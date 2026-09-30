@@ -3,6 +3,8 @@ import { createPortal } from "react-dom";
 import { useContent, useT } from "../i18n/LanguageContext";
 import { guidesByDay } from "../data/guides";
 import { guideImages } from "../data/guideImages";
+import googleMapsIcon from "../assets/icons/google-maps.png";
+import bookingIcon from "../assets/icons/booking.png";
 import { pendingItems } from "../data/pending";
 import { heymondoInsurance } from "../data/insurance";
 import { gygFujiActivity, visibilityTools } from "../data/fujiBookings";
@@ -254,7 +256,7 @@ function HotelCard({ stay, compact = false }) {
       {opt.note && <><span style={{ color: "#5a6070" }}>{opt.note}</span><br /></>}
       {opt.url && (
         <a href={opt.url} style={{ color: "#7a2c2e", display: "inline-flex", alignItems: "center", gap: 4 }}>
-          <img src="/icons/booking.png" alt="" width={11} height={11} style={{ borderRadius: 2 }} />
+          <img src={bookingIcon} alt="" width={11} height={11} style={{ borderRadius: 2 }} />
           Ver reserva ↗
         </a>
       )}
@@ -297,7 +299,7 @@ function GuideBlock({ id, accentColor, guides }) {
             {g.name} <span style={{ fontWeight: 400, color: "#5a6070", fontSize: 10 }}>{g.jp}</span>
           </strong>
           <a href={mapsUrl} style={{ color: "#7a2c2e", fontSize: 9.5, display: "inline-flex", alignItems: "center", gap: 4 }}>
-            <img src="/icons/google-maps.png" alt="" width={10} height={10} />
+            <img src={googleMapsIcon} alt="Google Maps" width={10} height={10} />
             Ver en mapa ↗
           </a>
         </div>

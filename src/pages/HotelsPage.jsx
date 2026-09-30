@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useContent, useT } from "../i18n/LanguageContext";
 import { mapsUrl } from "../utils/maps";
+import googleMapsIcon from "../assets/icons/google-maps.png";
 import { MapPin, Phone, KeyRound, CalendarCheck, CalendarX, BedDouble, ChevronDown, ChevronUp, Sparkles, ShieldCheck } from "lucide-react";
 import { useHighlight } from "../context/HighlightContext";
 import { slug } from "../utils/slug";
@@ -103,7 +104,7 @@ function HotelCard({ stay, index, anchorId, defaultExpanded = false }) {
               className="inline-flex items-center justify-center gap-1.5 text-xs font-semibold rounded-full px-3 py-1.5 transition-colors shadow-xs"
               style={{ background: "rgba(255,255,255,0.22)", color: "white", textDecoration: "none" }}
             >
-              <MapPin size={13} /> Maps
+              <img src={googleMapsIcon} alt="Google Maps" width={13} height={13} style={{ flexShrink: 0 }} /> Maps
             </a>
             <div className="p-1 rounded-full bg-white/15">
               {expanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}

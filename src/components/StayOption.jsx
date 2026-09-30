@@ -1,5 +1,7 @@
 import { MapPin, KeyRound, BedDouble, Phone, CalendarCheck, CalendarX } from "lucide-react";
 import { mapsUrl } from "../utils/maps";
+import googleMapsIcon from "../assets/icons/google-maps.png";
+import bookingIcon from "../assets/icons/booking.png";
 
 // Etiqueta pequeña en mayúsculas + valor debajo — mismo lenguaje visual
 // que ya usa la ficha completa de Hoteles, para que ambos sitios se
@@ -113,7 +115,7 @@ export default function StayOption({ option, city }) {
             className="flex-1 flex items-center justify-center gap-1.5 rounded-lg py-2 px-2 transition-colors"
             style={{ background: "var(--indigo)", color: "white", fontSize: 12, fontWeight: 700, textDecoration: "none" }}
           >
-            <img src="/icons/booking.png" alt="" width={14} height={14} style={{ borderRadius: 3, flexShrink: 0 }} />
+            <img src={bookingIcon} alt="" width={14} height={14} style={{ borderRadius: 3, flexShrink: 0 }} />
             Ver reserva ↗
           </a>
         )}
@@ -123,7 +125,7 @@ export default function StayOption({ option, city }) {
           className="flex-1 flex items-center justify-center gap-1.5 rounded-lg py-2 px-2 transition-colors"
           style={{ background: "var(--paper-raised)", color: "var(--shu)", fontSize: 12, fontWeight: 700, border: "1px solid var(--line)", textDecoration: "none" }}
         >
-          <img src="/icons/google-maps.png" alt="" width={14} height={14} style={{ flexShrink: 0 }} />
+          <img src={googleMapsIcon} alt="Google Maps" width={14} height={14} style={{ flexShrink: 0 }} />
           Cómo llegar ↗
         </a>
       </div>
